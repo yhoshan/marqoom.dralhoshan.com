@@ -334,7 +334,7 @@ export default function Home() {
           {/* Logo Image */}
           <div style={{ marginBottom: 20, display: "flex", justifyContent: "center" }}>
             <img
-              src="/manus-storage/marqoom_logo_transparent_40d69299.png"
+              src="/manus-storage/marqoom_logo_final_febb27a2.png"
               alt="مرقوم — MARQOOM"
               style={{
                 height: "clamp(80px, 14vw, 130px)",
