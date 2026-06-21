@@ -410,30 +410,32 @@ export default function Home() {
         zIndex: 100,
         boxShadow: "0 2px 12px rgba(26,122,110,0.08)",
       }}>
-        <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 16px", display: "flex", alignItems: "center", gap: 6, overflowX: "auto", scrollbarWidth: "none" }}>
-          <span style={{ color: C.textLight, fontSize: 13, whiteSpace: "nowrap", padding: "14px 12px 14px 0", borderLeft: `1px solid ${C.creamMid}`, paddingLeft: 14, marginLeft: 4, flexShrink: 0 }}>التصنيف:</span>
+        <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 12px", display: "flex", alignItems: "center", gap: 4, overflowX: "auto", scrollbarWidth: "none", WebkitOverflowScrolling: "touch" }}>
+          <span style={{ color: C.textLight, fontSize: "clamp(12px,3vw,13px)", whiteSpace: "nowrap", padding: "0 10px 0 0", borderLeft: `1px solid ${C.creamMid}`, paddingLeft: 12, marginLeft: 4, flexShrink: 0, minHeight: 52, display: "flex", alignItems: "center" }}>التصنيف:</span>
           {CATEGORIES.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
               style={{
-                padding: "7px 16px",
+                padding: "0 clamp(12px,3vw,16px)",
+                minHeight: 44,
                 borderRadius: 40,
                 border: activeCategory === cat.id ? `1.5px solid ${C.emerald}` : `1.5px solid transparent`,
                 cursor: "pointer",
                 whiteSpace: "nowrap",
-                fontSize: 13,
+                fontSize: "clamp(12px,3vw,13px)",
                 fontFamily: "'Noto Naskh Arabic', serif",
                 fontWeight: activeCategory === cat.id ? 700 : 400,
                 background: activeCategory === cat.id ? C.emerald : "transparent",
                 color: activeCategory === cat.id ? C.white : C.textMid,
                 transition: "all 0.2s",
-                margin: "8px 0",
+                margin: "4px 0",
                 flexShrink: 0,
+                WebkitTapHighlightColor: "transparent",
               }}
             >
               {cat.label}{" "}
-              <span style={{ opacity: 0.75, fontSize: 11 }}>
+              <span style={{ opacity: 0.75, fontSize: "clamp(10px,2.5vw,11px)" }}>
                 ({cat.id === "all" ? filtered.length : KASHAFAT.filter(k => k.category === cat.id).length})
               </span>
             </button>
@@ -481,18 +483,15 @@ export default function Home() {
       }}>
         <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, transparent, ${C.gold}, ${C.goldLight}, ${C.gold}, transparent)` }} />
 
-        {/* Logo in footer */}
-        <div style={{ marginBottom: 16 }}>
-          <img
-            src="/manus-storage/marqoom_logo_transparent_40d69299.png"
-            alt="مرقوم"
-            style={{ height: 50, width: "auto", opacity: 0.9 }}
-          />
+        {/* Title in footer instead of logo */}
+        <div style={{ marginBottom: 8 }}>
+          <p style={{ color: C.white, fontSize: "clamp(22px,5vw,28px)", fontFamily: "'Amiri', serif", fontWeight: 700, marginBottom: 4 }}>
+            مرقوم
+          </p>
+          <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "clamp(13px,3vw,15px)", marginBottom: 16 }}>
+            بوابة الكشافات الرقمية
+          </p>
         </div>
-
-        <p style={{ color: "rgba(255,255,255,0.75)", fontSize: 13, marginBottom: 16 }}>
-          بوابة الكشافات المنهجية الرقمية
-        </p>
 
         {/* Signature */}
         <div style={{ marginBottom: 16, display: "flex", justifyContent: "center" }}>
