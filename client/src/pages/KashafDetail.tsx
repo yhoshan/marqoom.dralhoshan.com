@@ -716,7 +716,7 @@ export default function KashafDetail() {
             />
           </a>
         </div>
-        <p style={{ color: C.goldLight, fontSize: "clamp(11px,2.5vw,12px)", opacity: 0.75 }}>© 1446هـ / 2025م — جميع الحقوق محفوظة</p>
+        <p style={{ color: C.goldLight, fontSize: "clamp(11px,2.5vw,12px)", opacity: 0.75 }}>© 1448هـ / 2026م — جميع الحقوق محفوظة</p>
       </footer>
 
     </div>

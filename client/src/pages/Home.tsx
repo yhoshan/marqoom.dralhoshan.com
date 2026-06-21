@@ -513,7 +513,7 @@ export default function Home() {
           </a>
         </div>
 
-        <p style={{ color: C.goldLight, fontSize: 12, opacity: 0.75 }}>© 1446هـ / 2025م — جميع الحقوق محفوظة</p>
+        <p style={{ color: C.goldLight, fontSize: 12, opacity: 0.75 }}>© 1448هـ / 2026م — جميع الحقوق محفوظة</p>
       </footer>
 
       {/* ── SCROLL TO TOP ── */}
