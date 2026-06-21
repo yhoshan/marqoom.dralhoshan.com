@@ -352,7 +352,7 @@ export default function Home() {
             بوابة الكشافات الرقمية
           </p>
           <p style={{ color: C.white, fontSize: "clamp(13px, 3.2vw, 15px)", marginBottom: 28, lineHeight: 1.6, padding: "0 8px" }}>
-            فهارس تحليلية آلية لكبريات المصنفات الإسلامية
+            فهارس تحليلية آلية لمختارات من كتب التراث
           </p>
 
           {/* Stats */}

@@ -703,7 +703,8 @@ export default function KashafDetail() {
       }}>
         <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, transparent, ${C.gold}, ${C.goldLight}, ${C.gold}, transparent)` }} />
         <p style={{ color: C.white, fontSize: "clamp(20px,5vw,26px)", fontFamily: "'Amiri', serif", fontWeight: 700, marginBottom: 4 }}>مرقوم</p>
-        <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "clamp(12px,3vw,14px)", marginBottom: 14 }}>بوابة الكشافات الرقمية</p>
+        <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "clamp(12px,3vw,14px)", marginBottom: 4 }}>بوابة الكشافات الرقمية</p>
+        <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "clamp(11px,2.5vw,13px)", marginBottom: 14 }}>فهارس تحليلية آلية لمختارات من كتب التراث</p>
         <div style={{ marginBottom: 14, display: "flex", justifyContent: "center" }}>
           <a href="https://dralhoshan.com" target="_blank" rel="noopener noreferrer">
             <img
