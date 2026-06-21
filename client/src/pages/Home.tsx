@@ -325,9 +325,9 @@ export default function Home() {
         {/* Gold bottom line */}
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, transparent, ${C.gold}, ${C.goldLight}, ${C.gold}, transparent)` }} />
 
-        <div style={{ maxWidth: 960, margin: "0 auto", padding: "40px 24px 36px", position: "relative", zIndex: 1, textAlign: "center" }}>
+        <div style={{ maxWidth: 960, margin: "0 auto", padding: "clamp(28px,6vw,40px) clamp(16px,4vw,24px) clamp(28px,6vw,36px)", position: "relative", zIndex: 1, textAlign: "center" }}>
           {/* Bismillah */}
-          <p style={{ color: C.goldLight, fontSize: 14, fontFamily: "'Amiri', serif", marginBottom: 20, letterSpacing: 2, opacity: 0.9 }}>
+          <p style={{ color: C.goldLight, fontSize: "clamp(13px,3.5vw,15px)", fontFamily: "'Amiri', serif", marginBottom: 16, letterSpacing: 2, opacity: 0.9 }}>
             بسم الله الرحمن الرحيم
           </p>
 
@@ -337,8 +337,9 @@ export default function Home() {
               src="/manus-storage/marqoom_logo_final_febb27a2.png"
               alt="مرقوم — MARQOOM"
               style={{
-                height: "clamp(80px, 14vw, 130px)",
+                height: "clamp(70px, 18vw, 130px)",
                 width: "auto",
+                maxWidth: "70vw",
                 opacity: 0.95,
               }}
             />
@@ -346,15 +347,15 @@ export default function Home() {
 
           {/* NOTE: الأيقونة الهندسية المنفصلة تم حذفها بناءً على طلب المستخدم */}
 
-          <p style={{ color: C.white, fontSize: "clamp(14px, 2.5vw, 18px)", fontFamily: "'Amiri', serif", marginBottom: 6 }}>
+          <p style={{ color: C.white, fontSize: "clamp(16px, 4vw, 20px)", fontFamily: "'Amiri', serif", marginBottom: 6, fontWeight: 600 }}>
             بوابة الكشافات الرقمية
           </p>
-          <p style={{ color: C.white, fontSize: 13, marginBottom: 32 }}>
+          <p style={{ color: C.white, fontSize: "clamp(13px, 3.2vw, 15px)", marginBottom: 28, lineHeight: 1.6, padding: "0 8px" }}>
             فهارس تحليلية آلية لكبريات المصنفات الإسلامية
           </p>
 
           {/* Stats */}
-          <div style={{ display: "flex", justifyContent: "center", gap: "clamp(16px, 4vw, 48px)", flexWrap: "wrap", marginBottom: 32 }}>
+          <div style={{ display: "flex", justifyContent: "center", gap: "clamp(12px, 4vw, 48px)", flexWrap: "wrap", marginBottom: 28 }}>
             {[
               { n: "11", l: "كشّافاً منهجياً" },
               { n: "+30م", l: "كلمة محللة" },
@@ -362,14 +363,14 @@ export default function Home() {
               { n: "11", l: "مصنفاً كبيراً" },
             ].map((s) => (
               <div key={s.l} style={{ textAlign: "center" }}>
-                <div style={{ fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 700, color: C.goldLight, fontFamily: "'Amiri', serif" }}>{s.n}</div>
-                <div style={{ fontSize: 12, color: C.white, marginTop: 2 }}>{s.l}</div>
+                <div style={{ fontSize: "clamp(20px, 5vw, 32px)", fontWeight: 700, color: C.goldLight, fontFamily: "'Amiri', serif" }}>{s.n}</div>
+                <div style={{ fontSize: "clamp(11px, 2.8vw, 13px)", color: C.white, marginTop: 3 }}>{s.l}</div>
               </div>
             ))}
           </div>
 
           {/* Search */}
-          <div style={{ maxWidth: 560, margin: "0 auto 4px", position: "relative" }}>
+          <div style={{ maxWidth: 560, margin: "0 auto 4px", position: "relative", width: "100%" }}>
             <span style={{ position: "absolute", right: 16, top: "50%", transform: "translateY(-50%)", color: C.goldLight, fontSize: 18, pointerEvents: "none" }}>🔍</span>
             <input
               ref={searchRef}
@@ -379,18 +380,19 @@ export default function Home() {
               placeholder="ابحث عن كشاف... (فتح الباري، ابن تيمية، الرازي...)"
               style={{
                 width: "100%",
-                padding: "13px 48px 13px 20px",
+                padding: "clamp(12px,3vw,14px) 48px clamp(12px,3vw,14px) 20px",
                 borderRadius: 40,
                 border: `2px solid rgba(181,160,90,0.4)`,
-                background: "rgba(255,255,255,0.12)",
+                background: "rgba(255,255,255,0.15)",
                 color: C.white,
-                fontSize: 15,
+                fontSize: "clamp(14px,3.5vw,16px)",
                 fontFamily: "'Noto Naskh Arabic', serif",
                 outline: "none",
                 backdropFilter: "blur(8px)",
                 direction: "rtl",
                 transition: "border-color 0.2s",
                 boxSizing: "border-box",
+                WebkitAppearance: "none",
               }}
               onFocus={(e) => (e.target.style.borderColor = C.goldLight)}
               onBlur={(e) => (e.target.style.borderColor = "rgba(181,160,90,0.4)")}
@@ -440,13 +442,13 @@ export default function Home() {
       </div>
 
       {/* ── MAIN CONTENT ── */}
-      <main style={{ maxWidth: 960, margin: "0 auto", padding: "40px 16px 80px" }}>
+      <main style={{ maxWidth: 960, margin: "0 auto", padding: "clamp(24px,5vw,40px) clamp(12px,4vw,16px) 80px" }}>
         <div style={{ marginBottom: 32, textAlign: "center" }}>
-          <h2 style={{ fontFamily: "'Amiri', serif", fontSize: 28, color: C.emeraldDark, marginBottom: 8 }}>
+          <h2 style={{ fontFamily: "'Amiri', serif", fontSize: "clamp(22px,5vw,28px)", color: C.emeraldDark, marginBottom: 8 }}>
             الكشافات المنهجية الرقمية
           </h2>
           <div style={{ width: 60, height: 2, background: `linear-gradient(90deg, transparent, ${C.gold}, transparent)`, margin: "0 auto 12px" }} />
-          <p style={{ color: C.textMid, fontSize: 14 }}>
+          <p style={{ color: C.textMid, fontSize: "clamp(14px,3.5vw,16px)", lineHeight: 1.75, padding: "0 clamp(0px,2vw,16px)" }}>
             اختر الكشاف الذي تريد الاطلاع عليه — كل كشاف يتضمن تحليلاً آلياً شاملاً للمصنَّف مع فهارس منهجية دقيقة
           </p>
         </div>
@@ -460,8 +462,8 @@ export default function Home() {
         ) : (
           <div style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(290px, 1fr))",
-            gap: 24,
+            gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 290px), 1fr))",
+            gap: "clamp(14px,3vw,24px)",
           }}>
             {filtered.map((k) => (
               <KashafCard key={k.id} kashaf={k} />
@@ -573,7 +575,7 @@ function KashafCard({ kashaf }: { kashaf: typeof KASHAFAT[0] }) {
         background: hovered
           ? `linear-gradient(135deg, ${C.emeraldDark} 0%, ${C.emerald} 100%)`
           : `linear-gradient(135deg, ${C.emerald} 0%, ${C.emeraldLight} 100%)`,
-        padding: "18px 20px 14px",
+        padding: "clamp(14px,3vw,18px) clamp(16px,4vw,20px) clamp(12px,3vw,14px)",
         position: "relative",
         overflow: "hidden",
         transition: "background 0.25s",
@@ -624,25 +626,25 @@ function KashafCard({ kashaf }: { kashaf: typeof KASHAFAT[0] }) {
         {/* Title */}
         <h3 style={{
           fontFamily: "'Amiri', serif",
-          fontSize: 19,
+          fontSize: "clamp(17px,4.5vw,20px)",
           fontWeight: 700,
           color: C.white,
           marginBottom: 4,
-          lineHeight: 1.3,
+          lineHeight: 1.35,
           position: "relative",
           zIndex: 1,
         }}>
           {kashaf.title}
         </h3>
         {/* Author */}
-        <p style={{ color: "rgba(255,255,255,0.8)", fontSize: 12, position: "relative", zIndex: 1 }}>
+        <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "clamp(12px,3vw,13px)", position: "relative", zIndex: 1 }}>
           ◆ {kashaf.author} ({kashaf.death})
         </p>
       </div>
 
       {/* Card Body */}
-      <div style={{ padding: "16px 20px", flex: 1, display: "flex", flexDirection: "column" }}>
-        <p style={{ color: C.textMid, fontSize: 13, lineHeight: 1.75, marginBottom: 14, flex: 1 }}>
+      <div style={{ padding: "clamp(14px,3vw,16px) clamp(14px,4vw,20px)", flex: 1, display: "flex", flexDirection: "column" }}>
+        <p style={{ color: C.textMid, fontSize: "clamp(13px,3.2vw,14px)", lineHeight: 1.8, marginBottom: 14, flex: 1 }}>
           {kashaf.description}
         </p>
 
@@ -685,11 +687,11 @@ function KashafCard({ kashaf }: { kashaf: typeof KASHAFAT[0] }) {
               alignItems: "center",
               justifyContent: "center",
               gap: 8,
-              padding: "10px 16px",
+              padding: "clamp(11px,2.5vw,12px) 16px",
               borderRadius: 8,
               background: hovered ? C.emeraldDark : C.emerald,
               color: C.white,
-              fontSize: 14,
+              fontSize: "clamp(14px,3.5vw,15px)",
               fontWeight: 700,
               fontFamily: "'Noto Naskh Arabic', serif",
               textDecoration: "none",
@@ -713,12 +715,12 @@ function KashafCard({ kashaf }: { kashaf: typeof KASHAFAT[0] }) {
                 alignItems: "center",
                 justifyContent: "center",
                 gap: 5,
-                padding: "8px 10px",
-                borderRadius: 8,
-                background: "#E8F5E9",
-                border: "1px solid #A5D6A7",
-                color: "#2E7D32",
-                fontSize: 12,
+              padding: "clamp(9px,2vw,10px) 10px",
+              borderRadius: 8,
+              background: "#E8F5E9",
+              border: "1px solid #A5D6A7",
+              color: "#2E7D32",
+              fontSize: "clamp(12px,3vw,13px)",
                 fontWeight: 600,
                 fontFamily: "'Noto Naskh Arabic', serif",
                 textDecoration: "none",
@@ -741,12 +743,12 @@ function KashafCard({ kashaf }: { kashaf: typeof KASHAFAT[0] }) {
                 alignItems: "center",
                 justifyContent: "center",
                 gap: 5,
-                padding: "8px 10px",
-                borderRadius: 8,
-                background: "#E3F2FD",
-                border: "1px solid #90CAF9",
-                color: "#1565C0",
-                fontSize: 12,
+              padding: "clamp(9px,2vw,10px) 10px",
+              borderRadius: 8,
+              background: "#E3F2FD",
+              border: "1px solid #90CAF9",
+              color: "#1565C0",
+              fontSize: "clamp(12px,3vw,13px)",
                 fontWeight: 600,
                 fontFamily: "'Noto Naskh Arabic', serif",
                 textDecoration: "none",
