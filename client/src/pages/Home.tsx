@@ -311,49 +311,35 @@ export default function Home() {
 
       {/* ── HEADER ── */}
       <header style={{
-        background: `linear-gradient(160deg, ${C.emeraldDark} 0%, ${C.emerald} 55%, ${C.emeraldLight} 100%)`,
         position: "relative",
         overflow: "hidden",
         paddingBottom: 0,
+        background: C.emeraldDark,
       }}>
-        {/* Islamic geometric pattern overlay */}
-        <div style={{
-          position: "absolute", inset: 0, opacity: 0.06,
-          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30Z' fill='none' stroke='%23B5A05A' stroke-width='1'/%3E%3Cpath d='M30 10 L50 30 L30 50 L10 30Z' fill='none' stroke='%23B5A05A' stroke-width='0.5'/%3E%3C/svg%3E")`,
-          backgroundSize: "60px 60px",
-          pointerEvents: "none",
-        }} />
+        {/* Hero background image */}
+        <img
+          src="/manus-storage/marqoom_hero_header_5defb287.webp"
+          alt=""
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center top",
+            pointerEvents: "none",
+          }}
+        />
+        {/* Dark overlay for stats/search readability */}
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.35) 75%, rgba(0,0,0,0.55) 100%)", pointerEvents: "none" }} />
         {/* Gold bottom line */}
-        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, transparent, ${C.gold}, ${C.goldLight}, ${C.gold}, transparent)` }} />
+        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, transparent, ${C.gold}, ${C.goldLight}, ${C.gold}, transparent)`, zIndex: 2 }} />
 
         <div style={{ maxWidth: 960, margin: "0 auto", padding: "clamp(28px,6vw,40px) clamp(16px,4vw,24px) clamp(28px,6vw,36px)", position: "relative", zIndex: 1, textAlign: "center" }}>
-          {/* Bismillah */}
-          <p style={{ color: C.goldLight, fontSize: "clamp(13px,3.5vw,15px)", fontFamily: "'Amiri', serif", marginBottom: 16, letterSpacing: 2, opacity: 0.9 }}>
-            بسم الله الرحمن الرحيم
-          </p>
+          {/* Spacer to let hero image breathe — image already contains logo + title + subtitle */}
+          <div style={{ height: "clamp(180px, 48vw, 340px)" }} />
 
-          {/* Logo Image */}
-          <div style={{ marginBottom: 20, display: "flex", justifyContent: "center" }}>
-            <img
-              src="/manus-storage/marqoom_logo_final_febb27a2.png"
-              alt="مرقوم — MARQOOM"
-              style={{
-                height: "clamp(70px, 18vw, 130px)",
-                width: "auto",
-                maxWidth: "70vw",
-                opacity: 0.95,
-              }}
-            />
-          </div>
-
-          {/* NOTE: الأيقونة الهندسية المنفصلة تم حذفها بناءً على طلب المستخدم */}
-
-          <p style={{ color: C.white, fontSize: "clamp(16px, 4vw, 20px)", fontFamily: "'Amiri', serif", marginBottom: 6, fontWeight: 600 }}>
-            بوابة الكشافات الرقمية
-          </p>
-          <p style={{ color: C.white, fontSize: "clamp(13px, 3.2vw, 15px)", marginBottom: 28, lineHeight: 1.6, padding: "0 8px" }}>
-            فهارس تحليلية آلية لمختارات من كتب التراث
-          </p>
 
           {/* Stats */}
           <div style={{ display: "flex", justifyContent: "center", gap: "clamp(12px, 4vw, 48px)", flexWrap: "wrap", marginBottom: 28 }}>
