@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useLocation } from "wouter";
+import { useTheme } from "@/contexts/ThemeContext";
 
 // ═══════════════════════════════════════════════
 // DESIGN: هوية مرقوم الرسمية
@@ -8,7 +9,7 @@ import { useLocation } from "wouter";
 // التوقيع: /manus-storage/marqoom_signature_a4c79224.png
 // ═══════════════════════════════════════════════
 
-// ── COLORS ──
+// ── COLORS LIGHT ──
 const C = {
   emerald: "#1A7A6E",
   emeraldDark: "#145F55",
@@ -284,11 +285,33 @@ const categoryColors: Record<string, { bg: string; text: string; accent: string 
   عقيدة: { bg: "#EFF4EE", text: "#2E5A28",     accent: "#4A8A40" },
 };
 
+// ── COLORS DARK ──
+const D = {
+  emerald: "#1A7A6E",
+  emeraldDark: "#145F55",
+  emeraldLight: "#2A9A8E",
+  gold: "#B5A05A",
+  goldLight: "#D4C07A",
+  goldDark: "#8A7840",
+  dark: "#2A2A2A",
+  darkMid: "#3A3A3A",
+  cream: "#1A1F2E",
+  creamDark: "#232A3A",
+  creamMid: "#2E3650",
+  textDark: "#E8E0D0",
+  textMid: "#B0A890",
+  textLight: "#7A7A8A",
+  white: "#FFFFFF",
+};
+
 export default function Home() {
   const [activeCategory, setActiveCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [showScrollTop, setShowScrollTop] = useState(false);
   const searchRef = useRef<HTMLInputElement>(null);
+  const { theme, toggleTheme } = useTheme();
+  const isDark = theme === "dark";
+  const T = isDark ? D : C;
 
   useEffect(() => {
     const handleScroll = () => setShowScrollTop(window.scrollY > 400);
@@ -307,11 +330,11 @@ export default function Home() {
   });
 
   return (
-    <div style={{ fontFamily: "'Noto Naskh Arabic', 'Amiri', serif", direction: "rtl", background: C.cream, minHeight: "100vh" }}>
+    <div style={{ fontFamily: "'Noto Naskh Arabic', 'Amiri', serif", direction: "rtl", background: T.cream, minHeight: "100vh", transition: "background 0.3s" }}>
 
       {/* ── HEADER ── */}
       <header style={{
-        background: `linear-gradient(160deg, ${C.emeraldDark} 0%, ${C.emerald} 55%, ${C.emeraldLight} 100%)`,
+        background: `linear-gradient(160deg, ${T.emeraldDark} 0%, ${T.emerald} 55%, ${T.emeraldLight} 100%)`,
         position: "relative",
         overflow: "hidden",
         paddingBottom: 0,
@@ -324,7 +347,7 @@ export default function Home() {
           pointerEvents: "none",
         }} />
         {/* Gold bottom line */}
-        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, transparent, ${C.gold}, ${C.goldLight}, ${C.gold}, transparent)` }} />
+        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, transparent, ${T.gold}, ${T.goldLight}, ${T.gold}, transparent)` }} />
 
         <div style={{ maxWidth: 960, margin: "0 auto", padding: "clamp(28px,6vw,40px) clamp(16px,4vw,24px) clamp(28px,6vw,36px)", position: "relative", zIndex: 1, textAlign: "center" }}>
           {/* Logo Image */}
@@ -341,10 +364,10 @@ export default function Home() {
             />
           </div>
 
-          <p style={{ color: C.white, fontSize: "clamp(13px, 3.2vw, 16px)", fontFamily: "'Amiri', serif", marginBottom: 5, fontWeight: 600 }}>
+          <p style={{ color: T.white, fontSize: "clamp(13px, 3.2vw, 16px)", fontFamily: "'Amiri', serif", marginBottom: 5, fontWeight: 600 }}>
             بوابة الكشافات الرقمية
           </p>
-          <p style={{ color: C.white, fontSize: "clamp(11px, 2.6vw, 13px)", marginBottom: 28, lineHeight: 1.6, padding: "0 8px" }}>
+          <p style={{ color: T.white, fontSize: "clamp(11px, 2.6vw, 13px)", marginBottom: 28, lineHeight: 1.6, padding: "0 8px" }}>
             فهارس تحليلية آلية لمختارات من كتب التراث
           </p>
 
@@ -358,15 +381,44 @@ export default function Home() {
               { n: "11", l: "مصنفاً كبيراً" },
             ].map((s) => (
               <div key={s.l} style={{ textAlign: "center" }}>
-                <div style={{ fontSize: "clamp(20px, 5vw, 32px)", fontWeight: 700, color: C.goldLight, fontFamily: "'Amiri', serif" }}>{s.n}</div>
-                <div style={{ fontSize: "clamp(11px, 2.8vw, 13px)", color: C.white, marginTop: 3 }}>{s.l}</div>
+                <div style={{ fontSize: "clamp(20px, 5vw, 32px)", fontWeight: 700, color: T.goldLight, fontFamily: "'Amiri', serif" }}>{s.n}</div>
+                <div style={{ fontSize: "clamp(11px, 2.8vw, 13px)", color: T.white, marginTop: 3 }}>{s.l}</div>
               </div>
             ))}
           </div>
 
+          {/* Dark mode toggle */}
+          <div style={{ display: "flex", justifyContent: "center", marginBottom: 16 }}>
+            <button
+              onClick={toggleTheme}
+              title={isDark ? "الوضع النهاري" : "الوضع الليلي"}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 7,
+                padding: "7px 18px",
+                borderRadius: 40,
+                border: `1.5px solid rgba(181,160,90,0.5)`,
+                background: "rgba(255,255,255,0.12)",
+                color: T.white,
+                fontSize: "clamp(12px,3vw,13px)",
+                fontFamily: "'Noto Naskh Arabic', serif",
+                cursor: "pointer",
+                backdropFilter: "blur(8px)",
+                transition: "all 0.2s",
+                WebkitTapHighlightColor: "transparent",
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.22)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.12)"; }}
+            >
+              <span style={{ fontSize: 16 }}>{isDark ? "☀️" : "🌙"}</span>
+              <span>{isDark ? "الوضع النهاري" : "الوضع الليلي"}</span>
+            </button>
+          </div>
+
           {/* Search */}
           <div style={{ maxWidth: 560, margin: "0 auto 4px", position: "relative", width: "100%" }}>
-            <span style={{ position: "absolute", right: 16, top: "50%", transform: "translateY(-50%)", color: C.goldLight, fontSize: 18, pointerEvents: "none" }}>🔍</span>
+            <span style={{ position: "absolute", right: 16, top: "50%", transform: "translateY(-50%)", color: T.goldLight, fontSize: 18, pointerEvents: "none" }}>🔍</span>
             <input
               ref={searchRef}
               type="search"
@@ -379,7 +431,7 @@ export default function Home() {
                 borderRadius: 40,
                 border: `2px solid rgba(181,160,90,0.4)`,
                 background: "rgba(255,255,255,0.15)",
-                color: C.white,
+                color: T.white,
                 fontSize: "clamp(14px,3.5vw,16px)",
                 fontFamily: "'Noto Naskh Arabic', serif",
                 outline: "none",
@@ -389,7 +441,7 @@ export default function Home() {
                 boxSizing: "border-box",
                 WebkitAppearance: "none",
               }}
-              onFocus={(e) => (e.target.style.borderColor = C.goldLight)}
+              onFocus={(e) => (e.target.style.borderColor = T.goldLight)}
               onBlur={(e) => (e.target.style.borderColor = "rgba(181,160,90,0.4)")}
             />
           </div>
@@ -398,15 +450,15 @@ export default function Home() {
 
       {/* ── FILTER TABS ── */}
       <div style={{
-        background: C.white,
-        borderBottom: `2px solid ${C.creamMid}`,
+        background: T.white,
+        borderBottom: `2px solid ${T.creamMid}`,
         position: "sticky",
         top: 0,
         zIndex: 100,
         boxShadow: "0 2px 12px rgba(26,122,110,0.08)",
       }}>
         <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 12px", display: "flex", alignItems: "center", gap: 4, overflowX: "auto", scrollbarWidth: "none", WebkitOverflowScrolling: "touch" }}>
-          <span style={{ color: C.textLight, fontSize: "clamp(12px,3vw,13px)", whiteSpace: "nowrap", padding: "0 10px 0 0", borderLeft: `1px solid ${C.creamMid}`, paddingLeft: 12, marginLeft: 4, flexShrink: 0, minHeight: 52, display: "flex", alignItems: "center" }}>التصنيف:</span>
+          <span style={{ color: T.textLight, fontSize: "clamp(12px,3vw,13px)", whiteSpace: "nowrap", padding: "0 10px 0 0", borderLeft: `1px solid ${T.creamMid}`, paddingLeft: 12, marginLeft: 4, flexShrink: 0, minHeight: 52, display: "flex", alignItems: "center" }}>التصنيف:</span>
           {CATEGORIES.map((cat) => (
             <button
               key={cat.id}
@@ -415,14 +467,14 @@ export default function Home() {
                 padding: "0 clamp(12px,3vw,16px)",
                 minHeight: 44,
                 borderRadius: 40,
-                border: activeCategory === cat.id ? `1.5px solid ${C.emerald}` : `1.5px solid transparent`,
+                border: activeCategory === cat.id ? `1.5px solid ${T.emerald}` : `1.5px solid transparent`,
                 cursor: "pointer",
                 whiteSpace: "nowrap",
                 fontSize: "clamp(12px,3vw,13px)",
                 fontFamily: "'Noto Naskh Arabic', serif",
                 fontWeight: activeCategory === cat.id ? 700 : 400,
-                background: activeCategory === cat.id ? C.emerald : "transparent",
-                color: activeCategory === cat.id ? C.white : C.textMid,
+                background: activeCategory === cat.id ? T.emerald : "transparent",
+                color: activeCategory === cat.id ? T.white : T.textMid,
                 transition: "all 0.2s",
                 margin: "4px 0",
                 flexShrink: 0,
@@ -441,17 +493,17 @@ export default function Home() {
       {/* ── MAIN CONTENT ── */}
       <main style={{ maxWidth: 960, margin: "0 auto", padding: "clamp(24px,5vw,40px) clamp(12px,4vw,16px) 80px" }}>
         <div style={{ marginBottom: 32, textAlign: "center" }}>
-          <h2 style={{ fontFamily: "'Amiri', serif", fontSize: "clamp(22px,5vw,28px)", color: C.emeraldDark, marginBottom: 8 }}>
+          <h2 style={{ fontFamily: "'Amiri', serif", fontSize: "clamp(22px,5vw,28px)", color: T.emeraldDark, marginBottom: 8 }}>
             الكشافات المنهجية الرقمية
           </h2>
-          <div style={{ width: 60, height: 2, background: `linear-gradient(90deg, transparent, ${C.gold}, transparent)`, margin: "0 auto 12px" }} />
-          <p style={{ color: C.textMid, fontSize: "clamp(14px,3.5vw,16px)", lineHeight: 1.75, padding: "0 clamp(0px,2vw,16px)" }}>
+          <div style={{ width: 60, height: 2, background: `linear-gradient(90deg, transparent, ${T.gold}, transparent)`, margin: "0 auto 12px" }} />
+          <p style={{ color: T.textMid, fontSize: "clamp(14px,3.5vw,16px)", lineHeight: 1.75, padding: "0 clamp(0px,2vw,16px)" }}>
             اختر الكشاف الذي تريد الاطلاع عليه — كل كشاف يتضمن تحليلاً آلياً شاملاً للمصنَّف مع فهارس منهجية دقيقة
           </p>
         </div>
 
         {filtered.length === 0 ? (
-          <div style={{ textAlign: "center", padding: "60px 20px", color: C.textMid }}>
+          <div style={{ textAlign: "center", padding: "60px 20px", color: T.textMid }}>
             <div style={{ fontSize: 48, marginBottom: 16 }}>🔍</div>
             <p style={{ fontSize: 18, fontFamily: "'Amiri', serif" }}>لا توجد نتائج مطابقة للبحث</p>
             <p style={{ fontSize: 14, marginTop: 8, opacity: 0.7 }}>جرّب كلمات بحث مختلفة</p>
@@ -471,16 +523,16 @@ export default function Home() {
 
       {/* ── FOOTER ── */}
       <footer style={{
-        background: `linear-gradient(160deg, ${C.emeraldDark} 0%, ${C.emerald} 100%)`,
+        background: `linear-gradient(160deg, ${T.emeraldDark} 0%, ${T.emerald} 100%)`,
         padding: "36px 24px",
         textAlign: "center",
         position: "relative",
       }}>
-        <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, transparent, ${C.gold}, ${C.goldLight}, ${C.gold}, transparent)` }} />
+        <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, transparent, ${T.gold}, ${T.goldLight}, ${T.gold}, transparent)` }} />
 
         {/* Title in footer instead of logo */}
         <div style={{ marginBottom: 8 }}>
-          <p style={{ color: C.white, fontSize: "clamp(22px,5vw,28px)", fontFamily: "'Amiri', serif", fontWeight: 700, marginBottom: 4 }}>
+          <p style={{ color: T.white, fontSize: "clamp(22px,5vw,28px)", fontFamily: "'Amiri', serif", fontWeight: 700, marginBottom: 4 }}>
             مرقوم
           </p>
           <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "clamp(13px,3vw,15px)", marginBottom: 16 }}>
@@ -507,7 +559,7 @@ export default function Home() {
           </a>
         </div>
 
-        <p style={{ color: C.goldLight, fontSize: 12, opacity: 0.75 }}>© 1448هـ / 2026م — جميع الحقوق محفوظة</p>
+        <p style={{ color: T.goldLight, fontSize: 12, opacity: 0.75 }}>© 1448هـ / 2026م — جميع الحقوق محفوظة</p>
       </footer>
 
       {/* ── SCROLL TO TOP ── */}
@@ -521,9 +573,9 @@ export default function Home() {
             width: 44,
             height: 44,
             borderRadius: "50%",
-            background: C.emerald,
-            border: `2px solid ${C.gold}`,
-            color: C.white,
+            background: T.emerald,
+            border: `2px solid ${T.gold}`,
+            color: T.white,
             fontSize: 20,
             cursor: "pointer",
             boxShadow: "0 4px 16px rgba(26,122,110,0.4)",
@@ -546,6 +598,16 @@ function KashafCard({ kashaf }: { kashaf: typeof KASHAFAT[0] }) {
   const [hovered, setHovered] = useState(false);
   const catColor = categoryColors[kashaf.category] || categoryColors["حديث"];
   const [, navigate] = useLocation();
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+  const T = isDark ? D : C;
+  const darkCatColors: Record<string, { bg: string; text: string; accent: string }> = {
+    حديث:  { bg: "#1A2E2C", text: "#7ECFC5", accent: "#2A9A8E" },
+    تفسير: { bg: "#1E2040", text: "#8090D0", accent: "#7080C0" },
+    فقه:   { bg: "#2A1E10", text: "#D09060", accent: "#C06020" },
+    عقيدة: { bg: "#1A2818", text: "#80B870", accent: "#5A9A40" },
+  };
+  const tc = isDark ? (darkCatColors[kashaf.category] || darkCatColors["حديث"]) : catColor;
 
   return (
     <div
@@ -554,12 +616,12 @@ function KashafCard({ kashaf }: { kashaf: typeof KASHAFAT[0] }) {
       style={{
         display: "flex",
         flexDirection: "column",
-        background: C.white,
+        background: isDark ? "#1E2535" : C.white,
         borderRadius: 14,
-        border: `1px solid ${hovered ? C.emerald : C.creamMid}`,
+        border: `1px solid ${hovered ? T.emerald : T.creamMid}`,
         boxShadow: hovered
           ? `0 8px 40px rgba(26,122,110,0.18), 0 2px 8px rgba(181,160,90,0.1)`
-          : "0 4px 24px rgba(0,0,0,0.06)",
+          : isDark ? "0 4px 24px rgba(0,0,0,0.3)" : "0 4px 24px rgba(0,0,0,0.06)",
         overflow: "hidden",
         transition: "all 0.25s ease",
         transform: hovered ? "translateY(-4px)" : "translateY(0)",
@@ -568,8 +630,8 @@ function KashafCard({ kashaf }: { kashaf: typeof KASHAFAT[0] }) {
       {/* Card Header */}
       <div style={{
         background: hovered
-          ? `linear-gradient(135deg, ${C.emeraldDark} 0%, ${C.emerald} 100%)`
-          : `linear-gradient(135deg, ${C.emerald} 0%, ${C.emeraldLight} 100%)`,
+          ? `linear-gradient(135deg, ${T.emeraldDark} 0%, ${T.emerald} 100%)`
+          : `linear-gradient(135deg, ${T.emerald} 0%, ${T.emeraldLight} 100%)`,
         padding: "clamp(14px,3vw,18px) clamp(16px,4vw,20px) clamp(12px,3vw,14px)",
         position: "relative",
         overflow: "hidden",
@@ -595,7 +657,7 @@ function KashafCard({ kashaf }: { kashaf: typeof KASHAFAT[0] }) {
           alignItems: "center",
           justifyContent: "center",
           fontSize: 11,
-          color: C.goldLight,
+          color: T.goldLight,
           fontWeight: 700,
           zIndex: 1,
         }}>
@@ -606,8 +668,8 @@ function KashafCard({ kashaf }: { kashaf: typeof KASHAFAT[0] }) {
           display: "inline-flex",
           alignItems: "center",
           gap: 5,
-          background: catColor.bg,
-          color: catColor.text,
+          background: tc.bg,
+          color: tc.text,
           borderRadius: 20,
           padding: "3px 10px",
           fontSize: 11,
@@ -623,7 +685,7 @@ function KashafCard({ kashaf }: { kashaf: typeof KASHAFAT[0] }) {
           fontFamily: "'Amiri', serif",
           fontSize: "clamp(17px,4.5vw,20px)",
           fontWeight: 700,
-          color: C.white,
+          color: T.white,
           marginBottom: 4,
           lineHeight: 1.35,
           position: "relative",
@@ -639,7 +701,7 @@ function KashafCard({ kashaf }: { kashaf: typeof KASHAFAT[0] }) {
 
       {/* Card Body */}
       <div style={{ padding: "clamp(14px,3vw,16px) clamp(14px,4vw,20px)", flex: 1, display: "flex", flexDirection: "column" }}>
-        <p style={{ color: C.textMid, fontSize: "clamp(13px,3.2vw,14px)", lineHeight: 1.8, marginBottom: 14, flex: 1 }}>
+        <p style={{ color: T.textMid, fontSize: "clamp(13px,3.2vw,14px)", lineHeight: 1.8, marginBottom: 14, flex: 1 }}>
           {kashaf.description}
         </p>
 
@@ -647,17 +709,17 @@ function KashafCard({ kashaf }: { kashaf: typeof KASHAFAT[0] }) {
         <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 14 }}>
           {kashaf.stats.map((s) => (
             <span key={s.label} style={{
-              background: C.cream,
-              border: `1px solid ${C.creamMid}`,
+              background: T.creamDark,
+              border: `1px solid ${T.creamMid}`,
               borderRadius: 20,
               padding: "3px 10px",
               fontSize: 11,
-              color: C.textMid,
+              color: T.textMid,
               display: "flex",
               alignItems: "center",
               gap: 4,
             }}>
-              <span style={{ color: catColor.accent, fontWeight: 700 }}>{s.value}</span>
+              <span style={{ color: tc.accent, fontWeight: 700 }}>{s.value}</span>
               <span>{s.label}</span>
             </span>
           ))}
@@ -665,13 +727,13 @@ function KashafCard({ kashaf }: { kashaf: typeof KASHAFAT[0] }) {
 
         {/* Tag */}
         <div style={{ marginBottom: 12 }}>
-          <span style={{ fontSize: 11, color: C.textLight, background: C.creamDark, padding: "3px 10px", borderRadius: 20 }}>
+          <span style={{ fontSize: 11, color: T.textLight, background: T.creamMid, padding: "3px 10px", borderRadius: 20 }}>
             {kashaf.tag}
           </span>
         </div>
 
         {/* CTA: Enter + Download buttons */}
-        <div style={{ borderTop: `1px solid ${C.creamMid}`, paddingTop: 12, display: "flex", flexDirection: "column", gap: 8 }}>
+        <div style={{ borderTop: `1px solid ${T.creamMid}`, paddingTop: 12, display: "flex", flexDirection: "column", gap: 8 }}>
           {/* Main CTA */}
           <button
             onClick={() => navigate(`/kashaf/${kashaf.id}`)}
@@ -682,8 +744,8 @@ function KashafCard({ kashaf }: { kashaf: typeof KASHAFAT[0] }) {
               gap: 8,
               padding: "clamp(11px,2.5vw,12px) 16px",
               borderRadius: 8,
-              background: hovered ? C.emeraldDark : C.emerald,
-              color: C.white,
+              background: hovered ? T.emeraldDark : T.emerald,
+              color: T.white,
               fontSize: "clamp(14px,3.5vw,15px)",
               fontWeight: 700,
               fontFamily: "'Noto Naskh Arabic', serif",
@@ -714,9 +776,9 @@ function KashafCard({ kashaf }: { kashaf: typeof KASHAFAT[0] }) {
                 gap: 5,
               padding: "clamp(9px,2vw,10px) 10px",
               borderRadius: 8,
-              background: "#E8F5E9",
-              border: "1px solid #A5D6A7",
-              color: "#2E7D32",
+              background: isDark ? "#1A2E1A" : "#E8F5E9",
+              border: isDark ? "1px solid #2A5A2A" : "1px solid #A5D6A7",
+              color: isDark ? "#7EC87E" : "#2E7D32",
               fontSize: "clamp(12px,3vw,13px)",
                 fontWeight: 600,
                 fontFamily: "'Noto Naskh Arabic', serif",
@@ -724,8 +786,8 @@ function KashafCard({ kashaf }: { kashaf: typeof KASHAFAT[0] }) {
                 transition: "background 0.2s",
                 cursor: "pointer",
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.background = "#C8E6C9")}
-              onMouseLeave={(e) => (e.currentTarget.style.background = "#E8F5E9")}
+              onMouseEnter={(e) => (e.currentTarget.style.background = isDark ? "#2A3E2A" : "#C8E6C9")}
+              onMouseLeave={(e) => (e.currentTarget.style.background = isDark ? "#1A2E1A" : "#E8F5E9")}
             >
               <span style={{ fontSize: 14 }}>⬇</span>
               <span>Excel</span>
@@ -742,9 +804,9 @@ function KashafCard({ kashaf }: { kashaf: typeof KASHAFAT[0] }) {
                 gap: 5,
               padding: "clamp(9px,2vw,10px) 10px",
               borderRadius: 8,
-              background: "#E3F2FD",
-              border: "1px solid #90CAF9",
-              color: "#1565C0",
+              background: isDark ? "#1A1E2E" : "#E3F2FD",
+              border: isDark ? "1px solid #2A3A6A" : "1px solid #90CAF9",
+              color: isDark ? "#7090D0" : "#1565C0",
               fontSize: "clamp(12px,3vw,13px)",
                 fontWeight: 600,
                 fontFamily: "'Noto Naskh Arabic', serif",
@@ -752,8 +814,8 @@ function KashafCard({ kashaf }: { kashaf: typeof KASHAFAT[0] }) {
                 transition: "background 0.2s",
                 cursor: "pointer",
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.background = "#BBDEFB")}
-              onMouseLeave={(e) => (e.currentTarget.style.background = "#E3F2FD")}
+              onMouseEnter={(e) => (e.currentTarget.style.background = isDark ? "#2A3050" : "#BBDEFB")}
+              onMouseLeave={(e) => (e.currentTarget.style.background = isDark ? "#1A1E2E" : "#E3F2FD")}
             >
               <span style={{ fontSize: 14 }}>⬇</span>
               <span>Word</span>

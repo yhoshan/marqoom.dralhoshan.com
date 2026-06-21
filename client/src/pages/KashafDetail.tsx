@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useParams, useLocation } from "wouter";
+import { useTheme } from "@/contexts/ThemeContext";
 
 // ═══════════════════════════════════════════════
 // DESIGN: هوية مرقوم الرسمية
@@ -20,6 +21,24 @@ const C = {
   textDark: "#1E1E1E",
   textMid: "#4A4A4A",
   textLight: "#7A7A7A",
+  white: "#FFFFFF",
+};
+
+
+// ── COLORS DARK ──
+const D = {
+  emerald: "#1A7A6E",
+  emeraldDark: "#145F55",
+  emeraldLight: "#2A9A8E",
+  gold: "#B5A05A",
+  goldLight: "#D4C07A",
+  dark: "#2A2A2A",
+  cream: "#1A1F2E",
+  creamDark: "#232A3A",
+  creamMid: "#2E3650",
+  textDark: "#E8E0D0",
+  textMid: "#B0A890",
+  textLight: "#7A7A8A",
   white: "#FFFFFF",
 };
 
@@ -436,6 +455,9 @@ function DonutChart({ data, color }: { data: { label: string; pct: number }[]; c
 }
 
 export default function KashafDetail() {
+  const { theme, toggleTheme } = useTheme();
+  const isDark = theme === "dark";
+  const T = isDark ? D : C;
   const { id } = useParams<{ id: string }>();
   const [, navigate] = useLocation();
 
@@ -447,10 +469,10 @@ export default function KashafDetail() {
 
   if (!kashaf) {
     return (
-      <div style={{ fontFamily: "'Noto Naskh Arabic', serif", direction: "rtl", minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: C.cream }}>
+      <div style={{ fontFamily: "'Noto Naskh Arabic', serif", direction: "rtl", minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: T.cream }}>
         <div style={{ textAlign: "center" }}>
-          <p style={{ fontSize: 24, color: C.textMid, marginBottom: 16 }}>الكشاف غير موجود</p>
-          <button onClick={() => navigate("/")} style={{ padding: "10px 24px", background: C.emerald, color: C.white, border: "none", borderRadius: 8, cursor: "pointer", fontSize: 15, fontFamily: "'Noto Naskh Arabic', serif" }}>
+          <p style={{ fontSize: 24, color: T.textMid, marginBottom: 16 }}>الكشاف غير موجود</p>
+          <button onClick={() => navigate("/")} style={{ padding: "10px 24px", background: T.emerald, color: T.white, border: "none", borderRadius: 8, cursor: "pointer", fontSize: 15, fontFamily: "'Noto Naskh Arabic', serif" }}>
             العودة للرئيسية
           </button>
         </div>
@@ -461,11 +483,11 @@ export default function KashafDetail() {
   const catColor = categoryColors[kashaf.category] || categoryColors["حديث"];
 
   return (
-    <div style={{ fontFamily: "'Noto Naskh Arabic', 'Amiri', serif", direction: "rtl", background: C.cream, minHeight: "100vh" }}>
+    <div style={{ fontFamily: "'Noto Naskh Arabic', 'Amiri', serif", direction: "rtl", background: T.cream, minHeight: "100vh" }}>
 
       {/* ── HEADER ── */}
       <header style={{
-        background: `linear-gradient(160deg, ${C.emeraldDark} 0%, ${C.emerald} 55%, ${C.emeraldLight} 100%)`,
+        background: `linear-gradient(160deg, ${T.emeraldDark} 0%, ${T.emerald} 55%, ${T.emeraldLight} 100%)`,
         position: "relative",
         overflow: "hidden",
         paddingBottom: 0,
@@ -476,7 +498,7 @@ export default function KashafDetail() {
           backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30Z' fill='none' stroke='%23B5A05A' stroke-width='1'/%3E%3Cpath d='M30 10 L50 30 L30 50 L10 30Z' fill='none' stroke='%23B5A05A' stroke-width='0.5'/%3E%3C/svg%3E")`,
           backgroundSize: "60px 60px", pointerEvents: "none",
         }} />
-        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, transparent, ${C.gold}, ${C.goldLight}, ${C.gold}, transparent)` }} />
+        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, transparent, ${T.gold}, ${T.goldLight}, ${T.gold}, transparent)` }} />
 
         <div style={{ maxWidth: 960, margin: "0 auto", padding: "clamp(20px,4vw,32px) clamp(16px,4vw,24px)", position: "relative", zIndex: 1 }}>
           {/* Back button */}
@@ -485,7 +507,7 @@ export default function KashafDetail() {
             style={{
               display: "inline-flex", alignItems: "center", gap: 6,
               background: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.3)",
-              borderRadius: 8, padding: "8px 14px", color: C.white,
+              borderRadius: 8, padding: "8px 14px", color: T.white,
               fontSize: "clamp(12px,3vw,14px)", cursor: "pointer", marginBottom: 20,
               fontFamily: "'Noto Naskh Arabic', serif",
               backdropFilter: "blur(8px)", transition: "background 0.2s",
@@ -498,6 +520,28 @@ export default function KashafDetail() {
             <span>العودة للبوابة</span>
           </button>
 
+          {/* Dark mode toggle */}
+          <button
+            onClick={toggleTheme}
+            title={isDark ? "الوضع النهاري" : "الوضع الليلي"}
+            style={{
+              display: "inline-flex", alignItems: "center", gap: 7,
+              padding: "7px 16px", borderRadius: 40,
+              border: "1.5px solid rgba(181,160,90,0.5)",
+              background: "rgba(255,255,255,0.12)",
+              color: T.white, fontSize: "clamp(12px,3vw,13px)",
+              fontFamily: "'Noto Naskh Arabic', serif",
+              cursor: "pointer", backdropFilter: "blur(8px)",
+              transition: "all 0.2s", marginBottom: 20, marginRight: 8,
+              WebkitTapHighlightColor: "transparent",
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.22)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.12)"; }}
+          >
+            <span style={{ fontSize: 16 }}>{isDark ? "☀️" : "🌙"}</span>
+            <span>{isDark ? "الوضع النهاري" : "الوضع الليلي"}</span>
+          </button>
+
           {/* Title area */}
           <div style={{ display: "flex", alignItems: "flex-start", gap: 16, flexWrap: "wrap" }}>
             <div style={{
@@ -505,7 +549,7 @@ export default function KashafDetail() {
               borderRadius: "50%", background: "rgba(255,255,255,0.15)",
               border: `2px solid rgba(181,160,90,0.6)`,
               display: "flex", alignItems: "center", justifyContent: "center",
-              fontSize: "clamp(16px,4vw,22px)", color: C.goldLight, fontWeight: 700,
+              fontSize: "clamp(16px,4vw,22px)", color: T.goldLight, fontWeight: 700,
               flexShrink: 0,
             }}>
               {kashaf.num}
@@ -522,7 +566,7 @@ export default function KashafDetail() {
               <h1 style={{
                 fontFamily: "'Amiri', serif",
                 fontSize: "clamp(20px,5vw,30px)",
-                fontWeight: 700, color: C.white,
+                fontWeight: 700, color: T.white,
                 marginBottom: 6, lineHeight: 1.3,
               }}>
                 {kashaf.title}
@@ -547,37 +591,37 @@ export default function KashafDetail() {
         }}>
           {kashaf.stats.map((s) => (
             <div key={s.label} style={{
-              background: C.white,
+              background: T.white,
               borderRadius: 12,
               padding: "clamp(14px,3vw,20px) clamp(12px,2vw,16px)",
               textAlign: "center",
               boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
-              border: `1px solid ${C.creamMid}`,
+              border: `1px solid ${T.creamMid}`,
             }}>
               <div style={{ fontSize: "clamp(18px,4.5vw,26px)", fontWeight: 700, color: catColor.accent, fontFamily: "'Amiri', serif", marginBottom: 4 }}>
                 {s.value}
               </div>
-              <div style={{ fontSize: "clamp(11px,2.5vw,13px)", color: C.textMid }}>{s.label}</div>
+              <div style={{ fontSize: "clamp(11px,2.5vw,13px)", color: T.textMid }}>{s.label}</div>
             </div>
           ))}
         </div>
 
         {/* Description */}
         <div style={{
-          background: C.white, borderRadius: 14, padding: "clamp(18px,4vw,28px)",
+          background: T.white, borderRadius: 14, padding: "clamp(18px,4vw,28px)",
           marginBottom: "clamp(20px,4vw,28px)",
           boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
-          border: `1px solid ${C.creamMid}`,
+          border: `1px solid ${T.creamMid}`,
         }}>
-          <h2 style={{ fontFamily: "'Amiri', serif", fontSize: "clamp(16px,4vw,20px)", color: C.emeraldDark, marginBottom: 12 }}>
+          <h2 style={{ fontFamily: "'Amiri', serif", fontSize: "clamp(16px,4vw,20px)", color: T.emeraldDark, marginBottom: 12 }}>
             نبذة عن الكشاف
           </h2>
-          <div style={{ width: 40, height: 2, background: `linear-gradient(90deg, ${C.gold}, transparent)`, marginBottom: 14 }} />
-          <p style={{ color: C.textMid, fontSize: "clamp(14px,3.2vw,15px)", lineHeight: 1.9 }}>
+          <div style={{ width: 40, height: 2, background: `linear-gradient(90deg, ${T.gold}, transparent)`, marginBottom: 14 }} />
+          <p style={{ color: T.textMid, fontSize: "clamp(14px,3.2vw,15px)", lineHeight: 1.9 }}>
             {kashaf.longDesc}
           </p>
           <div style={{ marginTop: 12 }}>
-            <span style={{ fontSize: "clamp(11px,2.5vw,12px)", color: C.textLight, background: C.creamDark, padding: "3px 12px", borderRadius: 20 }}>
+            <span style={{ fontSize: "clamp(11px,2.5vw,12px)", color: T.textLight, background: T.creamDark, padding: "3px 12px", borderRadius: 20 }}>
               {kashaf.tag}
             </span>
           </div>
@@ -592,12 +636,12 @@ export default function KashafDetail() {
         }}>
           {/* Bar chart */}
           <div style={{
-            background: C.white, borderRadius: 14,
+            background: T.white, borderRadius: 14,
             padding: "clamp(16px,3vw,24px)",
             boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
-            border: `1px solid ${C.creamMid}`,
+            border: `1px solid ${T.creamMid}`,
           }}>
-            <h3 style={{ fontFamily: "'Amiri', serif", fontSize: "clamp(15px,3.5vw,18px)", color: C.emeraldDark, marginBottom: 16 }}>
+            <h3 style={{ fontFamily: "'Amiri', serif", fontSize: "clamp(15px,3.5vw,18px)", color: T.emeraldDark, marginBottom: 16 }}>
               توزيع المحاور المنهجية
             </h3>
             <BarChart data={kashaf.chartData} color={catColor.bar} />
@@ -605,13 +649,13 @@ export default function KashafDetail() {
 
           {/* Donut chart */}
           <div style={{
-            background: C.white, borderRadius: 14,
+            background: T.white, borderRadius: 14,
             padding: "clamp(16px,3vw,24px)",
             boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
-            border: `1px solid ${C.creamMid}`,
+            border: `1px solid ${T.creamMid}`,
             display: "flex", flexDirection: "column", alignItems: "center",
           }}>
-            <h3 style={{ fontFamily: "'Amiri', serif", fontSize: "clamp(15px,3.5vw,18px)", color: C.emeraldDark, marginBottom: 16, alignSelf: "flex-start" }}>
+            <h3 style={{ fontFamily: "'Amiri', serif", fontSize: "clamp(15px,3.5vw,18px)", color: T.emeraldDark, marginBottom: 16, alignSelf: "flex-start" }}>
               نسب المحاور الرئيسية
             </h3>
             <DonutChart data={kashaf.chartData} color={catColor.bar} />
@@ -620,7 +664,7 @@ export default function KashafDetail() {
 
         {/* CTA section */}
         <div style={{
-          background: `linear-gradient(135deg, ${C.emeraldDark} 0%, ${C.emerald} 100%)`,
+          background: `linear-gradient(135deg, ${T.emeraldDark} 0%, ${T.emerald} 100%)`,
           borderRadius: 14, padding: "clamp(20px,4vw,32px)",
           position: "relative", overflow: "hidden",
         }}>
@@ -630,7 +674,7 @@ export default function KashafDetail() {
             backgroundSize: "40px 40px",
           }} />
           <div style={{ position: "relative", zIndex: 1 }}>
-            <h3 style={{ fontFamily: "'Amiri', serif", fontSize: "clamp(17px,4vw,22px)", color: C.white, marginBottom: 8 }}>
+            <h3 style={{ fontFamily: "'Amiri', serif", fontSize: "clamp(17px,4vw,22px)", color: T.white, marginBottom: 8 }}>
               استعرض الكشاف كاملاً
             </h3>
             <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "clamp(13px,3vw,14px)", marginBottom: 20 }}>
@@ -644,13 +688,13 @@ export default function KashafDetail() {
                 style={{
                   display: "inline-flex", alignItems: "center", gap: 8,
                   padding: "clamp(11px,2.5vw,13px) clamp(20px,4vw,28px)",
-                  borderRadius: 8, background: C.gold, color: C.dark,
+                  borderRadius: 8, background: T.gold, color: T.dark,
                   fontSize: "clamp(14px,3.5vw,16px)", fontWeight: 700,
                   fontFamily: "'Noto Naskh Arabic', serif", textDecoration: "none",
                   transition: "background 0.2s", WebkitTapHighlightColor: "transparent",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.background = C.goldLight)}
-                onMouseLeave={(e) => (e.currentTarget.style.background = C.gold)}
+                onMouseEnter={(e) => (e.currentTarget.style.background = T.goldLight)}
+                onMouseLeave={(e) => (e.currentTarget.style.background = T.gold)}
               >
                 <span>دخول الكشاف</span>
                 <span style={{ fontSize: 16 }}>←</span>
@@ -663,7 +707,7 @@ export default function KashafDetail() {
                   padding: "clamp(11px,2.5vw,13px) clamp(16px,3vw,20px)",
                   borderRadius: 8, background: "rgba(255,255,255,0.15)",
                   border: "1px solid rgba(255,255,255,0.3)",
-                  color: C.white, fontSize: "clamp(13px,3vw,14px)", fontWeight: 600,
+                  color: T.white, fontSize: "clamp(13px,3vw,14px)", fontWeight: 600,
                   fontFamily: "'Noto Naskh Arabic', serif", textDecoration: "none",
                   transition: "background 0.2s", WebkitTapHighlightColor: "transparent",
                 }}
@@ -680,7 +724,7 @@ export default function KashafDetail() {
                   padding: "clamp(11px,2.5vw,13px) clamp(16px,3vw,20px)",
                   borderRadius: 8, background: "rgba(255,255,255,0.15)",
                   border: "1px solid rgba(255,255,255,0.3)",
-                  color: C.white, fontSize: "clamp(13px,3vw,14px)", fontWeight: 600,
+                  color: T.white, fontSize: "clamp(13px,3vw,14px)", fontWeight: 600,
                   fontFamily: "'Noto Naskh Arabic', serif", textDecoration: "none",
                   transition: "background 0.2s", WebkitTapHighlightColor: "transparent",
                 }}
@@ -697,12 +741,12 @@ export default function KashafDetail() {
 
       {/* ── FOOTER ── */}
       <footer style={{
-        background: `linear-gradient(160deg, ${C.emeraldDark} 0%, ${C.emerald} 100%)`,
+        background: `linear-gradient(160deg, ${T.emeraldDark} 0%, ${T.emerald} 100%)`,
         padding: "clamp(24px,4vw,36px) 24px",
         textAlign: "center", position: "relative",
       }}>
-        <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, transparent, ${C.gold}, ${C.goldLight}, ${C.gold}, transparent)` }} />
-        <p style={{ color: C.white, fontSize: "clamp(20px,5vw,26px)", fontFamily: "'Amiri', serif", fontWeight: 700, marginBottom: 4 }}>مرقوم</p>
+        <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, transparent, ${T.gold}, ${T.goldLight}, ${T.gold}, transparent)` }} />
+        <p style={{ color: T.white, fontSize: "clamp(20px,5vw,26px)", fontFamily: "'Amiri', serif", fontWeight: 700, marginBottom: 4 }}>مرقوم</p>
         <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "clamp(12px,3vw,14px)", marginBottom: 4 }}>بوابة الكشافات الرقمية</p>
         <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "clamp(11px,2.5vw,13px)", marginBottom: 14 }}>فهارس تحليلية آلية لمختارات من كتب التراث</p>
         <div style={{ marginBottom: 14, display: "flex", justifyContent: "center" }}>
@@ -716,7 +760,7 @@ export default function KashafDetail() {
             />
           </a>
         </div>
-        <p style={{ color: C.goldLight, fontSize: "clamp(11px,2.5vw,12px)", opacity: 0.75 }}>© 1448هـ / 2026م — جميع الحقوق محفوظة</p>
+        <p style={{ color: T.goldLight, fontSize: "clamp(11px,2.5vw,12px)", opacity: 0.75 }}>© 1448هـ / 2026م — جميع الحقوق محفوظة</p>
       </footer>
 
     </div>
