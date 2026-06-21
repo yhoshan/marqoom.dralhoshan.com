@@ -32,16 +32,16 @@ const KASHAFAT = [
     num: 1,
     title: "كشّاف فتح الباري بالأرقام",
     author: "ابن حجر العسقلاني",
-    death: "ت ٨٥٢هـ",
+    death: "ت 852هـ",
     category: "حديث",
     categoryLabel: "الحديث وعلومه",
     description:
       "فهرس تحليلي آلي شامل لشرح صحيح البخاري — أضخم شروح الحديث النبوي وأجمعها، يرصد المحاور المنهجية من أحاديث وأسانيد وتخريج وترجيح وإشكالات.",
     stats: [
-      { label: "كلمة", value: "٣٫٥م" },
-      { label: "عبارة", value: "٢١٧٬٤٣٣" },
-      { label: "صفحة", value: "٧٬٨٠٧" },
-      { label: "باباً", value: "٣٬٤٤٢" },
+      { label: "كلمة", value: "3.5م" },
+      { label: "عبارة", value: "217,433" },
+      { label: "صفحة", value: "7,807" },
+      { label: "باباً", value: "3,442" },
     ],
     tag: "شرح حديث موسوعي",
     url: "https://marqoom1.dralhoshan.com",
@@ -53,16 +53,16 @@ const KASHAFAT = [
     num: 2,
     title: "كشّاف ابن عبد البر",
     author: "ابن عبد البر القرطبي",
-    death: "ت ٤٦٣هـ",
+    death: "ت 463هـ",
     category: "حديث",
     categoryLabel: "الحديث وعلومه",
     description:
       "كشاف شامل لثلاثة مصنفات كبرى: التمهيد لما في الموطأ، والاستذكار، والاستيعاب — يرصد منهجية الإمام الحافظ في الحديث والفقه والرجال.",
     stats: [
-      { label: "كلمة", value: "٨٫٥م" },
-      { label: "عبارة", value: "٢٣٥٬٤٢٧" },
-      { label: "صفحة", value: "١٣٬٧٢٢" },
-      { label: "مصنفات", value: "٣" },
+      { label: "كلمة", value: "8.5م" },
+      { label: "عبارة", value: "235,427" },
+      { label: "صفحة", value: "13,722" },
+      { label: "مصنفات", value: "3" },
     ],
     tag: "حديث وفقه مقارن",
     url: "https://marqoom2.dralhoshan.com",
@@ -74,16 +74,16 @@ const KASHAFAT = [
     num: 3,
     title: "كشّاف ابن تيمية بالأرقام",
     author: "شيخ الإسلام ابن تيمية",
-    death: "ت ٧٢٨هـ",
+    death: "ت 728هـ",
     category: "عقيدة",
     categoryLabel: "العقيدة والأصول",
     description:
       "فهرس منهجي لخمسة مصنفات كبرى لشيخ الإسلام — يرصد الاستدلال النقلي والعقلي ومنهج النقد والرد على المخالفين والمدارس الكلامية.",
     stats: [
-      { label: "كلمة", value: "٥م" },
-      { label: "عبارة", value: "١٤٥٬١٧٥" },
-      { label: "صفحة", value: "٢٩٬٨٢٨" },
-      { label: "مصنفات", value: "٥" },
+      { label: "كلمة", value: "5م" },
+      { label: "عبارة", value: "145,175" },
+      { label: "صفحة", value: "29,828" },
+      { label: "مصنفات", value: "5" },
     ],
     tag: "عقيدة وأصول",
     url: "https://marqoom3.dralhoshan.com",
@@ -95,15 +95,15 @@ const KASHAFAT = [
     num: 4,
     title: "كشّاف تفسير الرازي",
     author: "فخر الدين الرازي",
-    death: "ت ٦٠٦هـ",
+    death: "ت 606هـ",
     category: "تفسير",
     categoryLabel: "التفسير",
     description:
       "فهرس تحليلي لمفاتيح الغيب (التفسير الكبير) — يرصد الاستدلال والتعليل والجدل الكلامي والترجيح والقراءات في أضخم تفاسير القرآن الكريم.",
     stats: [
-      { label: "كلمة", value: "٣م" },
-      { label: "عبارة", value: "٩٢٬٤٠٠+" },
-      { label: "جزءاً", value: "٣٢" },
+      { label: "كلمة", value: "3م" },
+      { label: "عبارة", value: "92,400+" },
+      { label: "جزءاً", value: "32" },
       { label: "نوع", value: "جدلي" },
     ],
     tag: "تفسير موسوعي جدلي",
@@ -116,16 +116,16 @@ const KASHAFAT = [
     num: 5,
     title: "كشّاف تفسير القرطبي",
     author: "القرطبي",
-    death: "ت ٦٧١هـ",
+    death: "ت 671هـ",
     category: "تفسير",
     categoryLabel: "التفسير",
     description:
       "فهرس منهجي للجامع لأحكام القرآن — يرصد الخلاف وعرض الأقوال والاستنباط الفقهي من القرآن الكريم في هذا التفسير الموسوعي الفقهي.",
     stats: [
-      { label: "كلمة", value: "٢٫٢م" },
-      { label: "عبارة", value: "١٠٠٬٤٦٢" },
-      { label: "صفحة", value: "٧٬٤٥٤" },
-      { label: "مدخل", value: "٣٬٤٢٣" },
+      { label: "كلمة", value: "2.2م" },
+      { label: "عبارة", value: "100,462" },
+      { label: "صفحة", value: "7,454" },
+      { label: "مدخل", value: "3,423" },
     ],
     tag: "تفسير فقهي موسوعي",
     url: "https://marqoom5.dralhoshan.com",
@@ -137,16 +137,16 @@ const KASHAFAT = [
     num: 6,
     title: "كشّاف جامع البيان للطبري",
     author: "ابن جرير الطبري",
-    death: "ت ٣١٠هـ",
+    death: "ت 310هـ",
     category: "تفسير",
     categoryLabel: "التفسير",
     description:
       "فهرس تحليلي لجامع البيان في تأويل القرآن — أقدم التفاسير الكبرى وأوسعها في نقل أقوال السلف والروايات، يرصد الأعلام والمصادر والمدارس التفسيرية.",
     stats: [
-      { label: "كلمة", value: "٤٫٣م" },
-      { label: "مورد", value: "١٥٧٬٣١٤" },
-      { label: "علم", value: "٧٧٬٥٦٤" },
-      { label: "ملفات", value: "١٠" },
+      { label: "كلمة", value: "4.3م" },
+      { label: "مورد", value: "157,314" },
+      { label: "علم", value: "77,564" },
+      { label: "ملفات", value: "10" },
     ],
     tag: "تفسير بالمأثور",
     url: "https://marqoom6.dralhoshan.com",
@@ -158,16 +158,16 @@ const KASHAFAT = [
     num: 7,
     title: "كشّاف المجموع للنووي",
     author: "الإمام النووي",
-    death: "ت ٦٧٦هـ",
+    death: "ت 676هـ",
     category: "فقه",
     categoryLabel: "الفقه المقارن",
     description:
-      "فهرس تحليلي للمجموع شرح المهذب — الموسوعة الفقهية الشافعية الكبرى، يرصد الخلاف المذهبي والمقارن في ٤٤ كتاباً فقهياً.",
+      "فهرس تحليلي للمجموع شرح المهذب — الموسوعة الفقهية الشافعية الكبرى، يرصد الخلاف المذهبي والمقارن في 44 كتاباً فقهياً.",
     stats: [
-      { label: "كلمة", value: "٢٫٨م" },
-      { label: "صفحة", value: "٩٬٧٩٣" },
-      { label: "كتاباً", value: "٤٤" },
-      { label: "مدخل", value: "٣٣٥" },
+      { label: "كلمة", value: "2.8م" },
+      { label: "صفحة", value: "9,793" },
+      { label: "كتاباً", value: "44" },
+      { label: "مدخل", value: "335" },
     ],
     tag: "فقه شافعي موسوعي",
     url: "https://marqoom7.dralhoshan.com",
@@ -179,16 +179,16 @@ const KASHAFAT = [
     num: 8,
     title: "كشّاف المحلى لابن حزم",
     author: "ابن حزم الأندلسي",
-    death: "ت ٤٥٦هـ",
+    death: "ت 456هـ",
     category: "فقه",
     categoryLabel: "الفقه المقارن",
     description:
-      "فهرس تحليلي للمحلى بالآثار — الموسوعة الفقهية الظاهرية الكبرى، يرصد المنهج الأثري الجدلي في ٦١ كتاباً فقهياً مع ٢١٥٨ مسألة.",
+      "فهرس تحليلي للمحلى بالآثار — الموسوعة الفقهية الظاهرية الكبرى، يرصد المنهج الأثري الجدلي في 61 كتاباً فقهياً مع 2158 مسألة.",
     stats: [
-      { label: "كلمة", value: "١٫٥م" },
-      { label: "عبارة", value: "١١٧٬٨٥٤" },
-      { label: "كتاباً", value: "٦١" },
-      { label: "مسألة", value: "٢٬١٥٨" },
+      { label: "كلمة", value: "1.5م" },
+      { label: "عبارة", value: "117,854" },
+      { label: "كتاباً", value: "61" },
+      { label: "مسألة", value: "2,158" },
     ],
     tag: "فقه ظاهري أثري",
     url: "https://marqoom8.dralhoshan.com",
@@ -200,16 +200,16 @@ const KASHAFAT = [
     num: 9,
     title: "كشّاف المغني لابن قدامة",
     author: "ابن قدامة المقدسي",
-    death: "ت ٦٢٠هـ",
+    death: "ت 620هـ",
     category: "فقه",
     categoryLabel: "الفقه المقارن",
     description:
-      "فهرس تحليلي للمغني شرح مختصر الخرقي — الموسوعة الفقهية الحنبلية الكبرى في الفقه المقارن، يرصد ٧٠ كتاباً فقهياً و٣٧٬٩٨٥ عبارة منهجية.",
+      "فهرس تحليلي للمغني شرح مختصر الخرقي — الموسوعة الفقهية الحنبلية الكبرى في الفقه المقارن، يرصد 70 كتاباً فقهياً و37,985 عبارة منهجية.",
     stats: [
-      { label: "كلمة", value: "١٫٨م" },
-      { label: "عبارة", value: "٣٧٬٩٨٥" },
-      { label: "كتاباً", value: "٧٠" },
-      { label: "مدخل", value: "٧٬٦٦٨" },
+      { label: "كلمة", value: "1.8م" },
+      { label: "عبارة", value: "37,985" },
+      { label: "كتاباً", value: "70" },
+      { label: "مدخل", value: "7,668" },
     ],
     tag: "فقه حنبلي مقارن",
     url: "https://marqoom9.dralhoshan.com",
@@ -221,16 +221,16 @@ const KASHAFAT = [
     num: 10,
     title: "كشّاف بدائع الصنائع للكاساني",
     author: "علاء الدين الكاساني",
-    death: "ت ٥٨٧هـ",
+    death: "ت 587هـ",
     category: "فقه",
     categoryLabel: "الفقه المقارن",
     description:
-      "فهرس تحليلي لبدائع الصنائع في ترتيب الشرائع — الموسوعة الفقهية الحنفية التعليلية، يرصد ٦٦ كتاباً فقهياً بمنهج تعليلي مقارن فريد.",
+      "فهرس تحليلي لبدائع الصنائع في ترتيب الشرائع — الموسوعة الفقهية الحنفية التعليلية، يرصد 66 كتاباً فقهياً بمنهج تعليلي مقارن فريد.",
     stats: [
-      { label: "كلمة", value: "١٫٥م" },
-      { label: "صفحة", value: "٢٬١٢٧" },
-      { label: "كتاباً", value: "٦٦" },
-      { label: "مدخل", value: "٩٥٣" },
+      { label: "كلمة", value: "1.5م" },
+      { label: "صفحة", value: "2,127" },
+      { label: "كتاباً", value: "66" },
+      { label: "مدخل", value: "953" },
     ],
     tag: "فقه حنفي تعليلي",
     url: "https://marqoom10.dralhoshan.com",
@@ -242,16 +242,16 @@ const KASHAFAT = [
     num: 11,
     title: "كشّاف كتب ابن القيم الثلاثة",
     author: "ابن قيم الجوزية",
-    death: "ت ٧٥١هـ",
+    death: "ت 751هـ",
     category: "عقيدة",
     categoryLabel: "العقيدة والأصول",
     description:
       "فهرس تحليلي لثلاثة مصنفات كبرى: إعلام الموقعين، ومدارج السالكين، وزاد المعاد — يرصد الحديث والرواية والسلوك والتزكية والاستدلال.",
     stats: [
-      { label: "كلمة", value: "١م+" },
-      { label: "عبارة", value: "٣٧٬٢٩٠" },
-      { label: "صفحة", value: "٣٬١٠٧" },
-      { label: "مصنفات", value: "٣" },
+      { label: "كلمة", value: "1م+" },
+      { label: "عبارة", value: "37,290" },
+      { label: "صفحة", value: "3,107" },
+      { label: "مصنفات", value: "3" },
     ],
     tag: "عقيدة وسلوك وفقه",
     url: "https://marqoom11.dralhoshan.com",
@@ -344,24 +344,26 @@ export default function Home() {
             />
           </div>
 
-          <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "clamp(14px, 2.5vw, 18px)", fontFamily: "'Amiri', serif", marginBottom: 6 }}>
-            بوابة الكشافات المنهجية الرقمية
+          {/* NOTE: الأيقونة الهندسية المنفصلة تم حذفها بناءً على طلب المستخدم */}
+
+          <p style={{ color: C.white, fontSize: "clamp(14px, 2.5vw, 18px)", fontFamily: "'Amiri', serif", marginBottom: 6 }}>
+            بوابة الكشافات الرقمية
           </p>
-          <p style={{ color: C.goldLight, fontSize: 13, marginBottom: 32, opacity: 0.85 }}>
+          <p style={{ color: C.white, fontSize: 13, marginBottom: 32 }}>
             فهارس تحليلية آلية لكبريات المصنفات الإسلامية
           </p>
 
           {/* Stats */}
           <div style={{ display: "flex", justifyContent: "center", gap: "clamp(16px, 4vw, 48px)", flexWrap: "wrap", marginBottom: 32 }}>
             {[
-              { n: "١١", l: "كشّافاً منهجياً" },
-              { n: "+٣٠م", l: "كلمة محللة" },
-              { n: "+١م", l: "عبارة مصنفة" },
-              { n: "١١", l: "مصنفاً كبيراً" },
+              { n: "11", l: "كشّافاً منهجياً" },
+              { n: "+30م", l: "كلمة محللة" },
+              { n: "+1م", l: "عبارة مصنفة" },
+              { n: "11", l: "مصنفاً كبيراً" },
             ].map((s) => (
               <div key={s.l} style={{ textAlign: "center" }}>
                 <div style={{ fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 700, color: C.goldLight, fontFamily: "'Amiri', serif" }}>{s.n}</div>
-                <div style={{ fontSize: 12, color: "rgba(255,255,255,0.75)", marginTop: 2 }}>{s.l}</div>
+                <div style={{ fontSize: 12, color: C.white, marginTop: 2 }}>{s.l}</div>
               </div>
             ))}
           </div>
@@ -495,7 +497,7 @@ export default function Home() {
           <a href="https://dralhoshan.com" target="_blank" rel="noopener noreferrer">
             <img
               src="/manus-storage/marqoom_signature_hq_2a392bb3.png"
-              alt="د. يوسف بن محمود الهاشم"
+              alt="د. يوسف بن حمود الحوشان"
               style={{
                 height: 64,
                 width: "auto",
@@ -509,7 +511,7 @@ export default function Home() {
           </a>
         </div>
 
-        <p style={{ color: C.goldLight, fontSize: 12, opacity: 0.75 }}>© ١٤٤٦هـ / ٢٠٢٥م — جميع الحقوق محفوظة</p>
+        <p style={{ color: C.goldLight, fontSize: 12, opacity: 0.75 }}>© 1446هـ / 2025م — جميع الحقوق محفوظة</p>
       </footer>
 
       {/* ── SCROLL TO TOP ── */}
