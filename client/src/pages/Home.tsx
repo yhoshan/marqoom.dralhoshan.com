@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useLocation } from "wouter";
 
 // ═══════════════════════════════════════════════
 // DESIGN: هوية مرقوم الرسمية
@@ -550,6 +551,7 @@ export default function Home() {
 function KashafCard({ kashaf }: { kashaf: typeof KASHAFAT[0] }) {
   const [hovered, setHovered] = useState(false);
   const catColor = categoryColors[kashaf.category] || categoryColors["حديث"];
+  const [, navigate] = useLocation();
 
   return (
     <div
@@ -677,10 +679,8 @@ function KashafCard({ kashaf }: { kashaf: typeof KASHAFAT[0] }) {
         {/* CTA: Enter + Download buttons */}
         <div style={{ borderTop: `1px solid ${C.creamMid}`, paddingTop: 12, display: "flex", flexDirection: "column", gap: 8 }}>
           {/* Main CTA */}
-          <a
-            href={kashaf.url}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => navigate(`/kashaf/${kashaf.id}`)}
             style={{
               display: "flex",
               alignItems: "center",
@@ -696,11 +696,15 @@ function KashafCard({ kashaf }: { kashaf: typeof KASHAFAT[0] }) {
               textDecoration: "none",
               transition: "background 0.2s",
               letterSpacing: 0.5,
+              border: "none",
+              cursor: "pointer",
+              width: "100%",
+              WebkitTapHighlightColor: "transparent",
             }}
           >
             <span>دخول الكشاف</span>
             <span style={{ fontSize: 16, opacity: 0.85 }}>←</span>
-          </a>
+          </button>
 
           {/* Download buttons */}
           <div style={{ display: "flex", gap: 8 }}>
