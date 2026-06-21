@@ -485,6 +485,38 @@ export default function KashafDetail() {
   return (
     <div style={{ fontFamily: "'Noto Naskh Arabic', 'Amiri', serif", direction: "rtl", background: T.cream, minHeight: "100vh" }}>
 
+      {/* ── FIXED DARK MODE BUTTON (top-left) ── */}
+      <button
+        onClick={toggleTheme}
+        title={isDark ? "الوضع النهاري" : "الوضع الليلي"}
+        style={{
+          position: "fixed",
+          top: 14,
+          left: 14,
+          zIndex: 9999,
+          width: 40,
+          height: 40,
+          borderRadius: "50%",
+          border: "1.5px solid rgba(181,160,90,0.6)",
+          background: isDark ? "rgba(30,40,55,0.85)" : "rgba(255,255,255,0.18)",
+          backdropFilter: "blur(10px)",
+          WebkitBackdropFilter: "blur(10px)",
+          color: "#fff",
+          fontSize: 18,
+          cursor: "pointer",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          boxShadow: "0 2px 12px rgba(0,0,0,0.25)",
+          transition: "all 0.2s",
+          WebkitTapHighlightColor: "transparent",
+        }}
+        onMouseEnter={(e) => { e.currentTarget.style.background = isDark ? "rgba(30,40,55,0.95)" : "rgba(255,255,255,0.32)"; }}
+        onMouseLeave={(e) => { e.currentTarget.style.background = isDark ? "rgba(30,40,55,0.85)" : "rgba(255,255,255,0.18)"; }}
+      >
+        {isDark ? "☀️" : "🌙"}
+      </button>
+
       {/* ── HEADER ── */}
       <header style={{
         background: `linear-gradient(160deg, ${T.emeraldDark} 0%, ${T.emerald} 55%, ${T.emeraldLight} 100%)`,
@@ -520,27 +552,7 @@ export default function KashafDetail() {
             <span>العودة للبوابة</span>
           </button>
 
-          {/* Dark mode toggle */}
-          <button
-            onClick={toggleTheme}
-            title={isDark ? "الوضع النهاري" : "الوضع الليلي"}
-            style={{
-              display: "inline-flex", alignItems: "center", gap: 7,
-              padding: "7px 16px", borderRadius: 40,
-              border: "1.5px solid rgba(181,160,90,0.5)",
-              background: "rgba(255,255,255,0.12)",
-              color: T.white, fontSize: "clamp(12px,3vw,13px)",
-              fontFamily: "'Noto Naskh Arabic', serif",
-              cursor: "pointer", backdropFilter: "blur(8px)",
-              transition: "all 0.2s", marginBottom: 20, marginRight: 8,
-              WebkitTapHighlightColor: "transparent",
-            }}
-            onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.22)"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.12)"; }}
-          >
-            <span style={{ fontSize: 16 }}>{isDark ? "☀️" : "🌙"}</span>
-            <span>{isDark ? "الوضع النهاري" : "الوضع الليلي"}</span>
-          </button>
+
 
           {/* Title area */}
           <div style={{ display: "flex", alignItems: "flex-start", gap: 16, flexWrap: "wrap" }}>
