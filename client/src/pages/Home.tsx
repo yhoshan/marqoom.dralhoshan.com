@@ -308,6 +308,7 @@ export default function Home() {
   const [activeCategory, setActiveCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [showAbout, setShowAbout] = useState(false);
   const searchRef = useRef<HTMLInputElement>(null);
   const { theme, toggleTheme } = useTheme();
   const isDark = theme === "dark";
@@ -331,6 +332,136 @@ export default function Home() {
 
   return (
     <div style={{ fontFamily: "'Noto Naskh Arabic', 'Amiri', serif", direction: "rtl", background: T.cream, minHeight: "100vh", transition: "background 0.3s" }}>
+
+      {/* ── FIXED ABOUT BUTTON (top-right) ── */}
+      <button
+        onClick={() => setShowAbout(true)}
+        title="حول مرقوم"
+        style={{
+          position: "fixed",
+          top: 14,
+          right: 14,
+          zIndex: 9999,
+          width: 40,
+          height: 40,
+          borderRadius: "50%",
+          border: "1.5px solid rgba(181,160,90,0.6)",
+          background: isDark ? "rgba(30,40,55,0.85)" : "rgba(255,255,255,0.18)",
+          backdropFilter: "blur(10px)",
+          WebkitBackdropFilter: "blur(10px)",
+          color: T.goldLight,
+          fontSize: 18,
+          cursor: "pointer",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          boxShadow: "0 2px 12px rgba(0,0,0,0.25)",
+          transition: "all 0.2s",
+          WebkitTapHighlightColor: "transparent",
+        }}
+        onMouseEnter={(e) => { e.currentTarget.style.background = isDark ? "rgba(30,40,55,0.95)" : "rgba(255,255,255,0.32)"; }}
+        onMouseLeave={(e) => { e.currentTarget.style.background = isDark ? "rgba(30,40,55,0.85)" : "rgba(255,255,255,0.18)"; }}
+      >
+        ℹ️
+      </button>
+
+      {/* ── ABOUT MODAL ── */}
+      {showAbout && (
+        <div
+          onClick={() => setShowAbout(false)}
+          style={{
+            position: "fixed", inset: 0, zIndex: 99999,
+            background: "rgba(0,0,0,0.72)",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            padding: "20px",
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              background: `linear-gradient(160deg, #145F55 0%, #1A7A6E 55%, #2A9A8E 100%)`,
+              border: `2px solid rgba(181,160,90,0.7)`,
+              borderRadius: 18,
+              padding: "clamp(24px,5vw,36px)",
+              maxWidth: 540,
+              width: "100%",
+              position: "relative",
+              overflow: "hidden",
+              boxShadow: "0 24px 70px rgba(0,0,0,0.55)",
+              fontFamily: "'Noto Naskh Arabic', serif",
+              direction: "rtl",
+            }}
+          >
+            {/* Islamic geometric pattern overlay */}
+            <div style={{
+              position: "absolute", inset: 0, opacity: 0.07, pointerEvents: "none",
+              backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30Z' fill='none' stroke='%23B5A05A' stroke-width='1'/%3E%3Cpath d='M30 10 L50 30 L30 50 L10 30Z' fill='none' stroke='%23B5A05A' stroke-width='0.5'/%3E%3C/svg%3E")`,
+              backgroundSize: "60px 60px",
+            }} />
+
+            {/* Header */}
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 18, position: "relative", zIndex: 1 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                <span style={{ fontSize: 22, color: "#D4C07A" }}>🛡️</span>
+                <span style={{ fontSize: "clamp(17px,4.5vw,22px)", fontWeight: 700, color: "#D4C07A", fontFamily: "'Amiri', serif", letterSpacing: 0.5 }}>حول مرقوم</span>
+              </div>
+              <button
+                onClick={() => setShowAbout(false)}
+                style={{
+                  background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.2)",
+                  cursor: "pointer", fontSize: 18, color: "rgba(255,255,255,0.8)", lineHeight: 1,
+                  padding: "5px 10px", borderRadius: 8, transition: "background 0.2s",
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.22)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.12)"; }}
+              >✕</button>
+            </div>
+
+            {/* Gold divider */}
+            <div style={{ height: 1.5, background: `linear-gradient(90deg, transparent, #D4C07A, #B5A05A, #D4C07A, transparent)`, marginBottom: 22, position: "relative", zIndex: 1 }} />
+
+            {/* Content */}
+            <p style={{
+              fontSize: "clamp(14px,3.5vw,16px)",
+              lineHeight: 2,
+              color: "rgba(255,255,255,0.92)",
+              margin: 0,
+              marginBottom: 28,
+              textAlign: "justify",
+              position: "relative", zIndex: 1,
+            }}>
+              <strong style={{ color: "#D4C07A", fontSize: "clamp(15px,4vw,18px)", fontFamily: "'Amiri', serif" }}>مرقوم</strong>
+              {" "}مشروع رقمي لفهرسة وتحليل كتب التراث الإسلامي، ينتج كشافات منهجية منظّمة تساعد الباحثين على اكتشاف محتوى الكتاب من خلال مسائله، وأعلامه، ومصادره، ومصطلحاته، واستشهاداته، واتجاهاته العلمية. ويحوّل النص التراثي الطويل إلى خريطة بحثية ذكية، قابلة للبحث والتنزيل والمقارنة، تقرّب الباحث من منهج المؤلف وبنية الكتاب.
+            </p>
+
+            {/* Confirm button */}
+            <button
+              onClick={() => setShowAbout(false)}
+              style={{
+                display: "block",
+                width: "100%",
+                padding: "clamp(12px,3vw,14px)",
+                background: `linear-gradient(135deg, #B5A05A, #D4C07A, #B5A05A)`,
+                color: "#1A1A1A",
+                border: "none",
+                borderRadius: 40,
+                fontSize: "clamp(14px,3.5vw,16px)",
+                fontFamily: "'Amiri', serif",
+                cursor: "pointer",
+                fontWeight: 700,
+                letterSpacing: 1,
+                transition: "opacity 0.2s, transform 0.15s",
+                position: "relative", zIndex: 1,
+                boxShadow: "0 4px 16px rgba(181,160,90,0.4)",
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.88"; e.currentTarget.style.transform = "scale(0.98)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; e.currentTarget.style.transform = "scale(1)"; }}
+            >
+              فهمت
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* ── FIXED DARK MODE BUTTON (top-left) ── */}
       <button
