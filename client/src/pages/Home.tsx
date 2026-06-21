@@ -334,42 +334,22 @@ export default function Home() {
 
       {/* ── HEADER ── */}
       <header style={{
-        background: `linear-gradient(160deg, ${T.emeraldDark} 0%, ${T.emerald} 55%, ${T.emeraldLight} 100%)`,
         position: "relative",
         overflow: "hidden",
         paddingBottom: 0,
+        backgroundImage: "url('/manus-storage/marqoom_header_bg_750c3aaf.webp')",
+        backgroundSize: "cover",
+        backgroundPosition: "center top",
+        backgroundRepeat: "no-repeat",
       }}>
-        {/* Islamic geometric pattern overlay */}
-        <div style={{
-          position: "absolute", inset: 0, opacity: 0.06,
-          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30Z' fill='none' stroke='%23B5A05A' stroke-width='1'/%3E%3Cpath d='M30 10 L50 30 L30 50 L10 30Z' fill='none' stroke='%23B5A05A' stroke-width='0.5'/%3E%3C/svg%3E")`,
-          backgroundSize: "60px 60px",
-          pointerEvents: "none",
-        }} />
+        {/* Dark overlay for better contrast on stats/search */}
+        <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.15)", pointerEvents: "none" }} />
         {/* Gold bottom line */}
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, transparent, ${T.gold}, ${T.goldLight}, ${T.gold}, transparent)` }} />
 
         <div style={{ maxWidth: 960, margin: "0 auto", padding: "clamp(28px,6vw,40px) clamp(16px,4vw,24px) clamp(28px,6vw,36px)", position: "relative", zIndex: 1, textAlign: "center" }}>
-          {/* Logo Image */}
-          <div style={{ marginBottom: 20, display: "flex", justifyContent: "center" }}>
-            <img
-              src="/manus-storage/marqoom_logo_final_febb27a2.png"
-              alt="مرقوم — MARQOOM"
-              style={{
-                height: "clamp(70px, 18vw, 130px)",
-                width: "auto",
-                maxWidth: "70vw",
-                opacity: 0.95,
-              }}
-            />
-          </div>
-
-          <p style={{ color: T.white, fontSize: "clamp(13px, 3.2vw, 16px)", fontFamily: "'Amiri', serif", marginBottom: 5, fontWeight: 600 }}>
-            بوابة الكشافات الرقمية
-          </p>
-          <p style={{ color: T.white, fontSize: "clamp(11px, 2.6vw, 13px)", marginBottom: 28, lineHeight: 1.6, padding: "0 8px" }}>
-            فهارس تحليلية آلية لمختارات من كتب التراث
-          </p>
+          {/* Spacer to push stats below the image text area */}
+          <div style={{ height: "clamp(180px, 38vw, 320px)" }} />
 
 
           {/* Stats */}
