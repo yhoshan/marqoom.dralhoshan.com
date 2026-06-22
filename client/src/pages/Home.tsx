@@ -652,7 +652,7 @@ export default function Home() {
             مرقوم
           </p>
           <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "clamp(13px,3vw,15px)", marginBottom: 16 }}>
-            بوابة الكشافات الرقمية
+            بوابة الكشافات التراثية الرقمية
           </p>
         </div>
 
