@@ -669,20 +669,22 @@ export default function Home() {
       <header style={{
         position: "relative",
         overflow: "hidden",
-        paddingBottom: 0,
-        backgroundImage: "url('/manus-storage/marqoom_header_bg_750c3aaf.webp')",
+        padding: 0,
+        margin: 0,
+        backgroundImage: "url('/manus-storage/marqoom_hero_banner_197d6440.webp')",
         backgroundSize: "cover",
         backgroundPosition: "center top",
         backgroundRepeat: "no-repeat",
       }}>
-        {/* Dark overlay for better contrast on stats/search */}
-        <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.15)", pointerEvents: "none" }} />
+        {/* Subtle dark gradient at bottom for stats readability */}
+        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "45%", background: "linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 100%)", pointerEvents: "none" }} />
         {/* Gold bottom line */}
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, transparent, ${T.gold}, ${T.goldLight}, ${T.gold}, transparent)` }} />
 
-        <div style={{ maxWidth: 960, margin: "0 auto", padding: "clamp(28px,6vw,40px) clamp(16px,4vw,24px) clamp(28px,6vw,36px)", position: "relative", zIndex: 1, textAlign: "center" }}>
-          {/* Spacer to push stats below the image text area */}
-          <div style={{ height: "clamp(180px, 38vw, 320px)" }} />
+        <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 clamp(16px,4vw,24px) clamp(24px,5vw,32px)", position: "relative", zIndex: 1, textAlign: "center" }}>
+          {/* Spacer — image fills from top, stats appear at bottom */}
+          {/* Mobile: smaller spacer so image doesn't dominate the screen */}
+          <div style={{ height: "clamp(140px, 38vw, 460px)" }} />
 
 
           {/* Stats */}
