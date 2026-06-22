@@ -665,7 +665,7 @@ export default function Home() {
         <i className={isDark ? "fa-solid fa-sun" : "fa-solid fa-moon"} />
       </button>
 
-      {/* ── HEADER ── */}
+            {/* ── HEADER ── */}
       <header style={{
         position: "relative",
         overflow: "hidden",
@@ -675,66 +675,43 @@ export default function Home() {
         backgroundSize: "cover",
         backgroundPosition: "center top",
         backgroundRepeat: "no-repeat",
+        height: "clamp(160px, 45vw, 480px)",
       }}>
-        {/* Subtle dark gradient at bottom for stats readability */}
-        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "45%", background: "linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 100%)", pointerEvents: "none" }} />
+        {/* Subtle dark gradient at bottom */}
+        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "30%", background: "linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 100%)", pointerEvents: "none" }} />
         {/* Gold bottom line */}
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, transparent, ${T.gold}, ${T.goldLight}, ${T.gold}, transparent)` }} />
-
-        <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 clamp(16px,4vw,24px) clamp(24px,5vw,32px)", position: "relative", zIndex: 1, textAlign: "center" }}>
-          {/* Spacer — image fills from top, stats appear at bottom */}
-          {/* Mobile: smaller spacer so image doesn't dominate the screen */}
-          <div style={{ height: "clamp(140px, 38vw, 460px)" }} />
-
-
-          {/* Stats */}
-          <div style={{ display: "flex", justifyContent: "center", gap: "clamp(12px, 4vw, 48px)", flexWrap: "wrap", marginBottom: 28 }}>
-            {[
-              { n: "11", l: "كشّافاً رقمياً" },
-              { n: "+30م", l: "كلمة محللة" },
-              { n: "+1م", l: "عبارة مصنفة" },
-              { n: "11", l: "مصنفاً كبيراً" },
-            ].map((s) => (
-              <div key={s.l} style={{ textAlign: "center" }}>
-                <div style={{ fontSize: "clamp(20px, 5vw, 32px)", fontWeight: 700, color: T.goldLight, fontFamily: "'Amiri', serif" }}>{s.n}</div>
-                <div style={{ fontSize: "clamp(11px, 2.8vw, 13px)", color: T.white, marginTop: 3 }}>{s.l}</div>
-              </div>
-            ))}
-          </div>
-
-
-
-          {/* Search */}
-          <div style={{ maxWidth: 560, margin: "0 auto 4px", position: "relative", width: "100%" }}>
-            <i className="fa-solid fa-magnifying-glass" style={{ position: "absolute", right: 16, top: "50%", transform: "translateY(-50%)", color: T.goldLight, fontSize: 18, pointerEvents: "none" }} />
-            <input
-              ref={searchRef}
-              type="search"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="ابحث عن كشاف... (فتح الباري، ابن تيمية، الرازي...)"
-              style={{
-                width: "100%",
-                padding: "clamp(12px,3vw,14px) 48px clamp(12px,3vw,14px) 20px",
-                borderRadius: 40,
-                border: `2px solid rgba(181,160,90,0.4)`,
-                background: "rgba(255,255,255,0.15)",
-                color: T.white,
-                fontSize: "clamp(14px,3.5vw,16px)",
-                fontFamily: "'Noto Naskh Arabic', serif",
-                outline: "none",
-                backdropFilter: "blur(8px)",
-                direction: "rtl",
-                transition: "border-color 0.2s",
-                boxSizing: "border-box",
-                WebkitAppearance: "none",
-              }}
-              onFocus={(e) => (e.target.style.borderColor = T.goldLight)}
-              onBlur={(e) => (e.target.style.borderColor = "rgba(181,160,90,0.4)")}
-            />
-          </div>
-        </div>
       </header>
+      {/* ── SEARCH BAR ── */}
+      <div style={{ background: isDark ? T.dark : T.white, padding: "clamp(12px,3vw,18px) clamp(16px,4vw,24px)", borderBottom: `1px solid ${T.creamMid}` }}>
+        <div style={{ maxWidth: 560, margin: "0 auto", position: "relative" }}>
+          <i className="fa-solid fa-magnifying-glass" style={{ position: "absolute", right: 16, top: "50%", transform: "translateY(-50%)", color: T.emerald, fontSize: 18, pointerEvents: "none" }} />
+          <input
+            ref={searchRef}
+            type="search"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="ابحث عن كشاف... (فتح الباري، ابن تيمية، الرازي...)"
+            style={{
+              width: "100%",
+              padding: "clamp(12px,3vw,14px) 48px clamp(12px,3vw,14px) 20px",
+              borderRadius: 40,
+              border: `2px solid ${isDark ? 'rgba(181,160,90,0.3)' : 'rgba(26,122,110,0.25)'}`,
+              background: isDark ? "rgba(255,255,255,0.06)" : "rgba(26,122,110,0.05)",
+              color: isDark ? T.white : T.textDark,
+              fontSize: "clamp(14px,3.5vw,16px)",
+              fontFamily: "'Noto Naskh Arabic', serif",
+              outline: "none",
+              direction: "rtl",
+              transition: "border-color 0.2s",
+              boxSizing: "border-box",
+              WebkitAppearance: "none",
+            }}
+            onFocus={(e) => (e.target.style.borderColor = T.emerald)}
+            onBlur={(e) => (e.target.style.borderColor = isDark ? 'rgba(181,160,90,0.3)' : 'rgba(26,122,110,0.25)')}
+          />
+        </div>
+      </div>
 
       {/* ── FILTER TABS ── */}
       <div style={{
