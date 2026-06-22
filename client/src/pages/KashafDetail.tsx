@@ -515,7 +515,7 @@ export default function KashafDetail() {
         onMouseEnter={(e) => { e.currentTarget.style.background = isDark ? "rgba(30,40,55,0.95)" : "rgba(255,255,255,0.32)"; }}
         onMouseLeave={(e) => { e.currentTarget.style.background = isDark ? "rgba(30,40,55,0.85)" : "rgba(255,255,255,0.18)"; }}
       >
-        ℹ️
+        <i className="fa-solid fa-circle-info" />
       </button>
 
       {/* ── ABOUT MODAL ── */}
@@ -552,13 +552,13 @@ export default function KashafDetail() {
             }} />
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 18, position: "relative", zIndex: 1 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                <span style={{ fontSize: 22, color: "#D4C07A" }}>🛡️</span>
+                <i className="fa-solid fa-shield-halved" style={{ fontSize: 22, color: "#D4C07A" }} />
                 <span style={{ fontSize: "clamp(17px,4.5vw,22px)", fontWeight: 700, color: "#D4C07A", fontFamily: "'Amiri', serif" }}>حول مرقوم</span>
               </div>
               <button onClick={() => setShowAbout(false)} style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.2)", cursor: "pointer", fontSize: 18, color: "rgba(255,255,255,0.8)", lineHeight: 1, padding: "5px 10px", borderRadius: 8, transition: "background 0.2s" }}
                 onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.22)"; }}
                 onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.12)"; }}
-              >✕</button>
+              ><i className="fa-solid fa-xmark" /></button>
             </div>
             <div style={{ height: 1.5, background: `linear-gradient(90deg, transparent, #D4C07A, #B5A05A, #D4C07A, transparent)`, marginBottom: 22, position: "relative", zIndex: 1 }} />
             <p style={{ fontSize: "clamp(14px,3.5vw,16px)", lineHeight: 2, color: "rgba(255,255,255,0.92)", margin: 0, marginBottom: 28, textAlign: "justify", position: "relative", zIndex: 1 }}>
@@ -602,7 +602,7 @@ export default function KashafDetail() {
         onMouseEnter={(e) => { e.currentTarget.style.background = isDark ? "rgba(30,40,55,0.95)" : "rgba(255,255,255,0.32)"; }}
         onMouseLeave={(e) => { e.currentTarget.style.background = isDark ? "rgba(30,40,55,0.85)" : "rgba(255,255,255,0.18)"; }}
       >
-        {isDark ? "☀️" : "🌙"}
+        <i className={isDark ? "fa-solid fa-sun" : "fa-solid fa-moon"} />
       </button>
 
       {/* ── HEADER ── */}
@@ -636,7 +636,7 @@ export default function KashafDetail() {
             onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.25)")}
             onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.15)")}
           >
-            <span style={{ fontSize: 16 }}>→</span>
+            <i className="fa-solid fa-arrow-left" style={{ fontSize: 14 }} />
             <span>العودة للبوابة</span>
           </button>
 
@@ -672,7 +672,7 @@ export default function KashafDetail() {
                 {kashaf.title}
               </h1>
               <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "clamp(13px,3vw,15px)" }}>
-                ◆ {kashaf.author} ({kashaf.death})
+                <i className="fa-solid fa-diamond" style={{ fontSize: 8, marginLeft: 6, verticalAlign: 'middle' }} /> {kashaf.author} ({kashaf.death})
               </p>
             </div>
           </div>
@@ -797,7 +797,7 @@ export default function KashafDetail() {
                 onMouseLeave={(e) => (e.currentTarget.style.background = T.gold)}
               >
                 <span>دخول الكشاف</span>
-                <span style={{ fontSize: 16 }}>←</span>
+                <i className="fa-solid fa-arrow-right" style={{ fontSize: 14 }} />
               </a>
               <a
                 href={kashaf.xlsxUrl}
@@ -814,7 +814,7 @@ export default function KashafDetail() {
                 onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.25)")}
                 onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.15)")}
               >
-                <span>⬇</span><span>Excel</span>
+                <i className="fa-solid fa-download" style={{ fontSize: 13 }} /><span>Excel</span>
               </a>
               <a
                 href={kashaf.docxUrl}
@@ -831,7 +831,7 @@ export default function KashafDetail() {
                 onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.25)")}
                 onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.15)")}
               >
-                <span>⬇</span><span>Word</span>
+                <i className="fa-solid fa-download" style={{ fontSize: 13 }} /><span>Word</span>
               </a>
             </div>
           </div>

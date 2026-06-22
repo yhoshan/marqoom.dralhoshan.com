@@ -362,7 +362,7 @@ export default function Home() {
         onMouseEnter={(e) => { e.currentTarget.style.background = isDark ? "rgba(30,40,55,0.95)" : "rgba(255,255,255,0.32)"; }}
         onMouseLeave={(e) => { e.currentTarget.style.background = isDark ? "rgba(30,40,55,0.85)" : "rgba(255,255,255,0.18)"; }}
       >
-        ℹ️
+        <i className="fa-solid fa-circle-info" />
       </button>
 
       {/* ── ABOUT MODAL ── */}
@@ -402,7 +402,7 @@ export default function Home() {
             {/* Header */}
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 18, position: "relative", zIndex: 1 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                <span style={{ fontSize: 22, color: "#D4C07A" }}>🛡️</span>
+                <i className="fa-solid fa-shield-halved" style={{ fontSize: 22, color: "#D4C07A" }} />
                 <span style={{ fontSize: "clamp(17px,4.5vw,22px)", fontWeight: 700, color: "#D4C07A", fontFamily: "'Amiri', serif", letterSpacing: 0.5 }}>حول مرقوم</span>
               </div>
               <button
@@ -414,7 +414,7 @@ export default function Home() {
                 }}
                 onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.22)"; }}
                 onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.12)"; }}
-              >✕</button>
+              ><i className="fa-solid fa-xmark" /></button>
             </div>
 
             {/* Gold divider */}
@@ -492,7 +492,7 @@ export default function Home() {
         onMouseEnter={(e) => { e.currentTarget.style.background = isDark ? "rgba(30,40,55,0.95)" : "rgba(255,255,255,0.32)"; }}
         onMouseLeave={(e) => { e.currentTarget.style.background = isDark ? "rgba(30,40,55,0.85)" : "rgba(255,255,255,0.18)"; }}
       >
-        {isDark ? "☀️" : "🌙"}
+        <i className={isDark ? "fa-solid fa-sun" : "fa-solid fa-moon"} />
       </button>
 
       {/* ── HEADER ── */}
@@ -534,7 +534,7 @@ export default function Home() {
 
           {/* Search */}
           <div style={{ maxWidth: 560, margin: "0 auto 4px", position: "relative", width: "100%" }}>
-            <span style={{ position: "absolute", right: 16, top: "50%", transform: "translateY(-50%)", color: T.goldLight, fontSize: 18, pointerEvents: "none" }}>🔍</span>
+            <i className="fa-solid fa-magnifying-glass" style={{ position: "absolute", right: 16, top: "50%", transform: "translateY(-50%)", color: T.goldLight, fontSize: 18, pointerEvents: "none" }} />
             <input
               ref={searchRef}
               type="search"
@@ -620,7 +620,7 @@ export default function Home() {
 
         {filtered.length === 0 ? (
           <div style={{ textAlign: "center", padding: "60px 20px", color: T.textMid }}>
-            <div style={{ fontSize: 48, marginBottom: 16 }}>🔍</div>
+            <div style={{ fontSize: 48, marginBottom: 16 }}><i className="fa-solid fa-magnifying-glass" style={{ color: T.emerald, opacity: 0.4 }} /></div>
             <p style={{ fontSize: 18, fontFamily: "'Amiri', serif" }}>لا توجد نتائج مطابقة للبحث</p>
             <p style={{ fontSize: 14, marginTop: 8, opacity: 0.7 }}>جرّب كلمات بحث مختلفة</p>
           </div>
@@ -811,7 +811,7 @@ function KashafCard({ kashaf }: { kashaf: typeof KASHAFAT[0] }) {
         </h3>
         {/* Author */}
         <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "clamp(12px,3vw,13px)", position: "relative", zIndex: 1 }}>
-          ◆ {kashaf.author} ({kashaf.death})
+          <i className="fa-solid fa-diamond" style={{ fontSize: 8, marginLeft: 6, verticalAlign: 'middle' }} /> {kashaf.author} ({kashaf.death})
         </p>
       </div>
 
@@ -875,7 +875,7 @@ function KashafCard({ kashaf }: { kashaf: typeof KASHAFAT[0] }) {
             }}
           >
             <span>دخول الكشاف</span>
-            <span style={{ fontSize: 16, opacity: 0.85 }}>←</span>
+            <i className="fa-solid fa-arrow-right" style={{ fontSize: 14 }} />
           </button>
 
           {/* Download buttons */}
@@ -905,7 +905,7 @@ function KashafCard({ kashaf }: { kashaf: typeof KASHAFAT[0] }) {
               onMouseEnter={(e) => (e.currentTarget.style.background = isDark ? "#2A3E2A" : "#C8E6C9")}
               onMouseLeave={(e) => (e.currentTarget.style.background = isDark ? "#1A2E1A" : "#E8F5E9")}
             >
-              <span style={{ fontSize: 14 }}>⬇</span>
+              <i className="fa-solid fa-download" style={{ fontSize: 13 }} />
               <span>Excel</span>
             </a>
             <a
@@ -933,7 +933,7 @@ function KashafCard({ kashaf }: { kashaf: typeof KASHAFAT[0] }) {
               onMouseEnter={(e) => (e.currentTarget.style.background = isDark ? "#2A3050" : "#BBDEFB")}
               onMouseLeave={(e) => (e.currentTarget.style.background = isDark ? "#1A1E2E" : "#E3F2FD")}
             >
-              <span style={{ fontSize: 14 }}>⬇</span>
+              <i className="fa-solid fa-download" style={{ fontSize: 13 }} />
               <span>Word</span>
             </a>
           </div>
