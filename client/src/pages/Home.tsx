@@ -882,11 +882,11 @@ export default function Home() {
         overflow: "hidden",
         padding: 0,
         margin: 0,
-        backgroundImage: "url('/manus-storage/marqoom_hero_banner_197d6440.webp')",
+        backgroundImage: "url('/manus-storage/marqoom_header2_707a96ff.webp')",
         backgroundSize: "cover",
-        backgroundPosition: "center top",
+        backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
-        height: "clamp(160px, 45vw, 480px)",
+        height: "clamp(155px, 40vw, 380px)",
       }}>
         {/* Subtle dark gradient at bottom */}
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "30%", background: "linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 100%)", pointerEvents: "none" }} />
