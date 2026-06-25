@@ -1128,15 +1128,17 @@ export default function Home() {
           <div
             onClick={(e) => e.stopPropagation()}
             style={{
-              background: `linear-gradient(160deg, #0A6B5E 0%, #0D8A7A 50%, #18B0A0 100%)`,
-              border: `2px solid rgba(181,160,90,0.7)`,
+              background: isDark
+                ? `linear-gradient(160deg, #071E1C 0%, #0A2A28 50%, #0E3230 100%)`
+                : `linear-gradient(160deg, #0A6B5E 0%, #0D8A7A 45%, #18B0A0 80%, #20C8B8 100%)`,
+              border: `2px solid rgba(${isDark ? '32,200,184' : '255,255,255'},0.25)`,
               borderRadius: 18,
               padding: "clamp(24px,5vw,36px)",
               maxWidth: 540,
               width: "100%",
               position: "relative",
               overflow: "hidden",
-              boxShadow: "0 24px 70px rgba(0,0,0,0.55)",
+              boxShadow: isDark ? "0 24px 70px rgba(0,0,0,0.8)" : "0 24px 70px rgba(10,107,94,0.55)",
               fontFamily: "'Noto Naskh Arabic', serif",
               direction: "rtl",
             }}
@@ -1250,11 +1252,11 @@ export default function Home() {
         overflow: "hidden",
         padding: 0,
         margin: 0,
-        backgroundImage: "url('/manus-storage/marqoom_header_new_opt_69ac020f.jpg')",
+        backgroundImage: "url('/manus-storage/marqoom_header_wide2_620c02ba.jpg')",
         backgroundSize: "cover",
-        backgroundPosition: "center center",
+        backgroundPosition: "center top",
         backgroundRepeat: "no-repeat",
-        height: "clamp(180px, 46vw, 420px)",
+        height: "clamp(180px, 30vw, 540px)",
       }}>
         {/* Subtle dark gradient at bottom */}
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "30%", background: "linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 100%)", pointerEvents: "none" }} />
@@ -1294,12 +1296,12 @@ export default function Home() {
 
       {/* ── FILTER TABS ── */}
       <div style={{
-        background: T.white,
+        background: isDark ? T.dark : T.white,
         borderBottom: `2px solid ${T.creamMid}`,
         position: "sticky",
         top: 0,
         zIndex: 100,
-        boxShadow: "0 2px 12px rgba(26,122,110,0.08)",
+        boxShadow: isDark ? "0 2px 12px rgba(0,0,0,0.4)" : "0 2px 12px rgba(13,138,122,0.12)",
       }}>
         <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 12px", display: "flex", alignItems: "center", gap: 4, overflowX: "auto", scrollbarWidth: "none", WebkitOverflowScrolling: "touch" }}>
           <span style={{ color: T.textLight, fontSize: "clamp(12px,3vw,13px)", whiteSpace: "nowrap", padding: "0 10px 0 0", borderLeft: `1px solid ${T.creamMid}`, paddingLeft: 12, marginLeft: 4, flexShrink: 0, minHeight: 52, display: "flex", alignItems: "center" }}>التصنيف:</span>
