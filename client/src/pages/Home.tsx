@@ -1230,13 +1230,20 @@ function parseNum(v: string): number {
   if (clean.endsWith("k") || clean.endsWith("K")) return Math.round(parseFloat(clean) * 1_000);
   return parseInt(clean) || 0;
 }
+// تسميات الصفحات المعتمدة في جميع الكشافات
+const PAGE_LABELS = ["صفحة", "صفحات", "صفحات نصية", "صفحات المتن", "مقاطع XHTML", "صفحات/مقاطع", "عدد الصفحات"];
+// تسميات الكلمات المعتمدة في جميع الكشافات
+const WORD_LABELS = ["كلمة", "كلمات", "كلمات التفسير", "كلمات المتن", "كلمات عربية", "كلمات تقريبية", "إجمالي الكلمات", "كلمات النص"];
+// تسميات العبارات المعتمدة في جميع الكشافات
+const PHRASE_LABELS = ["عبارة", "عبارات", "عبارات مصنفة", "عبارات القاموس", "مجموع عبارات القاموس"];
+
 function computeGlobalStats() {
   let totalPhrases = 0, totalPages = 0, totalWords = 0;
   for (const k of KASHAFAT) {
     for (const s of k.stats) {
-      if (s.label === "عبارة") totalPhrases += parseNum(s.value);
-      if (s.label === "صفحة") totalPages += parseNum(s.value);
-      if (s.label === "كلمة") totalWords += parseNum(s.value);
+      if (PHRASE_LABELS.some(l => s.label.includes(l.split(" ")[0]) && s.label.length < 20)) totalPhrases += parseNum(s.value);
+      else if (PAGE_LABELS.some(l => s.label === l)) totalPages += parseNum(s.value);
+      else if (WORD_LABELS.some(l => s.label === l)) totalWords += parseNum(s.value);
     }
   }
   return { totalPhrases, totalPages, totalWords, totalKashafat: KASHAFAT.length };
