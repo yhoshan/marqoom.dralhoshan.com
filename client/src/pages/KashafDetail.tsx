@@ -1809,15 +1809,41 @@ const KASHAFAT = [
     url: "https://marqoom69.dralhoshan.com",
     xlsxUrl: "/manus-storage/marqoom69_mujam_udaba_yaqut_a2df7079.xlsx",
     docxUrl: "/manus-storage/marqoom69_mujam_udaba_summary_472e3944.docx",
-    chartData: [
+        chartData: [
       { label: "التراجم الأدبية", pct: 50 },
       { label: "المصادر والمراجع", pct: 25 },
       { label: "اللغة والنحو", pct: 15 },
       { label: "الشعر والأدب", pct: 10 },
     ],
   },
+  {
+    id: "aqeela-ziyadah",
+    num: 70,
+    title: "كشّاف الزيادة والإحسان في علوم القرآن",
+    author: "عقيلة المكي",
+    died: "1150هـ",
+    category: "قرآن",
+    categoryLabel: "علوم القرآن والقراءات",
+    description: "فهرس تحليلي رقمي للزيادة والإحسان في علوم القرآن — 9 أجزاء، 4,240 صفحة، 476,554 كلمة، 24,349 عبارة منهجية مرصودة. مصنف موسوعي تحريري عزوي في علوم القرآن.",
+    stats: [
+      { label: "صفحة", value: "4,240", raw: 4240 },
+      { label: "كلمة", value: "476,554", raw: 476554 },
+      { label: "عبارة منهجية", value: "24,349", raw: 24349 },
+      { label: "جزء", value: "9", raw: 9 },
+      { label: "إحالة كتب", value: "975", raw: 975 },
+    ],
+    tag: "موسوعي تحريري عزوي",
+    url: "https://marqoom70.dralhoshan.com",
+    xlsxUrl: "/manus-storage/marqoom70_aqeela_ziyadah_6d26f63d.xlsx",
+    docxUrl: "/manus-storage/marqoom70_aqeela_ziyadah_mulakhkhas_e83dbaf2.docx",
+    chartData: [
+      { label: "الإحالة والبناء الداخلي", pct: 27 },
+      { label: "الاستدلال والتعليل", pct: 25 },
+      { label: "النقل والعزو", pct: 22 },
+      { label: "الخلاف والترجيح", pct: 26 },
+    ],
+  },
 ];
-
 // ── Animated Bar Chart Component ──
 function BarChart({ data, color }: { data: { label: string; pct: number }[]; color: string }) {
   const ref = useRef<HTMLDivElement>(null);

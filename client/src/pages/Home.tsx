@@ -1008,6 +1008,7 @@ const KASHAFAT = [
   },
 
   {
+    id: "kashaf50",
     num: 50,
     title: "كشّاف التفسير الوجيز للواحدي",
     author: "الواحدي النيسابوري",
@@ -1025,6 +1026,7 @@ const KASHAFAT = [
     docxUrl: "/manus-storage/marqoom50_wahidi_report_fa0ec33c.docx",
   },
   {
+    id: "kashaf51",
     num: 51,
     title: "كشّاف الموسوعة الفقهية الكويتية",
     author: "وزارة الأوقاف الكويتية",
@@ -1042,6 +1044,7 @@ const KASHAFAT = [
     docxUrl: "/manus-storage/marqoom51_mawsuah_summary_29dbfbae.docx",
   },
   {
+    id: "kashaf52",
     num: 52,
     title: "كشّاف تفسير البغوي",
     author: "البغوي",
@@ -1058,6 +1061,7 @@ const KASHAFAT = [
     docxUrl: "/manus-storage/marqoom52_baghawi_summary_34918c05.docx",
   },
   {
+    id: "kashaf53",
     num: 53,
     title: "كشّاف تفسير أبي السعود",
     author: "أبو السعود العمادي",
@@ -1075,6 +1079,7 @@ const KASHAFAT = [
     docxUrl: "/manus-storage/marqoom53_abusaud_summary_d0cbc98c.docx",
   },
   {
+    id: "kashaf54",
     num: 54,
     title: "كشّاف تفسير ابن عرفة",
     author: "ابن عرفة المالكي",
@@ -1092,6 +1097,7 @@ const KASHAFAT = [
     docxUrl: "/manus-storage/marqoom54_ibnarafa_summary_41d90a19.docx",
   },
   {
+    id: "kashaf55",
     num: 55,
     title: "كشّاف تفسير النسفي",
     author: "النسفي",
@@ -1108,6 +1114,7 @@ const KASHAFAT = [
     docxUrl: "/manus-storage/marqoom55_nasafi_summary_07a7c072.docx",
   },
   {
+    id: "kashaf56",
     num: 56,
     title: "كشّاف تيسير العزيز الحميد",
     author: "سليمان بن عبدالله آل الشيخ",
@@ -1125,6 +1132,7 @@ const KASHAFAT = [
     docxUrl: "/manus-storage/marqoom56_tayseer_summary_0c9f59bb.docx",
   },
   {
+    id: "kashaf57",
     num: 57,
     title: "كشّاف جامع الأصول لابن الأثير",
     author: "ابن الأثير الجزري",
@@ -1142,6 +1150,7 @@ const KASHAFAT = [
     docxUrl: "/manus-storage/marqoom57_jamialasul_summary_f6bf4952.docx",
   },
   {
+    id: "kashaf58",
     num: 58,
     title: "كشّاف شرح السنة للبربهاري",
     author: "البربهاري",
@@ -1159,6 +1168,7 @@ const KASHAFAT = [
     docxUrl: "/manus-storage/marqoom58_barbahary_summary_4fa02dec.docx",
   },
   {
+    id: "kashaf59",
     num: 59,
     title: "كشّاف الرد على الجهمية لابن منده",
     author: "ابن منده",
@@ -1176,6 +1186,7 @@ const KASHAFAT = [
     docxUrl: "/manus-storage/marqoom59_ibmandah_summary_1d164c7a.docx",
   },
   {
+    id: "kashaf60",
     num: 60,
     title: "كشّاف أصول السرخسي",
     author: "السرخسي",
@@ -1193,6 +1204,7 @@ const KASHAFAT = [
     docxUrl: "/manus-storage/marqoom60_sarakhsi_summary_40653c8c.docx",
   },
   {
+    id: "kashaf61",
     num: 61,
     title: "كشّاف البحر المحيط للزركشي",
     author: "الزركشي",
@@ -1210,6 +1222,7 @@ const KASHAFAT = [
     docxUrl: "/manus-storage/marqoom61_bahr_muhit_summary_3de2bd10.docx",
   },
   {
+    id: "kashaf62",
     num: 62,
     title: "كشّاف تدريب الراوي للسيوطي",
     author: "السيوطي",
@@ -1227,11 +1240,12 @@ const KASHAFAT = [
     docxUrl: "/manus-storage/marqoom62_tadrib_summary_6d04886a.docx",
   },
   {
+    id: "kashaf63",
     num: 63,
     title: "كشّاف جامع البيان في القراءات للداني",
     author: "أبو عمرو الداني",
     died: "444هـ",
-    category: "قراءات",
+    category: "قرآن",
     description: "تحليل رقمي لجامع البيان في القراءات السبع — 1,683 صفحة، 272,651 كلمة، 26,075 صيغة أداء.",
     stats: [
       { label: "صفحة", value: "1,683" },
@@ -1244,6 +1258,7 @@ const KASHAFAT = [
     docxUrl: "/manus-storage/marqoom63_dani_summary_970cf5ac.docx",
   },
   {
+    id: "kashaf64",
     num: 64,
     title: "كشّاف روضة التقرير",
     author: "مجهول",
@@ -1258,6 +1273,7 @@ const KASHAFAT = [
     docxUrl: "/manus-storage/marqoom64_rawda_taqrir_summary_ad6d52bb.docx",
   },
   {
+    id: "kashaf65",
     num: 65,
     title: "كشّاف روضة الناظر لابن قدامة",
     author: "ابن قدامة",
@@ -1272,20 +1288,22 @@ const KASHAFAT = [
     docxUrl: "/manus-storage/marqoom65_rawda_nazir_summary_ba607cd0.docx",
   },
   {
+    id: "kashaf66",
     num: 66,
     title: "كشّاف شرح طيبة النشر للنويري",
     author: "النويري",
     died: "857هـ",
-    category: "قراءات",
+    category: "قرآن",
     description: "تحليل رقمي لشرح طيبة النشر في القراءات العشر — كشاف قراءات منهجي.",
     stats: [
-      { label: "تصنيف", value: "قراءات" },
+      { label: "تصنيف", value: "علوم القرآن" },
     ],
     url: "https://marqoom66.dralhoshan.com",
     xlsxUrl: "/manus-storage/marqoom66_sharh_tayba_nuwayri_b7aeda69.xlsx",
     docxUrl: "/manus-storage/marqoom66_nuwayri_summary_38bebf04.docx",
   },
   {
+    id: "kashaf67",
     num: 67,
     title: "كشّاف شرح مختصر الروضة للطوفي",
     author: "الطوفي",
@@ -1303,6 +1321,7 @@ const KASHAFAT = [
     docxUrl: "/manus-storage/marqoom67_tufi_summary_a34110a2.docx",
   },
   {
+    id: "kashaf68",
     num: 68,
     title: "كشّاف فتح المغيث للسخاوي",
     author: "السخاوي",
@@ -1320,6 +1339,7 @@ const KASHAFAT = [
     docxUrl: "/manus-storage/marqoom68_fath_mughith_summary_b3d813aa.docx",
   },
   {
+    id: "kashaf69",
     num: 69,
     title: "كشّاف معجم الأدباء لياقوت الحموي",
     author: "ياقوت الحموي",
@@ -1336,15 +1356,36 @@ const KASHAFAT = [
     xlsxUrl: "/manus-storage/marqoom69_mujam_udaba_yaqut_a2df7079.xlsx",
     docxUrl: "/manus-storage/marqoom69_mujam_udaba_summary_472e3944.docx",
   },
+  {
+    id: "aqeela-ziyadah",
+    num: 70,
+    title: "كشّاف الزيادة والإحسان في علوم القرآن",
+    author: "عقيلة المكي",
+    death: "ت1150هـ",
+    category: "قرآن",
+    categoryLabel: "علوم القرآن والقراءات",
+    description: "فهرس تحليلي رقمي للزيادة والإحسان في علوم القرآن — 9 أجزاء، 4,240 صفحة، 476,554 كلمة، 24,349 عبارة منهجية مرصودة.",
+    stats: [
+      { label: "صفحة", value: "4,240" },
+      { label: "كلمة", value: "476,554" },
+      { label: "عبارة منهجية", value: "24,349" },
+      { label: "جزء", value: "9" },
+    ],
+    tag: "موسوعي تحريري عزوي في علوم القرآن",
+    url: "https://marqoom70.dralhoshan.com",
+    xlsxUrl: "/manus-storage/marqoom70_aqeela_ziyadah_6d26f63d.xlsx",
+    docxUrl: "/manus-storage/marqoom70_aqeela_ziyadah_mulakhkhas_e83dbaf2.docx",
+    docxUrl2: "/manus-storage/marqoom70_aqeela_ziyadah_mulhaq_728ef775.docx",
+  },
 ];
 const CATEGORIES = [
-  { id: "all", label: "الكل", count: 69 },
+  { id: "all", label: "الكل", count: 70 },
   { id: "حديث", label: "الحديث وعلومه", count: 25 },
+  { id: "قرآن", label: "علوم القرآن والقراءات", count: 3 },
   { id: "فقه", label: "الفقه المقارن", count: 8 },
   { id: "تفسير", label: "التفسير", count: 12 },
   { id: "عقيدة", label: "العقيدة والأصول", count: 9 },
   { id: "أصول", label: "الأصول والمنطق", count: 6 },
-  { id: "قراءات", label: "القراءات", count: 2 },
   { id: "لغة", label: "اللغة والنحو", count: 3 },
   { id: "سيرة", label: "السيرة والتاريخ", count: 4 },
   { id: "تراجم", label: "التراجم والأعلام", count: 2 },
