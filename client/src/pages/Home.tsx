@@ -9,22 +9,22 @@ import { useTheme } from "@/contexts/ThemeContext";
 // التوقيع: /manus-storage/marqoom_signature_a4c79224.png
 // ═══════════════════════════════════════════════
 
-// ── COLORS LIGHT ──
+// ── COLORS LIGHT (Teal/Firouzi palette from new header) ──
 const C = {
-  emerald: "#1A7A6E",
-  emeraldDark: "#145F55",
-  emeraldLight: "#2A9A8E",
+  emerald: "#0D8A7A",
+  emeraldDark: "#0A6B5E",
+  emeraldLight: "#18B0A0",
   gold: "#B5A05A",
   goldLight: "#D4C07A",
   goldDark: "#8A7840",
-  dark: "#2A2A2A",
-  darkMid: "#3A3A3A",
-  cream: "#F8F4EC",
-  creamDark: "#EDE5D5",
-  creamMid: "#E0D5C0",
-  textDark: "#1E1E1E",
-  textMid: "#4A4A4A",
-  textLight: "#7A7A7A",
+  dark: "#0A2A28",
+  darkMid: "#1A3A38",
+  cream: "#F0FAF9",
+  creamDark: "#D8F0EE",
+  creamMid: "#B8E0DC",
+  textDark: "#0A2A28",
+  textMid: "#2A5A56",
+  textLight: "#5A8A86",
   white: "#FFFFFF",
 };
 
@@ -1028,7 +1028,7 @@ function normalizeArabic(text: string) {
 }
 
 const categoryColors: Record<string, { bg: string; text: string; accent: string }> = {
-  حديث:  { bg: "#E8F4F2", text: C.emeraldDark, accent: C.emerald },
+  حديث:  { bg: "#D8F5F2", text: "#0A5A52", accent: "#0D8A7A" },
   تفسير: { bg: "#EEF0F8", text: "#3A4580",     accent: "#5060C0" },
   فقه:   { bg: "#FFF4E6", text: "#7A4010",     accent: "#C06020" },
   عقيدة: { bg: "#EFF4EE", text: "#2E5A28",     accent: "#4A8A40" },
@@ -1036,20 +1036,20 @@ const categoryColors: Record<string, { bg: string; text: string; accent: string 
 
 // ── COLORS DARK ──
 const D = {
-  emerald: "#1A7A6E",
-  emeraldDark: "#145F55",
-  emeraldLight: "#2A9A8E",
-  gold: "#B5A05A",
-  goldLight: "#D4C07A",
-  goldDark: "#8A7840",
-  dark: "#2A2A2A",
-  darkMid: "#3A3A3A",
-  cream: "#1A1F2E",
-  creamDark: "#232A3A",
-  creamMid: "#2E3650",
-  textDark: "#E8E0D0",
-  textMid: "#B0A890",
-  textLight: "#7A7A8A",
+  emerald: "#18B0A0",
+  emeraldDark: "#0D8A7A",
+  emeraldLight: "#2ACABA",
+  gold: "#D4C07A",
+  goldLight: "#E8D89A",
+  goldDark: "#B5A05A",
+  dark: "#071E1C",
+  darkMid: "#0E2E2C",
+  cream: "#071E1C",
+  creamDark: "#0E2E2C",
+  creamMid: "#163E3C",
+  textDark: "#D8F0EE",
+  textMid: "#90C8C4",
+  textLight: "#5A8A86",
   white: "#FFFFFF",
 };
 
@@ -1128,7 +1128,7 @@ export default function Home() {
           <div
             onClick={(e) => e.stopPropagation()}
             style={{
-              background: `linear-gradient(160deg, #145F55 0%, #1A7A6E 55%, #2A9A8E 100%)`,
+              background: `linear-gradient(160deg, #0A6B5E 0%, #0D8A7A 50%, #18B0A0 100%)`,
               border: `2px solid rgba(181,160,90,0.7)`,
               borderRadius: 18,
               padding: "clamp(24px,5vw,36px)",
@@ -1250,11 +1250,11 @@ export default function Home() {
         overflow: "hidden",
         padding: 0,
         margin: 0,
-        backgroundImage: "url('/manus-storage/marqoom_header2_707a96ff.webp')",
+        backgroundImage: "url('/manus-storage/marqoom_header_new_opt_69ac020f.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
-        height: "clamp(155px, 40vw, 380px)",
+        height: "clamp(180px, 46vw, 420px)",
       }}>
         {/* Subtle dark gradient at bottom */}
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "30%", background: "linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 100%)", pointerEvents: "none" }} />
@@ -1367,7 +1367,7 @@ export default function Home() {
 
       {/* ── FOOTER ── */}
       <footer style={{
-        background: `linear-gradient(160deg, ${T.emeraldDark} 0%, ${T.emerald} 100%)`,
+        background: `linear-gradient(160deg, ${T.emeraldDark} 0%, ${T.emerald} 60%, ${T.emeraldLight} 100%)`,
         padding: "36px 24px",
         textAlign: "center",
         position: "relative",
