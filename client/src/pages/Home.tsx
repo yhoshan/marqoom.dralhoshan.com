@@ -1295,17 +1295,15 @@ export default function Home() {
           ? `linear-gradient(135deg, #071E1C 0%, #0A2A28 100%)`
           : `linear-gradient(135deg, #0A6B5E 0%, #0D8A7A 50%, #18B0A0 100%)`,
         borderBottom: `2px solid ${T.gold}`,
-        padding: "clamp(10px,2.5vw,16px) clamp(16px,4vw,24px)",
+        padding: "clamp(16px,3vw,28px) clamp(16px,4vw,24px)",
         direction: "rtl",
       }}>
         <div style={{
           maxWidth: 960,
           margin: "0 auto",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "clamp(16px,4vw,48px)",
-          flexWrap: "wrap",
+          display: "grid",
+          gridTemplateColumns: "repeat(4, 1fr)",
+          gap: "clamp(10px,2vw,20px)",
         }}>
           {[
             { icon: "fa-solid fa-book-open", value: String(STATS.totalKashafat), label: "كشافاً رقمياً" },
@@ -1315,28 +1313,37 @@ export default function Home() {
           ].map((stat, i) => (
             <div key={i} style={{
               display: "flex",
+              flexDirection: "column",
               alignItems: "center",
-              gap: "clamp(6px,1.5vw,10px)",
-              padding: "clamp(4px,1vw,6px) clamp(10px,2vw,16px)",
-              borderRadius: 40,
-              background: "rgba(255,255,255,0.08)",
-              border: "1px solid rgba(255,255,255,0.15)",
-              backdropFilter: "blur(4px)",
-            }}>
-              <i className={stat.icon} style={{ color: T.goldLight, fontSize: "clamp(13px,3vw,16px)" }} />
+              justifyContent: "center",
+              gap: "clamp(4px,1vw,8px)",
+              padding: "clamp(12px,2.5vw,20px) clamp(8px,2vw,16px)",
+              borderRadius: 14,
+              background: "rgba(255,255,255,0.10)",
+              border: "1px solid rgba(255,255,255,0.18)",
+              backdropFilter: "blur(8px)",
+              textAlign: "center",
+              transition: "background 0.2s",
+            }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.background = "rgba(255,255,255,0.18)"; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.background = "rgba(255,255,255,0.10)"; }}
+            >
+              <i className={stat.icon} style={{ color: T.goldLight, fontSize: "clamp(18px,3.5vw,26px)", marginBottom: 2 }} />
               <span style={{
                 fontFamily: "'Amiri', serif",
-                fontSize: "clamp(15px,3.5vw,20px)",
+                fontSize: "clamp(20px,4vw,30px)",
                 fontWeight: 700,
                 color: "#FFFFFF",
-                letterSpacing: 0.5,
+                lineHeight: 1.1,
                 direction: "ltr",
                 unicodeBidi: "embed",
+                letterSpacing: 0.5,
               }}>{stat.value}</span>
               <span style={{
                 fontFamily: "'Noto Naskh Arabic', serif",
-                fontSize: "clamp(11px,2.5vw,13px)",
+                fontSize: "clamp(11px,2.2vw,13px)",
                 color: "rgba(255,255,255,0.75)",
+                marginTop: 2,
               }}>{stat.label}</span>
             </div>
           ))}
