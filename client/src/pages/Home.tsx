@@ -1073,7 +1073,7 @@ function computeGlobalStats() {
   return { totalPhrases, totalPages, totalWords, totalKashafat: KASHAFAT.length };
 }
 function fmtNum(n: number): string {
-  if (n >= 1_000_000) return (n / 1_000_000).toFixed(1).replace(/\.0$/, "") + "م";
+  if (n >= 1_000_000) return (n / 1_000_000).toFixed(1).replace(/\.0$/, "") + " مليون";
   if (n >= 1_000) return n.toLocaleString("en-US");
   return String(n);
 }
@@ -1330,14 +1330,13 @@ export default function Home() {
             >
               <i className={stat.icon} style={{ color: T.goldLight, fontSize: "clamp(18px,3.5vw,26px)", marginBottom: 2 }} />
               <span style={{
-                fontFamily: "'Amiri', serif",
-                fontSize: "clamp(20px,4vw,30px)",
-                fontWeight: 700,
+                fontFamily: "'Cairo', sans-serif",
+                fontSize: "clamp(18px,3.5vw,26px)",
+                fontWeight: 800,
                 color: "#FFFFFF",
-                lineHeight: 1.1,
-                direction: "ltr",
-                unicodeBidi: "embed",
-                letterSpacing: 0.5,
+                lineHeight: 1.15,
+                direction: "rtl",
+                letterSpacing: 0,
               }}>{stat.value}</span>
               <span style={{
                 fontFamily: "'Noto Naskh Arabic', serif",
