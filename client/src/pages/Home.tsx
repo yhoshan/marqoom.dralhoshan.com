@@ -1006,13 +1006,182 @@ const KASHAFAT = [
     xlsxUrl: "/manus-storage/marqoom49_lisan_alarab_ibn_manzur_4d7de4c8.xlsx",
     docxUrl: "/manus-storage/marqoom49_lisan_alarab_summary_9d1ac665.docx",
   },
+
+  {
+    num: 50,
+    title: "كشّاف التفسير الوجيز للواحدي",
+    author: "الواحدي النيسابوري",
+    died: "468هـ",
+    category: "تفسير",
+    description: "تحليل رقمي لتفسير الواحدي الموجز — 6,236 مدخلاً قرآنياً، و176,801 كلمة، وتغطية كاملة من الفاتحة إلى الناس.",
+    stats: [
+      { label: "مداخل قرآنية", value: "6,236" },
+      { label: "كلمات التفسير", value: "176,801" },
+      { label: "أعلى سورة شرحاً", value: "البقرة" },
+      { label: "متوسط كلمات/آية", value: "28.35" },
+    ],
+    url: "https://marqoom50.dralhoshan.com",
+    xlsxUrl: "/manus-storage/marqoom50_wahidi_90b7a3c0.xlsx",
+    docxUrl: "/manus-storage/marqoom50_wahidi_report_fa0ec33c.docx",
+  },
+  {
+    num: 51,
+    title: "كشّاف الموسوعة الفقهية الكويتية",
+    author: "وزارة الأوقاف الكويتية",
+    died: "معاصر",
+    category: "فقه",
+    description: "تحليل رقمي للموسوعة الفقهية الكويتية — 31,950 مقطعاً، و4,810,041 كلمة، وأكثر من 28,000 حاشية فقهية.",
+    stats: [
+      { label: "مقاطع XHTML", value: "31,950" },
+      { label: "كلمات تقريبية", value: "4,810,041" },
+      { label: "حواشي فقهية", value: "28,218" },
+      { label: "عناوين داخلية", value: "37,773" },
+    ],
+    url: "https://marqoom51.dralhoshan.com",
+    xlsxUrl: "/manus-storage/marqoom51_mawsuah_0933d1b3.xlsx",
+    docxUrl: "/manus-storage/marqoom51_mawsuah_summary_29dbfbae.docx",
+  },
+  {
+    num: 52,
+    title: "كشّاف تفسير البغوي",
+    author: "البغوي",
+    died: "516هـ",
+    category: "تفسير",
+    description: "تحليل رقمي لمعالم التنزيل للبغوي — 852,826 كلمة، و3,526 صفحة، و36,657 عبارة منهجية في قاموس التفسير.",
+    stats: [
+      { label: "كلمات تقريبية", value: "852,826" },
+      { label: "صفحات EPUB", value: "3,526" },
+      { label: "عبارات القاموس", value: "36,657" },
+    ],
+    url: "https://marqoom52.dralhoshan.com",
+    xlsxUrl: "/manus-storage/marqoom52_baghawi_09e433c2.xlsx",
+    docxUrl: "/manus-storage/marqoom52_baghawi_summary_34918c05.docx",
+  },
+  {
+    num: 53,
+    title: "كشّاف تفسير أبي السعود",
+    author: "أبو السعود العمادي",
+    died: "982هـ",
+    category: "تفسير",
+    description: "تحليل رقمي لإرشاد العقل السليم — 1,032,820 كلمة، و8,642 مقطعاً، و74,717 عبارة في قاموس المصطلحات.",
+    stats: [
+      { label: "كلمات عربية", value: "1,032,820" },
+      { label: "مقاطع XHTML", value: "8,642" },
+      { label: "عبارات القاموس", value: "74,717" },
+      { label: "مؤشر الخلاف", value: "90.41%" },
+    ],
+    url: "https://marqoom53.dralhoshan.com",
+    xlsxUrl: "/manus-storage/marqoom53_abusaud_0a6a58c9.xlsx",
+    docxUrl: "/manus-storage/marqoom53_abusaud_summary_d0cbc98c.docx",
+  },
+  {
+    num: 54,
+    title: "كشّاف تفسير ابن عرفة",
+    author: "ابن عرفة المالكي",
+    died: "803هـ",
+    category: "تفسير",
+    description: "تحليل رقمي لتفسير ابن عرفة — 101,086 كلمة، و994 صفحة، و8,181 مصطلحاً منهجياً.",
+    stats: [
+      { label: "كلمات النص", value: "101,086" },
+      { label: "صفحات المتن", value: "994" },
+      { label: "مصطلحات منهجية", value: "8,181" },
+      { label: "نسبتها", value: "26.41%" },
+    ],
+    url: "https://marqoom54.dralhoshan.com",
+    xlsxUrl: "/manus-storage/marqoom54_ibnarafa_f128738b.xlsx",
+    docxUrl: "/manus-storage/marqoom54_ibnarafa_summary_41d90a19.docx",
+  },
+  {
+    num: 55,
+    title: "كشّاف تفسير النسفي",
+    author: "النسفي",
+    died: "710هـ",
+    category: "تفسير",
+    description: "تحليل رقمي لمدارك التنزيل وحقائق التأويل — 556,376 كلمة، و7,814 صفحة، و23,863 مؤشراً منهجياً.",
+    stats: [
+      { label: "كلمات تقريبية", value: "556,376" },
+      { label: "صفحات نصية", value: "7,814" },
+      { label: "مؤشرات منهجية", value: "23,863" },
+    ],
+    url: "https://marqoom55.dralhoshan.com",
+    xlsxUrl: "/manus-storage/marqoom55_nasafi_b69ef957.xlsx",
+    docxUrl: "/manus-storage/marqoom55_nasafi_summary_07a7c072.docx",
+  },
+  {
+    num: 56,
+    title: "كشّاف تيسير العزيز الحميد",
+    author: "سليمان بن عبدالله آل الشيخ",
+    died: "1233هـ",
+    category: "عقيدة",
+    description: "تحليل رقمي لشرح كتاب التوحيد — 164,841 كلمة، و4,577 عبارة مصنفة، وتحليل منهجي للاستدلال العقدي.",
+    stats: [
+      { label: "كلمات عربية", value: "164,841" },
+      { label: "عبارات مصنفة", value: "4,577" },
+      { label: "شرح وتحليل", value: "1,065" },
+      { label: "استدلال بالقرآن", value: "760" },
+    ],
+    url: "https://marqoom56.dralhoshan.com",
+    xlsxUrl: "/manus-storage/marqoom56_tayseer_4b70ccff.xlsx",
+    docxUrl: "/manus-storage/marqoom56_tayseer_summary_0c9f59bb.docx",
+  },
+  {
+    num: 57,
+    title: "كشّاف جامع الأصول لابن الأثير",
+    author: "ابن الأثير الجزري",
+    died: "606هـ",
+    category: "حديث",
+    description: "تحليل رقمي للجامع الحديثي الكبير — 9,523 مدخلاً حديثياً، و1,608,250 كلمة في المتن، وأبو هريرة أكثر الرواة حضوراً.",
+    stats: [
+      { label: "مداخل حديثية", value: "9,523" },
+      { label: "كلمات المتن", value: "1,608,250" },
+      { label: "كلمات الحواشي", value: "1,767,702" },
+      { label: "أعلى راوٍ", value: "أبو هريرة" },
+    ],
+    url: "https://marqoom57.dralhoshan.com",
+    xlsxUrl: "/manus-storage/marqoom57_jamialasul_811c25d4.xlsx",
+    docxUrl: "/manus-storage/marqoom57_jamialasul_summary_f6bf4952.docx",
+  },
+  {
+    num: 58,
+    title: "كشّاف شرح السنة للبربهاري",
+    author: "البربهاري",
+    died: "329هـ",
+    category: "عقيدة",
+    description: "تحليل رقمي للمتن العقدي السلفي — 156 فقرة مرقمة، و6,994 كلمة، وتحليل موضوعي للقضايا العقدية.",
+    stats: [
+      { label: "فقرات مرقمة", value: "156" },
+      { label: "كلمات المتن", value: "6,994" },
+      { label: "مؤشرات الآيات", value: "8" },
+      { label: "نطاق الصفحات", value: "33–138" },
+    ],
+    url: "https://marqoom58.dralhoshan.com",
+    xlsxUrl: "/manus-storage/marqoom58_barbahary_cc7362c6.xlsx",
+    docxUrl: "/manus-storage/marqoom58_barbahary_summary_4fa02dec.docx",
+  },
+  {
+    num: 59,
+    title: "كشّاف الرد على الجهمية لابن منده",
+    author: "ابن منده",
+    died: "395هـ",
+    category: "عقيدة",
+    description: "تحليل رقمي لكتاب الرد على الجهمية — 50 خبراً مرقماً، و4,153 كلمة في المتن، و509 صيغة أداء.",
+    stats: [
+      { label: "أخبار مرقمة", value: "50" },
+      { label: "كلمات المتن", value: "4,153" },
+      { label: "صيغ الأداء", value: "509" },
+      { label: "آيات فريدة", value: "11" },
+    ],
+    url: "https://marqoom59.dralhoshan.com",
+    xlsxUrl: "/manus-storage/marqoom59_ibmandah_21c4c038.xlsx",
+    docxUrl: "/manus-storage/marqoom59_ibmandah_summary_1d164c7a.docx",
+  },
 ];
 const CATEGORIES = [
-  { id: "all", label: "الكل", count: 49 },
-  { id: "حديث", label: "الحديث وعلومه", count: 22 },
-  { id: "فقه", label: "الفقه المقارن", count: 7 },
-  { id: "تفسير", label: "التفسير", count: 6 },
-  { id: "عقيدة", label: "العقيدة والأصول", count: 6 },
+  { id: "all", label: "الكل", count: 59 },
+  { id: "حديث", label: "الحديث وعلومه", count: 23 },
+  { id: "فقه", label: "الفقه المقارن", count: 8 },
+  { id: "تفسير", label: "التفسير", count: 12 },
+  { id: "عقيدة", label: "العقيدة والأصول", count: 9 },
   { id: "أصول", label: "الأصول والمنطق", count: 1 },
   { id: "لغة", label: "اللغة والنحو", count: 3 },
   { id: "سيرة", label: "السيرة والتاريخ", count: 4 },
@@ -1304,10 +1473,10 @@ export default function Home() {
       }}>
         <div className="stats-grid">
           {[
-            { icon: "fa-solid fa-book-open", value: String(STATS.totalKashafat), label: "كشافاً رقمياً", plus: false },
-            { icon: "fa-solid fa-list-check", value: fmtNum(STATS.totalPhrases), label: "عبارة محللة", plus: true },
-            { icon: "fa-solid fa-file-lines", value: fmtNum(STATS.totalPages), label: "صفحة مفهرسة", plus: true },
-            { icon: "fa-solid fa-font", value: fmtNum(STATS.totalWords), label: "كلمة مُعالَجة", plus: true },
+            { icon: "fa-solid fa-book-open", value: String(STATS.totalKashafat), label: "كشافاً رقمياً", plus: false, arabicIcon: null },
+            { icon: "fa-solid fa-list-check", value: fmtNum(STATS.totalPhrases), label: "عبارة محللة", plus: false, arabicIcon: null },
+            { icon: "fa-solid fa-file-lines", value: fmtNum(STATS.totalPages), label: "صفحة مفهرسة", plus: false, arabicIcon: null },
+            { icon: "", value: fmtNum(STATS.totalWords), label: "كلمة مُعالَجة", plus: false, arabicIcon: "ك" },
           ].map((stat, i) => (
             <div key={i} style={{
               display: "flex",
@@ -1326,11 +1495,12 @@ export default function Home() {
             onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.background = "rgba(255,255,255,0.18)"; }}
             onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.background = "rgba(255,255,255,0.10)"; }}
             >
-              <i className={stat.icon} style={{ color: T.goldLight, fontSize: "clamp(18px,3.5vw,26px)", marginBottom: 2 }} />
+              {stat.arabicIcon ? (
+                <span style={{ fontFamily: "'Amiri', serif", fontSize: "clamp(22px,4vw,32px)", fontWeight: 700, color: T.goldLight, lineHeight: 1, marginBottom: 2 }}>{stat.arabicIcon}</span>
+              ) : (
+                <i className={stat.icon} style={{ color: T.goldLight, fontSize: "clamp(18px,3.5vw,26px)", marginBottom: 2 }} />
+              )}
               <div style={{ display: "flex", alignItems: "baseline", gap: 2, direction: "ltr" }}>
-                {stat.plus && (
-                  <span style={{ fontFamily: "'Cairo', sans-serif", fontSize: "clamp(14px,2.5vw,18px)", fontWeight: 700, color: T.goldLight, lineHeight: 1 }}>+</span>
-                )}
                 <span style={{
                   fontFamily: "'Cairo', sans-serif",
                   fontSize: "clamp(18px,3.5vw,26px)",
