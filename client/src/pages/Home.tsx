@@ -1073,7 +1073,7 @@ function computeGlobalStats() {
   return { totalPhrases, totalPages, totalWords, totalKashafat: KASHAFAT.length };
 }
 function fmtNum(n: number): string {
-  if (n >= 1_000_000) return (n / 1_000_000).toFixed(1).replace(/\.0$/, "") + "م";
+  if (n >= 1_000_000) return (n / 1_000_000).toFixed(1).replace(/\.0$/, "") + " مليون";
   if (n >= 1_000) return n.toLocaleString("en-US");
   return String(n);
 }
@@ -1275,29 +1275,26 @@ export default function Home() {
             {/* ── HEADER ── */}
       <header style={{
         position: "relative",
-        overflow: "hidden",
         padding: 0,
         margin: 0,
         backgroundImage: "url('/manus-storage/marqoom_header_wide2_620c02ba.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center top",
         backgroundRepeat: "no-repeat",
-        height: "clamp(180px, 30vw, 540px)",
       }}>
-        {/* Subtle dark gradient at bottom */}
-        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "30%", background: "linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 100%)", pointerEvents: "none" }} />
-        {/* Gold bottom line */}
-        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, transparent, ${T.gold}, ${T.goldLight}, ${T.gold}, transparent)` }} />
-      </header>
-      {/* ── STATS BAR ── */}
-      <div style={{
-        background: isDark
-          ? `linear-gradient(135deg, #071E1C 0%, #0A2A28 100%)`
-          : `linear-gradient(135deg, #0A6B5E 0%, #0D8A7A 50%, #18B0A0 100%)`,
-        borderBottom: `2px solid ${T.gold}`,
-        padding: "clamp(16px,3vw,28px) clamp(16px,4vw,24px)",
-        direction: "rtl",
-      }}>
+        {/* Image area */}
+        <div style={{ height: "clamp(180px, 30vw, 540px)", position: "relative" }}>
+          {/* Subtle dark gradient at bottom */}
+          <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "40%", background: "linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 100%)", pointerEvents: "none" }} />
+        </div>
+        {/* ── STATS BAR ── */}
+        <div style={{
+          background: "transparent",
+          borderTop: `2px solid rgba(181,160,90,0.5)`,
+          borderBottom: `2px solid ${T.gold}`,
+          padding: "clamp(14px,2.5vw,24px) clamp(16px,4vw,24px)",
+          direction: "rtl",
+        }}>
         <div style={{
           maxWidth: 960,
           margin: "0 auto",
@@ -1319,37 +1316,43 @@ export default function Home() {
               gap: "clamp(4px,1vw,8px)",
               padding: "clamp(12px,2.5vw,20px) clamp(8px,2vw,16px)",
               borderRadius: 14,
-              background: "rgba(255,255,255,0.10)",
-              border: "1px solid rgba(255,255,255,0.18)",
-              backdropFilter: "blur(8px)",
+              background: "rgba(255,255,255,0.08)",
+              border: "1px solid rgba(255,255,255,0.20)",
+              backdropFilter: "blur(12px)",
+              WebkitBackdropFilter: "blur(12px)",
               textAlign: "center",
-              transition: "background 0.2s",
+              transition: "background 0.2s, border-color 0.2s",
             }}
-            onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.background = "rgba(255,255,255,0.18)"; }}
-            onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.background = "rgba(255,255,255,0.10)"; }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLDivElement).style.background = "rgba(255,255,255,0.15)";
+              (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.35)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLDivElement).style.background = "rgba(255,255,255,0.08)";
+              (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.20)";
+            }}
             >
               <i className={stat.icon} style={{ color: T.goldLight, fontSize: "clamp(18px,3.5vw,26px)", marginBottom: 2 }} />
               <span style={{
-                fontFamily: "'Amiri', serif",
-                fontSize: "clamp(20px,4vw,30px)",
-                fontWeight: 700,
+                fontFamily: "'Cairo', 'Tajawal', sans-serif",
+                fontSize: "clamp(18px,3.5vw,26px)",
+                fontWeight: 800,
                 color: "#FFFFFF",
-                lineHeight: 1.1,
-                direction: "ltr",
-                unicodeBidi: "embed",
-                letterSpacing: 0.5,
+                lineHeight: 1.15,
+                direction: "rtl",
+                letterSpacing: 0,
               }}>{stat.value}</span>
               <span style={{
                 fontFamily: "'Noto Naskh Arabic', serif",
                 fontSize: "clamp(11px,2.2vw,13px)",
-                color: "rgba(255,255,255,0.75)",
+                color: "rgba(255,255,255,0.72)",
                 marginTop: 2,
               }}>{stat.label}</span>
             </div>
-          ))}
+                    ))}
         </div>
-      </div>
-
+        </div>
+      </header>
       {/* ── SEARCH BAR ── */}
       <div style={{ background: isDark ? T.dark : T.white, padding: "clamp(12px,3vw,18px) clamp(16px,4vw,24px)", borderBottom: `1px solid ${T.creamMid}` }}>
         <div style={{ maxWidth: 560, margin: "0 auto", position: "relative" }}>
