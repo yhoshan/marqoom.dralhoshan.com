@@ -1290,6 +1290,10 @@ export default function Home() {
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, transparent, ${T.gold}, ${T.goldLight}, ${T.gold}, transparent)` }} />
       </header>
       {/* ── STATS BAR ── */}
+      <style>{`
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(10px,2vw,20px); max-width: 960px; margin: 0 auto; }
+        @media (max-width: 600px) { .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; } }
+      `}</style>
       <div style={{
         background: isDark
           ? `linear-gradient(135deg, #071E1C 0%, #0A2A28 100%)`
@@ -1298,13 +1302,7 @@ export default function Home() {
         padding: "clamp(16px,3vw,28px) clamp(16px,4vw,24px)",
         direction: "rtl",
       }}>
-        <div style={{
-          maxWidth: 960,
-          margin: "0 auto",
-          display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
-          gap: "clamp(10px,2vw,20px)",
-        }}>
+        <div className="stats-grid">
           {[
             { icon: "fa-solid fa-book-open", value: String(STATS.totalKashafat), label: "كشافاً رقمياً", plus: false },
             { icon: "fa-solid fa-list-check", value: fmtNum(STATS.totalPhrases), label: "عبارة محللة", plus: true },
