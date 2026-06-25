@@ -1306,10 +1306,10 @@ export default function Home() {
           gap: "clamp(10px,2vw,20px)",
         }}>
           {[
-            { icon: "fa-solid fa-book-open", value: String(STATS.totalKashafat), label: "كشافاً رقمياً" },
-            { icon: "fa-solid fa-list-check", value: fmtNum(STATS.totalPhrases) + "+", label: "عبارة محللة" },
-            { icon: "fa-solid fa-file-lines", value: fmtNum(STATS.totalPages) + "+", label: "صفحة مفهرسة" },
-            { icon: "fa-solid fa-font", value: fmtNum(STATS.totalWords) + "+", label: "كلمة مُعالَجة" },
+            { icon: "fa-solid fa-book-open", value: String(STATS.totalKashafat), label: "كشافاً رقمياً", plus: false },
+            { icon: "fa-solid fa-list-check", value: fmtNum(STATS.totalPhrases), label: "عبارة محللة", plus: true },
+            { icon: "fa-solid fa-file-lines", value: fmtNum(STATS.totalPages), label: "صفحة مفهرسة", plus: true },
+            { icon: "fa-solid fa-font", value: fmtNum(STATS.totalWords), label: "كلمة مُعالَجة", plus: true },
           ].map((stat, i) => (
             <div key={i} style={{
               display: "flex",
@@ -1329,15 +1329,19 @@ export default function Home() {
             onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.background = "rgba(255,255,255,0.10)"; }}
             >
               <i className={stat.icon} style={{ color: T.goldLight, fontSize: "clamp(18px,3.5vw,26px)", marginBottom: 2 }} />
-              <span style={{
-                fontFamily: "'Cairo', sans-serif",
-                fontSize: "clamp(18px,3.5vw,26px)",
-                fontWeight: 800,
-                color: "#FFFFFF",
-                lineHeight: 1.15,
-                direction: "rtl",
-                letterSpacing: 0,
-              }}>{stat.value}</span>
+              <div style={{ display: "flex", alignItems: "baseline", gap: 2, direction: "ltr" }}>
+                {stat.plus && (
+                  <span style={{ fontFamily: "'Cairo', sans-serif", fontSize: "clamp(14px,2.5vw,18px)", fontWeight: 700, color: T.goldLight, lineHeight: 1 }}>+</span>
+                )}
+                <span style={{
+                  fontFamily: "'Cairo', sans-serif",
+                  fontSize: "clamp(18px,3.5vw,26px)",
+                  fontWeight: 800,
+                  color: "#FFFFFF",
+                  lineHeight: 1.15,
+                  letterSpacing: 0,
+                }}>{stat.value}</span>
+              </div>
               <span style={{
                 fontFamily: "'Noto Naskh Arabic', serif",
                 fontSize: "clamp(11px,2.2vw,13px)",
