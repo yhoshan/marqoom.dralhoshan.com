@@ -1053,6 +1053,31 @@ const D = {
   white: "#FFFFFF",
 };
 
+// ── حساب الإحصائيات الإجمالية ديناميكياً من البيانات ──
+function parseNum(v: string): number {
+  if (!v) return 0;
+  const clean = v.replace(/[,،\+\s]/g, "");
+  if (clean.endsWith("م")) return Math.round(parseFloat(clean) * 1_000_000);
+  if (clean.endsWith("k") || clean.endsWith("K")) return Math.round(parseFloat(clean) * 1_000);
+  return parseInt(clean) || 0;
+}
+function computeGlobalStats() {
+  let totalPhrases = 0, totalPages = 0, totalWords = 0;
+  for (const k of KASHAFAT) {
+    for (const s of k.stats) {
+      if (s.label === "عبارة") totalPhrases += parseNum(s.value);
+      if (s.label === "صفحة") totalPages += parseNum(s.value);
+      if (s.label === "كلمة") totalWords += parseNum(s.value);
+    }
+  }
+  return { totalPhrases, totalPages, totalWords, totalKashafat: KASHAFAT.length };
+}
+function fmtNum(n: number): string {
+  if (n >= 1_000_000) return (n / 1_000_000).toFixed(1).replace(/\.0$/, "") + "م";
+  if (n >= 1_000) return n.toLocaleString("en-US");
+  return String(n);
+}
+
 export default function Home() {
   const [activeCategory, setActiveCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
@@ -1062,6 +1087,7 @@ export default function Home() {
   const { theme, toggleTheme } = useTheme();
   const isDark = theme === "dark";
   const T = isDark ? D : C;
+  const STATS = computeGlobalStats();
 
   useEffect(() => {
     const handleScroll = () => setShowScrollTop(window.scrollY > 400);
@@ -1263,6 +1289,60 @@ export default function Home() {
         {/* Gold bottom line */}
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, transparent, ${T.gold}, ${T.goldLight}, ${T.gold}, transparent)` }} />
       </header>
+      {/* ── STATS BAR ── */}
+      <div style={{
+        background: isDark
+          ? `linear-gradient(135deg, #071E1C 0%, #0A2A28 100%)`
+          : `linear-gradient(135deg, #0A6B5E 0%, #0D8A7A 50%, #18B0A0 100%)`,
+        borderBottom: `2px solid ${T.gold}`,
+        padding: "clamp(10px,2.5vw,16px) clamp(16px,4vw,24px)",
+        direction: "rtl",
+      }}>
+        <div style={{
+          maxWidth: 960,
+          margin: "0 auto",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "clamp(16px,4vw,48px)",
+          flexWrap: "wrap",
+        }}>
+          {[
+            { icon: "fa-solid fa-book-open", value: String(STATS.totalKashafat), label: "كشافاً رقمياً" },
+            { icon: "fa-solid fa-list-check", value: fmtNum(STATS.totalPhrases) + "+", label: "عبارة محللة" },
+            { icon: "fa-solid fa-file-lines", value: fmtNum(STATS.totalPages) + "+", label: "صفحة مفهرسة" },
+            { icon: "fa-solid fa-font", value: fmtNum(STATS.totalWords) + "+", label: "كلمة مُعالَجة" },
+          ].map((stat, i) => (
+            <div key={i} style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "clamp(6px,1.5vw,10px)",
+              padding: "clamp(4px,1vw,6px) clamp(10px,2vw,16px)",
+              borderRadius: 40,
+              background: "rgba(255,255,255,0.08)",
+              border: "1px solid rgba(255,255,255,0.15)",
+              backdropFilter: "blur(4px)",
+            }}>
+              <i className={stat.icon} style={{ color: T.goldLight, fontSize: "clamp(13px,3vw,16px)" }} />
+              <span style={{
+                fontFamily: "'Amiri', serif",
+                fontSize: "clamp(15px,3.5vw,20px)",
+                fontWeight: 700,
+                color: "#FFFFFF",
+                letterSpacing: 0.5,
+                direction: "ltr",
+                unicodeBidi: "embed",
+              }}>{stat.value}</span>
+              <span style={{
+                fontFamily: "'Noto Naskh Arabic', serif",
+                fontSize: "clamp(11px,2.5vw,13px)",
+                color: "rgba(255,255,255,0.75)",
+              }}>{stat.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* ── SEARCH BAR ── */}
       <div style={{ background: isDark ? T.dark : T.white, padding: "clamp(12px,3vw,18px) clamp(16px,4vw,24px)", borderBottom: `1px solid ${T.creamMid}` }}>
         <div style={{ maxWidth: 560, margin: "0 auto", position: "relative" }}>
