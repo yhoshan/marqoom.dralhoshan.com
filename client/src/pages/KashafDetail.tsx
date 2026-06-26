@@ -51,7 +51,28 @@ const categoryColors: Record<string, { bg: string; text: string; accent: string;
   عقيدة: { bg: "#EFF4EE", text: "#2E5A28",     accent: "#4A8A40",  bar: "#4A8A40" },
 };
 
-const KASHAFAT = [
+type KashafStat = { label: string; value: string; raw?: number };
+type KashafItem = {
+  id: string;
+  num: number;
+  title: string;
+  author: string;
+  death?: string;
+  died?: string;
+  category: string;
+  categoryLabel?: string;
+  description: string;
+  longDesc?: string;
+  stats: KashafStat[];
+  chartData?: { label: string; pct: number }[];
+  tag?: string;
+  url: string;
+  xlsxUrl?: string;
+  docxUrl?: string;
+  docxUrl2?: string;
+  jsonUrl?: string;
+};
+const KASHAFAT: KashafItem[] = [
   {
     id: "fathalbaari",
     num: 1,
@@ -1509,7 +1530,6 @@ const KASHAFAT = [
       { label: "مراجع قرآنية", value: "6,497" },
     ],
     url: "https://marqoom61.dralhoshan.com",
-    jsonUrl: "/manus-storage/bahralmuhit_view_cache_9111cda1.json",
     chartData: [
       { label: "الأدلة والاستدلال", pct: 35 },
       { label: "الخلاف المذهبي", pct: 30 },
@@ -1532,7 +1552,6 @@ const KASHAFAT = [
       { label: "عبارة خلاف", value: "1,203" },
     ],
     url: "https://marqoom62.dralhoshan.com",
-    jsonUrl: "/manus-storage/marqoom_fayd_alqadir_view_cache_207df957.json",
     chartData: [
       { label: "صيغ الرواية والأداء", pct: 40 },
       { label: "مصطلحات علوم الحديث", pct: 30 },
@@ -2009,7 +2028,7 @@ export default function KashafDetail() {
                 borderRadius: 20, padding: "3px 12px", fontSize: "clamp(11px,2.5vw,12px)",
                 fontWeight: 600, marginBottom: 8,
               }}>
-                {kashaf.categoryLabel}
+                {(kashaf as any).categoryLabel || kashaf.category}
               </div>
               <h1 style={{
                 fontFamily: "'Amiri', serif",
@@ -2020,7 +2039,7 @@ export default function KashafDetail() {
                 {kashaf.title}
               </h1>
               <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "clamp(13px,3vw,15px)" }}>
-                <i className="fa-solid fa-diamond" style={{ fontSize: 8, marginLeft: 6, verticalAlign: 'middle' }} /> {kashaf.author} ({kashaf.death})
+                <i className="fa-solid fa-diamond" style={{ fontSize: 8, marginLeft: 6, verticalAlign: 'middle' }} /> {kashaf.author} ({(kashaf as any).death || (kashaf as any).died || ""})
               </p>
             </div>
           </div>
@@ -2066,49 +2085,51 @@ export default function KashafDetail() {
           </h2>
           <div style={{ width: 40, height: 2, background: `linear-gradient(90deg, ${T.gold}, transparent)`, marginBottom: 14 }} />
           <p style={{ color: T.textMid, fontSize: "clamp(14px,3.2vw,15px)", lineHeight: 1.9 }}>
-            {kashaf.longDesc}
+            {(kashaf as any).longDesc || kashaf.description}
           </p>
           <div style={{ marginTop: 12 }}>
             <span style={{ fontSize: "clamp(11px,2.5vw,12px)", color: T.textLight, background: T.creamDark, padding: "3px 12px", borderRadius: 20 }}>
-              {kashaf.tag}
+              {(kashaf as any).tag || kashaf.category}
             </span>
           </div>
         </div>
 
         {/* Charts section */}
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 280px), 1fr))",
-          gap: "clamp(16px,3vw,24px)",
-          marginBottom: "clamp(20px,4vw,28px)",
-        }}>
-          {/* Bar chart */}
+        {kashaf.chartData && kashaf.chartData.length > 0 && (
           <div style={{
-            background: T.white, borderRadius: 14,
-            padding: "clamp(16px,3vw,24px)",
-            boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
-            border: `1px solid ${T.creamMid}`,
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 280px), 1fr))",
+            gap: "clamp(16px,3vw,24px)",
+            marginBottom: "clamp(20px,4vw,28px)",
           }}>
-            <h3 style={{ fontFamily: "'Amiri', serif", fontSize: "clamp(15px,3.5vw,18px)", color: T.emeraldDark, marginBottom: 16 }}>
-              توزيع المحاور الرئيسية
-            </h3>
-            <BarChart data={kashaf.chartData} color={catColor.bar} />
-          </div>
+            {/* Bar chart */}
+            <div style={{
+              background: T.white, borderRadius: 14,
+              padding: "clamp(16px,3vw,24px)",
+              boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
+              border: `1px solid ${T.creamMid}`,
+            }}>
+              <h3 style={{ fontFamily: "'Amiri', serif", fontSize: "clamp(15px,3.5vw,18px)", color: T.emeraldDark, marginBottom: 16 }}>
+                توزيع المحاور الرئيسية
+              </h3>
+              <BarChart data={kashaf.chartData} color={catColor.bar} />
+            </div>
 
-          {/* Donut chart */}
-          <div style={{
-            background: T.white, borderRadius: 14,
-            padding: "clamp(16px,3vw,24px)",
-            boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
-            border: `1px solid ${T.creamMid}`,
-            display: "flex", flexDirection: "column", alignItems: "center",
-          }}>
-            <h3 style={{ fontFamily: "'Amiri', serif", fontSize: "clamp(15px,3.5vw,18px)", color: T.emeraldDark, marginBottom: 16, alignSelf: "flex-start" }}>
-              نسب المحاور الرئيسية
-            </h3>
-            <DonutChart data={kashaf.chartData} color={catColor.bar} />
+            {/* Donut chart */}
+            <div style={{
+              background: T.white, borderRadius: 14,
+              padding: "clamp(16px,3vw,24px)",
+              boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
+              border: `1px solid ${T.creamMid}`,
+              display: "flex", flexDirection: "column", alignItems: "center",
+            }}>
+              <h3 style={{ fontFamily: "'Amiri', serif", fontSize: "clamp(15px,3.5vw,18px)", color: T.emeraldDark, marginBottom: 16, alignSelf: "flex-start" }}>
+                نسب المحاور الرئيسية
+              </h3>
+              <DonutChart data={kashaf.chartData} color={catColor.bar} />
+            </div>
           </div>
-        </div>
+        )}
         {/* ViewCache section */}
         {"jsonUrl" in kashaf && kashaf.jsonUrl && (
           <div style={{ marginBottom: "clamp(20px,4vw,28px)" }}>

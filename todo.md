@@ -36,6 +36,12 @@
 - [x] التحقق من عدم ظهور روابط الملفات في Network tab
 - [x] حفظ checkpoint
 
+## إصلاح TypeScript بعد ترقية Full-Stack
+- [x] إصلاح خطأ TypeScript في KashafDetail.tsx (تغليف chartData بشرط)
+- [x] إضافة استيراد @fortawesome في main.tsx
+- [x] التحقق من صحة TypeScript (pnpm check — لا أخطاء)
+- [x] مزامنة قاعدة البيانات (pnpm db:push)
+
 ## الجداول التفصيلية — العارض البحثي الكامل
 
 - [x] فحص بنية view_cache.json وتحديد مفاتيح الجداول المتاحة
