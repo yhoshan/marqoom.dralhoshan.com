@@ -3,13 +3,21 @@
 // يدعم أيضاً البنية التجريبية القديمة (legacy format)
 // الألوان: أخضر زمردي #1A7A6E + ذهبي #B5A05A + رمادي داكن #3A3A3A
 // الاتجاه: RTL — العربية فقط
+//
+// ملاحظة: الأعمدة في JSON المُولَّد من ETL تحمل أسماء عربية متنوعة
+// (مثل: الغرض، الفئة، المحور، العلم، ...) لذلك نستخدم الموضع (index)
+// لا الاسم لاستخراج البيانات:
+//   - العمود 0 = التسمية (label)
+//   - العمود 1 = العدد (count) — أو آخر عمود رقمي
+//   - آخر عمود رقمي = النسبة (pct) — أو العمود الثاني
 // ═══════════════════════════════════════════════════════════════════
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 // ── Color palette ──────────────────────────────────────────────────
 const P = {
   emerald: "#0D8A7A",
   emeraldDark: "#0A6B5E",
+  emeraldLight: "#1A9A8A",
   gold: "#B5A05A",
   goldLight: "#D4C07A",
   cream: "#F0FAF9",
@@ -21,6 +29,7 @@ const P = {
   white: "#FFFFFF",
   blue: "#2D5FA6",
   orange: "#C06020",
+  bgPage: "#F4FAFA",
 };
 
 // ── Helpers ────────────────────────────────────────────────────────
@@ -29,41 +38,116 @@ function fmt(n: number | null | undefined): string {
   return Number(n).toLocaleString("en-US");
 }
 
+function fmtPct(n: number | null | undefined): string {
+  if (n == null || isNaN(Number(n))) return "—";
+  const v = Number(n);
+  return v < 0.1 ? v.toFixed(2) + "%" : v.toFixed(1) + "%";
+}
+
+// ── استخراج القيمة من صف بالموضع مع fallback ─────────────────────
+function cellAt(row: unknown[], idx: number): unknown {
+  if (idx < 0 || idx >= row.length) return null;
+  return row[idx];
+}
+
+// ── تحديد عمود العدد: أول عمود رقمي بعد العمود الأول ──────────────
+function findCountIdx(cols: string[], rows: unknown[][]): number {
+  // نبحث عن أول عمود يحتوي قيماً رقمية كبيرة (> 1)
+  if (!cols.length || !rows.length) return 1;
+  for (let i = 1; i < cols.length; i++) {
+    const vals = rows.slice(0, 3).map(r => Number((r as unknown[])[i]));
+    if (vals.some(v => !isNaN(v) && v > 1)) return i;
+  }
+  return 1;
+}
+
+// ── تحديد عمود النسبة: أول عمود رقمي بعد عمود العدد ─────────────
+function findPctIdx(cols: string[], rows: unknown[][], countIdx: number): number {
+  if (!cols.length || !rows.length) return -1;
+  // نبحث عن عمود يحتوي قيماً بين 0 و 100
+  for (let i = countIdx + 1; i < cols.length; i++) {
+    const vals = rows.slice(0, 3).map(r => Number((r as unknown[])[i]));
+    if (vals.some(v => !isNaN(v) && v >= 0 && v <= 100)) return i;
+  }
+  return -1;
+}
+
 // ── Animated bar ───────────────────────────────────────────────────
 function AnimBar({ pct, color, delay = 0 }: { pct: number; color: string; delay?: number }) {
   const [w, setW] = useState(0);
   useEffect(() => {
-    const t = setTimeout(() => setW(pct), 100 + delay);
+    const t = setTimeout(() => setW(pct), 80 + delay);
     return () => clearTimeout(t);
   }, [pct, delay]);
   return (
-    <div style={{ height: 8, background: "#E8F5F3", borderRadius: 4, overflow: "hidden", flex: 1 }}>
-      <div style={{ height: "100%", borderRadius: 4, background: `linear-gradient(90deg,${color},${color}BB)`, width: `${w}%`, transition: "width 0.7s cubic-bezier(0.23,1,0.32,1)" }} />
+    <div style={{ height: 7, background: "#E0F0EE", borderRadius: 4, overflow: "hidden", flex: 1 }}>
+      <div style={{ height: "100%", borderRadius: 4, background: `linear-gradient(90deg,${color},${color}BB)`, width: `${w}%`, transition: "width 0.65s cubic-bezier(0.23,1,0.32,1)" }} />
     </div>
   );
 }
 
 // ── Section header ─────────────────────────────────────────────────
-function SH({ icon, title, sub }: { icon: string; title: string; sub?: string }) {
+function SH({ icon, title, sub, id }: { icon: string; title: string; sub?: string; id?: string }) {
   return (
-    <div style={{ marginBottom: 18 }}>
+    <div id={id} style={{ marginBottom: 18, scrollMarginTop: 80 }}>
       <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 4 }}>
         <div style={{ width: 34, height: 34, borderRadius: 9, background: `linear-gradient(135deg,${P.emeraldDark},${P.emerald})`, display: "flex", alignItems: "center", justifyContent: "center", color: P.goldLight, fontSize: 15, flexShrink: 0 }}>
           <i className={icon} />
         </div>
         <h3 style={{ fontFamily: "'Amiri',serif", fontSize: "clamp(15px,4vw,19px)", color: P.emeraldDark, margin: 0, fontWeight: 700 }}>{title}</h3>
+        {sub && <span style={{ fontSize: 12, color: P.textLight, background: P.creamDark, padding: "2px 10px", borderRadius: 20, marginRight: "auto" }}>{sub}</span>}
       </div>
-      {sub && <p style={{ fontSize: 12, color: P.textLight, margin: "0 44px 0 0" }}>{sub}</p>}
       <div style={{ height: 2, background: `linear-gradient(90deg,${P.gold},${P.goldLight}44,transparent)`, marginTop: 8 }} />
     </div>
   );
 }
 
 // ── Card ───────────────────────────────────────────────────────────
-function Card({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) {
+function Card({ children, style, id }: { children: React.ReactNode; style?: React.CSSProperties; id?: string }) {
   return (
-    <div style={{ background: P.white, borderRadius: 16, padding: "clamp(16px,4vw,26px)", boxShadow: "0 2px 16px rgba(10,42,40,0.07)", border: `1px solid ${P.creamMid}`, ...style }}>
+    <div id={id} style={{ background: P.white, borderRadius: 16, padding: "clamp(16px,4vw,26px)", boxShadow: "0 2px 16px rgba(10,42,40,0.07)", border: `1px solid ${P.creamMid}`, ...style }}>
       {children}
+    </div>
+  );
+}
+
+// ── Sticky nav ─────────────────────────────────────────────────────
+interface NavItem { id: string; icon: string; label: string }
+function StickyNav({ items, activeId }: { items: NavItem[]; activeId: string }) {
+  return (
+    <div style={{
+      position: "sticky", top: 0, zIndex: 30,
+      background: "rgba(240,250,249,0.95)",
+      backdropFilter: "blur(8px)",
+      borderBottom: `1px solid ${P.creamMid}`,
+      padding: "8px clamp(8px,3vw,20px)",
+      display: "flex", gap: 6, overflowX: "auto",
+      scrollbarWidth: "none",
+      WebkitOverflowScrolling: "touch",
+    }}>
+      {items.map(item => (
+        <button
+          key={item.id}
+          onClick={() => {
+            const el = document.getElementById(item.id);
+            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+          }}
+          style={{
+            display: "flex", alignItems: "center", gap: 6,
+            padding: "6px 12px", borderRadius: 20,
+            border: `1px solid ${activeId === item.id ? P.emerald : P.creamMid}`,
+            background: activeId === item.id ? P.emerald : P.white,
+            color: activeId === item.id ? P.white : P.textMid,
+            fontSize: "clamp(11px,2.5vw,13px)", cursor: "pointer",
+            whiteSpace: "nowrap", fontFamily: "'Noto Naskh Arabic',serif",
+            transition: "all 0.2s",
+            flexShrink: 0,
+          }}
+        >
+          <i className={item.icon} style={{ fontSize: 11 }} />
+          {item.label}
+        </button>
+      ))}
     </div>
   );
 }
@@ -80,10 +164,11 @@ interface NormalizedData {
   summary: { pages?: number; parts?: number; wordsApprox?: number; chars?: number; surahsDetected?: number };
   purposes: { label: string; count: number; pct: number }[];
   resources: { label: string; count: number; pct: number }[];
-  books: { title: string; category: string; author: string; count: number; pct: number }[];
-  people: { name: string; role: string; count: number; pct: number }[];
+  books: { title: string; category: string; author: string; count: number; pct: number; confidence?: string; note?: string }[];
+  people: { name: string; role: string; count: number; pct: number; confidence?: string }[];
   surahs: { number: number; name: string; pageStart?: number; ayahCount?: number; chars?: number; charsPerAyah?: number }[];
   limits: [string, string][];
+  rawHighlights?: Record<string, { _columns: string[]; rows: unknown[][] }>;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -92,44 +177,107 @@ function normalize(d: any): NormalizedData {
   if (d._meta && d.book && d.highlights) {
     const hl = d.highlights || {};
     const dist = d.distributions || {};
-    const colIdx = (t: { _columns: string[] }, name: string) => t._columns?.indexOf(name) ?? -1;
-    const cell = (row: unknown[], idx: number) => idx >= 0 ? row[idx] : null;
 
-    const parseTable = (t: { _columns: string[]; rows: unknown[][] } | null | undefined, labelC: string, countC: string, pctC: string, extraC?: string) => {
+    // ── parseSimpleTable: يستخرج label/count/pct بالموضع ──────────
+    const parseSimpleTable = (t: { _columns: string[]; rows: unknown[][] } | null | undefined): { label: string; count: number; pct: number }[] => {
       if (!t?.rows?.length) return [];
-      const li = colIdx(t, labelC), ci = colIdx(t, countC), pi = colIdx(t, pctC);
-      const ei = extraC ? colIdx(t, extraC) : -1;
-      return t.rows.map(r => ({
-        label: String(cell(r as unknown[], li) ?? ""),
-        count: Number(cell(r as unknown[], ci)) || 0,
-        pct: Number(cell(r as unknown[], pi)) || 0,
-        extra: ei >= 0 ? String(cell(r as unknown[], ei) ?? "") : "",
-      }));
+      const cols = t._columns || [];
+      const rows = t.rows;
+      const countIdx = findCountIdx(cols, rows);
+      const pctIdx = findPctIdx(cols, rows, countIdx);
+      return rows.map(r => ({
+        label: String(cellAt(r as unknown[], 0) ?? ""),
+        count: Number(cellAt(r as unknown[], countIdx)) || 0,
+        pct: pctIdx >= 0 ? Number(cellAt(r as unknown[], pctIdx)) || 0 : 0,
+      })).filter(item => item.label);
     };
 
-    const parseBooksTable = (t: { _columns: string[]; rows: unknown[][] } | null | undefined) => {
+    // ── parseBooksTable: يستخرج بيانات الكتب بالموضع ──────────────
+    const parseBooksTable = (t: { _columns: string[]; rows: unknown[][] } | null | undefined): NormalizedData["books"] => {
       if (!t?.rows?.length) return [];
-      const ti = colIdx(t, "title"), cati = colIdx(t, "category"), ai = colIdx(t, "author"), ci = colIdx(t, "count"), pi = colIdx(t, "pct");
-      return t.rows.map(r => ({
-        title: String(cell(r as unknown[], ti) ?? ""),
-        category: String(cell(r as unknown[], cati) ?? ""),
-        author: String(cell(r as unknown[], ai) ?? ""),
-        count: Number(cell(r as unknown[], ci)) || 0,
-        pct: Number(cell(r as unknown[], pi)) || 0,
-      }));
+      const cols = t._columns || [];
+      const rows = t.rows;
+      // عمود 0 = الكتاب، 1 = المجال، 2 = العدد، 3 = النسبة أو الثقة
+      // نبحث عن عمود العدد (أول رقمي > 1)
+      const countIdx = findCountIdx(cols, rows);
+      const pctIdx = findPctIdx(cols, rows, countIdx);
+      // عمود المجال: عمود 1 إذا كان نصياً
+      const catIdx = 1;
+      // عمود الثقة: نبحث عن كلمة "ثقة" في اسم العمود
+      const confIdx = cols.findIndex(c => c.includes("ثقة") || c.includes("confidence"));
+      // عمود التنبيه
+      const noteIdx = cols.findIndex(c => c.includes("تنبيه") || c.includes("ملاحظة") || c.includes("note"));
+
+      return rows.map(r => {
+        const row = r as unknown[];
+        const catVal = String(cellAt(row, catIdx) ?? "");
+        // إذا كان عمود 1 رقمياً فلا يوجد عمود مجال
+        const isNumCat = !isNaN(Number(catVal)) && catVal !== "";
+        return {
+          title: String(cellAt(row, 0) ?? ""),
+          category: isNumCat ? "" : catVal,
+          author: "",
+          count: Number(cellAt(row, countIdx)) || 0,
+          pct: pctIdx >= 0 ? Number(cellAt(row, pctIdx)) || 0 : 0,
+          confidence: confIdx >= 0 ? String(cellAt(row, confIdx) ?? "") : undefined,
+          note: noteIdx >= 0 ? String(cellAt(row, noteIdx) ?? "") : undefined,
+        };
+      }).filter(b => b.title);
     };
 
+    // ── parsePeopleTable: يستخرج بيانات الأعلام بالموضع ──────────
+    const parsePeopleTable = (t: { _columns: string[]; rows: unknown[][] } | null | undefined): NormalizedData["people"] => {
+      if (!t?.rows?.length) return [];
+      const cols = t._columns || [];
+      const rows = t.rows;
+      const countIdx = findCountIdx(cols, rows);
+      const pctIdx = findPctIdx(cols, rows, countIdx);
+      // عمود الدور: نبحث عن "مجال" أو "صفة" أو "طبقة"
+      const roleIdx = cols.findIndex((c, i) => i > 0 && i < countIdx && (c.includes("مجال") || c.includes("صفة") || c.includes("طبقة") || c.includes("نوع")));
+      const confIdx = cols.findIndex(c => c.includes("ثقة") || c.includes("confidence"));
+
+      return rows.map(r => {
+        const row = r as unknown[];
+        return {
+          name: String(cellAt(row, 0) ?? ""),
+          role: roleIdx >= 0 ? String(cellAt(row, roleIdx) ?? "") : "",
+          count: Number(cellAt(row, countIdx)) || 0,
+          pct: pctIdx >= 0 ? Number(cellAt(row, pctIdx)) || 0 : 0,
+          confidence: confIdx >= 0 ? String(cellAt(row, confIdx) ?? "") : undefined,
+        };
+      }).filter(p => p.name);
+    };
+
+    // ── parseSurahTable ────────────────────────────────────────────
     const parseSurahTable = (t: { _columns: string[]; rows: unknown[][] } | null | undefined) => {
       if (!t?.rows?.length) return [];
-      const numi = colIdx(t, "number"), ni = colIdx(t, "name"), psi = colIdx(t, "page_start"), ai = colIdx(t, "ayah_count"), chari = colIdx(t, "chars"), cpai = colIdx(t, "chars_per_ayah");
-      return t.rows.map(r => ({
-        number: Number(cell(r as unknown[], numi)) || 0,
-        name: String(cell(r as unknown[], ni) ?? ""),
-        pageStart: Number(cell(r as unknown[], psi)) || undefined,
-        ayahCount: Number(cell(r as unknown[], ai)) || undefined,
-        chars: Number(cell(r as unknown[], chari)) || undefined,
-        charsPerAyah: Number(cell(r as unknown[], cpai)) || undefined,
-      }));
+      const cols = t._columns || [];
+      // نبحث عن أعمدة السور بالاسم أو الموضع
+      const findCol = (...names: string[]) => {
+        for (const name of names) {
+          const i = cols.findIndex(c => c.includes(name));
+          if (i >= 0) return i;
+        }
+        return -1;
+      };
+      const numi = findCol("رقم", "number");
+      const ni = findCol("اسم", "سورة", "name");
+      const psi = findCol("صفحة", "page");
+      const ai = findCol("آية", "ayah");
+      const chari = findCol("حرف", "char");
+      const cpai = findCol("حرف/آية", "chars_per");
+
+      return t.rows.map(r => {
+        const row = r as unknown[];
+        return {
+          number: Number(cellAt(row, numi >= 0 ? numi : 0)) || 0,
+          name: String(cellAt(row, ni >= 0 ? ni : 1) ?? ""),
+          pageStart: psi >= 0 ? Number(cellAt(row, psi)) || undefined : undefined,
+          ayahCount: ai >= 0 ? Number(cellAt(row, ai)) || undefined : undefined,
+          chars: chari >= 0 ? Number(cellAt(row, chari)) || undefined : undefined,
+          charsPerAyah: cpai >= 0 ? Number(cellAt(row, cpai)) || undefined : undefined,
+        };
+      });
     };
 
     return {
@@ -147,12 +295,13 @@ function normalize(d: any): NormalizedData {
         chars: d.summary?.chars ?? undefined,
         surahsDetected: d.summary?.surahs_detected ?? undefined,
       },
-      purposes: parseTable(hl.top_purposes, "label", "count", "pct_total"),
-      resources: parseTable(hl.top_resources, "label", "count", "pct_total"),
+      purposes: parseSimpleTable(hl.top_purposes),
+      resources: parseSimpleTable(hl.top_resources),
       books: parseBooksTable(hl.top_books),
-      people: parseTable(hl.top_people, "name", "count", "pct").map(p => ({ ...p, name: p.label, role: p.extra || "" })),
-      surahs: parseSurahTable(dist.surah),
+      people: parsePeopleTable(hl.top_people),
+      surahs: parseSurahTable(dist.surahs || dist.surah),
       limits: (d.limits || []).map((item: unknown[]) => [String(item[0] ?? ""), String(item[1] ?? "")] as [string, string]),
+      rawHighlights: hl,
     };
   }
 
@@ -235,7 +384,7 @@ function SummaryCards({ s }: { s: NormalizedData["summary"] }) {
   ].filter(i => i.value != null && i.value !== 0);
   if (!items.length) return null;
   return (
-    <div>
+    <div id="sec-summary" style={{ scrollMarginTop: 80 }}>
       <SH icon="fa-solid fa-chart-simple" title="الأرقام الكبرى" />
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(min(100%,150px),1fr))", gap: "clamp(10px,2vw,14px)" }}>
         {items.map((item, i) => (
@@ -254,96 +403,197 @@ function SummaryCards({ s }: { s: NormalizedData["summary"] }) {
 }
 
 // ── Bar chart section ──────────────────────────────────────────────
-function BarSection({ items, title, icon, color, sub }: {
+function BarSection({ items, title, icon, color, sub, sectionId }: {
   items: { label: string; count: number; pct: number }[];
-  title: string; icon: string; color: string; sub?: string;
+  title: string; icon: string; color: string; sub?: string; sectionId?: string;
 }) {
+  const [showAll, setShowAll] = useState(false);
   if (!items.length) return null;
+  const displayed = showAll ? items : items.slice(0, 10);
   const maxPct = Math.max(...items.map(i => i.pct));
   return (
     <Card>
-      <SH icon={icon} title={title} sub={sub} />
-      <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-        {items.map((item, i) => (
+      <SH icon={icon} title={title} sub={sub} id={sectionId} />
+      <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+        {displayed.map((item, i) => (
           <div key={i}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 5 }}>
-              <span style={{ fontSize: "clamp(12px,3vw,14px)", color: P.textDark, fontWeight: i === 0 ? 700 : 400 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 4 }}>
+              <span style={{ fontSize: "clamp(12px,3vw,14px)", color: P.textDark, fontWeight: i === 0 ? 700 : 400, flex: 1, paddingLeft: 8 }}>
                 {i === 0 && <i className="fa-solid fa-star" style={{ color: P.gold, marginLeft: 5, fontSize: 11 }} />}
                 {item.label}
               </span>
-              <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+              <div style={{ display: "flex", gap: 8, alignItems: "center", flexShrink: 0 }}>
                 <span style={{ fontSize: 12, color: P.textLight }}>{fmt(item.count)}</span>
-                <span style={{ fontSize: 12, fontWeight: 700, color, background: color + "15", padding: "1px 8px", borderRadius: 10, minWidth: 44, textAlign: "center" }}>{item.pct}%</span>
+                <span style={{ fontSize: 12, fontWeight: 700, color, background: color + "15", padding: "1px 8px", borderRadius: 10, minWidth: 50, textAlign: "center" }}>{fmtPct(item.pct)}</span>
               </div>
             </div>
-            <AnimBar pct={maxPct > 0 ? (item.pct / maxPct) * 100 : 0} color={color} delay={i * 60} />
+            <AnimBar pct={maxPct > 0 ? (item.pct / maxPct) * 100 : 0} color={color} delay={i * 50} />
           </div>
         ))}
       </div>
+      {items.length > 10 && (
+        <button onClick={() => setShowAll(!showAll)}
+          style={{ marginTop: 14, width: "100%", padding: "8px", borderRadius: 10, border: `1px dashed ${P.creamMid}`, background: "transparent", color: P.textMid, fontSize: 13, cursor: "pointer", fontFamily: "'Noto Naskh Arabic',serif" }}>
+          {showAll ? "عرض أقل ▲" : `عرض جميع ${items.length} عنصراً ▼`}
+        </button>
+      )}
     </Card>
   );
 }
 
 // ── Books table ────────────────────────────────────────────────────
 function BooksSection({ books }: { books: NormalizedData["books"] }) {
+  const [search, setSearch] = useState("");
+  const [sortCol, setSortCol] = useState<"count" | "pct" | null>("count");
+  const [sortDir, setSortDir] = useState<"asc" | "desc">("desc");
+  const [showAll, setShowAll] = useState(false);
+
   if (!books.length) return null;
+
+  const normalize_ar = (s: string) => s.replace(/[أإآ]/g, "ا").replace(/ة/g, "ه").replace(/ى/g, "ي");
+  const q = normalize_ar(search.trim());
+
+  let filtered = books.filter(b =>
+    !q || normalize_ar(b.title).includes(q) || normalize_ar(b.category).includes(q)
+  );
+
+  if (sortCol) {
+    filtered = [...filtered].sort((a, b) => {
+      const va = a[sortCol], vb = b[sortCol];
+      return sortDir === "desc" ? vb - va : va - vb;
+    });
+  }
+
+  const displayed = showAll ? filtered : filtered.slice(0, 15);
+  const hasConfidence = books.some(b => b.confidence);
+  const hasCategory = books.some(b => b.category);
+
+  const toggleSort = (col: "count" | "pct") => {
+    if (sortCol === col) setSortDir(d => d === "desc" ? "asc" : "desc");
+    else { setSortCol(col); setSortDir("desc"); }
+  };
+
+  const SortIcon = ({ col }: { col: "count" | "pct" }) => (
+    <i className={`fa-solid fa-sort${sortCol === col ? (sortDir === "desc" ? "-down" : "-up") : ""}`}
+      style={{ marginRight: 4, fontSize: 10, opacity: sortCol === col ? 1 : 0.4 }} />
+  );
+
   return (
-    <Card>
-      <SH icon="fa-solid fa-books" title="أبرز الكتب المُحال إليها" sub={`${books.length} كتاباً`} />
+    <Card id="sec-books">
+      <SH icon="fa-solid fa-books" title="أبرز الكتب المُحال إليها" sub={`${books.length} كتاباً`} id="sec-books-h" />
+      {/* بحث */}
+      <div style={{ marginBottom: 12, position: "relative" }}>
+        <i className="fa-solid fa-magnifying-glass" style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)", color: P.textLight, fontSize: 13 }} />
+        <input value={search} onChange={e => setSearch(e.target.value)} placeholder="ابحث في الكتب..."
+          style={{ width: "100%", padding: "9px 36px 9px 12px", border: `1px solid ${P.creamMid}`, borderRadius: 10, fontSize: 14, fontFamily: "'Noto Naskh Arabic',serif", direction: "rtl", background: P.cream, color: P.textDark, outline: "none", boxSizing: "border-box" }} />
+      </div>
       <div style={{ overflowX: "auto" }}>
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "clamp(11px,2.5vw,13px)" }}>
           <thead>
             <tr style={{ background: P.cream }}>
-              {["#", "الكتاب", "المجال", "المؤلف", "التكرار", "النسبة"].map((h, i) => (
-                <th key={i} style={{ padding: "9px 10px", textAlign: "right", color: P.textMid, fontWeight: 600, fontSize: 12, borderBottom: `2px solid ${P.creamMid}`, whiteSpace: "nowrap" }}>{h}</th>
-              ))}
+              <th style={thStyle}>#</th>
+              <th style={thStyle}>الكتاب</th>
+              {hasCategory && <th style={thStyle}>المجال</th>}
+              <th style={{ ...thStyle, cursor: "pointer" }} onClick={() => toggleSort("count")}>
+                <SortIcon col="count" />التكرار
+              </th>
+              <th style={{ ...thStyle, cursor: "pointer" }} onClick={() => toggleSort("pct")}>
+                <SortIcon col="pct" />النسبة
+              </th>
+              {hasConfidence && <th style={thStyle}>الثقة</th>}
             </tr>
           </thead>
           <tbody>
-            {books.map((b, i) => (
+            {displayed.map((b, i) => (
               <tr key={i} style={{ borderBottom: `1px solid ${P.creamDark}`, transition: "background 0.15s" }}
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = P.cream; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = ""; }}
               >
-                <td style={{ padding: "8px 10px", color: P.textLight, fontWeight: 700 }}>{i + 1}</td>
-                <td style={{ padding: "8px 10px", color: P.textDark, fontWeight: i < 3 ? 600 : 400 }}>
+                <td style={tdStyle}><span style={{ color: P.textLight, fontWeight: 700 }}>{i + 1}</span></td>
+                <td style={tdStyle}>
                   {i < 3 && <i className="fa-solid fa-bookmark" style={{ color: P.gold, marginLeft: 5, fontSize: 10 }} />}
-                  {b.title}
+                  <span style={{ color: P.textDark, fontWeight: i < 3 ? 600 : 400 }}>{b.title}</span>
+                  {b.note && <div style={{ fontSize: 10, color: P.textLight, marginTop: 2 }}>{b.note}</div>}
                 </td>
-                <td style={{ padding: "8px 10px" }}>
-                  <span style={{ background: P.creamDark, color: P.textMid, padding: "2px 8px", borderRadius: 10, fontSize: 11 }}>{b.category}</span>
-                </td>
-                <td style={{ padding: "8px 10px", color: P.textMid }}>{b.author}</td>
-                <td style={{ padding: "8px 10px", color: P.emerald, fontWeight: 600 }}>{fmt(b.count)}</td>
-                <td style={{ padding: "8px 10px" }}><span style={{ color: P.gold, fontWeight: 700 }}>{b.pct}%</span></td>
+                {hasCategory && <td style={tdStyle}>{b.category && <span style={{ background: P.creamDark, color: P.textMid, padding: "2px 8px", borderRadius: 10, fontSize: 11 }}>{b.category}</span>}</td>}
+                <td style={tdStyle}><span style={{ color: P.emerald, fontWeight: 600 }}>{fmt(b.count)}</span></td>
+                <td style={tdStyle}><span style={{ color: P.gold, fontWeight: 700 }}>{fmtPct(b.pct)}</span></td>
+                {hasConfidence && <td style={tdStyle}><ConfidenceBadge v={b.confidence} /></td>}
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+      {filtered.length > 15 && (
+        <button onClick={() => setShowAll(!showAll)}
+          style={{ marginTop: 12, width: "100%", padding: "8px", borderRadius: 10, border: `1px dashed ${P.creamMid}`, background: "transparent", color: P.textMid, fontSize: 13, cursor: "pointer", fontFamily: "'Noto Naskh Arabic',serif" }}>
+          {showAll ? "عرض أقل ▲" : `عرض جميع ${filtered.length} كتاباً ▼`}
+        </button>
+      )}
+      {filtered.length === 0 && search && (
+        <div style={{ textAlign: "center", padding: 24, color: P.textLight, fontSize: 14 }}>لا توجد نتائج لـ "{search}"</div>
+      )}
     </Card>
+  );
+}
+
+// ── Confidence badge ───────────────────────────────────────────────
+function ConfidenceBadge({ v }: { v?: string }) {
+  if (!v) return null;
+  const map: Record<string, { bg: string; color: string }> = {
+    "عالية": { bg: "#E8F5E9", color: "#2E7D32" },
+    "عالٍ": { bg: "#E8F5E9", color: "#2E7D32" },
+    "متوسطة": { bg: "#FFF8E1", color: "#F57F17" },
+    "متوسط": { bg: "#FFF8E1", color: "#F57F17" },
+    "منخفضة": { bg: "#FFEBEE", color: "#C62828" },
+    "منخفض": { bg: "#FFEBEE", color: "#C62828" },
+  };
+  const style = map[v] || { bg: P.creamDark, color: P.textMid };
+  return (
+    <span style={{ background: style.bg, color: style.color, padding: "2px 8px", borderRadius: 10, fontSize: 11, fontWeight: 600 }}>{v}</span>
   );
 }
 
 // ── People grid ────────────────────────────────────────────────────
 function PeopleSection({ people }: { people: NormalizedData["people"] }) {
+  const [search, setSearch] = useState("");
+  const [showAll, setShowAll] = useState(false);
   if (!people.length) return null;
+
+  const normalize_ar = (s: string) => s.replace(/[أإآ]/g, "ا").replace(/ة/g, "ه").replace(/ى/g, "ي");
+  const q = normalize_ar(search.trim());
+  const filtered = people.filter(p => !q || normalize_ar(p.name).includes(q) || normalize_ar(p.role).includes(q));
+  const displayed = showAll ? filtered : filtered.slice(0, 12);
+
   const maxCount = Math.max(...people.map(p => p.count));
   const roleColors: Record<string, string> = {
     "تفسير": P.blue, "حديث": P.emerald, "فقه": P.orange,
     "نحو": "#6A3A9A", "قراءات": "#8A6A20", "عقيدة": "#4A8A40", "بلاغة": "#2A7A9A",
+    "مؤلف": P.emeraldDark, "تاريخ": "#7A5A2A",
   };
+  const getRoleColor = (role: string) => {
+    for (const [key, color] of Object.entries(roleColors)) {
+      if (role.includes(key)) return color;
+    }
+    return P.emerald;
+  };
+
   return (
-    <Card>
-      <SH icon="fa-solid fa-users" title="أبرز الأعلام" sub={`${people.length} عَلَماً`} />
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(min(100%,260px),1fr))", gap: 12 }}>
-        {people.map((p, i) => {
-          const roleKey = p.role.split("/")[0];
-          const rc = roleColors[roleKey] || P.emerald;
+    <Card id="sec-people">
+      <SH icon="fa-solid fa-users" title="أبرز الأعلام" sub={`${people.length} عَلَماً`} id="sec-people-h" />
+      {/* بحث */}
+      <div style={{ marginBottom: 12, position: "relative" }}>
+        <i className="fa-solid fa-magnifying-glass" style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)", color: P.textLight, fontSize: 13 }} />
+        <input value={search} onChange={e => setSearch(e.target.value)} placeholder="ابحث في الأعلام..."
+          style={{ width: "100%", padding: "9px 36px 9px 12px", border: `1px solid ${P.creamMid}`, borderRadius: 10, fontSize: 14, fontFamily: "'Noto Naskh Arabic',serif", direction: "rtl", background: P.cream, color: P.textDark, outline: "none", boxSizing: "border-box" }} />
+      </div>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(min(100%,260px),1fr))", gap: 10 }}>
+        {displayed.map((p, i) => {
+          const rc = getRoleColor(p.role);
           return (
             <div key={i} style={{ background: P.cream, borderRadius: 12, padding: "12px 14px", border: `1px solid ${P.creamMid}`, display: "flex", flexDirection: "column", gap: 6 }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
-                <div>
+                <div style={{ flex: 1 }}>
                   <span style={{ fontSize: "clamp(13px,3vw,14px)", fontWeight: 700, color: P.textDark }}>{p.name}</span>
                   {p.role && (
                     <div style={{ marginTop: 2 }}>
@@ -351,16 +601,26 @@ function PeopleSection({ people }: { people: NormalizedData["people"] }) {
                     </div>
                   )}
                 </div>
-                <div style={{ textAlign: "left" }}>
+                <div style={{ textAlign: "left", flexShrink: 0, marginRight: 8 }}>
                   <div style={{ fontSize: 14, fontWeight: 700, color: P.emeraldDark }}>{fmt(p.count)}</div>
-                  <div style={{ fontSize: 11, color: P.gold, fontWeight: 600 }}>{p.pct}%</div>
+                  <div style={{ fontSize: 11, color: P.gold, fontWeight: 600 }}>{fmtPct(p.pct)}</div>
                 </div>
               </div>
               <AnimBar pct={maxCount > 0 ? (p.count / maxCount) * 100 : 0} color={P.emerald} delay={i * 40} />
+              {p.confidence && <ConfidenceBadge v={p.confidence} />}
             </div>
           );
         })}
       </div>
+      {filtered.length > 12 && (
+        <button onClick={() => setShowAll(!showAll)}
+          style={{ marginTop: 14, width: "100%", padding: "8px", borderRadius: 10, border: `1px dashed ${P.creamMid}`, background: "transparent", color: P.textMid, fontSize: 13, cursor: "pointer", fontFamily: "'Noto Naskh Arabic',serif" }}>
+          {showAll ? "عرض أقل ▲" : `عرض جميع ${filtered.length} عَلَماً ▼`}
+        </button>
+      )}
+      {filtered.length === 0 && search && (
+        <div style={{ textAlign: "center", padding: 24, color: P.textLight, fontSize: 14 }}>لا توجد نتائج لـ "{search}"</div>
+      )}
     </Card>
   );
 }
@@ -376,8 +636,8 @@ function SurahSection({ surahs }: { surahs: NormalizedData["surahs"] }) {
   const paged = filtered.slice((page - 1) * PER, page * PER);
   const maxChars = Math.max(...surahs.map(s => s.chars || 0));
   return (
-    <Card>
-      <SH icon="fa-solid fa-quran" title="توزيع السور" sub={`${surahs.length} سورة`} />
+    <Card id="sec-surahs">
+      <SH icon="fa-solid fa-quran" title="توزيع السور" sub={`${surahs.length} سورة`} id="sec-surahs-h" />
       <div style={{ marginBottom: 12, position: "relative" }}>
         <i className="fa-solid fa-magnifying-glass" style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)", color: P.textLight, fontSize: 13 }} />
         <input value={search} onChange={e => { setSearch(e.target.value); setPage(1); }} placeholder="ابحث عن سورة..."
@@ -388,7 +648,7 @@ function SurahSection({ surahs }: { surahs: NormalizedData["surahs"] }) {
           <thead>
             <tr style={{ background: P.cream }}>
               {["#", "السورة", "الصفحة", "الآيات", "الأحرف", "أحرف/آية", "الكثافة"].map((h, i) => (
-                <th key={i} style={{ padding: "9px 10px", textAlign: "right", color: P.textMid, fontWeight: 600, fontSize: 12, borderBottom: `2px solid ${P.creamMid}`, whiteSpace: "nowrap" }}>{h}</th>
+                <th key={i} style={thStyle}>{h}</th>
               ))}
             </tr>
           </thead>
@@ -400,13 +660,13 @@ function SurahSection({ surahs }: { surahs: NormalizedData["surahs"] }) {
                   onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = P.cream; }}
                   onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = ""; }}
                 >
-                  <td style={{ padding: "8px 10px", color: P.textLight, fontSize: 11 }}>{s.number}</td>
-                  <td style={{ padding: "8px 10px", color: P.textDark, fontWeight: 600 }}>{s.name}</td>
-                  <td style={{ padding: "8px 10px", color: P.textMid }}>{s.pageStart ?? "—"}</td>
-                  <td style={{ padding: "8px 10px", color: P.emerald, fontWeight: 600 }}>{fmt(s.ayahCount)}</td>
-                  <td style={{ padding: "8px 10px", color: P.textMid }}>{fmt(s.chars)}</td>
-                  <td style={{ padding: "8px 10px", color: P.textLight }}>{s.charsPerAyah?.toFixed(1) ?? "—"}</td>
-                  <td style={{ padding: "8px 10px" }}>
+                  <td style={tdStyle}><span style={{ color: P.textLight, fontSize: 11 }}>{s.number}</span></td>
+                  <td style={tdStyle}><span style={{ color: P.textDark, fontWeight: 600 }}>{s.name}</span></td>
+                  <td style={tdStyle}><span style={{ color: P.textMid }}>{s.pageStart ?? "—"}</span></td>
+                  <td style={tdStyle}><span style={{ color: P.emerald, fontWeight: 600 }}>{fmt(s.ayahCount)}</span></td>
+                  <td style={tdStyle}><span style={{ color: P.textMid }}>{fmt(s.chars)}</span></td>
+                  <td style={tdStyle}><span style={{ color: P.textLight }}>{s.charsPerAyah?.toFixed(1) ?? "—"}</span></td>
+                  <td style={tdStyle}>
                     <div style={{ height: 6, background: P.creamDark, borderRadius: 3, overflow: "hidden", minWidth: 60 }}>
                       <div style={{ height: "100%", borderRadius: 3, background: P.emerald, width: `${barPct}%` }} />
                     </div>
@@ -441,15 +701,15 @@ function SurahSection({ surahs }: { surahs: NormalizedData["surahs"] }) {
 // ── Limits ─────────────────────────────────────────────────────────
 function LimitsSection({ limits }: { limits: [string, string][] }) {
   if (!limits.length) return null;
-  const icons = ["fa-solid fa-database", "fa-solid fa-crosshairs", "fa-solid fa-calculator", "fa-solid fa-percent", "fa-solid fa-shield-halved", "fa-solid fa-triangle-exclamation"];
+  const icons = ["fa-solid fa-database", "fa-solid fa-crosshairs", "fa-solid fa-calculator", "fa-solid fa-percent", "fa-solid fa-shield-halved", "fa-solid fa-triangle-exclamation", "fa-solid fa-circle-info", "fa-solid fa-microscope"];
   return (
-    <Card style={{ background: "linear-gradient(135deg,#FFF8EC,#FFFAF4)", border: "1px solid #E8D89A" }}>
-      <SH icon="fa-solid fa-circle-info" title="حدود الدراسة وملاحظات المنهج" />
-      <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+    <Card id="sec-limits" style={{ background: "linear-gradient(135deg,#FFF8EC,#FFFAF4)", border: "1px solid #E8D89A" }}>
+      <SH icon="fa-solid fa-circle-info" title="حدود الدراسة وملاحظات المنهج" id="sec-limits-h" />
+      <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
         {limits.map((item, i) => (
           <div key={i} style={{ display: "flex", gap: 12, alignItems: "flex-start", padding: "12px 14px", background: "rgba(255,255,255,0.7)", borderRadius: 10, border: "1px solid #E8D89A44" }}>
             <div style={{ width: 32, height: 32, borderRadius: 8, flexShrink: 0, background: `linear-gradient(135deg,${P.gold},${P.goldLight})`, display: "flex", alignItems: "center", justifyContent: "center", color: "#1A1A1A", fontSize: 13 }}>
-              <i className={icons[i] || "fa-solid fa-info"} />
+              <i className={icons[i % icons.length] || "fa-solid fa-info"} />
             </div>
             <div>
               <div style={{ fontSize: 12, fontWeight: 700, color: P.gold, marginBottom: 3 }}>{item[0]}</div>
@@ -462,32 +722,68 @@ function LimitsSection({ limits }: { limits: [string, string][] }) {
   );
 }
 
+// ── Shared table styles ────────────────────────────────────────────
+const thStyle: React.CSSProperties = {
+  padding: "9px 10px", textAlign: "right", color: P.textMid, fontWeight: 600,
+  fontSize: 12, borderBottom: `2px solid ${P.creamMid}`, whiteSpace: "nowrap",
+};
+const tdStyle: React.CSSProperties = { padding: "8px 10px" };
+
 // ── Skeleton ───────────────────────────────────────────────────────
 function Skeleton() {
   return (
     <div style={{ padding: "16px 0" }}>
       <style>{`@keyframes vcpulse{0%,100%{opacity:1}50%{opacity:0.45}}`}</style>
-      {[120, 80, 160].map((h, i) => (
-        <div key={i} style={{ background: P.creamDark, borderRadius: 14, height: h, marginBottom: 14, animation: "vcpulse 1.5s ease-in-out infinite" }} />
+      {[120, 80, 160, 100].map((h, i) => (
+        <div key={i} style={{ background: P.creamDark, borderRadius: 14, height: h, marginBottom: 14, animation: "vcpulse 1.5s ease-in-out infinite", animationDelay: `${i * 0.15}s` }} />
       ))}
     </div>
   );
 }
 
 // ── Main export ────────────────────────────────────────────────────
-export default function ViewCacheViewer({ jsonUrl }: { jsonUrl: string }) {
+// يقبل إما بيانات مُضمَّنة مباشرة (inlineData) أو رابط JSON (jsonUrl) للتوافق
+// الأفضل دائماً استخدام inlineData لأنها لا تُكشف في Network tab
+export default function ViewCacheViewer({
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [raw, setRaw] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
+  inlineData, jsonUrl
+}: { inlineData?: any; jsonUrl?: string }) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [raw, setRaw] = useState<any>(inlineData || null);
+  const [loading, setLoading] = useState(!inlineData);
   const [error, setError] = useState<string | null>(null);
+  const [activeSection, setActiveSection] = useState("sec-book");
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // إذا توفرت بيانات مُضمَّنة، لا نحتاج fetch
+    if (inlineData) { setRaw(inlineData); setLoading(false); return; }
+    if (!jsonUrl) { setError("لا توجد بيانات"); setLoading(false); return; }
     setLoading(true); setError(null);
     fetch(jsonUrl)
       .then(r => { if (!r.ok) throw new Error(`فشل تحميل البيانات (${r.status})`); return r.json(); })
       .then(d => { setRaw(d); setLoading(false); })
       .catch(e => { setError(e.message || "خطأ في التحميل"); setLoading(false); });
-  }, [jsonUrl]);
+  }, [inlineData, jsonUrl]);
+
+  // تتبع القسم النشط عند التمرير
+  useEffect(() => {
+    if (!raw) return;
+    const sections = ["sec-book", "sec-summary", "sec-purposes", "sec-resources", "sec-books", "sec-people", "sec-surahs", "sec-limits"];
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) setActiveSection(entry.target.id);
+        });
+      },
+      { rootMargin: "-20% 0px -70% 0px", threshold: 0 }
+    );
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, [raw]);
 
   if (loading) return <Skeleton />;
   if (error) return (
@@ -500,66 +796,83 @@ export default function ViewCacheViewer({ jsonUrl }: { jsonUrl: string }) {
 
   const data = normalize(raw);
 
+  // بناء قائمة التنقل بناءً على البيانات المتاحة
+  const navItems: NavItem[] = [
+    { id: "sec-book", icon: "fa-solid fa-book-open", label: "الكتاب" },
+    ...(Object.values(data.summary).some(v => v != null) ? [{ id: "sec-summary", icon: "fa-solid fa-chart-simple", label: "الأرقام" }] : []),
+    ...(data.purposes.length ? [{ id: "sec-purposes", icon: "fa-solid fa-bullseye", label: "الأغراض" }] : []),
+    ...(data.resources.length ? [{ id: "sec-resources", icon: "fa-solid fa-layer-group", label: "الموارد" }] : []),
+    ...(data.books.length ? [{ id: "sec-books", icon: "fa-solid fa-books", label: "الكتب" }] : []),
+    ...(data.people.length ? [{ id: "sec-people", icon: "fa-solid fa-users", label: "الأعلام" }] : []),
+    ...(data.surahs.length ? [{ id: "sec-surahs", icon: "fa-solid fa-quran", label: "السور" }] : []),
+    ...(data.limits.length ? [{ id: "sec-limits", icon: "fa-solid fa-circle-info", label: "الحدود" }] : []),
+  ];
+
   return (
-    <div style={{ fontFamily: "'Noto Naskh Arabic','Amiri',serif", direction: "rtl", display: "flex", flexDirection: "column", gap: "clamp(18px,4vw,26px)" }}>
-      {/* Divider */}
-      <div style={{ display: "flex", alignItems: "center", gap: 12, margin: "4px 0" }}>
-        <div style={{ flex: 1, height: 1, background: `linear-gradient(90deg,${P.gold},transparent)` }} />
-        <span style={{ fontSize: 12, color: P.textLight, whiteSpace: "nowrap", padding: "0 8px" }}>
-          <i className="fa-solid fa-chart-bar" style={{ marginLeft: 5, color: P.gold }} />
-          البيانات التحليلية
-          {data.schemaVersion && <span style={{ marginRight: 6, opacity: 0.7 }}>— MARQOOM_SCHEMA v{data.schemaVersion}</span>}
-        </span>
-        <div style={{ flex: 1, height: 1, background: `linear-gradient(270deg,${P.gold},transparent)` }} />
-      </div>
+    <div ref={containerRef} style={{ fontFamily: "'Noto Naskh Arabic','Amiri',serif", direction: "rtl" }}>
+      {/* شريط التنقل السريع */}
+      {navItems.length > 2 && <StickyNav items={navItems} activeId={activeSection} />}
 
-      {/* Book info */}
-      <Card style={{ borderTop: `4px solid ${P.gold}` }}>
-        <div style={{ display: "flex", alignItems: "flex-start", gap: 16, flexWrap: "wrap" }}>
-          <div style={{ width: 52, height: 52, borderRadius: 14, background: `linear-gradient(135deg,${P.emeraldDark},${P.emerald})`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-            <i className="fa-solid fa-book-open" style={{ fontSize: 20, color: P.goldLight }} />
-          </div>
-          <div style={{ flex: 1 }}>
-            <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 6 }}>
-              {data.category && <span style={{ background: P.creamDark, color: P.textMid, borderRadius: 20, padding: "2px 12px", fontSize: 12, fontWeight: 600 }}>{data.category}</span>}
-              {data.bookId && <span style={{ fontSize: 11, color: P.textLight, background: P.creamDark, padding: "2px 10px", borderRadius: 20 }}>{data.bookId}</span>}
-            </div>
-            <h2 style={{ fontFamily: "'Amiri',serif", fontSize: "clamp(17px,4.5vw,22px)", color: P.textDark, margin: "0 0 4px", fontWeight: 700 }}>{data.title}</h2>
-            <p style={{ color: P.textMid, fontSize: "clamp(13px,3vw,15px)", margin: 0 }}>
-              <i className="fa-solid fa-user-pen" style={{ marginLeft: 6, color: P.gold }} />
-              {data.author}
-              {data.diedHijri && <span style={{ color: P.textLight, fontSize: 13 }}> (ت {data.diedHijri}هـ)</span>}
-            </p>
-          </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: "clamp(18px,4vw,26px)", padding: "clamp(12px,3vw,20px) 0" }}>
+        {/* فاصل */}
+        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+          <div style={{ flex: 1, height: 1, background: `linear-gradient(90deg,${P.gold},transparent)` }} />
+          <span style={{ fontSize: 12, color: P.textLight, whiteSpace: "nowrap", padding: "0 8px" }}>
+            <i className="fa-solid fa-chart-bar" style={{ marginLeft: 5, color: P.gold }} />
+            البيانات التحليلية
+            {data.schemaVersion && <span style={{ marginRight: 6, opacity: 0.7 }}>— MARQOOM_SCHEMA v{data.schemaVersion}</span>}
+          </span>
+          <div style={{ flex: 1, height: 1, background: `linear-gradient(270deg,${P.gold},transparent)` }} />
         </div>
-        {data.generatedAt && (
-          <div style={{ marginTop: 12, fontSize: 11, color: P.textLight }}>
-            <i className="fa-solid fa-clock" style={{ marginLeft: 4 }} />
-            آخر تحديث: {new Date(data.generatedAt).toLocaleDateString("ar-SA")}
+
+        {/* بطاقة الكتاب */}
+        <Card id="sec-book" style={{ borderTop: `4px solid ${P.gold}`, scrollMarginTop: 80 }}>
+          <div style={{ display: "flex", alignItems: "flex-start", gap: 16, flexWrap: "wrap" }}>
+            <div style={{ width: 52, height: 52, borderRadius: 14, background: `linear-gradient(135deg,${P.emeraldDark},${P.emerald})`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+              <i className="fa-solid fa-book-open" style={{ fontSize: 20, color: P.goldLight }} />
+            </div>
+            <div style={{ flex: 1 }}>
+              <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 6 }}>
+                {data.category && <span style={{ background: P.creamDark, color: P.textMid, borderRadius: 20, padding: "2px 12px", fontSize: 12, fontWeight: 600 }}>{data.category}</span>}
+                {data.bookId && <span style={{ fontSize: 11, color: P.textLight, background: P.creamDark, padding: "2px 10px", borderRadius: 20 }}>{data.bookId}</span>}
+              </div>
+              <h2 style={{ fontFamily: "'Amiri',serif", fontSize: "clamp(17px,4.5vw,22px)", color: P.textDark, margin: "0 0 4px", fontWeight: 700 }}>{data.title}</h2>
+              <p style={{ color: P.textMid, fontSize: "clamp(13px,3vw,15px)", margin: 0 }}>
+                <i className="fa-solid fa-user-pen" style={{ marginLeft: 6, color: P.gold }} />
+                {data.author}
+                {data.diedHijri && <span style={{ color: P.textLight, fontSize: 13 }}> (ت {data.diedHijri}هـ)</span>}
+              </p>
+            </div>
           </div>
-        )}
-      </Card>
+          {data.generatedAt && (
+            <div style={{ marginTop: 12, fontSize: 11, color: P.textLight }}>
+              <i className="fa-solid fa-clock" style={{ marginLeft: 4 }} />
+              آخر تحديث: {new Date(data.generatedAt).toLocaleDateString("ar-SA")}
+            </div>
+          )}
+        </Card>
 
-      {/* Summary */}
-      <SummaryCards s={data.summary} />
+        {/* الأرقام الكبرى */}
+        <SummaryCards s={data.summary} />
 
-      {/* Purposes */}
-      <BarSection items={data.purposes} title="توزيع الأغراض الرئيسية" icon="fa-solid fa-bullseye" color={P.emerald} sub="أبرز الأغراض العلمية حسب التكرار" />
+        {/* الأغراض */}
+        <BarSection items={data.purposes} title="توزيع الأغراض الرئيسية" icon="fa-solid fa-bullseye" color={P.emerald} sub="أبرز الأغراض العلمية حسب التكرار" sectionId="sec-purposes" />
 
-      {/* Resources */}
-      <BarSection items={data.resources} title="أبرز الموارد العلمية" icon="fa-solid fa-layer-group" color={P.blue} sub="الموارد الأكثر حضوراً في الكتاب" />
+        {/* الموارد */}
+        <BarSection items={data.resources} title="أبرز الموارد العلمية" icon="fa-solid fa-layer-group" color={P.blue} sub="الموارد الأكثر حضوراً في الكتاب" sectionId="sec-resources" />
 
-      {/* Books */}
-      <BooksSection books={data.books} />
+        {/* الكتب */}
+        <BooksSection books={data.books} />
 
-      {/* People */}
-      <PeopleSection people={data.people} />
+        {/* الأعلام */}
+        <PeopleSection people={data.people} />
 
-      {/* Surahs */}
-      <SurahSection surahs={data.surahs} />
+        {/* السور */}
+        <SurahSection surahs={data.surahs} />
 
-      {/* Limits */}
-      <LimitsSection limits={data.limits} />
+        {/* الحدود */}
+        <LimitsSection limits={data.limits} />
+      </div>
     </div>
   );
 }

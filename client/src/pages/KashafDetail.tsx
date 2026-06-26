@@ -76,8 +76,6 @@ const KASHAFAT = [
     ],
     tag: "شرح حديث موسوعي",
     url: "https://marqoom1.dralhoshan.com",
-    xlsxUrl: "/manus-storage/fathalbaari_941b6fe4.xlsx",
-    docxUrl: "/manus-storage/fathalbaari_b996ac19.docx",
   },
   {
     id: "ibnabdulbar",
@@ -104,8 +102,6 @@ const KASHAFAT = [
     ],
     tag: "حديث وفقه مقارن",
     url: "https://marqoom2.dralhoshan.com",
-    xlsxUrl: "/manus-storage/ibnabdulbar_6a68a5e1.xlsx",
-    docxUrl: "/manus-storage/ibnabdulbar_c6225243.docx",
   },
   {
     id: "ibntimiah",
@@ -132,8 +128,6 @@ const KASHAFAT = [
     ],
     tag: "عقيدة وأصول",
     url: "https://marqoom3.dralhoshan.com",
-    xlsxUrl: "/manus-storage/ibntimiah_76aba10d.xlsx",
-    docxUrl: "/manus-storage/ibntimiah_f0915251.docx",
   },
   {
     id: "alrazi",
@@ -160,8 +154,6 @@ const KASHAFAT = [
     ],
     tag: "تفسير موسوعي جدلي",
     url: "https://marqoom4.dralhoshan.com",
-    xlsxUrl: "/manus-storage/alrazi_235e5b5f.xlsx",
-    docxUrl: "/manus-storage/alrazi_847cb397.docx",
   },
   {
     id: "alqurtubi",
@@ -188,8 +180,6 @@ const KASHAFAT = [
     ],
     tag: "تفسير فقهي موسوعي",
     url: "https://marqoom5.dralhoshan.com",
-    xlsxUrl: "/manus-storage/alqurtubi_8166b591.xlsx",
-    docxUrl: "/manus-storage/alqurtubi_91c92062.docx",
   },
   {
     id: "altabari",
@@ -216,8 +206,6 @@ const KASHAFAT = [
     ],
     tag: "تفسير بالمأثور",
     url: "https://marqoom6.dralhoshan.com",
-    xlsxUrl: "/manus-storage/altabari_b5a853f1.xlsx",
-    docxUrl: "/manus-storage/altabari_aebfc1ae.docx",
   },
   {
     id: "annawawe",
@@ -244,8 +232,6 @@ const KASHAFAT = [
     ],
     tag: "فقه شافعي موسوعي",
     url: "https://marqoom7.dralhoshan.com",
-    xlsxUrl: "/manus-storage/annawawe_1cadb86b.xlsx",
-    docxUrl: "/manus-storage/annawawe_d9bef041.docx",
   },
   {
     id: "almuhalla",
@@ -272,8 +258,6 @@ const KASHAFAT = [
     ],
     tag: "فقه ظاهري أثري",
     url: "https://marqoom8.dralhoshan.com",
-    xlsxUrl: "/manus-storage/almuhalla_c65c1027.xlsx",
-    docxUrl: "/manus-storage/almuhalla_63eccc4a.docx",
   },
   {
     id: "almughni",
@@ -300,8 +284,6 @@ const KASHAFAT = [
     ],
     tag: "فقه حنبلي مقارن",
     url: "https://marqoom9.dralhoshan.com",
-    xlsxUrl: "/manus-storage/almughni_32baf018.xlsx",
-    docxUrl: "/manus-storage/almughni_46f85955.docx",
   },
   {
     id: "albadaei",
@@ -328,8 +310,6 @@ const KASHAFAT = [
     ],
     tag: "فقه حنفي تعليلي",
     url: "https://marqoom10.dralhoshan.com",
-    xlsxUrl: "/manus-storage/albadaei_d6c19af7.xlsx",
-    docxUrl: "/manus-storage/albadaei_edee1f00.docx",
   },
   {
     id: "ibnalqayyim",
@@ -356,8 +336,6 @@ const KASHAFAT = [
     ],
     tag: "عقيدة وسلوك وفقه",
     url: "https://marqoom11.dralhoshan.com",
-    xlsxUrl: "/manus-storage/ibnalqayyim_e5c84b55.xlsx",
-    docxUrl: "/manus-storage/ibnalqayyim_da87858a.docx",
   },
   {
     id: "bukhari",
@@ -384,8 +362,6 @@ const KASHAFAT = [
     ],
     tag: "حديث مسند مبوّب",
     url: "https://marqoom12.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom12_bukhari_cd9d6e7d.xlsx",
-    docxUrl: "/manus-storage/marqoom12_bukhari_summary_8c490f7d.docx",
   },
   {
     id: "tamyiz",
@@ -411,8 +387,6 @@ const KASHAFAT = [
     ],
     tag: "نقد حديثي وعلل",
     url: "https://marqoom13.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom13_tamyiz_muslim_85cee9c0.xlsx",
-    docxUrl: "/manus-storage/marqoom13_tamyiz_summary_c18bd1c2.docx",
   },
   {
     id: "risala",
@@ -439,8 +413,6 @@ const KASHAFAT = [
     ],
     tag: "أصول فقه وفقه شافعي",
     url: "https://marqoom14.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom14_risala_umm_shafii_e476f1ed.xlsx",
-    docxUrl: "/manus-storage/marqoom14_risala_summary_649c92ab.docx",
   },
   {
     id: "mustasfa",
@@ -467,8 +439,6 @@ const KASHAFAT = [
     ],
     tag: "أصول فقه وجدل",
     url: "https://marqoom15.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom15_mustasfa_ghazali_9495ad89.xlsx",
-    docxUrl: "/manus-storage/marqoom15_mustasfa_summary_5739c413.docx",
   },
   {
     id: "baydawi",
@@ -495,8 +465,6 @@ const KASHAFAT = [
     ],
     tag: "تفسير تحريري",
     url: "https://marqoom16.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom16_tafsir_baydawi_7eea3e4b.xlsx",
-    docxUrl: "/manus-storage/marqoom16_baydawi_summary_cbce4fae.docx",
   },
   {
     id: "tawhid",
@@ -523,8 +491,6 @@ const KASHAFAT = [
     ],
     tag: "عقيدة توحيد",
     url: "https://marqoom17.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom17_tawhid_ibnabdulwahhab_fd5eff7a.xlsx",
-    docxUrl: "/manus-storage/marqoom17_tawhid_summary_2b31d140.docx",
   },
   {
     id: "sibawayh",
@@ -551,8 +517,6 @@ const KASHAFAT = [
     ],
     tag: "نحو ولغة تأسيسي",
     url: "https://marqoom18.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom18_kitab_sibawayh_9ddb004c.xlsx",
-    docxUrl: "/manus-storage/marqoom18_kitab_summary_5e8b63ce.docx",
   },
   {
     id: "rawdh",
@@ -579,8 +543,6 @@ const KASHAFAT = [
     ],
     tag: "فقه حنبلي شرح",
     url: "https://marqoom19.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom19_rawdh_murbaa_2b7056ae.xlsx",
-    docxUrl: "/manus-storage/marqoom19_rawdh_summary_002166e8.docx",
   },
   {
     id: "tirmidhi",
@@ -607,8 +569,6 @@ const KASHAFAT = [
     ],
     tag: "حديث نقدي",
     url: "https://marqoom20.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom20_tirmidhi_01990461.xlsx",
-    docxUrl: "/manus-storage/marqoom20_tirmidhi_summary_b45a2aad.docx",
   },
   {
     id: "muslim",
@@ -635,8 +595,6 @@ const KASHAFAT = [
     ],
     tag: "حديث صحيح",
     url: "https://marqoom21.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom21_muslim_4d89fd03.xlsx",
-    docxUrl: "/manus-storage/marqoom21_muslim_summary_20713e40.docx",
   },
   {
     id: "musnad-ahmad",
@@ -663,8 +621,6 @@ const KASHAFAT = [
     ],
     tag: "حديث مسند",
     url: "https://marqoom22.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom22_musnad_ahmad_073bdf65.xlsx",
-    docxUrl: "/manus-storage/marqoom22_musnad_ahmad_summary_1a562a5d.docx",
   },
   {
     id: "abudawud",
@@ -691,8 +647,6 @@ const KASHAFAT = [
     ],
     tag: "حديث فقهي",
     url: "https://marqoom23.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom23_abudawud_faf0eb40.xlsx",
-    docxUrl: "/manus-storage/marqoom23_abudawud_summary_7f8cfb3d.docx",
   },
   {
     id: "ibnmajah",
@@ -719,8 +673,6 @@ const KASHAFAT = [
     ],
     tag: "حديث سنن",
     url: "https://marqoom24.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom24_ibnmajah_04d20e3c.xlsx",
-    docxUrl: "/manus-storage/marqoom24_ibnmajah_summary_98fbc706.docx",
   },
   {
     id: "nasai",
@@ -747,8 +699,6 @@ const KASHAFAT = [
     ],
     tag: "حديث سنن كبرى",
     url: "https://marqoom25.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom25_nasai_7410c2d2.xlsx",
-    docxUrl: "/manus-storage/marqoom25_nasai_summary_b19f76be.docx",
   },
   {
     id: "darimi",
@@ -775,8 +725,6 @@ const KASHAFAT = [
     ],
     tag: "حديث مسند",
     url: "https://marqoom26.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom26_darimi_15c395c2.xlsx",
-    docxUrl: "/manus-storage/marqoom26_darimi_summary_aa80a77e.docx",
   },
   {
     id: "muwatta",
@@ -803,8 +751,6 @@ const KASHAFAT = [
     ],
     tag: "حديث فقهي مبكر",
     url: "https://marqoom27.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom27_muwatta_e5e9be5f.xlsx",
-    docxUrl: "/manus-storage/marqoom27_muwatta_summary_5066dfc3.docx",
   },
   {
     id: "ibnkhuzaymah",
@@ -831,8 +777,6 @@ const KASHAFAT = [
     ],
     tag: "حديث صحيح",
     url: "https://marqoom28.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom28_ibnkhuzaymah_824275ee.xlsx",
-    docxUrl: "/manus-storage/marqoom28_ibnkhuzaymah_summary_4cc8229f.docx",
   },
   {
     id: "seerah",
@@ -859,8 +803,6 @@ const KASHAFAT = [
     ],
     tag: "سيرة ومغازي",
     url: "https://marqoom29.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom29_seerah_e14e23f2.xlsx",
-    docxUrl: "/manus-storage/marqoom29_seerah_summary_3b589993.docx",
   },
   {
     id: "alawsat",
@@ -885,8 +827,6 @@ const KASHAFAT = [
     ],
     tag: "فقه مقارن",
     url: "https://marqoom30.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom30_alawsat_ibn_almundhir_9ec2bbd7.xlsx",
-    docxUrl: "/manus-storage/marqoom30_alawsat_summary_d68fce92.docx",
   },
   {
     id: "tahawi",
@@ -907,8 +847,6 @@ const KASHAFAT = [
     ],
     tag: "حديث وفقه",
     url: "https://marqoom31.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom31_sharh_maani_alathar_tahawi_2a189fb9.xlsx",
-    docxUrl: "/manus-storage/marqoom31_tahawi_summary_6cbde5c6.docx",
   },
   {
     id: "suhayli",
@@ -926,8 +864,6 @@ const KASHAFAT = [
     ],
     tag: "سيرة وشرح",
     url: "https://marqoom32.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom32_rawdh_alnf_suhayli_48feb2bd.xlsx",
-    docxUrl: "/manus-storage/marqoom32_suhayli_summary_6f63d368.docx",
   },
   {
     id: "nihaya",
@@ -946,8 +882,6 @@ const KASHAFAT = [
     ],
     tag: "غريب الحديث",
     url: "https://marqoom33.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom33_nihaya_gharib_hadith_ibn_atheer_69396255.xlsx",
-    docxUrl: "/manus-storage/marqoom33_nihaya_summary_877fc4de.docx",
   },
   {
     id: "bayhaqi",
@@ -968,8 +902,6 @@ const KASHAFAT = [
     ],
     tag: "حديث وفقه",
     url: "https://marqoom34.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom34_sunan_kubra_bayhaqi_d638fe21.xlsx",
-    docxUrl: "/manus-storage/marqoom34_bayhaqi_summary_6cb305f2.docx",
   },
   {
     id: "mizzi",
@@ -989,8 +921,6 @@ const KASHAFAT = [
     ],
     tag: "رجال الحديث",
     url: "https://marqoom35.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom35_tahdhib_alkamal_almizzi_e72bd391.xlsx",
-    docxUrl: "/manus-storage/marqoom35_mizzi_summary_072f451a.docx",
   },
   {
     id: "ibnabishaybah",
@@ -1010,8 +940,6 @@ const KASHAFAT = [
     ],
     tag: "حديث وآثار",
     url: "https://marqoom36.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom36_musannaf_ibn_abi_shayba_7002a8f8.xlsx",
-    docxUrl: "/manus-storage/marqoom36_ibn_abi_shayba_summary_4125f07f.docx",
   },
   {
     id: "ibnabihatimt",
@@ -1032,8 +960,6 @@ const KASHAFAT = [
     ],
     tag: "تفسير مسند",
     url: "https://marqoom37.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom37_tafsir_ibn_abi_hatim_49cb872c.xlsx",
-    docxUrl: "/manus-storage/marqoom37_ibn_abi_hatim_summary_cdacdfda.docx",
   },
   {
     id: "dhahabi",
@@ -1055,8 +981,6 @@ const KASHAFAT = [
     ],
     tag: "تراجم ورجال",
     url: "https://marqoom38.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom38_siyar_alam_nubala_dhahabi_7e5fe1f7.xlsx",
-    docxUrl: "/manus-storage/marqoom38_dhahabi_summary_9c498271.docx",
   },
   {
     id: "abdulrazzaq",
@@ -1077,8 +1001,6 @@ const KASHAFAT = [
     ],
     tag: "حديث وآثار",
     url: "https://marqoom39.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom39_musannaf_abdulrazzaq_8b02a06e.xlsx",
-    docxUrl: "/manus-storage/marqoom39_abdulrazzaq_summary_1517aca0.docx",
   },
   {
     id: "zamakhshari",
@@ -1104,8 +1026,6 @@ const KASHAFAT = [
     ],
     tag: "تفسير لغوي بلاغي",
     url: "https://marqoom40.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom40_zamakhshari_kashaf_a1148cea.xlsx",
-    docxUrl: "/manus-storage/marqoom40_zamakhshari_summary_b77efa95.docx",
   },
   {
     id: "saeed_ibn_mansur",
@@ -1131,8 +1051,6 @@ const KASHAFAT = [
     ],
     tag: "سنن حديثية فقهية",
     url: "https://marqoom41.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom41_saeed_ibn_mansur_cc03d825.xlsx",
-    docxUrl: "/manus-storage/marqoom41_saeed_ibn_mansur_summary_5975bb00.docx",
   },
   {
     id: "subul_alhuda",
@@ -1159,8 +1077,6 @@ const KASHAFAT = [
     ],
     tag: "سيرة نبوية موسوعية",
     url: "https://marqoom42.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom42_subul_alhuda_salhi_dfe2817c.xlsx",
-    docxUrl: "/manus-storage/marqoom42_subul_alhuda_summary_06caa745.docx",
   },
   {
     id: "isabah_ibn_hajar",
@@ -1184,8 +1100,6 @@ const KASHAFAT = [
     ],
     tag: "تراجم الصحابة",
     url: "https://marqoom43.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom43_isabah_ibn_hajar_c2f5f318.xlsx",
-    docxUrl: "/manus-storage/marqoom43_isabah_summary_45f08504.docx",
   },
   {
     id: "mujam_albuldan",
@@ -1212,8 +1126,6 @@ const KASHAFAT = [
     ],
     tag: "معجم جغرافي تاريخي",
     url: "https://marqoom44.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom44_mujam_albuldan_yaqut_6463a464.xlsx",
-    docxUrl: "/manus-storage/marqoom44_mujam_albuldan_summary_d6ec9085.docx",
   },
   {
     id: "alam_alzarkali",
@@ -1240,8 +1152,6 @@ const KASHAFAT = [
     ],
     tag: "موسوعة تراجم وأعلام",
     url: "https://marqoom45.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom45_alam_alzarkali_02ac0b0d.xlsx",
-    docxUrl: "/manus-storage/marqoom45_alam_alzarkali_summary_916bdfbe.docx",
   },
   {
     id: "tahawiyya_ibn_abi_aliz",
@@ -1267,8 +1177,6 @@ const KASHAFAT = [
     ],
     tag: "شرح عقدي تقريري",
     url: "https://marqoom46.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom46_tahawiyya_ibn_abi_aliz_aaadc8b1.xlsx",
-    docxUrl: "/manus-storage/marqoom46_tahawiyya_summary_ff6aecb0.docx",
   },
   {
     id: "khalq_afal_albukhari",
@@ -1294,8 +1202,6 @@ const KASHAFAT = [
     ],
     tag: "مصنف عقدي",
     url: "https://marqoom47.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom47_khalq_afal_albukhari_d7b4faff.xlsx",
-    docxUrl: "/manus-storage/marqoom47_khalq_afal_summary_a33758b6.docx",
   },
   {
     id: "usul_itiqad_allalikai",
@@ -1321,8 +1227,6 @@ const KASHAFAT = [
     ],
     tag: "مصنف عقدي أثري مسند",
     url: "https://marqoom48.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom48_usul_itiqad_allalikai_afa85dee.xlsx",
-    docxUrl: "/manus-storage/marqoom48_usul_itiqad_summary_82b76129.docx",
   },
   {
     id: "lisan_alarab",
@@ -1348,8 +1252,6 @@ const KASHAFAT = [
     ],
     tag: "معجم لغوي موسوعي",
     url: "https://marqoom49.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom49_lisan_alarab_ibn_manzur_4d7de4c8.xlsx",
-    docxUrl: "/manus-storage/marqoom49_lisan_alarab_summary_9d1ac665.docx",
   },
   {
     id: "wahidi",
@@ -1366,8 +1268,6 @@ const KASHAFAT = [
       { label: "متوسط كلمات/آية", value: "28.35" },
     ],
     url: "https://marqoom50.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom50_wahidi_90b7a3c0.xlsx",
-    docxUrl: "/manus-storage/marqoom50_wahidi_report_fa0ec33c.docx",
     chartData: [
         { label: "شرح وتفسير", pct: 45 },
         { label: "استدلال بالقرآن", pct: 25 },
@@ -1390,8 +1290,6 @@ const KASHAFAT = [
       { label: "عناوين داخلية", value: "37,773" },
     ],
     url: "https://marqoom51.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom51_mawsuah_0933d1b3.xlsx",
-    docxUrl: "/manus-storage/marqoom51_mawsuah_summary_29dbfbae.docx",
     chartData: [
         { label: "تعليل وضبط", pct: 35 },
         { label: "الشافعية", pct: 25 },
@@ -1413,8 +1311,6 @@ const KASHAFAT = [
       { label: "عبارات القاموس", value: "36,657" },
     ],
     url: "https://marqoom52.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom52_baghawi_09e433c2.xlsx",
-    docxUrl: "/manus-storage/marqoom52_baghawi_summary_34918c05.docx",
     chartData: [
         { label: "شرح وتفسير", pct: 40 },
         { label: "نقل وعزو", pct: 25 },
@@ -1437,8 +1333,6 @@ const KASHAFAT = [
       { label: "مؤشر الخلاف", value: "90.41%" },
     ],
     url: "https://marqoom53.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom53_abusaud_0a6a58c9.xlsx",
-    docxUrl: "/manus-storage/marqoom53_abusaud_summary_d0cbc98c.docx",
     chartData: [
         { label: "الخلاف والترجيح", pct: 35 },
         { label: "اللغة والنحو", pct: 25 },
@@ -1461,8 +1355,6 @@ const KASHAFAT = [
       { label: "نسبتها", value: "26.41%" },
     ],
     url: "https://marqoom54.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom54_ibnarafa_f128738b.xlsx",
-    docxUrl: "/manus-storage/marqoom54_ibnarafa_summary_41d90a19.docx",
     chartData: [
         { label: "الخلاف والترجيح", pct: 30 },
         { label: "اللغة والنحو", pct: 25 },
@@ -1484,8 +1376,6 @@ const KASHAFAT = [
       { label: "مؤشرات منهجية", value: "23,863" },
     ],
     url: "https://marqoom55.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom55_nasafi_b69ef957.xlsx",
-    docxUrl: "/manus-storage/marqoom55_nasafi_summary_07a7c072.docx",
     chartData: [
         { label: "شرح وتفسير", pct: 40 },
         { label: "اللغة والنحو", pct: 25 },
@@ -1508,8 +1398,6 @@ const KASHAFAT = [
       { label: "استدلال بالقرآن", value: "760" },
     ],
     url: "https://marqoom56.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom56_tayseer_4b70ccff.xlsx",
-    docxUrl: "/manus-storage/marqoom56_tayseer_summary_0c9f59bb.docx",
     chartData: [
         { label: "شرح وتحليل", pct: 35 },
         { label: "استدلال بالقرآن", pct: 25 },
@@ -1532,8 +1420,6 @@ const KASHAFAT = [
       { label: "أعلى راوٍ", value: "أبو هريرة" },
     ],
     url: "https://marqoom57.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom57_jamialasul_811c25d4.xlsx",
-    docxUrl: "/manus-storage/marqoom57_jamialasul_summary_f6bf4952.docx",
     chartData: [
         { label: "النقل والعزو", pct: 41 },
         { label: "شرح الغريب", pct: 36 },
@@ -1556,8 +1442,6 @@ const KASHAFAT = [
       { label: "نطاق الصفحات", value: "33–138" },
     ],
     url: "https://marqoom58.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom58_barbahary_cc7362c6.xlsx",
-    docxUrl: "/manus-storage/marqoom58_barbahary_summary_4fa02dec.docx",
     chartData: [
         { label: "العقيدة السلفية", pct: 50 },
         { label: "الرد على البدع", pct: 25 },
@@ -1580,8 +1464,6 @@ const KASHAFAT = [
       { label: "آيات فريدة", value: "11" },
     ],
     url: "https://marqoom59.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom59_ibmandah_21c4c038.xlsx",
-    docxUrl: "/manus-storage/marqoom59_ibmandah_summary_1d164c7a.docx",
     chartData: [
         { label: "الصفات والأسماء", pct: 40 },
         { label: "الرد على الجهمية", pct: 35 },
@@ -1604,8 +1486,6 @@ const KASHAFAT = [
       { label: "مصطلح أصولي", value: "6,708" },
     ],
     url: "https://marqoom60.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom60_sarakhsi_usul_e938ab7d.xlsx",
-    docxUrl: "/manus-storage/marqoom60_sarakhsi_summary_40653c8c.docx",
     chartData: [
       { label: "القياس والاستدلال", pct: 38 },
       { label: "الإجماع والنص", pct: 30 },
@@ -1628,8 +1508,6 @@ const KASHAFAT = [
       { label: "مراجع قرآنية", value: "6,497" },
     ],
     url: "https://marqoom61.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom61_bahr_muhit_zarkashi_29a57884.xlsx",
-    docxUrl: "/manus-storage/marqoom61_bahr_muhit_summary_3de2bd10.docx",
     jsonUrl: "/manus-storage/bahralmuhit_view_cache_9111cda1.json",
     chartData: [
       { label: "الأدلة والاستدلال", pct: 35 },
@@ -1653,8 +1531,6 @@ const KASHAFAT = [
       { label: "عبارة خلاف", value: "1,203" },
     ],
     url: "https://marqoom62.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom62_tadrib_rawi_suyuti_e76ce822.xlsx",
-    docxUrl: "/manus-storage/marqoom62_tadrib_summary_6d04886a.docx",
     jsonUrl: "/manus-storage/marqoom_fayd_alqadir_view_cache_207df957.json",
     chartData: [
       { label: "صيغ الرواية والأداء", pct: 40 },
@@ -1678,8 +1554,6 @@ const KASHAFAT = [
       { label: "إشارة قارئ", value: "11,204" },
     ],
     url: "https://marqoom63.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom63_jamia_bayan_dani_8b5246c6.xlsx",
-    docxUrl: "/manus-storage/marqoom63_dani_summary_970cf5ac.docx",
     chartData: [
       { label: "صيغ الأداء والرواية", pct: 45 },
       { label: "إشارات القراء", pct: 30 },
@@ -1699,8 +1573,6 @@ const KASHAFAT = [
       { label: "تصنيف", value: "أصول فقه" },
     ],
     url: "https://marqoom64.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom64_rawda_taqrir_3c7ce6b9.xlsx",
-    docxUrl: "/manus-storage/marqoom64_rawda_taqrir_summary_ad6d52bb.docx",
     chartData: [
       { label: "الأدلة الأصولية", pct: 40 },
       { label: "المصطلحات", pct: 35 },
@@ -1719,8 +1591,6 @@ const KASHAFAT = [
       { label: "تصنيف", value: "أصول حنبلي" },
     ],
     url: "https://marqoom65.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom65_rawda_nazir_ibn_qudama_09250c8e.xlsx",
-    docxUrl: "/manus-storage/marqoom65_rawda_nazir_summary_ba607cd0.docx",
     chartData: [
       { label: "الأدلة والاستدلال", pct: 42 },
       { label: "المصطلحات الأصولية", pct: 33 },
@@ -1739,8 +1609,6 @@ const KASHAFAT = [
       { label: "تصنيف", value: "قراءات" },
     ],
     url: "https://marqoom66.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom66_sharh_tayba_nuwayri_b7aeda69.xlsx",
-    docxUrl: "/manus-storage/marqoom66_nuwayri_summary_38bebf04.docx",
     chartData: [
       { label: "صيغ الأداء", pct: 45 },
       { label: "إشارات القراء", pct: 35 },
@@ -1762,8 +1630,6 @@ const KASHAFAT = [
       { label: "إشارة علم", value: "1,619" },
     ],
     url: "https://marqoom67.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom67_sharh_mukhtasar_rawda_tufi_94a8d65c.xlsx",
-    docxUrl: "/manus-storage/marqoom67_tufi_summary_a34110a2.docx",
     chartData: [
       { label: "الأدلة والاستدلال", pct: 36 },
       { label: "الخلاف المذهبي", pct: 28 },
@@ -1786,8 +1652,6 @@ const KASHAFAT = [
       { label: "إشارة علم", value: "5,222" },
     ],
     url: "https://marqoom68.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom68_fath_mughith_sakhawi_f023fb79.xlsx",
-    docxUrl: "/manus-storage/marqoom68_fath_mughith_summary_b3d813aa.docx",
     chartData: [
       { label: "مصطلحات علوم الحديث", pct: 40 },
       { label: "صيغ الرواية والأداء", pct: 30 },
@@ -1810,8 +1674,6 @@ const KASHAFAT = [
       { label: "كلمة متن", value: "692,155" },
     ],
     url: "https://marqoom69.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom69_mujam_udaba_yaqut_a2df7079.xlsx",
-    docxUrl: "/manus-storage/marqoom69_mujam_udaba_summary_472e3944.docx",
         chartData: [
       { label: "التراجم الأدبية", pct: 50 },
       { label: "المصادر والمراجع", pct: 25 },
@@ -1837,8 +1699,6 @@ const KASHAFAT = [
     ],
     tag: "موسوعي تحريري عزوي",
     url: "https://marqoom70.dralhoshan.com",
-    xlsxUrl: "/manus-storage/marqoom70_aqeela_ziyadah_6d26f63d.xlsx",
-    docxUrl: "/manus-storage/marqoom70_aqeela_ziyadah_mulakhkhas_e83dbaf2.docx",
     chartData: [
       { label: "الإحالة والبناء الداخلي", pct: 27 },
       { label: "الاستدلال والتعليل", pct: 25 },
@@ -2256,62 +2116,7 @@ export default function KashafDetail() {
         )}
 
 
-        {/* CTA section */}
-        <div style={{
-          background: `linear-gradient(135deg, ${T.emeraldDark} 0%, ${T.emerald} 100%)`,
-          borderRadius: 14, padding: "clamp(20px,4vw,32px)",
-          position: "relative", overflow: "hidden",
-        }}>
-          <div style={{
-            position: "absolute", inset: 0, opacity: 0.05,
-            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M20 0 L40 20 L20 40 L0 20Z' fill='none' stroke='%23B5A05A' stroke-width='1'/%3E%3C/svg%3E")`,
-            backgroundSize: "40px 40px",
-          }} />
-          <div style={{ position: "relative", zIndex: 1 }}>
-            <h3 style={{ fontFamily: "'Amiri', serif", fontSize: "clamp(17px,4vw,22px)", color: T.white, marginBottom: 8 }}>
-              تحميل الكشاف
-            </h3>
-            <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "clamp(13px,3vw,14px)", marginBottom: 20 }}>
-              حمّل الكشاف بصيغة Excel أو Word للاستخدام المباشر
-            </p>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
-              <a
-                href={kashaf.xlsxUrl}
-                download
-                style={{
-                  display: "inline-flex", alignItems: "center", gap: 6,
-                  padding: "clamp(11px,2.5vw,13px) clamp(16px,3vw,20px)",
-                  borderRadius: 8, background: "rgba(255,255,255,0.15)",
-                  border: "1px solid rgba(255,255,255,0.3)",
-                  color: T.white, fontSize: "clamp(13px,3vw,14px)", fontWeight: 600,
-                  fontFamily: "'Noto Naskh Arabic', serif", textDecoration: "none",
-                  transition: "background 0.2s", WebkitTapHighlightColor: "transparent",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.25)")}
-                onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.15)")}
-              >
-                <i className="fa-solid fa-download" style={{ fontSize: 13 }} /><span>Excel</span>
-              </a>
-              <a
-                href={kashaf.docxUrl}
-                download
-                style={{
-                  display: "inline-flex", alignItems: "center", gap: 6,
-                  padding: "clamp(11px,2.5vw,13px) clamp(16px,3vw,20px)",
-                  borderRadius: 8, background: "rgba(255,255,255,0.15)",
-                  border: "1px solid rgba(255,255,255,0.3)",
-                  color: T.white, fontSize: "clamp(13px,3vw,14px)", fontWeight: 600,
-                  fontFamily: "'Noto Naskh Arabic', serif", textDecoration: "none",
-                  transition: "background 0.2s", WebkitTapHighlightColor: "transparent",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.25)")}
-                onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.15)")}
-              >
-                <i className="fa-solid fa-download" style={{ fontSize: 13 }} /><span>Word</span>
-              </a>
-            </div>
-          </div>
-        </div>
+
 
       </main>
 

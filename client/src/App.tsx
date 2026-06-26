@@ -8,8 +8,8 @@ import Home from "@/pages/Home";
 import KashafDetail from "@/pages/KashafDetail";
 import KashafViewer from "@/pages/KashafViewer";
 
-
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path={"/"} component={Home} />
