@@ -2259,30 +2259,12 @@ export default function KashafDetail() {
           }} />
           <div style={{ position: "relative", zIndex: 1 }}>
             <h3 style={{ fontFamily: "'Amiri', serif", fontSize: "clamp(17px,4vw,22px)", color: T.white, marginBottom: 8 }}>
-              استعرض الكشاف كاملاً
+              تحميل الكشاف
             </h3>
             <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "clamp(13px,3vw,14px)", marginBottom: 20 }}>
-              ادخل إلى الكشاف التفاعلي الكامل مع جميع الفهارس والتحليلات
+              حمّل الكشاف بصيغة Excel أو Word للاستخدام المباشر
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
-              <a
-                href={kashaf.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: "inline-flex", alignItems: "center", gap: 8,
-                  padding: "clamp(11px,2.5vw,13px) clamp(20px,4vw,28px)",
-                  borderRadius: 8, background: T.gold, color: T.dark,
-                  fontSize: "clamp(14px,3.5vw,16px)", fontWeight: 700,
-                  fontFamily: "'Noto Naskh Arabic', serif", textDecoration: "none",
-                  transition: "background 0.2s", WebkitTapHighlightColor: "transparent",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.background = T.goldLight)}
-                onMouseLeave={(e) => (e.currentTarget.style.background = T.gold)}
-              >
-                <span>دخول الكشاف</span>
-                <i className="fa-solid fa-arrow-right" style={{ fontSize: 14 }} />
-              </a>
               <a
                 href={kashaf.xlsxUrl}
                 download
