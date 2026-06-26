@@ -910,7 +910,7 @@ const KASHAFAT = [
   },
 
   {
-    id: "kashaf50",
+    id: "wahidi",
     num: 50,
     title: "كشّاف التفسير الوجيز للواحدي",
     author: "الواحدي النيسابوري",
@@ -926,7 +926,7 @@ const KASHAFAT = [
     url: "https://marqoom50.dralhoshan.com",
   },
   {
-    id: "kashaf51",
+    id: "mawsuah_fiqhiyya",
     num: 51,
     title: "كشّاف الموسوعة الفقهية الكويتية",
     author: "وزارة الأوقاف الكويتية",
@@ -942,7 +942,7 @@ const KASHAFAT = [
     url: "https://marqoom51.dralhoshan.com",
   },
   {
-    id: "kashaf52",
+    id: "baghawi",
     num: 52,
     title: "كشّاف تفسير البغوي",
     author: "البغوي",
@@ -957,7 +957,7 @@ const KASHAFAT = [
     url: "https://marqoom52.dralhoshan.com",
   },
   {
-    id: "kashaf53",
+    id: "abusaud",
     num: 53,
     title: "كشّاف تفسير أبي السعود",
     author: "أبو السعود العمادي",
@@ -973,7 +973,7 @@ const KASHAFAT = [
     url: "https://marqoom53.dralhoshan.com",
   },
   {
-    id: "kashaf54",
+    id: "ibnarafa",
     num: 54,
     title: "كشّاف تفسير ابن عرفة",
     author: "ابن عرفة المالكي",
@@ -989,7 +989,7 @@ const KASHAFAT = [
     url: "https://marqoom54.dralhoshan.com",
   },
   {
-    id: "kashaf55",
+    id: "nasafi",
     num: 55,
     title: "كشّاف تفسير النسفي",
     author: "النسفي",
@@ -1004,7 +1004,7 @@ const KASHAFAT = [
     url: "https://marqoom55.dralhoshan.com",
   },
   {
-    id: "kashaf56",
+    id: "tayseer",
     num: 56,
     title: "كشّاف تيسير العزيز الحميد",
     author: "سليمان بن عبدالله آل الشيخ",
@@ -1020,7 +1020,7 @@ const KASHAFAT = [
     url: "https://marqoom56.dralhoshan.com",
   },
   {
-    id: "kashaf57",
+    id: "jamialasul",
     num: 57,
     title: "كشّاف جامع الأصول لابن الأثير",
     author: "ابن الأثير الجزري",
@@ -1036,7 +1036,7 @@ const KASHAFAT = [
     url: "https://marqoom57.dralhoshan.com",
   },
   {
-    id: "kashaf58",
+    id: "barbahary",
     num: 58,
     title: "كشّاف شرح السنة للبربهاري",
     author: "البربهاري",
@@ -1052,7 +1052,7 @@ const KASHAFAT = [
     url: "https://marqoom58.dralhoshan.com",
   },
   {
-    id: "kashaf59",
+    id: "ibmandah",
     num: 59,
     title: "كشّاف الرد على الجهمية لابن منده",
     author: "ابن منده",
@@ -1068,7 +1068,7 @@ const KASHAFAT = [
     url: "https://marqoom59.dralhoshan.com",
   },
   {
-    id: "kashaf60",
+    id: "sarakhsi_usul",
     num: 60,
     title: "كشّاف أصول السرخسي",
     author: "السرخسي",
@@ -1084,7 +1084,7 @@ const KASHAFAT = [
     url: "https://marqoom60.dralhoshan.com",
   },
   {
-    id: "kashaf61",
+    id: "bahr_muhit_zarkashi",
     num: 61,
     title: "كشّاف البحر المحيط للزركشي",
     author: "الزركشي",
@@ -1100,7 +1100,7 @@ const KASHAFAT = [
     url: "https://marqoom61.dralhoshan.com",
   },
   {
-    id: "kashaf62",
+    id: "tadrib_rawi_suyuti",
     num: 62,
     title: "كشّاف تدريب الراوي للسيوطي",
     author: "السيوطي",
@@ -1116,7 +1116,7 @@ const KASHAFAT = [
     url: "https://marqoom62.dralhoshan.com",
   },
   {
-    id: "kashaf63",
+    id: "jamia_bayan_dani",
     num: 63,
     title: "كشّاف جامع البيان في القراءات للداني",
     author: "أبو عمرو الداني",
@@ -1132,7 +1132,7 @@ const KASHAFAT = [
     url: "https://marqoom63.dralhoshan.com",
   },
   {
-    id: "kashaf64",
+    id: "rawda_taqrir",
     num: 64,
     title: "كشّاف روضة التقرير",
     author: "مجهول",
@@ -1145,7 +1145,7 @@ const KASHAFAT = [
     url: "https://marqoom64.dralhoshan.com",
   },
   {
-    id: "kashaf65",
+    id: "rawda_nazir_ibn_qudama",
     num: 65,
     title: "كشّاف روضة الناظر لابن قدامة",
     author: "ابن قدامة",
@@ -1158,7 +1158,7 @@ const KASHAFAT = [
     url: "https://marqoom65.dralhoshan.com",
   },
   {
-    id: "kashaf66",
+    id: "sharh_tayba_nuwayri",
     num: 66,
     title: "كشّاف شرح طيبة النشر للنويري",
     author: "النويري",
@@ -1171,7 +1171,7 @@ const KASHAFAT = [
     url: "https://marqoom66.dralhoshan.com",
   },
   {
-    id: "kashaf67",
+    id: "sharh_mukhtasar_rawda_tufi",
     num: 67,
     title: "كشّاف شرح مختصر الروضة للطوفي",
     author: "الطوفي",
@@ -1187,7 +1187,7 @@ const KASHAFAT = [
     url: "https://marqoom67.dralhoshan.com",
   },
   {
-    id: "kashaf68",
+    id: "fath_mughith_sakhawi",
     num: 68,
     title: "كشّاف فتح المغيث للسخاوي",
     author: "السخاوي",
@@ -1203,7 +1203,7 @@ const KASHAFAT = [
     url: "https://marqoom68.dralhoshan.com",
   },
   {
-    id: "kashaf69",
+    id: "mujam_udaba_yaqut",
     num: 69,
     title: "كشّاف معجم الأدباء لياقوت الحموي",
     author: "ياقوت الحموي",
