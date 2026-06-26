@@ -1,4 +1,5 @@
 import ViewCacheViewer from "@/components/ViewCacheViewer";
+import DetailedTablesViewer from "@/components/DetailedTablesViewer";
 import { useEffect, useRef, useState } from "react";
 import { useParams, useLocation } from "wouter";
 import { useTheme } from "@/contexts/ThemeContext";
@@ -2115,8 +2116,10 @@ export default function KashafDetail() {
           </div>
         )}
 
-
-
+        {/* قسم الجداول التفصيلية */}
+        {"jsonUrl" in kashaf && kashaf.jsonUrl && (
+          <DetailedTablesSection jsonUrl={(kashaf as any).jsonUrl} isDark={isDark} T={T} />
+        )}
 
       </main>
 
@@ -2143,6 +2146,132 @@ export default function KashafDetail() {
         <p style={{ color: T.goldLight, fontSize: "clamp(11px,2.5vw,12px)", opacity: 0.75 }}>© 1448هـ / 2026م — جميع الحقوق محفوظة</p>
       </footer>
 
+    </div>
+  );
+}
+
+// ── مكوّن قسم الجداول التفصيلية ──
+// يحمّل view_cache.json ويمرّره لـ DetailedTablesViewer
+function DetailedTablesSection({
+  jsonUrl,
+  isDark,
+  T,
+}: {
+  jsonUrl: string;
+  isDark: boolean;
+  T: typeof C;
+}) {
+  const [data, setData] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    setLoading(true);
+    setError(null);
+    fetch(jsonUrl)
+      .then((r) => {
+        if (!r.ok) throw new Error(`فشل تحميل البيانات (${r.status})`);
+        return r.json();
+      })
+      .then((d) => { setData(d); setLoading(false); })
+      .catch((e) => { setError(e.message || "خطأ في التحميل"); setLoading(false); });
+  }, [jsonUrl]);
+
+  return (
+    <div
+      style={{
+        marginBottom: "clamp(20px,4vw,28px)",
+        background: isDark ? T.creamDark : T.white,
+        borderRadius: 16,
+        border: `1px solid ${isDark ? "rgba(255,255,255,0.08)" : T.creamMid}`,
+        boxShadow: "0 2px 16px rgba(0,0,0,0.06)",
+        overflow: "hidden",
+      }}
+    >
+      {/* رأس القسم */}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: 10,
+          padding: "clamp(14px,3vw,20px) clamp(16px,4vw,24px)",
+          background: isDark
+            ? "linear-gradient(135deg, #0D3A36, #0A2A28)"
+            : `linear-gradient(135deg, ${C.emeraldDark}, ${C.emerald})`,
+          borderBottom: `2px solid ${isDark ? "rgba(181,160,90,0.3)" : C.gold}`,
+          direction: "rtl",
+        }}
+      >
+        <span style={{ fontSize: "clamp(18px,4vw,22px)" }}>📊</span>
+        <div>
+          <h2
+            style={{
+              fontFamily: "'Amiri', serif",
+              fontSize: "clamp(17px,4vw,22px)",
+              fontWeight: 700,
+              color: "#FFFFFF",
+              margin: 0,
+              lineHeight: 1.3,
+            }}
+          >
+            الجداول التفصيلية
+          </h2>
+          <p
+            style={{
+              fontSize: "clamp(11px,2.5vw,13px)",
+              color: "rgba(255,255,255,0.75)",
+              margin: "3px 0 0",
+              fontFamily: "'Noto Naskh Arabic', serif",
+            }}
+          >
+            بيانات الكشاف التحليلية — قابلة للبحث والفرز والتصفية
+          </p>
+        </div>
+      </div>
+
+      {/* المحتوى */}
+      <div style={{ padding: "clamp(16px,3vw,24px)" }}>
+        {loading ? (
+          <div
+            style={{
+              padding: "40px 20px",
+              textAlign: "center",
+              color: isDark ? T.textMid : C.textMid,
+              fontFamily: "'Noto Naskh Arabic', serif",
+              direction: "rtl",
+            }}
+          >
+            <div
+              style={{
+                width: 36,
+                height: 36,
+                border: `3px solid ${C.creamMid}`,
+                borderTopColor: C.emerald,
+                borderRadius: "50%",
+                animation: "spin 0.8s linear infinite",
+                margin: "0 auto 12px",
+              }}
+            />
+            <p style={{ fontSize: 14 }}>جارٍ تحميل الجداول التفصيلية...</p>
+            <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+          </div>
+        ) : error ? (
+          <div
+            style={{
+              padding: "32px 20px",
+              textAlign: "center",
+              color: "#C0392B",
+              fontFamily: "'Noto Naskh Arabic', serif",
+              direction: "rtl",
+            }}
+          >
+            <div style={{ fontSize: 32, marginBottom: 10 }}>⚠️</div>
+            <p style={{ fontSize: 14 }}>{error}</p>
+          </div>
+        ) : data ? (
+          <DetailedTablesViewer data={data} isDark={isDark} />
+        ) : null}
+      </div>
     </div>
   );
 }
