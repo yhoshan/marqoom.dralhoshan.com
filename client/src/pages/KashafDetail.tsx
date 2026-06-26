@@ -1,3 +1,4 @@
+import ViewCacheViewer from "@/components/ViewCacheViewer";
 import { useEffect, useRef, useState } from "react";
 import { useParams, useLocation } from "wouter";
 import { useTheme } from "@/contexts/ThemeContext";
@@ -1629,6 +1630,7 @@ const KASHAFAT = [
     url: "https://marqoom61.dralhoshan.com",
     xlsxUrl: "/manus-storage/marqoom61_bahr_muhit_zarkashi_29a57884.xlsx",
     docxUrl: "/manus-storage/marqoom61_bahr_muhit_summary_3de2bd10.docx",
+    jsonUrl: "/manus-storage/bahralmuhit_view_cache_9111cda1.json",
     chartData: [
       { label: "الأدلة والاستدلال", pct: 35 },
       { label: "الخلاف المذهبي", pct: 30 },
@@ -2245,6 +2247,13 @@ export default function KashafDetail() {
             <DonutChart data={kashaf.chartData} color={catColor.bar} />
           </div>
         </div>
+        {/* ViewCache section */}
+        {"jsonUrl" in kashaf && kashaf.jsonUrl && (
+          <div style={{ marginBottom: "clamp(20px,4vw,28px)" }}>
+            <ViewCacheViewer jsonUrl={(kashaf as any).jsonUrl} />
+          </div>
+        )}
+
 
         {/* CTA section */}
         <div style={{
