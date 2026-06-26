@@ -1655,6 +1655,7 @@ const KASHAFAT = [
     url: "https://marqoom62.dralhoshan.com",
     xlsxUrl: "/manus-storage/marqoom62_tadrib_rawi_suyuti_e76ce822.xlsx",
     docxUrl: "/manus-storage/marqoom62_tadrib_summary_6d04886a.docx",
+    jsonUrl: "/manus-storage/marqoom_fayd_alqadir_view_cache_207df957.json",
     chartData: [
       { label: "صيغ الرواية والأداء", pct: 40 },
       { label: "مصطلحات علوم الحديث", pct: 30 },
