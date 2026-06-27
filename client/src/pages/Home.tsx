@@ -1564,6 +1564,12 @@ export default function Home() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
   const searchRef = useRef<HTMLInputElement>(null);
+  const filterTabsRef = useRef<HTMLDivElement>(null);
+  const scrollFilterTabs = (dir: "left" | "right") => {
+    if (!filterTabsRef.current) return;
+    const el = filterTabsRef.current;
+    el.scrollBy({ left: dir === "left" ? -160 : 160, behavior: "smooth" });
+  };
   const { theme, toggleTheme } = useTheme();
   const isDark = theme === "dark";
   const T = isDark ? D : C;
@@ -1872,7 +1878,12 @@ export default function Home() {
         zIndex: 100,
         boxShadow: isDark ? "0 2px 12px rgba(0,0,0,0.4)" : "0 2px 12px rgba(13,138,122,0.12)",
       }}>
-        <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 12px", display: "flex", alignItems: "center", gap: 4, overflowX: "auto", scrollbarWidth: "none", WebkitOverflowScrolling: "touch" }}>
+        <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 4px", display: "flex", alignItems: "center", gap: 0, position: "relative" }}>
+          {/* سهم اليسار (للتمرير لليسار في RTL) */}
+          <button onClick={() => scrollFilterTabs("right")} style={{ flexShrink: 0, background: "none", border: "none", cursor: "pointer", padding: "0 6px", color: T.emerald, fontSize: 18, display: "flex", alignItems: "center", minHeight: 52 }}>
+            ❯
+          </button>
+          <div ref={filterTabsRef} style={{ flex: 1, display: "flex", alignItems: "center", gap: 4, overflowX: "auto", scrollbarWidth: "none", WebkitOverflowScrolling: "touch", padding: "0 4px" }}>
           <span style={{ color: T.textLight, fontSize: "clamp(12px,3vw,13px)", whiteSpace: "nowrap", padding: "0 10px 0 0", borderLeft: `1px solid ${T.creamMid}`, paddingLeft: 12, marginLeft: 4, flexShrink: 0, minHeight: 52, display: "flex", alignItems: "center" }}>التصنيف:</span>
           {CATEGORIES.map((cat) => (
             <button
@@ -1902,6 +1913,11 @@ export default function Home() {
               </span>
             </button>
           ))}
+          </div>
+          {/* سهم اليمين (للتمرير لليمين في RTL) */}
+          <button onClick={() => scrollFilterTabs("left")} style={{ flexShrink: 0, background: "none", border: "none", cursor: "pointer", padding: "0 6px", color: T.emerald, fontSize: 18, display: "flex", alignItems: "center", minHeight: 52 }}>
+            ❮
+          </button>
         </div>
       </div>
 
