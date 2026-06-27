@@ -1830,12 +1830,54 @@ export default function KashafDetail() {
   const { id } = useParams<{ id: string }>();
   const [, navigate] = useLocation();
   const [showAbout, setShowAbout] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("sec-stats");
+  // جلب JSON مرة واحدة على مستوى الصفحة
+  const [jsonData, setJsonData] = useState<any>(null);
+  const [jsonLoading, setJsonLoading] = useState(false);
+  const [jsonError, setJsonError] = useState<string | null>(null);
 
   const kashaf = KASHAFAT.find((k) => k.id === id);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [id]);
+
+  // جلب JSON عند تغيير الكشاف
+  useEffect(() => {
+    if (!kashaf || !("jsonUrl" in kashaf) || !(kashaf as any).jsonUrl) {
+      setJsonData(null);
+      return;
+    }
+    const url = (kashaf as any).jsonUrl as string;
+    setJsonLoading(true);
+    setJsonError(null);
+    setJsonData(null);
+    fetch(url)
+      .then((r) => {
+        if (!r.ok) throw new Error(`فشل تحميل البيانات (${r.status})`);
+        return r.json();
+      })
+      .then((d) => { setJsonData(d); setJsonLoading(false); })
+      .catch((e) => { setJsonError(e.message || "خطأ في التحميل"); setJsonLoading(false); });
+  }, [id, kashaf]);
+
+  // IntersectionObserver لتتبع القسم النشط
+  useEffect(() => {
+    const sections = ["sec-stats", "sec-desc", "sec-charts", "sec-viewer", "sec-tables"];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveSection(entry.target.id);
+        });
+      },
+      { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+    );
+    sections.forEach((sid) => {
+      const el = document.getElementById(sid);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, [id, kashaf]);
 
   if (!kashaf) {
     return (
@@ -2048,11 +2090,74 @@ export default function KashafDetail() {
         </div>
       </header>
 
+      {/* ── ANCHOR NAV ── */}
+      {(() => {
+        const hasCharts = !!(kashaf?.chartData && kashaf.chartData.length > 0);
+        const hasJson = !!(kashaf && "jsonUrl" in kashaf && (kashaf as any).jsonUrl);
+        const navItems = [
+          { id: "sec-stats", icon: "fa-solid fa-chart-bar", label: "الإحصائيات" },
+          { id: "sec-desc", icon: "fa-solid fa-book-open", label: "النبذة" },
+          ...(hasCharts ? [{ id: "sec-charts", icon: "fa-solid fa-chart-pie", label: "الرسوميات" }] : []),
+          ...(hasJson ? [{ id: "sec-viewer", icon: "fa-solid fa-table", label: "الملخص" }] : []),
+          ...(hasJson ? [{ id: "sec-tables", icon: "fa-solid fa-database", label: "الجداول" }] : []),
+        ];
+        if (navItems.length < 2) return null;
+        return (
+          <div style={{
+            position: "sticky", top: 0, zIndex: 50,
+            background: isDark ? "rgba(7,30,28,0.97)" : "rgba(240,250,249,0.97)",
+            backdropFilter: "blur(10px)",
+            borderBottom: `2px solid ${isDark ? T.creamMid : T.creamMid}`,
+            padding: "8px clamp(12px,4vw,20px)",
+            display: "flex", gap: 6, overflowX: "auto",
+            scrollbarWidth: "none",
+            WebkitOverflowScrolling: "touch",
+            direction: "rtl",
+          }}>
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => {
+                  const el = document.getElementById(item.id);
+                  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+                }}
+                style={{
+                  display: "flex", alignItems: "center", gap: 6,
+                  padding: "7px 14px", borderRadius: 20,
+                  border: `1.5px solid ${activeSection === item.id ? T.emerald : (isDark ? T.creamMid : T.creamMid)}`,
+                  background: activeSection === item.id ? T.emerald : "transparent",
+                  color: activeSection === item.id ? T.white : (isDark ? T.textMid : T.textMid),
+                  fontSize: "clamp(11px,2.5vw,13px)", cursor: "pointer",
+                  whiteSpace: "nowrap", fontFamily: "'Noto Naskh Arabic',serif",
+                  fontWeight: activeSection === item.id ? 700 : 400,
+                  transition: "all 0.2s",
+                  flexShrink: 0,
+                  WebkitTapHighlightColor: "transparent",
+                }}
+                onMouseEnter={(e) => {
+                  if (activeSection !== item.id) {
+                    (e.currentTarget as HTMLElement).style.background = isDark ? "rgba(42,202,186,0.1)" : "rgba(13,138,122,0.08)";
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (activeSection !== item.id) {
+                    (e.currentTarget as HTMLElement).style.background = "transparent";
+                  }
+                }}
+              >
+                <i className={item.icon} style={{ fontSize: 11 }} />
+                {item.label}
+              </button>
+            ))}
+          </div>
+        );
+      })()}
+
       {/* ── MAIN CONTENT ── */}
       <main style={{ maxWidth: 960, margin: "0 auto", padding: "clamp(20px,4vw,36px) clamp(12px,4vw,20px) 60px" }}>
 
         {/* Stats cards */}
-        <div style={{
+        <div id="sec-stats" style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 140px), 1fr))",
           gap: "clamp(10px,2vw,16px)",
@@ -2076,7 +2181,7 @@ export default function KashafDetail() {
         </div>
 
         {/* Description */}
-        <div style={{
+        <div id="sec-desc" style={{
           background: T.white, borderRadius: 14, padding: "clamp(18px,4vw,28px)",
           marginBottom: "clamp(20px,4vw,28px)",
           boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
@@ -2098,7 +2203,7 @@ export default function KashafDetail() {
 
         {/* Charts section */}
         {kashaf.chartData && kashaf.chartData.length > 0 && (
-          <div style={{
+          <div id="sec-charts" style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 280px), 1fr))",
             gap: "clamp(16px,3vw,24px)",
@@ -2134,14 +2239,29 @@ export default function KashafDetail() {
         )}
         {/* ViewCache section */}
         {"jsonUrl" in kashaf && kashaf.jsonUrl && (
-          <div style={{ marginBottom: "clamp(20px,4vw,28px)" }}>
-            <ViewCacheViewer jsonUrl={(kashaf as any).jsonUrl} />
+          <div id="sec-viewer" style={{ marginBottom: "clamp(20px,4vw,28px)" }}>
+            {jsonLoading ? (
+              <div style={{ padding: "40px 20px", textAlign: "center", color: T.textMid, fontFamily: "'Noto Naskh Arabic', serif", direction: "rtl" }}>
+                <div style={{ width: 36, height: 36, border: `3px solid ${C.creamMid}`, borderTopColor: C.emerald, borderRadius: "50%", animation: "spin 0.8s linear infinite", margin: "0 auto 12px" }} />
+                <p style={{ fontSize: 14 }}>جارٍ تحميل بيانات الكشاف...</p>
+                <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+              </div>
+            ) : jsonError ? (
+              <div style={{ background: "#FFF5F5", border: "1px solid #FFCDD2", borderRadius: 14, padding: 24, textAlign: "center", color: "#C0392B" }}>
+                <i className="fa-solid fa-circle-exclamation" style={{ fontSize: 28, marginBottom: 10, display: "block" }} />
+                <p style={{ margin: 0, fontSize: 14 }}>{jsonError}</p>
+              </div>
+            ) : jsonData ? (
+              <ViewCacheViewer inlineData={jsonData} />
+            ) : null}
           </div>
         )}
 
         {/* قسم الجداول التفصيلية */}
         {"jsonUrl" in kashaf && kashaf.jsonUrl && (
-          <DetailedTablesSection jsonUrl={(kashaf as any).jsonUrl} isDark={isDark} T={T} />
+          <div id="sec-tables">
+            <DetailedTablesSection data={jsonData} loading={jsonLoading} error={jsonError} isDark={isDark} T={T} />
+          </div>
         )}
 
       </main>
@@ -2174,31 +2294,20 @@ export default function KashafDetail() {
 }
 
 // ── مكوّن قسم الجداول التفصيلية ──
-// يحمّل view_cache.json ويمرّره لـ DetailedTablesViewer
+// يستقبل بيانات JSON محمّلة مسبقاً من الصفحة الأم
 function DetailedTablesSection({
-  jsonUrl,
+  data,
+  loading,
+  error,
   isDark,
   T,
 }: {
-  jsonUrl: string;
+  data: any;
+  loading: boolean;
+  error: string | null;
   isDark: boolean;
   T: typeof C;
 }) {
-  const [data, setData] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    setLoading(true);
-    setError(null);
-    fetch(jsonUrl)
-      .then((r) => {
-        if (!r.ok) throw new Error(`فشل تحميل البيانات (${r.status})`);
-        return r.json();
-      })
-      .then((d) => { setData(d); setLoading(false); })
-      .catch((e) => { setError(e.message || "خطأ في التحميل"); setLoading(false); });
-  }, [jsonUrl]);
 
   return (
     <div

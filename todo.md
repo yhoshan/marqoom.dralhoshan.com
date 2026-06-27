@@ -9,16 +9,16 @@
 - [x] إزالة حقول xlsxUrl وdocxUrl من KashafDetail.tsx
 
 ### تحسين تجربة المستخدم
-- [ ] إضافة زر "دخول الكشاف" يفتح صفحة KashafDetail الداخلية (بدلاً من موقع خارجي)
-- [ ] تحسين صفحة KashafDetail: تنقل سريع بين الأقسام (anchor navigation)
-- [ ] تحسين عرض الجداول في ViewCacheViewer: بحث + فرز + تصفية
-- [ ] إصلاح ViewCacheViewer ليدعم الأعمدة العربية بالموضع لا بالاسم
-- [ ] تحسين الأداء: lazy loading للبيانات الثقيلة في KashafDetail
+- [x] إضافة زر "دخول الكشاف" يفتح صفحة KashafDetail الداخلية (بدلاً من موقع خارجي)
+- [x] تحسين صفحة KashafDetail: تنقل سريع بين الأقسام (anchor navigation)
+- [x] تحسين عرض الجداول في ViewCacheViewer: بحث + فرز + تصفية
+- [x] إصلاح ViewCacheViewer ليدعم الأعمدة العربية بالموضع لا بالاسم
+- [x] تحسين الأداء: lazy loading للبيانات الثقيلة في KashafDetail
 
 ### استقرار العارض
-- [ ] اختبار ViewCacheViewer على الكشافات الستة المربوطة بـ JSON
-- [ ] معالجة حالة عدم وجود JSON (fallback graceful)
-- [ ] التأكد من عمل البحث والتصفية في الجداول
+- [x] اختبار ViewCacheViewer على الكشافات الستة المربوطة بـ JSON
+- [x] معالجة حالة عدم وجود JSON (fallback graceful)
+- [x] التأكد من عمل البحث والتصفية في الجداول
 
 ## مكتمل سابقاً
 - [x] بناء الصفحة الرئيسية مع 70 كشافاً
@@ -32,7 +32,7 @@
 - [x] إزالة حقول xlsxUrl وdocxUrl من KASHAFAT في Home.tsx
 - [x] حذف أزرار Excel وWord من KashafCard في Home.tsx
 - [x] حذف أزرار Excel وWord من KashafDetail.tsx (إن وُجدت)
-- [ ] إضافة زر "دخول الكشاف" يفتح KashafDetail الداخلية
+- [x] إضافة زر "دخول الكشاف" يفتح KashafDetail الداخلية
 - [x] التحقق من عدم ظهور روابط الملفات في Network tab
 - [x] حفظ checkpoint
 
