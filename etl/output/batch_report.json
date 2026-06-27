@@ -1,0 +1,632 @@
+[
+  {
+    "kashaf_id": "fathalbaari",
+    "book_id": "marqoom-1",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/fathalbaari/marqoom_1_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/fathalbaari/marqoom_1_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/fathalbaari/marqoom_1_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/fathalbaari/marqoom_1_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "ibnabdulbar",
+    "book_id": "marqoom-2",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/ibnabdulbar/marqoom_2_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/ibnabdulbar/marqoom_2_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/ibnabdulbar/marqoom_2_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/ibnabdulbar/marqoom_2_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "ibntimiah",
+    "book_id": "marqoom-3",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/ibntimiah/marqoom_3_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/ibntimiah/marqoom_3_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/ibntimiah/marqoom_3_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/ibntimiah/marqoom_3_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "alrazi",
+    "book_id": "marqoom-4",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/alrazi/marqoom_4_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/alrazi/marqoom_4_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/alrazi/marqoom_4_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/alrazi/marqoom_4_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "alqurtubi",
+    "book_id": "marqoom-5",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/alqurtubi/marqoom_5_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/alqurtubi/marqoom_5_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/alqurtubi/marqoom_5_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/alqurtubi/marqoom_5_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "altabari",
+    "book_id": "marqoom-6",
+    "status": "success",
+    "compliance": 25,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/altabari/marqoom_6_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/altabari/marqoom_6_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/altabari/marqoom_6_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/altabari/marqoom_6_validation_report.json\n📊 درجة الامتثال: 25%\n⚠️  أوراق أساسية مفقودة: ['لوحة عامة', 'بيانات الملفات', 'توزيع الأغراض', 'حدود الدراسة', 'المؤشرات المركبة']"
+  },
+  {
+    "kashaf_id": "annawawe",
+    "book_id": "marqoom-7",
+    "status": "success",
+    "compliance": 85,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/annawawe/marqoom_7_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/annawawe/marqoom_7_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/annawawe/marqoom_7_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/annawawe/marqoom_7_validation_report.json\n📊 درجة الامتثال: 85%\n⚠️  أوراق أساسية مفقودة: ['توزيع الأغراض']"
+  },
+  {
+    "kashaf_id": "almuhalla",
+    "book_id": "marqoom-8",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/almuhalla/marqoom_8_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/almuhalla/marqoom_8_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/almuhalla/marqoom_8_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/almuhalla/marqoom_8_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "almughni",
+    "book_id": "marqoom-9",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/almughni/marqoom_9_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/almughni/marqoom_9_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/almughni/marqoom_9_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/almughni/marqoom_9_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "albadaei",
+    "book_id": "marqoom-10",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/albadaei/marqoom_10_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/albadaei/marqoom_10_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/albadaei/marqoom_10_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/albadaei/marqoom_10_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "ibnalqayyim",
+    "book_id": "marqoom-11",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/ibnalqayyim/marqoom_11_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/ibnalqayyim/marqoom_11_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/ibnalqayyim/marqoom_11_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/ibnalqayyim/marqoom_11_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "marqoom12_bukhari",
+    "book_id": "marqoom-12",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom12_bukhari/marqoom_12_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom12_bukhari/marqoom_12_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom12_bukhari/marqoom_12_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom12_bukhari/marqoom_12_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "marqoom13_tamyiz_muslim",
+    "book_id": "marqoom-13",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom13_tamyiz_muslim/marqoom_13_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom13_tamyiz_muslim/marqoom_13_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom13_tamyiz_muslim/marqoom_13_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom13_tamyiz_muslim/marqoom_13_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "marqoom14_risala_umm_shafii",
+    "book_id": "marqoom-14",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom14_risala_umm_shafii/marqoom_14_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom14_risala_umm_shafii/marqoom_14_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom14_risala_umm_shafii/marqoom_14_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom14_risala_umm_shafii/marqoom_14_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "marqoom15_mustasfa_ghazali",
+    "book_id": "marqoom-15",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom15_mustasfa_ghazali/marqoom_15_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom15_mustasfa_ghazali/marqoom_15_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom15_mustasfa_ghazali/marqoom_15_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom15_mustasfa_ghazali/marqoom_15_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "marqoom16_tafsir_baydawi",
+    "book_id": "marqoom-16",
+    "status": "success",
+    "compliance": 85,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom16_tafsir_baydawi/marqoom_16_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom16_tafsir_baydawi/marqoom_16_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom16_tafsir_baydawi/marqoom_16_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom16_tafsir_baydawi/marqoom_16_validation_report.json\n📊 درجة الامتثال: 85%\n⚠️  أوراق أساسية مفقودة: ['حدود الدراسة']"
+  },
+  {
+    "kashaf_id": "marqoom17_tawhid_ibnabdulwahhab",
+    "book_id": "marqoom-17",
+    "status": "success",
+    "compliance": 10,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom17_tawhid_ibnabdulwahhab/marqoom_17_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom17_tawhid_ibnabdulwahhab/marqoom_17_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom17_tawhid_ibnabdulwahhab/marqoom_17_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom17_tawhid_ibnabdulwahhab/marqoom_17_validation_report.json\n📊 درجة الامتثال: 10%\n⚠️  أوراق أساسية مفقودة: ['لوحة عامة', 'بيانات الملفات', 'توزيع الأغراض', 'الموارد حسب المجال', 'حدود الدراسة', 'المؤشرات المركبة']"
+  },
+  {
+    "kashaf_id": "marqoom18_kitab_sibawayh",
+    "book_id": "marqoom-18",
+    "status": "success",
+    "compliance": 85,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom18_kitab_sibawayh/marqoom_18_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom18_kitab_sibawayh/marqoom_18_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom18_kitab_sibawayh/marqoom_18_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom18_kitab_sibawayh/marqoom_18_validation_report.json\n📊 درجة الامتثال: 85%\n⚠️  أوراق أساسية مفقودة: ['حدود الدراسة']"
+  },
+  {
+    "kashaf_id": "marqoom19_rawdh_murbaa",
+    "book_id": "marqoom-19",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom19_rawdh_murbaa/marqoom_19_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom19_rawdh_murbaa/marqoom_19_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom19_rawdh_murbaa/marqoom_19_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom19_rawdh_murbaa/marqoom_19_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "marqoom20_sahih_muslim",
+    "book_id": "marqoom-20",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom20_sahih_muslim/marqoom_20_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom20_sahih_muslim/marqoom_20_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom20_sahih_muslim/marqoom_20_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom20_sahih_muslim/marqoom_20_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "marqoom21_sunan_abudawud",
+    "book_id": "marqoom-21",
+    "status": "success",
+    "compliance": 25,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom21_sunan_abudawud/marqoom_21_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom21_sunan_abudawud/marqoom_21_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom21_sunan_abudawud/marqoom_21_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom21_sunan_abudawud/marqoom_21_validation_report.json\n📊 درجة الامتثال: 25%\n⚠️  أوراق أساسية مفقودة: ['بيانات الملفات', 'توزيع الأغراض', 'الموارد حسب المجال', 'حدود الدراسة', 'المؤشرات المركبة']"
+  },
+  {
+    "kashaf_id": "marqoom22_sunan_tirmidhi",
+    "book_id": "marqoom-22",
+    "status": "success",
+    "compliance": 70,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom22_sunan_tirmidhi/marqoom_22_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom22_sunan_tirmidhi/marqoom_22_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom22_sunan_tirmidhi/marqoom_22_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom22_sunan_tirmidhi/marqoom_22_validation_report.json\n📊 درجة الامتثال: 70%\n⚠️  أوراق أساسية مفقودة: ['توزيع الأغراض', 'حدود الدراسة']"
+  },
+  {
+    "kashaf_id": "marqoom23_sunan_ibnmajah",
+    "book_id": "marqoom-23",
+    "status": "success",
+    "compliance": 70,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom23_sunan_ibnmajah/marqoom_23_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom23_sunan_ibnmajah/marqoom_23_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom23_sunan_ibnmajah/marqoom_23_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom23_sunan_ibnmajah/marqoom_23_validation_report.json\n📊 درجة الامتثال: 70%\n⚠️  أوراق أساسية مفقودة: ['توزيع الأغراض', 'الموارد حسب المجال']"
+  },
+  {
+    "kashaf_id": "marqoom24_sunan_nasai",
+    "book_id": "marqoom-24",
+    "status": "success",
+    "compliance": 85,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom24_sunan_nasai/marqoom_24_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom24_sunan_nasai/marqoom_24_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom24_sunan_nasai/marqoom_24_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom24_sunan_nasai/marqoom_24_validation_report.json\n📊 درجة الامتثال: 85%\n⚠️  أوراق أساسية مفقودة: ['توزيع الأغراض']"
+  },
+  {
+    "kashaf_id": "marqoom25_musnad_ahmad",
+    "book_id": "marqoom-25",
+    "status": "success",
+    "compliance": 55,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom25_musnad_ahmad/marqoom_25_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom25_musnad_ahmad/marqoom_25_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom25_musnad_ahmad/marqoom_25_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom25_musnad_ahmad/marqoom_25_validation_report.json\n📊 درجة الامتثال: 55%\n⚠️  أوراق أساسية مفقودة: ['توزيع الأغراض', 'الموارد حسب المجال', 'المؤشرات المركبة']"
+  },
+  {
+    "kashaf_id": "marqoom26_muwatta_malik",
+    "book_id": "marqoom-26",
+    "status": "success",
+    "compliance": 70,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom26_muwatta_malik/marqoom_26_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom26_muwatta_malik/marqoom_26_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom26_muwatta_malik/marqoom_26_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom26_muwatta_malik/marqoom_26_validation_report.json\n📊 درجة الامتثال: 70%\n⚠️  أوراق أساسية مفقودة: ['توزيع الأغراض', 'الموارد حسب المجال']"
+  },
+  {
+    "kashaf_id": "marqoom27_sunan_darimi",
+    "book_id": "marqoom-27",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom27_sunan_darimi/marqoom_27_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom27_sunan_darimi/marqoom_27_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom27_sunan_darimi/marqoom_27_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom27_sunan_darimi/marqoom_27_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "marqoom28_sahih_ibnkhuzaymah",
+    "book_id": "marqoom-28",
+    "status": "success",
+    "compliance": 70,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom28_sahih_ibnkhuzaymah/marqoom_28_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom28_sahih_ibnkhuzaymah/marqoom_28_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom28_sahih_ibnkhuzaymah/marqoom_28_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom28_sahih_ibnkhuzaymah/marqoom_28_validation_report.json\n📊 درجة الامتثال: 70%\n⚠️  أوراق أساسية مفقودة: ['توزيع الأغراض', 'حدود الدراسة']"
+  },
+  {
+    "kashaf_id": "marqoom29_sirah_nabawiyyah",
+    "book_id": "marqoom-29",
+    "status": "success",
+    "compliance": 85,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom29_sirah_nabawiyyah/marqoom_29_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom29_sirah_nabawiyyah/marqoom_29_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom29_sirah_nabawiyyah/marqoom_29_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom29_sirah_nabawiyyah/marqoom_29_validation_report.json\n📊 درجة الامتثال: 85%\n⚠️  أوراق أساسية مفقودة: ['توزيع الأغراض']"
+  },
+  {
+    "kashaf_id": "marqoom30_sunan_bayhaqi",
+    "book_id": "marqoom-30",
+    "status": "success",
+    "compliance": 10,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom30_sunan_bayhaqi/marqoom_30_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom30_sunan_bayhaqi/marqoom_30_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom30_sunan_bayhaqi/marqoom_30_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom30_sunan_bayhaqi/marqoom_30_validation_report.json\n📊 درجة الامتثال: 10%\n⚠️  أوراق أساسية مفقودة: ['لوحة عامة', 'بيانات الملفات', 'توزيع الأغراض', 'الموارد حسب المجال', 'حدود الدراسة', 'المؤشرات المركبة']"
+  },
+  {
+    "kashaf_id": "marqoom31_tahdhib_kamal",
+    "book_id": "marqoom-31",
+    "status": "success",
+    "compliance": 10,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom31_tahdhib_kamal/marqoom_31_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom31_tahdhib_kamal/marqoom_31_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom31_tahdhib_kamal/marqoom_31_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom31_tahdhib_kamal/marqoom_31_validation_report.json\n📊 درجة الامتثال: 10%\n⚠️  أوراق أساسية مفقودة: ['لوحة عامة', 'بيانات الملفات', 'توزيع الأغراض', 'الموارد حسب المجال', 'حدود الدراسة', 'المؤشرات المركبة']"
+  },
+  {
+    "kashaf_id": "marqoom32_musannaf_ibnabishaybah",
+    "book_id": "marqoom-32",
+    "status": "success",
+    "compliance": 25,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom32_musannaf_ibnabishaybah/marqoom_32_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom32_musannaf_ibnabishaybah/marqoom_32_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom32_musannaf_ibnabishaybah/marqoom_32_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom32_musannaf_ibnabishaybah/marqoom_32_validation_report.json\n📊 درجة الامتثال: 25%\n⚠️  أوراق أساسية مفقودة: ['لوحة عامة', 'بيانات الملفات', 'توزيع الأغراض', 'حدود الدراسة', 'المؤشرات المركبة']"
+  },
+  {
+    "kashaf_id": "marqoom33_musannaf_abdulrazzaq",
+    "book_id": "marqoom-33",
+    "status": "success",
+    "compliance": 70,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom33_musannaf_abdulrazzaq/marqoom_33_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom33_musannaf_abdulrazzaq/marqoom_33_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom33_musannaf_abdulrazzaq/marqoom_33_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom33_musannaf_abdulrazzaq/marqoom_33_validation_report.json\n📊 درجة الامتثال: 70%\n⚠️  أوراق أساسية مفقودة: ['توزيع الأغراض', 'حدود الدراسة']"
+  },
+  {
+    "kashaf_id": "marqoom34_siyar_alam",
+    "book_id": "marqoom-34",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom34_siyar_alam/marqoom_34_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom34_siyar_alam/marqoom_34_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom34_siyar_alam/marqoom_34_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom34_siyar_alam/marqoom_34_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "marqoom35_tafsir_ibnabihati",
+    "book_id": "marqoom-35",
+    "status": "success",
+    "compliance": 70,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom35_tafsir_ibnabihati/marqoom_35_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom35_tafsir_ibnabihati/marqoom_35_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom35_tafsir_ibnabihati/marqoom_35_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom35_tafsir_ibnabihati/marqoom_35_validation_report.json\n📊 درجة الامتثال: 70%\n⚠️  أوراق أساسية مفقودة: ['توزيع الأغراض', 'حدود الدراسة']"
+  },
+  {
+    "kashaf_id": "marqoom36_awsat_ibnmundhir",
+    "book_id": "marqoom-36",
+    "status": "success",
+    "compliance": 10,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom36_awsat_ibnmundhir/marqoom_36_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom36_awsat_ibnmundhir/marqoom_36_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom36_awsat_ibnmundhir/marqoom_36_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom36_awsat_ibnmundhir/marqoom_36_validation_report.json\n📊 درجة الامتثال: 10%\n⚠️  أوراق أساسية مفقودة: ['لوحة عامة', 'بيانات الملفات', 'توزيع الأغراض', 'الموارد حسب المجال', 'حدود الدراسة', 'المؤشرات المركبة']"
+  },
+  {
+    "kashaf_id": "marqoom37_sharh_maani_athar",
+    "book_id": "marqoom-37",
+    "status": "success",
+    "compliance": 25,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom37_sharh_maani_athar/marqoom_37_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom37_sharh_maani_athar/marqoom_37_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom37_sharh_maani_athar/marqoom_37_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom37_sharh_maani_athar/marqoom_37_validation_report.json\n📊 درجة الامتثال: 25%\n⚠️  أوراق أساسية مفقودة: ['لوحة عامة', 'بيانات الملفات', 'توزيع الأغراض', 'حدود الدراسة', 'المؤشرات المركبة']"
+  },
+  {
+    "kashaf_id": "marqoom38_nihaya_gharib",
+    "book_id": "marqoom-38",
+    "status": "success",
+    "compliance": 25,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom38_nihaya_gharib/marqoom_38_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom38_nihaya_gharib/marqoom_38_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom38_nihaya_gharib/marqoom_38_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom38_nihaya_gharib/marqoom_38_validation_report.json\n📊 درجة الامتثال: 25%\n⚠️  أوراق أساسية مفقودة: ['لوحة عامة', 'بيانات الملفات', 'توزيع الأغراض', 'الموارد حسب المجال', 'حدود الدراسة']"
+  },
+  {
+    "kashaf_id": "marqoom39_rawdh_anf",
+    "book_id": "marqoom-39",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom39_rawdh_anf/marqoom_39_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom39_rawdh_anf/marqoom_39_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom39_rawdh_anf/marqoom_39_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom39_rawdh_anf/marqoom_39_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "marqoom40_alam_zarkali",
+    "book_id": "marqoom-40",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom40_alam_zarkali/marqoom_40_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom40_alam_zarkali/marqoom_40_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom40_alam_zarkali/marqoom_40_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom40_alam_zarkali/marqoom_40_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "marqoom41_isabah_sahaba",
+    "book_id": "marqoom-41",
+    "status": "success",
+    "compliance": 85,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom41_isabah_sahaba/marqoom_41_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom41_isabah_sahaba/marqoom_41_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom41_isabah_sahaba/marqoom_41_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom41_isabah_sahaba/marqoom_41_validation_report.json\n📊 درجة الامتثال: 85%\n⚠️  أوراق أساسية مفقودة: ['بيانات الملفات']"
+  },
+  {
+    "kashaf_id": "marqoom42_mujam_buldan",
+    "book_id": "marqoom-42",
+    "status": "success",
+    "compliance": 70,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom42_mujam_buldan/marqoom_42_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom42_mujam_buldan/marqoom_42_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom42_mujam_buldan/marqoom_42_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom42_mujam_buldan/marqoom_42_validation_report.json\n📊 درجة الامتثال: 70%\n⚠️  أوراق أساسية مفقودة: ['حدود الدراسة', 'المؤشرات المركبة']"
+  },
+  {
+    "kashaf_id": "marqoom43_tafsir_zamakhshari",
+    "book_id": "marqoom-43",
+    "status": "success",
+    "compliance": 70,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom43_tafsir_zamakhshari/marqoom_43_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom43_tafsir_zamakhshari/marqoom_43_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom43_tafsir_zamakhshari/marqoom_43_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom43_tafsir_zamakhshari/marqoom_43_validation_report.json\n📊 درجة الامتثال: 70%\n⚠️  أوراق أساسية مفقودة: ['الموارد حسب المجال', 'حدود الدراسة']"
+  },
+  {
+    "kashaf_id": "marqoom44_khalq_afal_bukhari",
+    "book_id": "marqoom-44",
+    "status": "success",
+    "compliance": 85,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom44_khalq_afal_bukhari/marqoom_44_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom44_khalq_afal_bukhari/marqoom_44_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom44_khalq_afal_bukhari/marqoom_44_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom44_khalq_afal_bukhari/marqoom_44_validation_report.json\n📊 درجة الامتثال: 85%\n⚠️  أوراق أساسية مفقودة: ['حدود الدراسة']"
+  },
+  {
+    "kashaf_id": "marqoom45_sunan_saidbnmansur",
+    "book_id": "marqoom-45",
+    "status": "success",
+    "compliance": 55,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom45_sunan_saidbnmansur/marqoom_45_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom45_sunan_saidbnmansur/marqoom_45_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom45_sunan_saidbnmansur/marqoom_45_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom45_sunan_saidbnmansur/marqoom_45_validation_report.json\n📊 درجة الامتثال: 55%\n⚠️  أوراق أساسية مفقودة: ['بيانات الملفات', 'توزيع الأغراض', 'المؤشرات المركبة']"
+  },
+  {
+    "kashaf_id": "marqoom46_sharh_aqida_tahawiyya",
+    "book_id": "marqoom-46",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom46_sharh_aqida_tahawiyya/marqoom_46_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom46_sharh_aqida_tahawiyya/marqoom_46_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom46_sharh_aqida_tahawiyya/marqoom_46_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom46_sharh_aqida_tahawiyya/marqoom_46_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "marqoom47_subul_huda_salhi",
+    "book_id": "marqoom-47",
+    "status": "success",
+    "compliance": 10,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom47_subul_huda_salhi/marqoom_47_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom47_subul_huda_salhi/marqoom_47_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom47_subul_huda_salhi/marqoom_47_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom47_subul_huda_salhi/marqoom_47_validation_report.json\n📊 درجة الامتثال: 10%\n⚠️  أوراق أساسية مفقودة: ['لوحة عامة', 'بيانات الملفات', 'توزيع الأغراض', 'الموارد حسب المجال', 'حدود الدراسة', 'المؤشرات المركبة']"
+  },
+  {
+    "kashaf_id": "marqoom48_sharh_usul_lalikai",
+    "book_id": "marqoom-48",
+    "status": "success",
+    "compliance": 85,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom48_sharh_usul_lalikai/marqoom_48_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom48_sharh_usul_lalikai/marqoom_48_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom48_sharh_usul_lalikai/marqoom_48_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom48_sharh_usul_lalikai/marqoom_48_validation_report.json\n📊 درجة الامتثال: 85%\n⚠️  أوراق أساسية مفقودة: ['المؤشرات المركبة']"
+  },
+  {
+    "kashaf_id": "marqoom49_lisan_arab",
+    "book_id": "marqoom-49",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom49_lisan_arab/marqoom_49_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom49_lisan_arab/marqoom_49_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom49_lisan_arab/marqoom_49_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom49_lisan_arab/marqoom_49_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "marqoom50_wahidi_wajiz",
+    "book_id": "marqoom-50",
+    "status": "success",
+    "compliance": 10,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom50_wahidi_wajiz/marqoom_50_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom50_wahidi_wajiz/marqoom_50_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom50_wahidi_wajiz/marqoom_50_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom50_wahidi_wajiz/marqoom_50_validation_report.json\n📊 درجة الامتثال: 10%\n⚠️  أوراق أساسية مفقودة: ['لوحة عامة', 'بيانات الملفات', 'توزيع الأغراض', 'الموارد حسب المجال', 'حدود الدراسة', 'المؤشرات المركبة']"
+  },
+  {
+    "kashaf_id": "marqoom51_kuwaiti_fiqh",
+    "book_id": "marqoom-51",
+    "status": "success",
+    "compliance": 85,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom51_kuwaiti_fiqh/marqoom_51_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom51_kuwaiti_fiqh/marqoom_51_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom51_kuwaiti_fiqh/marqoom_51_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom51_kuwaiti_fiqh/marqoom_51_validation_report.json\n📊 درجة الامتثال: 85%\n⚠️  أوراق أساسية مفقودة: ['حدود الدراسة']"
+  },
+  {
+    "kashaf_id": "marqoom52_tafsir_baghawi",
+    "book_id": "marqoom-52",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom52_tafsir_baghawi/marqoom_52_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom52_tafsir_baghawi/marqoom_52_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom52_tafsir_baghawi/marqoom_52_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom52_tafsir_baghawi/marqoom_52_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "marqoom53_tafsir_abusaud",
+    "book_id": "marqoom-53",
+    "status": "success",
+    "compliance": 85,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom53_tafsir_abusaud/marqoom_53_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom53_tafsir_abusaud/marqoom_53_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom53_tafsir_abusaud/marqoom_53_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom53_tafsir_abusaud/marqoom_53_validation_report.json\n📊 درجة الامتثال: 85%\n⚠️  أوراق أساسية مفقودة: ['حدود الدراسة']"
+  },
+  {
+    "kashaf_id": "marqoom54_tafsir_ibnarafa",
+    "book_id": "marqoom-54",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom54_tafsir_ibnarafa/marqoom_54_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom54_tafsir_ibnarafa/marqoom_54_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom54_tafsir_ibnarafa/marqoom_54_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom54_tafsir_ibnarafa/marqoom_54_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "marqoom55_tafsir_nasafi",
+    "book_id": "marqoom-55",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom55_tafsir_nasafi/marqoom_55_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom55_tafsir_nasafi/marqoom_55_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom55_tafsir_nasafi/marqoom_55_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom55_tafsir_nasafi/marqoom_55_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "marqoom56_tayseer_aziz",
+    "book_id": "marqoom-56",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom56_tayseer_aziz/marqoom_56_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom56_tayseer_aziz/marqoom_56_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom56_tayseer_aziz/marqoom_56_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom56_tayseer_aziz/marqoom_56_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "marqoom57_jamial_usul",
+    "book_id": "marqoom-57",
+    "status": "success",
+    "compliance": 70,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom57_jamial_usul/marqoom_57_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom57_jamial_usul/marqoom_57_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom57_jamial_usul/marqoom_57_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom57_jamial_usul/marqoom_57_validation_report.json\n📊 درجة الامتثال: 70%\n⚠️  أوراق أساسية مفقودة: ['توزيع الأغراض', 'حدود الدراسة']"
+  },
+  {
+    "kashaf_id": "marqoom58_sharh_sunnah_barbahary",
+    "book_id": "marqoom-58",
+    "status": "success",
+    "compliance": 85,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom58_sharh_sunnah_barbahary/marqoom_58_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom58_sharh_sunnah_barbahary/marqoom_58_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom58_sharh_sunnah_barbahary/marqoom_58_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom58_sharh_sunnah_barbahary/marqoom_58_validation_report.json\n📊 درجة الامتثال: 85%\n⚠️  أوراق أساسية مفقودة: ['الموارد حسب المجال']"
+  },
+  {
+    "kashaf_id": "marqoom59_radd_jahmiyya_ibnmandah",
+    "book_id": "marqoom-59",
+    "status": "success",
+    "compliance": 85,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom59_radd_jahmiyya_ibnmandah/marqoom_59_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom59_radd_jahmiyya_ibnmandah/marqoom_59_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom59_radd_jahmiyya_ibnmandah/marqoom_59_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom59_radd_jahmiyya_ibnmandah/marqoom_59_validation_report.json\n📊 درجة الامتثال: 85%\n⚠️  أوراق أساسية مفقودة: ['توزيع الأغراض']"
+  },
+  {
+    "kashaf_id": "marqoom60_sarakhsi_usul",
+    "book_id": "marqoom-60",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom60_sarakhsi_usul/marqoom_60_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom60_sarakhsi_usul/marqoom_60_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom60_sarakhsi_usul/marqoom_60_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom60_sarakhsi_usul/marqoom_60_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "bahr_muhit_zarkashi",
+    "book_id": "marqoom-61",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/bahr_muhit_zarkashi/marqoom_61_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/bahr_muhit_zarkashi/marqoom_61_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/bahr_muhit_zarkashi/marqoom_61_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/bahr_muhit_zarkashi/marqoom_61_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "tadrib_rawi_suyuti",
+    "book_id": "marqoom-62",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/tadrib_rawi_suyuti/marqoom_62_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/tadrib_rawi_suyuti/marqoom_62_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/tadrib_rawi_suyuti/marqoom_62_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/tadrib_rawi_suyuti/marqoom_62_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "marqoom63_jamia_bayan_dani",
+    "book_id": "marqoom-63",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom63_jamia_bayan_dani/marqoom_63_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom63_jamia_bayan_dani/marqoom_63_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom63_jamia_bayan_dani/marqoom_63_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom63_jamia_bayan_dani/marqoom_63_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "marqoom64_rawda_taqrir",
+    "book_id": "marqoom-64",
+    "status": "success",
+    "compliance": 85,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom64_rawda_taqrir/marqoom_64_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom64_rawda_taqrir/marqoom_64_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom64_rawda_taqrir/marqoom_64_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom64_rawda_taqrir/marqoom_64_validation_report.json\n📊 درجة الامتثال: 85%\n⚠️  أوراق أساسية مفقودة: ['حدود الدراسة']"
+  },
+  {
+    "kashaf_id": "marqoom65_rawda_nazir_ibn_qudama",
+    "book_id": "marqoom-65",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom65_rawda_nazir_ibn_qudama/marqoom_65_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom65_rawda_nazir_ibn_qudama/marqoom_65_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom65_rawda_nazir_ibn_qudama/marqoom_65_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom65_rawda_nazir_ibn_qudama/marqoom_65_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "marqoom66_sharh_tayba_nuwayri",
+    "book_id": "marqoom-66",
+    "status": "success",
+    "compliance": 85,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom66_sharh_tayba_nuwayri/marqoom_66_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom66_sharh_tayba_nuwayri/marqoom_66_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom66_sharh_tayba_nuwayri/marqoom_66_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom66_sharh_tayba_nuwayri/marqoom_66_validation_report.json\n📊 درجة الامتثال: 85%\n⚠️  أوراق أساسية مفقودة: ['حدود الدراسة']"
+  },
+  {
+    "kashaf_id": "marqoom67_sharh_mukhtasar_rawda_tufi",
+    "book_id": "marqoom-67",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom67_sharh_mukhtasar_rawda_tufi/marqoom_67_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom67_sharh_mukhtasar_rawda_tufi/marqoom_67_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom67_sharh_mukhtasar_rawda_tufi/marqoom_67_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom67_sharh_mukhtasar_rawda_tufi/marqoom_67_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "marqoom68_fath_mughith_sakhawi",
+    "book_id": "marqoom-68",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom68_fath_mughith_sakhawi/marqoom_68_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom68_fath_mughith_sakhawi/marqoom_68_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom68_fath_mughith_sakhawi/marqoom_68_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom68_fath_mughith_sakhawi/marqoom_68_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "marqoom69_mujam_udaba_yaqut",
+    "book_id": "marqoom-69",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom69_mujam_udaba_yaqut/marqoom_69_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom69_mujam_udaba_yaqut/marqoom_69_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom69_mujam_udaba_yaqut/marqoom_69_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom69_mujam_udaba_yaqut/marqoom_69_validation_report.json\n📊 درجة الامتثال: 100%"
+  },
+  {
+    "kashaf_id": "marqoom70_aqeela_ziyadah",
+    "book_id": "marqoom-70",
+    "status": "success",
+    "compliance": 100,
+    "view_cache": "/home/ubuntu/marqoom/etl/output/marqoom70_aqeela_ziyadah/marqoom_70_view_cache.json",
+    "validation_report": "/home/ubuntu/marqoom/etl/output/marqoom70_aqeela_ziyadah/marqoom_70_validation_report.json",
+    "stdout": "✅ view_cache.json     → /home/ubuntu/marqoom/etl/output/marqoom70_aqeela_ziyadah/marqoom_70_view_cache.json\n✅ validation_report   → /home/ubuntu/marqoom/etl/output/marqoom70_aqeela_ziyadah/marqoom_70_validation_report.json\n📊 درجة الامتثال: 100%"
+  }
+]
