@@ -2052,6 +2052,31 @@ const KASHAFAT: KashafItem[] = [
       { label: "مقاصد وإصلاح واجتماع", pct: 11 },
     ],
   },
+  {
+    id: "marqoom85_bayan_tabyin",
+    num: 85,
+    title: "كشّاف البيان والتبيين للجاحظ",
+    author: "أبو عثمان الجاحظ",
+    died: "255هـ",
+    category: "لغة",
+    categoryLabel: "اللغة والبلاغة",
+    description: "فهرس تحليلي رقمي للبيان والتبيين — 863 صفحة، 180,592 كلمة، 3 أجزاء، 199 وحدة تحليلية. يرصد مباحث البيان والبلاغة والخطابة والأدب في هذا المصنف الأدبي الكبير للجاحظ.",
+    stats: [
+      { label: "كلمة", value: "180,592", raw: 180592 },
+      { label: "صفحة", value: "863", raw: 863 },
+      { label: "وحدة", value: "199", raw: 199 },
+      { label: "مورد", value: "74", raw: 74 },
+    ],
+    tag: "بلاغة وأدب",
+    url: "https://marqoom85.dralhoshan.com",
+    xlsxUrl: "/manus-storage/bayan_tabyin_ffb174b8.xlsx",
+    chartData: [
+      { label: "الخطب والرسائل", pct: 43 },
+      { label: "البيان والبلاغة", pct: 20 },
+      { label: "عيوب البيان والنطق", pct: 8 },
+      { label: "الثقافة المادية والرمزية", pct: 7 },
+    ],
+  },
 ];
 // ── Animated Bar Chart Component ──
 function BarChart({ data, color }: { data: { label: string; pct: number }[]; color: string }) {

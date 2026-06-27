@@ -1,0 +1,77 @@
+{
+  "project": "مرقوم — بوابة الكشافات التراثية الرقمية",
+  "report_type": "validation_report",
+  "generated_at": "2026-06-27T14:17:51+03:00",
+  "source_excel": "مرقوم_البيان_والتبيين_للجاحظ.xlsx",
+  "protocol_version": "2.1",
+  "protocol_compliance_percent": 100,
+  "schema_compliance_note": "تنبيه: MARQOOM_SCHEMA.md لم يكن مرفقًا مستقلاً في المحادثة؛ لذلك لا توجد مطابقة خارجية مستقلة للملف، لكن الحقول الأساسية المطلوبة للعرض وETL مكتملة.",
+  "summary": {
+    "status": "pass_with_note",
+    "units_count": 199,
+    "resources_count": 74,
+    "warnings": 1,
+    "failures": 0
+  },
+  "checks": [
+    {
+      "check_id": "protocol_outputs",
+      "status": "pass",
+      "detail": "تم إنشاء Excel وview_cache.json وvalidation_report.json فقط."
+    },
+    {
+      "check_id": "excel_canonical_source",
+      "status": "pass",
+      "detail": "تم تنظيم كل الجداول المصدرية داخل Excel."
+    },
+    {
+      "check_id": "no_word_pdf",
+      "status": "pass",
+      "detail": "لم تنشأ ملفات Word أو PDF لأن الطلب لم ينص عليها."
+    },
+    {
+      "check_id": "epub_full_toc_extraction",
+      "status": "pass",
+      "detail": "استخرجت 199 وحدة من فهرس EPUB الداخلي."
+    },
+    {
+      "check_id": "required_sheets",
+      "status": "pass",
+      "detail": "الأوراق الموجودة: اقرأني, الميتاداتا, الإحصاءات, كشاف_الوحدات, الموارد_والمصادر, خريطة_ETL"
+    },
+    {
+      "check_id": "required_unit_columns",
+      "status": "pass",
+      "detail": "الأعمدة المفقودة: []"
+    },
+    {
+      "check_id": "required_unit_values",
+      "status": "pass",
+      "detail": "لا توجد فراغات مؤثرة في حقول الوحدات المطلوبة."
+    },
+    {
+      "check_id": "resources_sheet",
+      "status": "pass",
+      "detail": "أدرجت 74 موردًا بين كتب وأعلام واتجاهات وفنون."
+    },
+    {
+      "check_id": "viewer_cache_created",
+      "status": "pass",
+      "detail": "تم إنشاء view_cache.json من جداول الكشاف والموارد والإحصاءات."
+    },
+    {
+      "check_id": "official_schema_file",
+      "status": "warning",
+      "detail": "لم يُرفق MARQOOM_SCHEMA.md مستقلًا؛ اعتمد التحقق على حقول بروتوكول مرقوم 2.1 وخريطة ETL داخل Excel."
+    }
+  ],
+  "outputs": {
+    "excel": "مرقوم_البيان_والتبيين_للجاحظ.xlsx",
+    "view_cache": "view_cache.json",
+    "validation_report": "validation_report.json"
+  },
+  "recommendations": [
+    "عند تزويد MARQOOM_SCHEMA.md الرسمي يمكن إعادة تشغيل التحقق الخارجي دون تعديل يدوي على JSON.",
+    "إذا طُلبت نسخة Word أو PDF فتُولّد لاحقًا من Excel فقط."
+  ]
+}
