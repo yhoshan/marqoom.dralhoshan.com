@@ -1530,6 +1530,7 @@ const KASHAFAT: KashafItem[] = [
       { label: "مراجع قرآنية", value: "6,497" },
     ],
     url: "https://marqoom61.dralhoshan.com",
+    jsonUrl: "/manus-storage/bahralmuhit_view_cache_2f0da9e1.json",
     chartData: [
       { label: "الأدلة والاستدلال", pct: 35 },
       { label: "الخلاف المذهبي", pct: 30 },
@@ -1552,6 +1553,7 @@ const KASHAFAT: KashafItem[] = [
       { label: "عبارة خلاف", value: "1,203" },
     ],
     url: "https://marqoom62.dralhoshan.com",
+    jsonUrl: "/manus-storage/marqoom_fayd_alqadir_view_cache_6257042e.json",
     chartData: [
       { label: "صيغ الرواية والأداء", pct: 40 },
       { label: "مصطلحات علوم الحديث", pct: 30 },
