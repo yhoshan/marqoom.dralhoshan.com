@@ -47,7 +47,26 @@ type TableData = {
   rows: (string | number | null)[][];
 };
 
-type ViewCacheData = {
+// بنية v2.1 الجديدة (protocol_version: "2.1")
+type ViewCacheV21 = {
+  schema?: { protocol_version?: string };
+  metadata?: Record<string, unknown>;
+  stats?: Record<string, unknown>;
+  facets?: {
+    domains?: { name: string; count: number }[];
+    levels?: { name: string; count: number }[];
+    genres?: { name: string; count: number }[];
+    resources?: { type: string; count: number }[];
+    [key: string]: unknown;
+  };
+  views?: {
+    units?: Record<string, unknown>[];
+    resources?: Record<string, unknown>[];
+    [key: string]: unknown;
+  };
+};
+
+type ViewCacheData = ViewCacheV21 & {
   _meta?: Record<string, unknown>;
   book?: Record<string, unknown>;
   summary?: Record<string, unknown>;
@@ -71,6 +90,96 @@ type ViewCacheData = {
   };
   limits?: [string, string][];
 };
+
+// ── تحويل مصفوفة كائنات إلى TableData ──
+function objectArrayToTableData(arr: Record<string, unknown>[]): TableData | null {
+  if (!arr || arr.length === 0) return null;
+  const columns = Object.keys(arr[0]);
+  const rows = arr.map(obj => columns.map(col => {
+    const val = obj[col];
+    if (val === null || val === undefined) return null;
+    return typeof val === 'object' ? JSON.stringify(val) : (val as string | number);
+  }));
+  return { _columns: columns, rows };
+}
+
+// ── تحويل facets إلى TableData ──
+function facetToTableData(arr: { name?: string; type?: string; count: number }[]): TableData | null {
+  if (!arr || arr.length === 0) return null;
+  const hasName = arr[0].name !== undefined;
+  const labelKey = hasName ? 'name' : 'type';
+  const columns = [hasName ? 'المجال' : 'النوع', 'العدد'];
+  const rows = arr.map(item => [
+    String(item[labelKey as keyof typeof item] ?? ''),
+    Number(item.count) || 0,
+  ] as (string | number | null)[]);
+  return { _columns: columns, rows };
+}
+
+// ── كشف هل البيانات v2.1 ──
+function isV21(d: ViewCacheData): boolean {
+  const raw = d as Record<string, unknown>;
+  // الكشف بوجود views أو facets كمفاتيح رئيسية
+  if (raw.views && typeof raw.views === 'object') return true;
+  if (raw.facets && typeof raw.facets === 'object') return true;
+  // أو بوجود schema.protocol_version
+  const schema = raw.schema;
+  if (schema && typeof schema === 'object') {
+    const sv = (schema as Record<string, unknown>).protocol_version;
+    if (sv) return true;
+  }
+  return false;
+}
+
+// ── استخراج التبويبات من v2.1 ──
+function getV21Tabs(d: ViewCacheData): { id: string; label: string; icon: string; description: string; tableData: TableData }[] {
+  const v = d as ViewCacheV21;
+  const tabs: { id: string; label: string; icon: string; description: string; tableData: TableData }[] = [];
+
+  // وحدات الكشاف
+  const units = v.views?.units;
+  if (Array.isArray(units) && units.length > 0) {
+    const td = objectArrayToTableData(units);
+    if (td) tabs.push({ id: 'v21_units', label: 'وحدات الكشاف', icon: '📋', description: 'جميع الوحدات التحليلية مع مجالاتها وموضعها وخلاصة مرقوم', tableData: td });
+  }
+
+  // الموارد
+  const resources = v.views?.resources;
+  if (Array.isArray(resources) && resources.length > 0) {
+    const td = objectArrayToTableData(resources);
+    if (td) tabs.push({ id: 'v21_resources', label: 'الموارد والأعلام', icon: '📚', description: 'الموارد والأعلام المرصودة مع تكرارها وتصنيفها', tableData: td });
+  }
+
+  // توزيع المجالات
+  const domains = v.facets?.domains;
+  if (Array.isArray(domains) && domains.length > 0) {
+    const td = facetToTableData(domains as { name: string; count: number }[]);
+    if (td) tabs.push({ id: 'v21_domains', label: 'توزيع المجالات', icon: '🎯', description: 'توزيع الوحدات على المجالات الموضوعية الرئيسية', tableData: td });
+  }
+
+  // توزيع الأجناس المعرفية
+  const genres = v.facets?.genres;
+  if (Array.isArray(genres) && genres.length > 0) {
+    const td = facetToTableData(genres as { name: string; count: number }[]);
+    if (td) tabs.push({ id: 'v21_genres', label: 'الأجناس المعرفية', icon: '🏛️', description: 'توزيع الوحدات على الأجناس المعرفية (خطبة، مادة أدبية، باب...)', tableData: td });
+  }
+
+  // توزيع المستويات
+  const levels = v.facets?.levels;
+  if (Array.isArray(levels) && levels.length > 0) {
+    const td = facetToTableData(levels as { name: string; count: number }[]);
+    if (td) tabs.push({ id: 'v21_levels', label: 'مستويات البنية', icon: '🔬', description: 'توزيع الوحدات على مستويات البنية (جذر، باب، وحدة فرعية...)', tableData: td });
+  }
+
+  // توزيع أنواع الموارد
+  const resTypes = v.facets?.resources;
+  if (Array.isArray(resTypes) && resTypes.length > 0) {
+    const td = facetToTableData(resTypes as { type: string; count: number }[]);
+    if (td) tabs.push({ id: 'v21_res_types', label: 'أنواع الموارد', icon: '📊', description: 'توزيع الموارد على أنواعها (أعلام، كتب، مدارس...)', tableData: td });
+  }
+
+  return tabs;
+}
 
 // ── تعريف التبويبات ──
 type TabDef = {
@@ -634,8 +743,23 @@ export default function DetailedTablesViewer({
   const [activeTab, setActiveTab] = useState<string>("");
   const tabsRef = useRef<HTMLDivElement>(null);
 
-  // تحديد التبويبات المتاحة
+  // كشف schema v2.1
+  const isNewSchema = useMemo(() => isV21(data), [data]);
+  const v21Tabs = useMemo(() => isNewSchema ? getV21Tabs(data) : [], [data, isNewSchema]);
+
+  // تحديد التبويبات المتاحة (v1 أو v2.1)
   const availableTabs = useMemo(() => {
+    if (isNewSchema) {
+      // v2.1: نستخدم التبويبات المستخرجة من views/facets
+      return v21Tabs.map(t => ({
+        id: t.id,
+        label: t.label,
+        icon: t.icon,
+        description: t.description,
+        getData: () => null, // غير مستخدم في v2.1
+      }));
+    }
+    // v1: المنطق القديم
     return TABS.filter((tab) => {
       if (tab.id === "limits") {
         return Array.isArray(data.limits) && data.limits.length > 0;
@@ -643,7 +767,7 @@ export default function DetailedTablesViewer({
       const tableData = tab.getData(data);
       return tableData && tableData.rows && tableData.rows.length > 0;
     });
-  }, [data]);
+  }, [data, isNewSchema, v21Tabs]);
 
   // تعيين التبويب الافتراضي
   useEffect(() => {
@@ -670,18 +794,33 @@ export default function DetailedTablesViewer({
     );
   }
 
+  // استخراج بيانات التبويب النشط
+  const getActiveTableData = (): TableData | null => {
+    if (isNewSchema) {
+      const v21Tab = v21Tabs.find(t => t.id === activeTab);
+      return v21Tab?.tableData ?? null;
+    }
+    const activeTabDef = TABS.find(t => t.id === activeTab);
+    if (!activeTabDef || activeTabDef.id === 'limits') return null;
+    return activeTabDef.getData(data);
+  };
+
   const activeTabDef = availableTabs.find((t) => t.id === activeTab);
-  const activeTableData = activeTabDef?.id === "limits"
-    ? null
-    : (activeTabDef?.getData(data) ?? null);
+  const activeTableData = getActiveTableData();
   const limitsData = data.limits as [string, string][] | undefined;
 
   // دالة مساعدة لحساب عدد سجلات كل تبويب
-  const getTabCount = (tab: typeof TABS[0]): number => {
-    if (tab.id === "limits") {
+  const getTabCount = (tabId: string): number => {
+    if (isNewSchema) {
+      const v21Tab = v21Tabs.find(t => t.id === tabId);
+      return v21Tab?.tableData?.rows?.length ?? 0;
+    }
+    if (tabId === "limits") {
       return Array.isArray(data.limits) ? data.limits.length : 0;
     }
-    const td = tab.getData(data);
+    const tabDef = TABS.find(t => t.id === tabId);
+    if (!tabDef) return 0;
+    const td = tabDef.getData(data);
     return td?.rows?.length ?? 0;
   };
 
@@ -794,7 +933,7 @@ export default function DetailedTablesViewer({
                 fontWeight: 700,
                 lineHeight: 1,
               }}>
-                {getTabCount(tab).toLocaleString("en-US")}
+                {getTabCount(tab.id).toLocaleString("en-US")}
               </span>
             </button>
             );
@@ -840,7 +979,7 @@ export default function DetailedTablesViewer({
       </div>
 
       {/* محتوى التبويب */}
-      {activeTab === "limits" && limitsData ? (
+      {!isNewSchema && activeTab === "limits" && limitsData ? (
         <LimitsTable limits={limitsData} isDark={isDark} />
       ) : activeTableData ? (
         <DataTable tableData={activeTableData} isDark={isDark} />
