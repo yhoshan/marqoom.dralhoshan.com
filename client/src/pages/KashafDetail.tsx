@@ -2308,7 +2308,6 @@ function DetailedTablesSection({
         borderRadius: 16,
         border: `1px solid ${isDark ? "rgba(255,255,255,0.08)" : T.creamMid}`,
         boxShadow: "0 2px 16px rgba(0,0,0,0.06)",
-        overflow: "hidden",
       }}
     >
       {/* رأس القسم */}

@@ -689,26 +689,56 @@ export default function DetailedTablesViewer({
     <div style={{ direction: "rtl", fontFamily: "'Noto Naskh Arabic', serif" }}>
 
       {/* شريط التبويبات */}
-      <div
-        ref={tabsRef}
-        style={{
-          display: "flex",
-          gap: 4,
-          overflowX: "auto",
-          scrollbarWidth: "none",
-          WebkitOverflowScrolling: "touch",
-          paddingBottom: 2,
-          marginBottom: 16,
-          borderBottom: `2px solid ${isDark ? T.border : C.creamMid}`,
-        }}
-      >
-        {availableTabs.map((tab) => {
-          const isActive = activeTab === tab.id;
-          return (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              title={tab.description}
+      <div style={{ position: "relative", marginBottom: 16 }}>
+        {/* سهم التمرير يمين */}
+        <button
+          onClick={() => { if (tabsRef.current) tabsRef.current.scrollBy({ left: -120, behavior: "smooth" }); }}
+          style={{
+            position: "absolute", right: 0, top: "50%", transform: "translateY(-50%)",
+            zIndex: 2, background: isDark ? "rgba(10,42,40,0.95)" : "rgba(255,255,255,0.95)",
+            border: `1px solid ${isDark ? T.border : C.creamMid}`,
+            borderRadius: "50%", width: 28, height: 28, cursor: "pointer",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            fontSize: 13, color: T.emerald, boxShadow: "0 2px 8px rgba(0,0,0,0.12)",
+            padding: 0, lineHeight: 1,
+          }}
+          aria-label="تمرير يمين"
+        >›</button>
+        {/* سهم التمرير يسار */}
+        <button
+          onClick={() => { if (tabsRef.current) tabsRef.current.scrollBy({ left: 120, behavior: "smooth" }); }}
+          style={{
+            position: "absolute", left: 0, top: "50%", transform: "translateY(-50%)",
+            zIndex: 2, background: isDark ? "rgba(10,42,40,0.95)" : "rgba(255,255,255,0.95)",
+            border: `1px solid ${isDark ? T.border : C.creamMid}`,
+            borderRadius: "50%", width: 28, height: 28, cursor: "pointer",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            fontSize: 13, color: T.emerald, boxShadow: "0 2px 8px rgba(0,0,0,0.12)",
+            padding: 0, lineHeight: 1,
+          }}
+          aria-label="تمرير يسار"
+        >‹</button>
+        <div
+          ref={tabsRef}
+          style={{
+            display: "flex",
+            gap: 4,
+            overflowX: "auto",
+            scrollbarWidth: "none",
+            WebkitOverflowScrolling: "touch",
+            paddingBottom: 2,
+            paddingLeft: 36,
+            paddingRight: 36,
+            borderBottom: `2px solid ${isDark ? T.border : C.creamMid}`,
+          }}
+        >
+          {availableTabs.map((tab) => {
+            const isActive = activeTab === tab.id;
+            return (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                title={tab.description}
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -767,8 +797,9 @@ export default function DetailedTablesViewer({
                 {getTabCount(tab).toLocaleString("en-US")}
               </span>
             </button>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
 
       {/* وصف التبويب النشط */}
