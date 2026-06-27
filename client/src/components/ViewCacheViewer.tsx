@@ -852,9 +852,6 @@ export default function ViewCacheViewer({
           )}
         </Card>
 
-        {/* الأرقام الكبرى */}
-        <SummaryCards s={data.summary} />
-
         {/* الأغراض */}
         <BarSection items={data.purposes} title="توزيع الأغراض الرئيسية" icon="fa-solid fa-bullseye" color={P.emerald} sub="أبرز الأغراض العلمية حسب التكرار" sectionId="sec-purposes" />
 

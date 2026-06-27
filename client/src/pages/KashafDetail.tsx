@@ -1727,6 +1727,331 @@ const KASHAFAT: KashafItem[] = [
       { label: "الخلاف والترجيح", pct: 26 },
     ],
   },
+  {
+    id: "marqoom71_jamia_ulum_ahmad",
+    num: 71,
+    title: "كشّاف الجامع لعلوم الإمام أحمد",
+    author: "جمع وإعداد",
+    died: "جمعي",
+    category: "حديث",
+    categoryLabel: "الحديث وعلومه",
+    description: "فهرس تحليلي رقمي لجامع علوم الإمام أحمد — 11,793 صفحة، 2.5 مليون كلمة، يرصد المسائل والأعلام والمصادر في مسند الإمام أحمد وعلومه.",
+    stats: [
+      { label: "صفحة", value: "11,793", raw: 11793 },
+      { label: "كلمة", value: "2.5م", raw: 2500000 },
+      { label: "علم", value: "20", raw: 20 },
+      { label: "غرض", value: "8", raw: 8 },
+    ],
+    tag: "حديث وعلوم الإمام أحمد",
+    url: "https://marqoom71.dralhoshan.com",
+    xlsxUrl: "/manus-storage/jamia_ulum_ahmad_7131c3a7.xlsx",
+    chartData: [
+      { label: "النقل والعزو", pct: 30 },
+      { label: "اللغة والشرح", pct: 26 },
+      { label: "الإحالة الداخلية", pct: 15 },
+      { label: "الجدل والسؤال", pct: 13 },
+    ],
+  },
+  {
+    id: "marqoom72_durar_saniyya",
+    num: 72,
+    title: "كشّاف الدرر السنية",
+    author: "علماء نجد",
+    died: "جمعي",
+    category: "عقيدة",
+    categoryLabel: "العقيدة والأصول",
+    description: "فهرس تحليلي رقمي للدرر السنية في الأجوبة النجدية — 7,841 صفحة، 1.5 مليون كلمة، يرصد فتاوى علماء نجد في العقيدة والفقه والسياسة الشرعية.",
+    stats: [
+      { label: "صفحة", value: "7,841", raw: 7841 },
+      { label: "كلمة", value: "1.5م", raw: 1500000 },
+      { label: "علم", value: "20", raw: 20 },
+      { label: "غرض", value: "11", raw: 11 },
+    ],
+    tag: "عقيدة وفتاوى نجدية",
+    url: "https://marqoom72.dralhoshan.com",
+    xlsxUrl: "/manus-storage/durar_saniyya_da93f414.xlsx",
+    chartData: [
+      { label: "الاستدلال القرآني", pct: 31 },
+      { label: "الاستدلال النبوي والحديثي", pct: 17 },
+      { label: "التقرير والتأصيل", pct: 9 },
+      { label: "الفتوى والحكم العملي", pct: 9 },
+    ],
+  },
+  {
+    id: "marqoom73_bahr_raiq",
+    num: 73,
+    title: "كشّاف البحر الرائق لابن نجيم",
+    author: "ابن نجيم المصري",
+    died: "970هـ",
+    category: "فقه",
+    categoryLabel: "الفقه المقارن",
+    description: "فهرس تحليلي رقمي للبحر الرائق شرح كنز الدقائق — 3,123 صفحة، يرصد المسائل الفقهية الحنفية والتعليل والخلاف في هذا الشرح الموسوعي.",
+    stats: [
+      { label: "صفحة", value: "3,123", raw: 3123 },
+      { label: "علم", value: "20", raw: 20 },
+      { label: "غرض", value: "9", raw: 9 },
+    ],
+    tag: "فقه حنفي شرحي",
+    url: "https://marqoom73.dralhoshan.com",
+    xlsxUrl: "/manus-storage/bahr_raiq_3c66c061.xlsx",
+    chartData: [
+      { label: "الاستدلال والتعليل", pct: 34 },
+      { label: "النقل والعزو الفقهي", pct: 27 },
+      { label: "الترجيح والتصحيح والإفتاء", pct: 9 },
+      { label: "الخلاف والمقابلة بين الأقوال", pct: 6 },
+    ],
+  },
+  {
+    id: "marqoom74_hawi_kabir",
+    num: 74,
+    title: "كشّاف الحاوي الكبير للماوردي",
+    author: "أبو الحسن الماوردي",
+    died: "450هـ",
+    category: "فقه",
+    categoryLabel: "الفقه المقارن",
+    description: "فهرس تحليلي رقمي للحاوي الكبير في فقه مذهب الإمام الشافعي — 2.7 مليون كلمة، يرصد الخلاف والتعليل والاستدلال في أضخم موسوعات الفقه الشافعي.",
+    stats: [
+      { label: "كلمة", value: "2.7م", raw: 2700000 },
+      { label: "علم", value: "20", raw: 20 },
+      { label: "غرض", value: "8", raw: 8 },
+    ],
+    tag: "فقه شافعي موسوعي",
+    url: "https://marqoom74.dralhoshan.com",
+    xlsxUrl: "/manus-storage/hawi_kabir_e5382035.xlsx",
+    chartData: [],
+  },
+  {
+    id: "marqoom75_majmoo_fatawa",
+    num: 75,
+    title: "كشّاف مجموع فتاوى ابن تيمية مع المستدرك",
+    author: "شيخ الإسلام ابن تيمية",
+    died: "728هـ",
+    category: "عقيدة",
+    categoryLabel: "العقيدة والأصول",
+    description: "فهرس تحليلي رقمي لمجموع الفتاوى مع المستدرك — يرصد الفتاوى والمسائل العقدية والفقهية والأصولية في الموسوعة الكبرى لشيخ الإسلام ابن تيمية.",
+    stats: [
+      { label: "علم", value: "20", raw: 20 },
+      { label: "غرض", value: "8", raw: 8 },
+    ],
+    tag: "عقيدة وفقه وأصول",
+    url: "https://marqoom75.dralhoshan.com",
+    xlsxUrl: "/manus-storage/majmoo_fatawa_b76cd436.xlsx",
+    chartData: [
+      { label: "الاستدلال والنقل", pct: 50 },
+      { label: "النقد والإبطال", pct: 13 },
+      { label: "الجدل والمناظرة", pct: 11 },
+      { label: "التحرير والتفريق والإحالة", pct: 8 },
+    ],
+  },
+  {
+    id: "marqoom76_rasail_masail_najdiyya",
+    num: 76,
+    title: "كشّاف مجموعة الرسائل والمسائل النجدية",
+    author: "علماء نجد",
+    died: "جمعي",
+    category: "عقيدة",
+    categoryLabel: "العقيدة والأصول",
+    description: "فهرس تحليلي رقمي لمجموعة الرسائل والمسائل النجدية — 779,803 كلمة، يرصد رسائل علماء نجد في التوحيد والعقيدة والرد على المخالفين.",
+    stats: [
+      { label: "كلمة", value: "779,803", raw: 779803 },
+      { label: "علم", value: "20", raw: 20 },
+      { label: "غرض", value: "12", raw: 12 },
+    ],
+    tag: "عقيدة ورسائل نجدية",
+    url: "https://marqoom76.dralhoshan.com",
+    xlsxUrl: "/manus-storage/rasail_masail_najdiyya_0ee878da.xlsx",
+    chartData: [],
+  },
+  {
+    id: "marqoom77_tarikh_islam_dhahabi",
+    num: 77,
+    title: "كشّاف تاريخ الإسلام للذهبي",
+    author: "شمس الدين الذهبي",
+    died: "748هـ",
+    category: "سيرة",
+    categoryLabel: "السيرة والتاريخ",
+    description: "فهرس تحليلي رقمي لتاريخ الإسلام ووفيات المشاهير والأعلام — 11,890 صفحة، 3.4 مليون كلمة، يرصد الأعلام والحوادث والطبقات في أضخم موسوعات التاريخ الإسلامي.",
+    stats: [
+      { label: "صفحة", value: "11,890", raw: 11890 },
+      { label: "كلمة", value: "3.4م", raw: 3400000 },
+      { label: "علم", value: "20", raw: 20 },
+      { label: "غرض", value: "6", raw: 6 },
+    ],
+    tag: "تاريخ إسلامي موسوعي",
+    url: "https://marqoom77.dralhoshan.com",
+    xlsxUrl: "/manus-storage/tarikh_islam_dhahabi_8b9fc602.xlsx",
+    chartData: [
+      { label: "النقل والعزو والرواية", pct: 35 },
+      { label: "التراجم والطبقات", pct: 34 },
+      { label: "الحوادث والتأريخ", pct: 17 },
+      { label: "التوثيق والتعديل", pct: 8 },
+    ],
+  },
+  {
+    id: "marqoom78_dara_taarus",
+    num: 78,
+    title: "كشّاف درء تعارض العقل والنقل",
+    author: "شيخ الإسلام ابن تيمية",
+    died: "728هـ",
+    category: "عقيدة",
+    categoryLabel: "العقيدة والأصول",
+    description: "فهرس تحليلي رقمي لدرء تعارض العقل والنقل — 4,032 صفحة، 673,017 كلمة، يرصد الرد على المتكلمين والفلاسفة ومنهج الجمع بين العقل والنقل.",
+    stats: [
+      { label: "صفحة", value: "4,032", raw: 4032 },
+      { label: "كلمة", value: "673,017", raw: 673017 },
+      { label: "علم", value: "20", raw: 20 },
+      { label: "غرض", value: "10", raw: 10 },
+    ],
+    tag: "عقيدة وفلسفة ونقد",
+    url: "https://marqoom78.dralhoshan.com",
+    xlsxUrl: "/manus-storage/dara_taarus_91895692.xlsx",
+    chartData: [
+      { label: "الاستدلال والتعليل", pct: 24 },
+      { label: "الأصول الكلامية والفلسفية", pct: 20 },
+      { label: "المباحث السمعية والعقدية", pct: 12 },
+      { label: "تحرير النزاع والتفريق", pct: 11 },
+    ],
+  },
+  {
+    id: "marqoom79_fath_qadir_ibnahummam",
+    num: 79,
+    title: "كشّاف فتح القدير لابن الهمام",
+    author: "كمال الدين ابن الهمام",
+    died: "861هـ",
+    category: "فقه",
+    categoryLabel: "الفقه المقارن",
+    description: "فهرس تحليلي رقمي لفتح القدير شرح الهداية — 5,150 صفحة، 2 مليون كلمة، يرصد الخلاف الفقهي والتعليل والاستدلال في هذا الشرح الحنفي الكبير.",
+    stats: [
+      { label: "صفحة", value: "5,150", raw: 5150 },
+      { label: "كلمة", value: "2.0م", raw: 2000000 },
+      { label: "علم", value: "20", raw: 20 },
+      { label: "غرض", value: "10", raw: 10 },
+    ],
+    tag: "فقه حنفي مقارن",
+    url: "https://marqoom79.dralhoshan.com",
+    xlsxUrl: "/manus-storage/fath_qadir_ibnahummam_5f9eeb4b.xlsx",
+    chartData: [
+      { label: "الاستدلال والتعليل", pct: 33 },
+      { label: "المذاهب والأقوال", pct: 15 },
+      { label: "الحديث والتخريج", pct: 11 },
+      { label: "الأصول والقواعد", pct: 11 },
+    ],
+  },
+  {
+    id: "marqoom80_bayan_umrani",
+    num: 80,
+    title: "كشّاف البيان للعمراني",
+    author: "أبو الحسين يحيى العمراني",
+    died: "558هـ",
+    category: "فقه",
+    categoryLabel: "الفقه المقارن",
+    description: "فهرس تحليلي رقمي للبيان في مذهب الإمام الشافعي — 1.4 مليون كلمة، يرصد المسائل الفقهية الشافعية والخلاف والتعليل في هذه الموسوعة الفقهية الكبيرة.",
+    stats: [
+      { label: "كلمة", value: "1.4م", raw: 1400000 },
+      { label: "علم", value: "20", raw: 20 },
+      { label: "غرض", value: "8", raw: 8 },
+    ],
+    tag: "فقه شافعي تعليلي",
+    url: "https://marqoom80.dralhoshan.com",
+    xlsxUrl: "/manus-storage/bayan_umrani_2fe8f0be.xlsx",
+    chartData: [
+      { label: "الاستدلال والتعليل", pct: 36 },
+      { label: "الحديث والأثر", pct: 21 },
+      { label: "النقل والعزو", pct: 17 },
+      { label: "الخلاف والأقوال", pct: 13 },
+    ],
+  },
+  {
+    id: "marqoom81_dhakhira_qarafi",
+    num: 81,
+    title: "كشّاف الذخيرة للقرافي",
+    author: "شهاب الدين القرافي",
+    died: "684هـ",
+    category: "فقه",
+    categoryLabel: "الفقه المقارن",
+    description: "فهرس تحليلي رقمي للذخيرة في الفقه المالكي — 1.2 مليون كلمة، يرصد الخلاف والترجيح والاستدلال في هذه الموسوعة الفقهية المالكية الكبرى.",
+    stats: [
+      { label: "كلمة", value: "1.2م", raw: 1200000 },
+      { label: "علم", value: "20", raw: 20 },
+      { label: "غرض", value: "8", raw: 8 },
+    ],
+    tag: "فقه مالكي مقارن",
+    url: "https://marqoom81.dralhoshan.com",
+    xlsxUrl: "/manus-storage/dhakhira_qarafi_1eb3832b.xlsx",
+    chartData: [
+      { label: "الاستدلال والتعليل", pct: 48 },
+      { label: "النقل والعزو", pct: 16 },
+      { label: "الخلاف وعرض الأقوال", pct: 8 },
+      { label: "الترجيح والاختيار", pct: 8 },
+    ],
+  },
+  {
+    id: "marqoom82_maqalat_ashari",
+    num: 82,
+    title: "كشّاف مقالات الإسلاميين للأشعري",
+    author: "أبو الحسن الأشعري",
+    died: "324هـ",
+    category: "عقيدة",
+    categoryLabel: "العقيدة والأصول",
+    description: "فهرس تحليلي رقمي لمقالات الإسلاميين واختلاف المصلين — يرصد الفرق والمذاهب الكلامية والعقدية وأعلامها في أقدم موسوعات الملل والنحل.",
+    stats: [
+      { label: "علم", value: "20", raw: 20 },
+    ],
+    tag: "عقيدة وملل ونحل",
+    url: "https://marqoom82.dralhoshan.com",
+    xlsxUrl: "/manus-storage/maqalat_ashari_c1ef0094.xlsx",
+    chartData: [],
+  },
+  {
+    id: "marqoom83_bahr_muhit_abuhayyan",
+    num: 83,
+    title: "كشّاف البحر المحيط لأبي حيان",
+    author: "أبو حيان الأندلسي",
+    died: "745هـ",
+    category: "تفسير",
+    categoryLabel: "التفسير",
+    description: "فهرس تحليلي رقمي للبحر المحيط في التفسير — 2.1 مليون كلمة، 114 سورة، يرصد الاستدلال اللغوي والنحوي والتفسيري في هذا التفسير اللغوي الكبير.",
+    stats: [
+      { label: "كلمة", value: "2.1م", raw: 2100000 },
+      { label: "سورة", value: "114", raw: 114 },
+      { label: "علم", value: "20", raw: 20 },
+      { label: "غرض", value: "12", raw: 12 },
+    ],
+    tag: "تفسير لغوي نحوي",
+    url: "https://marqoom83.dralhoshan.com",
+    xlsxUrl: "/manus-storage/bahr_muhit_abuhayyan_02ac3db7.xlsx",
+    chartData: [
+      { label: "تفسير وبيان المعنى", pct: 49 },
+      { label: "النحو والإعراب", pct: 19 },
+      { label: "القراءات", pct: 15 },
+      { label: "النقد والتحرير", pct: 4 },
+    ],
+  },
+  {
+    id: "marqoom84_tahrir_tanwir",
+    num: 84,
+    title: "كشّاف التحرير والتنوير لابن عاشور",
+    author: "محمد الطاهر بن عاشور",
+    died: "1393هـ",
+    category: "تفسير",
+    categoryLabel: "التفسير",
+    description: "فهرس تحليلي رقمي للتحرير والتنوير — 11,009 صفحة، 2.9 مليون كلمة، 114 سورة، يرصد اللغة والبلاغة والتفسير والمقاصد في هذا التفسير الموسوعي الحديث.",
+    stats: [
+      { label: "صفحة", value: "11,009", raw: 11009 },
+      { label: "كلمة", value: "2.9م", raw: 2900000 },
+      { label: "سورة", value: "114", raw: 114 },
+      { label: "غرض", value: "8", raw: 8 },
+    ],
+    tag: "تفسير موسوعي حديث",
+    url: "https://marqoom84.dralhoshan.com",
+    xlsxUrl: "/manus-storage/tahrir_tanwir_b718feb3.xlsx",
+    chartData: [
+      { label: "لغة ونحو وبلاغة", pct: 31 },
+      { label: "تفسير وعلوم قرآن", pct: 22 },
+      { label: "قصص وتاريخ وأهل كتاب", pct: 14 },
+      { label: "مقاصد وإصلاح واجتماع", pct: 11 },
+    ],
+  },
 ];
 // ── Animated Bar Chart Component ──
 function BarChart({ data, color }: { data: { label: string; pct: number }[]; color: string }) {
@@ -2228,7 +2553,14 @@ export default function KashafDetail() {
             </div>
           </div>
         )}
-        {/* ViewCache section — يظهر عند وجود بيانات من API */}
+        {/* قسم الجداول التفصيلية — يظهر أولاً مكان الأرقام الكبرى */}
+        {(jsonData || jsonLoading || jsonError) && (
+          <div id="sec-tables" style={{ marginBottom: "clamp(20px,4vw,28px)" }}>
+            <DetailedTablesSection data={jsonData} loading={jsonLoading} error={jsonError} isDark={isDark} T={T} />
+          </div>
+        )}
+
+        {/* ViewCache section — يظهر بعد الجداول التفصيلية */}
         {(jsonData || jsonLoading || jsonError) && (
           <div id="sec-viewer" style={{ marginBottom: "clamp(20px,4vw,28px)" }}>
             {jsonLoading ? (
@@ -2245,13 +2577,6 @@ export default function KashafDetail() {
             ) : jsonData ? (
               <ViewCacheViewer inlineData={jsonData} />
             ) : null}
-          </div>
-        )}
-
-        {/* قسم الجداول التفصيلية — يظهر عند وجود بيانات من API */}
-        {(jsonData || jsonLoading || jsonError) && (
-          <div id="sec-tables">
-            <DetailedTablesSection data={jsonData} loading={jsonLoading} error={jsonError} isDark={isDark} T={T} />
           </div>
         )}
 
