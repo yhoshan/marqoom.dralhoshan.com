@@ -1,5 +1,6 @@
 import ViewCacheViewer from "@/components/ViewCacheViewer";
 import DetailedTablesViewer from "@/components/DetailedTablesViewer";
+import { trpc } from "@/lib/trpc";
 import { useEffect, useRef, useState } from "react";
 import { useParams, useLocation } from "wouter";
 import { useTheme } from "@/contexts/ThemeContext";
@@ -70,7 +71,7 @@ type KashafItem = {
   xlsxUrl?: string;
   docxUrl?: string;
   docxUrl2?: string;
-  jsonUrl?: string;
+  // jsonUrl أزيل — البيانات تصل عبر API فقط
 };
 const KASHAFAT: KashafItem[] = [
   {
@@ -1530,7 +1531,6 @@ const KASHAFAT: KashafItem[] = [
       { label: "مراجع قرآنية", value: "6,497" },
     ],
     url: "https://marqoom61.dralhoshan.com",
-    jsonUrl: "/manus-storage/bahralmuhit_view_cache_2f0da9e1.json",
     chartData: [
       { label: "الأدلة والاستدلال", pct: 35 },
       { label: "الخلاف المذهبي", pct: 30 },
@@ -1553,7 +1553,6 @@ const KASHAFAT: KashafItem[] = [
       { label: "عبارة خلاف", value: "1,203" },
     ],
     url: "https://marqoom62.dralhoshan.com",
-    jsonUrl: "/manus-storage/marqoom_fayd_alqadir_view_cache_6257042e.json",
     chartData: [
       { label: "صيغ الرواية والأداء", pct: 40 },
       { label: "مصطلحات علوم الحديث", pct: 30 },
@@ -1831,10 +1830,6 @@ export default function KashafDetail() {
   const [, navigate] = useLocation();
   const [showAbout, setShowAbout] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("sec-stats");
-  // جلب JSON مرة واحدة على مستوى الصفحة
-  const [jsonData, setJsonData] = useState<any>(null);
-  const [jsonLoading, setJsonLoading] = useState(false);
-  const [jsonError, setJsonError] = useState<string | null>(null);
 
   const kashaf = KASHAFAT.find((k) => k.id === id);
 
@@ -1842,24 +1837,19 @@ export default function KashafDetail() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [id]);
 
-  // جلب JSON عند تغيير الكشاف
-  useEffect(() => {
-    if (!kashaf || !("jsonUrl" in kashaf) || !(kashaf as any).jsonUrl) {
-      setJsonData(null);
-      return;
+  // جلب view_cache عبر API — لا يُكشف أي رابط JSON للمتصفح
+  const viewCacheQuery = trpc.kashafat.getViewCache.useQuery(
+    { kashafId: id || "" },
+    {
+      enabled: !!id,
+      retry: false,
+      staleTime: 5 * 60 * 1000, // 5 دقائق cache
     }
-    const url = (kashaf as any).jsonUrl as string;
-    setJsonLoading(true);
-    setJsonError(null);
-    setJsonData(null);
-    fetch(url)
-      .then((r) => {
-        if (!r.ok) throw new Error(`فشل تحميل البيانات (${r.status})`);
-        return r.json();
-      })
-      .then((d) => { setJsonData(d); setJsonLoading(false); })
-      .catch((e) => { setJsonError(e.message || "خطأ في التحميل"); setJsonLoading(false); });
-  }, [id, kashaf]);
+  );
+
+  const jsonData = viewCacheQuery.data ?? null;
+  const jsonLoading = viewCacheQuery.isLoading;
+  const jsonError = viewCacheQuery.error?.message ?? null;
 
   // IntersectionObserver لتتبع القسم النشط
   useEffect(() => {
@@ -2093,7 +2083,8 @@ export default function KashafDetail() {
       {/* ── ANCHOR NAV ── */}
       {(() => {
         const hasCharts = !!(kashaf?.chartData && kashaf.chartData.length > 0);
-        const hasJson = !!(kashaf && "jsonUrl" in kashaf && (kashaf as any).jsonUrl);
+        // hasJson: يعتمد على البيانات الفعلية من API — لا على jsonUrl القديم
+        const hasJson = !!jsonData;
         const navItems = [
           { id: "sec-stats", icon: "fa-solid fa-chart-bar", label: "الإحصائيات" },
           { id: "sec-desc", icon: "fa-solid fa-book-open", label: "النبذة" },
@@ -2237,8 +2228,8 @@ export default function KashafDetail() {
             </div>
           </div>
         )}
-        {/* ViewCache section */}
-        {"jsonUrl" in kashaf && kashaf.jsonUrl && (
+        {/* ViewCache section — يظهر عند وجود بيانات من API */}
+        {(jsonData || jsonLoading || jsonError) && (
           <div id="sec-viewer" style={{ marginBottom: "clamp(20px,4vw,28px)" }}>
             {jsonLoading ? (
               <div style={{ padding: "40px 20px", textAlign: "center", color: T.textMid, fontFamily: "'Noto Naskh Arabic', serif", direction: "rtl" }}>
@@ -2257,8 +2248,8 @@ export default function KashafDetail() {
           </div>
         )}
 
-        {/* قسم الجداول التفصيلية */}
-        {"jsonUrl" in kashaf && kashaf.jsonUrl && (
+        {/* قسم الجداول التفصيلية — يظهر عند وجود بيانات من API */}
+        {(jsonData || jsonLoading || jsonError) && (
           <div id="sec-tables">
             <DetailedTablesSection data={jsonData} loading={jsonLoading} error={jsonError} isDark={isDark} T={T} />
           </div>

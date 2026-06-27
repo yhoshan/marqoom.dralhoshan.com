@@ -56,3 +56,13 @@
 - [x] ربط كشاف البحر المحيط للزركشي (61) بملف JSON
 - [x] ربط كشاف تدريب الراوي للسيوطي (62) بملف JSON
 - [x] التحقق البصري من ViewCacheViewer في صفحة كشاف 61
+
+## ETL الآمن — API داخلي لـ view_cache
+- [x] إضافة جدول kashaf_viewcache في قاعدة البيانات (kashaf_id, storage_key, schema_version, generated_at)
+- [x] بناء API endpoint: GET /api/trpc/kashaf.getViewCache?input={"kashafId":"..."} يجلب JSON من S3 ويعيده
+- [x] تحديث ViewCacheViewer لاستخدام trpc.kashaf.getViewCache بدلاً من jsonUrl
+- [x] إزالة jsonUrl من KashafDetail نهائياً واستبداله بـ kashafId فقط
+- [x] بناء سكريبت ETL: يرفع view_cache.json إلى S3 ويسجّل في قاعدة البيانات
+- [x] رفع ملف JSON كشاف البحر المحيط عبر ETL
+- [x] اختبار: التحقق من عدم ظهور أي .json في Network tab
+- [ ] إزالة jsonUrl الخاطئ من كشاف تدريب الراوي ✅ (مكتمل)

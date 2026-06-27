@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users } from "../drizzle/schema";
+import { InsertKashafViewcache, InsertUser, kashafViewcache, users } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -90,3 +90,77 @@ export async function getUserByOpenId(openId: string) {
 }
 
 // TODO: add feature queries here as your schema grows.
+
+// ── Kashaf ViewCache ────────────────────────────────────────────────
+
+/**
+ * الحصول على storageKey لكشاف محدد — لا يُرسل للعميل مطلقاً
+ */
+export async function getViewCacheKey(kashafId: string): Promise<string | null> {
+  const db = await getDb();
+  if (!db) return null;
+  const rows = await db
+    .select({ storageKey: kashafViewcache.storageKey })
+    .from(kashafViewcache)
+    .where(eq(kashafViewcache.kashafId, kashafId))
+    .limit(1);
+  return rows.length > 0 ? rows[0].storageKey : null;
+}
+
+/**
+ * الحصول على معلومات السجل (بدون storageKey) — آمن للعرض
+ */
+export async function getViewCacheMeta(kashafId: string) {
+  const db = await getDb();
+  if (!db) return null;
+  const rows = await db
+    .select({
+      kashafId: kashafViewcache.kashafId,
+      schemaVersion: kashafViewcache.schemaVersion,
+      generatedAt: kashafViewcache.generatedAt,
+      bookTitle: kashafViewcache.bookTitle,
+      bookAuthor: kashafViewcache.bookAuthor,
+    })
+    .from(kashafViewcache)
+    .where(eq(kashafViewcache.kashafId, kashafId))
+    .limit(1);
+  return rows.length > 0 ? rows[0] : null;
+}
+
+/**
+ * إدراج أو تحديث سجل view_cache — يُستخدم من سكريبت ETL فقط
+ */
+export async function upsertViewCache(record: InsertKashafViewcache): Promise<void> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  await db
+    .insert(kashafViewcache)
+    .values(record)
+    .onDuplicateKeyUpdate({
+      set: {
+        storageKey: record.storageKey,
+        schemaVersion: record.schemaVersion ?? null,
+        generatedAt: record.generatedAt ?? null,
+        bookTitle: record.bookTitle ?? null,
+        bookAuthor: record.bookAuthor ?? null,
+      },
+    });
+}
+
+/**
+ * قائمة جميع الكشافات المربوطة (بدون storageKey)
+ */
+export async function listViewCacheMeta() {
+  const db = await getDb();
+  if (!db) return [];
+  return db
+    .select({
+      kashafId: kashafViewcache.kashafId,
+      schemaVersion: kashafViewcache.schemaVersion,
+      generatedAt: kashafViewcache.generatedAt,
+      bookTitle: kashafViewcache.bookTitle,
+      bookAuthor: kashafViewcache.bookAuthor,
+      updatedAt: kashafViewcache.updatedAt,
+    })
+    .from(kashafViewcache);
+}

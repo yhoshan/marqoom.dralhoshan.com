@@ -2,8 +2,13 @@
  * Kashafat Router
  * Serves kashaf metadata for the viewer — file URLs are intentionally excluded.
  * The original Excel/Word files remain inaccessible from the browser.
+ *
+ * getViewCache: يجلب JSON من S3 عبر السيرفر — لا يُكشف أي رابط .json للمتصفح
  */
+import { TRPCError } from "@trpc/server";
 import { publicProcedure, router } from "../_core/trpc";
+import { getViewCacheKey } from "../db";
+import { storageGetSignedUrl } from "../storage";
 import { z } from "zod";
 
 // ── Kashaf data (file URLs stripped) ──
@@ -58,5 +63,38 @@ export const kashafatRouter = router({
     .query(({ input }) => {
       const found = KASHAFAT.find((k) => k.id === input.id);
       return found ?? null;
+    }),
+
+  /**
+   * جلب view_cache لكشاف محدد — آمن تماماً
+   * - يقرأ storageKey من قاعدة البيانات
+   * - يجلب المحتوى من S3 عبر presigned URL داخلية
+   * - يعيد البيانات كـ JSON مباشرة — لا رابط .json يظهر في Network
+   */
+  getViewCache: publicProcedure
+    .input(z.object({ kashafId: z.string().min(1).max(128) }))
+    .query(async ({ input }) => {
+      // 1. اجلب مفتاح S3 من قاعدة البيانات
+      const storageKey = await getViewCacheKey(input.kashafId);
+      if (!storageKey) {
+        // لا يوجد view_cache لهذا الكشاف — ليس خطأ، فقط لم يُربط بعد
+        return null;
+      }
+
+      // 2. اجلب presigned URL من S3 (داخلي — لا يُرسل للعميل)
+      const presignedUrl = await storageGetSignedUrl(storageKey);
+
+      // 3. جلب محتوى JSON عبر السيرفر
+      const resp = await fetch(presignedUrl);
+      if (!resp.ok) {
+        throw new TRPCError({
+          code: "INTERNAL_SERVER_ERROR",
+          message: `فشل جلب view_cache: ${resp.status}`,
+        });
+      }
+
+      // 4. أعد JSON مباشرة — لا رابط .json يظهر في Network
+      const data = await resp.json();
+      return data as Record<string, unknown>;
     }),
 });

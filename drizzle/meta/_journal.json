@@ -8,6 +8,13 @@
       "when": 1782510529457,
       "tag": "0000_real_lord_hawal",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1782545941794,
+      "tag": "0001_dizzy_pretty_boy",
+      "breakpoints": true
     }
   ]
 }
