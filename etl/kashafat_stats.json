@@ -1,0 +1,202 @@
+{
+  "fathalbaari": [
+    {
+      "label": "عبارة",
+      "value": "217,433"
+    },
+    {
+      "label": "مورد",
+      "value": "82,359"
+    },
+    {
+      "label": "علم",
+      "value": "72,665"
+    },
+    {
+      "label": "كتاب مصدر",
+      "value": "2,605"
+    }
+  ],
+  "marqoom75_majmoo_fatawa": [
+    {
+      "label": "عبارة",
+      "value": "91,777"
+    },
+    {
+      "label": "مورد",
+      "value": "48,424"
+    },
+    {
+      "label": "علم",
+      "value": "29,503"
+    },
+    {
+      "label": "كتاب مصدر",
+      "value": "7,712"
+    }
+  ],
+  "annawawe": [],
+  "almuhalla": [
+    {
+      "label": "كتاباً",
+      "value": "61"
+    }
+  ],
+  "almughni": [],
+  "albadaei": [],
+  "alrazi": [],
+  "alqurtubi": [
+    {
+      "label": "علم",
+      "value": "80"
+    }
+  ],
+  "marqoom_jawab_sahih": [
+    {
+      "label": "عبارة",
+      "value": "11,675"
+    },
+    {
+      "label": "مورد",
+      "value": "5,437"
+    },
+    {
+      "label": "علم",
+      "value": "2,248"
+    },
+    {
+      "label": "كتاب مصدر",
+      "value": "1,276"
+    }
+  ],
+  "marqoom_dara_taarus": [
+    {
+      "label": "عبارة",
+      "value": "21,469"
+    },
+    {
+      "label": "مورد",
+      "value": "6,327"
+    },
+    {
+      "label": "علم",
+      "value": "2,685"
+    },
+    {
+      "label": "كتاب مصدر",
+      "value": "746"
+    }
+  ],
+  "marqoom_bayan_talbis": [
+    {
+      "label": "عبارة",
+      "value": "20,254"
+    },
+    {
+      "label": "مورد",
+      "value": "11,995"
+    },
+    {
+      "label": "علم",
+      "value": "3,436"
+    },
+    {
+      "label": "كتاب مصدر",
+      "value": "1,051"
+    }
+  ],
+  "marqoom_alkafi_ibnabdulbar": [
+    {
+      "label": "عبارة",
+      "value": "7,450"
+    }
+  ],
+  "marqoom_ibnkathir": [
+    {
+      "label": "قسم",
+      "value": "114"
+    }
+  ],
+  "marqoom_zad_almaaad": [
+    {
+      "label": "كلمة",
+      "value": "582,927"
+    },
+    {
+      "label": "قسم",
+      "value": "4"
+    }
+  ],
+  "marqoom_madarij": [
+    {
+      "label": "كلمة",
+      "value": "388,916"
+    },
+    {
+      "label": "قسم",
+      "value": "4"
+    }
+  ],
+  "marqoom_jamia_ahmad": [
+    {
+      "label": "عبارة",
+      "value": "219,792"
+    },
+    {
+      "label": "قسم",
+      "value": "11"
+    }
+  ],
+  "marqoom_ziyadah_ihsan": [
+    {
+      "label": "قسم",
+      "value": "153"
+    }
+  ],
+  "marqoom_aghani": [
+    {
+      "label": "قسم",
+      "value": "2697"
+    }
+  ],
+  "marqoom_wafayat": [
+    {
+      "label": "كلمة",
+      "value": "766,839"
+    },
+    {
+      "label": "قسم",
+      "value": "991"
+    }
+  ],
+  "marqoom_altamhid": [
+    {
+      "label": "عبارة",
+      "value": "142,329"
+    },
+    {
+      "label": "قسم",
+      "value": "5"
+    }
+  ],
+  "marqoom_alistidhkar": [
+    {
+      "label": "عبارة",
+      "value": "85,648"
+    },
+    {
+      "label": "قسم",
+      "value": "50"
+    }
+  ],
+  "marqoom_ilam_almuwaqqiin": [
+    {
+      "label": "كلمة",
+      "value": "1.0م"
+    },
+    {
+      "label": "قسم",
+      "value": "4"
+    }
+  ]
+}

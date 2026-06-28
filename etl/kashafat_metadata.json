@@ -1,0 +1,343 @@
+{
+  "fathalbaari": {
+    "id": "fathalbaari",
+    "title": "فتح الباري بشرح صحيح البخاري",
+    "author": "ابن حجر العسقلاني",
+    "died": "",
+    "category": "",
+    "description": "",
+    "stats": [
+      {
+        "label": "قسم",
+        "value": "5"
+      }
+    ],
+    "xlsx": "/manus-storage/fathalbaari_3a4cf8fb.xlsx"
+  },
+  "marqoom75_majmoo_fatawa": {
+    "id": "marqoom75_majmoo_fatawa",
+    "title": "مجموع الفتاوى والمستدرك",
+    "author": "أحمد بن عبد الحليم بن تيمية الحراني",
+    "died": "",
+    "category": "",
+    "description": "",
+    "stats": [
+      {
+        "label": "قسم",
+        "value": "4"
+      }
+    ],
+    "xlsx": "/manus-storage/majmoo_fatawa_69ca772c.xlsx"
+  },
+  "annawawe": {
+    "id": "annawawe",
+    "title": "المجموع شرح المهذب",
+    "author": "الإمام النووي؛ مع تكملة السبكي والمطيعي في النسخة المرفوعة",
+    "died": "",
+    "category": "",
+    "description": "",
+    "stats": [
+      {
+        "label": "قسم",
+        "value": "2"
+      }
+    ],
+    "xlsx": "/manus-storage/annawawe_6c72435e.xlsx"
+  },
+  "almuhalla": {
+    "id": "almuhalla",
+    "title": "المحلى بالآثار",
+    "author": "أبو محمد علي بن أحمد بن سعيد بن حزم الأندلسي القرطبي الظاهري",
+    "died": "",
+    "category": "",
+    "description": "",
+    "stats": [
+      {
+        "label": "قسم",
+        "value": "61"
+      }
+    ],
+    "xlsx": "/manus-storage/almuhalla_158ef884.xlsx"
+  },
+  "almughni": {
+    "id": "almughni",
+    "title": "المغني",
+    "author": "موفق الدين ابن قدامة المقدسي",
+    "died": "",
+    "category": "",
+    "description": "",
+    "stats": [
+      {
+        "label": "قسم",
+        "value": "2"
+      }
+    ],
+    "xlsx": "/manus-storage/almughni_7cd7a76d.xlsx"
+  },
+  "albadaei": {
+    "id": "albadaei",
+    "title": "بدائع الصنائع في ترتيب الشرائع",
+    "author": "علاء الدين الكاساني الحنفي",
+    "died": "",
+    "category": "",
+    "description": "",
+    "stats": [
+      {
+        "label": "قسم",
+        "value": "1"
+      }
+    ],
+    "xlsx": "/manus-storage/albadaei_4b469872.xlsx"
+  },
+  "alrazi": {
+    "id": "alrazi",
+    "title": "تفسير الرازي = مفاتيح الغيب أو التفسير الكبير",
+    "author": "فخر الدين الرازي",
+    "died": "",
+    "category": "",
+    "description": "",
+    "stats": [
+      {
+        "label": "قسم",
+        "value": "1"
+      }
+    ],
+    "xlsx": "/manus-storage/alrazi_997c4d70.xlsx"
+  },
+  "alqurtubi": {
+    "id": "alqurtubi",
+    "title": "الجامع لأحكام القرآن والمبين لما تضمنه من السنة وآي الفرقان",
+    "author": "أبو عبد الله محمد بن أحمد الأنصاري القرطبي",
+    "died": "",
+    "category": "",
+    "description": "",
+    "stats": [
+      {
+        "label": "قسم",
+        "value": "4"
+      }
+    ],
+    "xlsx": "/manus-storage/alqurtubi_cbbd5fd0.xlsx"
+  },
+  "marqoom_jawab_sahih": {
+    "id": "marqoom_jawab_sahih",
+    "title": "الجواب الصحيح لمن بدل دين المسيح",
+    "author": "أحمد بن عبد الحليم بن تيمية الحراني",
+    "died": "",
+    "category": "",
+    "description": "",
+    "stats": [
+      {
+        "label": "قسم",
+        "value": "4"
+      }
+    ],
+    "xlsx": "/manus-storage/jawab_sahih_9efb0b4c.xlsx"
+  },
+  "marqoom_dara_taarus": {
+    "id": "marqoom_dara_taarus",
+    "title": "درء تعارض العقل والنقل",
+    "author": "أحمد بن عبد الحليم بن تيمية الحراني",
+    "died": "",
+    "category": "",
+    "description": "",
+    "stats": [
+      {
+        "label": "قسم",
+        "value": "4"
+      }
+    ],
+    "xlsx": "/manus-storage/dara_taarus_eafd2504.xlsx"
+  },
+  "marqoom_bayan_talbis": {
+    "id": "marqoom_bayan_talbis",
+    "title": "بيان تلبيس الجهمية",
+    "author": "أحمد بن عبد الحليم بن تيمية الحراني",
+    "died": "",
+    "category": "",
+    "description": "",
+    "stats": [
+      {
+        "label": "قسم",
+        "value": "4"
+      }
+    ],
+    "xlsx": "/manus-storage/bayan_talbis_17ba2f0e.xlsx"
+  },
+  "marqoom_alkafi_ibnabdulbar": {
+    "id": "marqoom_alkafi_ibnabdulbar",
+    "title": "الكافي في فقه أهل المدينة",
+    "author": "ابن عبد البر",
+    "died": "",
+    "category": "",
+    "description": "",
+    "stats": [],
+    "xlsx": "/manus-storage/alkafi_ibnabdulbar_08c04907.xlsx"
+  },
+  "marqoom_ibnkathir": {
+    "id": "marqoom_ibnkathir",
+    "title": "تفسير القرآن العظيم",
+    "author": "أبو الفداء إسماعيل بن عمر بن كثير الدمشقي (ت 774هـ)",
+    "died": "",
+    "category": "",
+    "description": "",
+    "stats": [
+      {
+        "label": "قسم",
+        "value": "114"
+      }
+    ],
+    "xlsx": "/manus-storage/ibnkathir_993feb9e.xlsx"
+  },
+  "marqoom_zad_almaaad": {
+    "id": "marqoom_zad_almaaad",
+    "title": "زاد المعاد في هدي خير العباد",
+    "author": "ابن القيم",
+    "died": "",
+    "category": "",
+    "description": "",
+    "stats": [
+      {
+        "label": "كلمة",
+        "value": "582,927"
+      },
+      {
+        "label": "قسم",
+        "value": "4"
+      }
+    ],
+    "xlsx": "/manus-storage/zad_almaaad_a9137855.xlsx"
+  },
+  "marqoom_madarij": {
+    "id": "marqoom_madarij",
+    "title": "مدارج السالكين بين منازل إياك نعبد وإياك نستعين",
+    "author": "ابن القيم",
+    "died": "",
+    "category": "",
+    "description": "",
+    "stats": [
+      {
+        "label": "كلمة",
+        "value": "388,916"
+      },
+      {
+        "label": "قسم",
+        "value": "4"
+      }
+    ],
+    "xlsx": "/manus-storage/madarij_3d029c3f.xlsx"
+  },
+  "marqoom_jamia_ahmad": {
+    "id": "marqoom_jamia_ahmad",
+    "title": "الجامع لعلوم الإمام أحمد بن حنبل",
+    "author": "",
+    "died": "",
+    "category": "",
+    "description": "",
+    "stats": [
+      {
+        "label": "قسم",
+        "value": "11"
+      }
+    ],
+    "xlsx": "/manus-storage/jamia_ahmad_a4d34db9.xlsx"
+  },
+  "marqoom_ziyadah_ihsan": {
+    "id": "marqoom_ziyadah_ihsan",
+    "title": "الزيادة والإحسان في علوم القرآن",
+    "author": "محمد بن أحمد بن سعيد الحنفي المكي، المعروف بعقيلة",
+    "died": "",
+    "category": "",
+    "description": "",
+    "stats": [
+      {
+        "label": "قسم",
+        "value": "153"
+      }
+    ],
+    "xlsx": "/manus-storage/ziyadah_ihsan_2ae1fcf9.xlsx"
+  },
+  "marqoom_aghani": {
+    "id": "marqoom_aghani",
+    "title": "كتاب الأغاني",
+    "author": "أبو الفرج الأصفهاني",
+    "died": "",
+    "category": "",
+    "description": "",
+    "stats": [
+      {
+        "label": "قسم",
+        "value": "2697"
+      }
+    ],
+    "xlsx": "/manus-storage/aghani_cc4bf307.xlsx"
+  },
+  "marqoom_wafayat": {
+    "id": "marqoom_wafayat",
+    "title": "وفيات الأعيان",
+    "author": "ابن خلكان",
+    "died": "",
+    "category": "",
+    "description": "",
+    "stats": [
+      {
+        "label": "كلمة",
+        "value": "766,839"
+      },
+      {
+        "label": "قسم",
+        "value": "991"
+      }
+    ],
+    "xlsx": "/manus-storage/wafayat_9a9cfdcb.xlsx"
+  },
+  "marqoom_altamhid": {
+    "id": "marqoom_altamhid",
+    "title": "التمهيد لما في الموطأ من المعاني والأسانيد",
+    "author": "ابن عبد البر",
+    "died": "",
+    "category": "",
+    "description": "",
+    "stats": [
+      {
+        "label": "قسم",
+        "value": "5"
+      }
+    ],
+    "xlsx": "/manus-storage/altamhid_7ae6f41f.xlsx"
+  },
+  "marqoom_alistidhkar": {
+    "id": "marqoom_alistidhkar",
+    "title": "الاستذكار",
+    "author": "ابن عبد البر",
+    "died": "",
+    "category": "",
+    "description": "",
+    "stats": [
+      {
+        "label": "قسم",
+        "value": "50"
+      }
+    ],
+    "xlsx": "/manus-storage/alistidhkar_d8360ea9.xlsx"
+  },
+  "marqoom_ilam_almuwaqqiin": {
+    "id": "marqoom_ilam_almuwaqqiin",
+    "title": "إعلام الموقعين عن رب العالمين",
+    "author": "ابن القيم",
+    "died": "",
+    "category": "",
+    "description": "",
+    "stats": [
+      {
+        "label": "كلمة",
+        "value": "1.0م"
+      },
+      {
+        "label": "قسم",
+        "value": "4"
+      }
+    ],
+    "xlsx": "/manus-storage/ilam_almuwaqqiin_56916e33.xlsx"
+  }
+}

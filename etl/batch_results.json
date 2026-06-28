@@ -1,0 +1,156 @@
+[
+  {
+    "kashafId": "fathalbaari",
+    "status": "OK",
+    "xlsxUrl": null,
+    "bookTitle": "فتح الباري بشرح صحيح البخاري",
+    "schemaVersion": "2.2"
+  },
+  {
+    "kashafId": "marqoom75_majmoo_fatawa",
+    "status": "OK",
+    "xlsxUrl": null,
+    "bookTitle": "مجموع الفتاوى والمستدرك",
+    "schemaVersion": "2.2"
+  },
+  {
+    "kashafId": "annawawe",
+    "status": "OK",
+    "xlsxUrl": null,
+    "bookTitle": "المجموع شرح المهذب",
+    "schemaVersion": "2.2"
+  },
+  {
+    "kashafId": "almuhalla",
+    "status": "OK",
+    "xlsxUrl": null,
+    "bookTitle": "المحلى بالآثار",
+    "schemaVersion": "2.2"
+  },
+  {
+    "kashafId": "almughni",
+    "status": "OK",
+    "xlsxUrl": null,
+    "bookTitle": "المغني",
+    "schemaVersion": "2.2"
+  },
+  {
+    "kashafId": "albadaei",
+    "status": "OK",
+    "xlsxUrl": null,
+    "bookTitle": "بدائع الصنائع في ترتيب الشرائع",
+    "schemaVersion": "2.2"
+  },
+  {
+    "kashafId": "alrazi",
+    "status": "OK",
+    "xlsxUrl": null,
+    "bookTitle": "تفسير الرازي = مفاتيح الغيب أو التفسير الكبير",
+    "schemaVersion": "2.2"
+  },
+  {
+    "kashafId": "alqurtubi",
+    "status": "OK",
+    "xlsxUrl": null,
+    "bookTitle": "الجامع لأحكام القرآن والمبين لما تضمنه من السنة وآي الفرقان",
+    "schemaVersion": "2.2"
+  },
+  {
+    "kashafId": "marqoom_jawab_sahih",
+    "status": "OK",
+    "xlsxUrl": null,
+    "bookTitle": "الجواب الصحيح لمن بدل دين المسيح",
+    "schemaVersion": "2.2"
+  },
+  {
+    "kashafId": "marqoom_dara_taarus",
+    "status": "OK",
+    "xlsxUrl": null,
+    "bookTitle": "درء تعارض العقل والنقل",
+    "schemaVersion": "2.2"
+  },
+  {
+    "kashafId": "marqoom_bayan_talbis",
+    "status": "OK",
+    "xlsxUrl": null,
+    "bookTitle": "بيان تلبيس الجهمية",
+    "schemaVersion": "2.2"
+  },
+  {
+    "kashafId": "marqoom_alkafi_ibnabdulbar",
+    "status": "OK",
+    "xlsxUrl": null,
+    "bookTitle": "الكافي في فقه أهل المدينة",
+    "schemaVersion": "2.2"
+  },
+  {
+    "kashafId": "marqoom_ibnkathir",
+    "status": "OK",
+    "xlsxUrl": null,
+    "bookTitle": "تفسير القرآن العظيم",
+    "schemaVersion": "2.2"
+  },
+  {
+    "kashafId": "marqoom_zad_almaaad",
+    "status": "OK",
+    "xlsxUrl": null,
+    "bookTitle": "زاد المعاد في هدي خير العباد",
+    "schemaVersion": "2.2"
+  },
+  {
+    "kashafId": "marqoom_madarij",
+    "status": "OK",
+    "xlsxUrl": null,
+    "bookTitle": "مدارج السالكين بين منازل إياك نعبد وإياك نستعين",
+    "schemaVersion": "2.2"
+  },
+  {
+    "kashafId": "marqoom_jamia_ahmad",
+    "status": "OK",
+    "xlsxUrl": null,
+    "bookTitle": "الجامع لعلوم الإمام أحمد بن حنبل",
+    "schemaVersion": "2.2"
+  },
+  {
+    "kashafId": "marqoom_ziyadah_ihsan",
+    "status": "OK",
+    "xlsxUrl": null,
+    "bookTitle": "الزيادة والإحسان في علوم القرآن",
+    "schemaVersion": "2.2"
+  },
+  {
+    "kashafId": "marqoom_aghani",
+    "status": "OK",
+    "xlsxUrl": null,
+    "bookTitle": "كتاب الأغاني",
+    "schemaVersion": "2.2"
+  },
+  {
+    "kashafId": "marqoom_wafayat",
+    "status": "OK",
+    "xlsxUrl": null,
+    "bookTitle": "وفيات الأعيان",
+    "schemaVersion": "2.2"
+  },
+  {
+    "kashafId": "marqoom_altamhid",
+    "status": "OK",
+    "xlsxUrl": null,
+    "bookTitle": "التمهيد لما في الموطأ من المعاني والأسانيد",
+    "schemaVersion": "2.2"
+  },
+  {
+    "kashafId": "marqoom_alistidhkar",
+    "status": "OK",
+    "xlsxUrl": null,
+    "bookTitle": "الاستذكار",
+    "schemaVersion": "2.2"
+  },
+  {
+    "kashafId": "marqoom_ilam_almuwaqqiin",
+    "status": "OK",
+    "xlsxUrl": null,
+    "bookTitle": "إعلام الموقعين عن رب العالمين",
+    "schemaVersion": "2.2"
+  }
+]
