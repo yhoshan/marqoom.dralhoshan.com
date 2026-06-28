@@ -71,7 +71,7 @@ type KashafItem = {
   xlsxUrl?: string;
   docxUrl?: string;
   docxUrl2?: string;
-  // jsonUrl أزيل — البيانات تصل عبر API فقط
+  jsonUrl?: string;
 };
 const KASHAFAT: KashafItem[] = [
   {
@@ -1650,31 +1650,7 @@ const KASHAFAT: KashafItem[] = [
       { label: "الخلاف والترجيح", pct: 26 },
     ],
   },
-  {
-    id: "marqoom71_jamia_ulum_ahmad",
-    num: 71,
-    title: "كشّاف الجامع لعلوم الإمام أحمد",
-    author: "جمع وإعداد",
-    died: "جمعي",
-    category: "حديث",
-    categoryLabel: "الحديث وعلومه",
-    description: "فهرس تحليلي رقمي لجامع علوم الإمام أحمد — 11,793 صفحة، 2.5 مليون كلمة، يرصد المسائل والأعلام والمصادر في مسند الإمام أحمد وعلومه.",
-    stats: [
-      { label: "صفحة", value: "11,793", raw: 11793 },
-      { label: "كلمة", value: "2.5 مليون", raw: 2500000 },
-      { label: "علم", value: "20", raw: 20 },
-      { label: "غرض", value: "8", raw: 8 },
-    ],
-    tag: "حديث وعلوم الإمام أحمد",
-    url: "https://marqoom71.dralhoshan.com",
-    xlsxUrl: "/manus-storage/jamia_ulum_ahmad_7131c3a7.xlsx",
-    chartData: [
-      { label: "النقل والعزو", pct: 30 },
-      { label: "اللغة والشرح", pct: 26 },
-      { label: "الإحالة الداخلية", pct: 15 },
-      { label: "الجدل والسؤال", pct: 13 },
-    ],
-  },
+
   {
     id: "marqoom72_durar_saniyya",
     num: 72,
@@ -2029,25 +2005,28 @@ const KASHAFAT: KashafItem[] = [
   {
     id: "marqoom87_jamia_ahmad",
     num: 87,
-    title: "كشّاف الجامع لعلوم الإمام أحمد",
-    author: "جمع وإعداد",
-    death: "موسوعي",
+    title: "كشّاف الجامع لعلوم الإمام أحمد بن حنبل",
+    author: "موسوعة جامعة",
+    died: "موسوعي",
     category: "حديث",
     categoryLabel: "الحديث وعلومه",
-    description: "فهرس تحليلي رقمي للجامع لعلوم الإمام أحمد بن حنبل — 219,792 عبارة منهجية، 11 مجلداً، يرصد منهج الإمام أحمد في الحديث والفقه والعقيدة والرجال.",
-    longDesc: "الجامع لعلوم الإمام أحمد بن حنبل موسوعة جمعية شاملة ترصد علوم الإمام أحمد في 11 مجلداً، من حديث وفقه وعقيدة ورجال. يرصد هذا الكشاف 219,792 عبارة منهجية تكشف منهج الإمام أحمد في الاستدلال والتعليل والنقد.",
+    description: "فهرس تحليلي رقمي للجامع لعلوم الإمام أحمد بن حنبل — 219,792 عبارة منهجية، 11 مجلداً، 2.5 مليون كلمة، يرصد منهج الإمام أحمد في الحديث والفقه والعقيدة والرجال.",
+    longDesc: "الجامع لعلوم الإمام أحمد بن حنبل موسوعة جمعية شاملة ترصد علوم الإمام أحمد في 11 مجلداً بمجموع 2.5 مليون كلمة، من حديث وفقه وعقيدة ورجال. يرصد هذا الكشاف 219,792 عبارة منهجية تكشف منهج الإمام أحمد في الاستدلال والتعليل والنقد عبر 11,793 وحدة داخلية.",
     stats: [
       { label: "عبارة", value: "219,792", raw: 219792 },
       { label: "مجلداً", value: "11", raw: 11 },
+      { label: "كلمة", value: "2.5 مليون", raw: 2500000 },
+      { label: "وحدة", value: "11,793", raw: 11793 },
     ],
-    tag: "منهج الإمام أحمد",
+    tag: "موسوعة علوم الإمام أحمد",
     url: "https://marqoom87.dralhoshan.com",
-    xlsxUrl: "/manus-storage/jamia_ahmad_a4d34db9.xlsx",
+    xlsxUrl: "/manus-storage/jamia_ahmad_new_afb541c3.xlsx",
+    jsonUrl: "/manus-storage/jamia_ahmad_new_viewcache_0d0cc0ae.json",
     chartData: [
-      { label: "الحديث والرجال", pct: 38 },
-      { label: "الفقه والمسائل", pct: 30 },
-      { label: "العقيدة والأصول", pct: 20 },
-      { label: "السيرة والتاريخ", pct: 12 },
+      { label: "النقل والعزو", pct: 30 },
+      { label: "اللغة والشرح", pct: 26 },
+      { label: "الإحالة الداخلية", pct: 15 },
+      { label: "الجدل والسؤال", pct: 13 },
     ],
   },
   {
