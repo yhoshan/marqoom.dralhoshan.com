@@ -186,42 +186,42 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
   if (Array.isArray(purposeDist) && purposeDist.length > 0) {
     const rows = purposeDist.map((p) => [
       str(p, 'الغرض', 'purpose'),
-      num(p, 'الحضور', 'count'),
-      num(p, 'النسبة من مجموع العبارات المنهجية %', 'percentage'),
+      num(p, 'العدد', 'الحضور', 'count'),
+      num(p, 'النسبة %', 'النسبة من مجموع العبارات المنهجية %', 'percentage'),
     ] as (string | number | null)[]);
     tabs.push({
       id: 'v22_purposes', label: 'توزيع الأغراض', icon: '🎯',
       description: 'توزيع الأغراض المنهجية ونسبها من مجموع العبارات',
-      tableData: { _columns: ['الغرض', 'الحضور', 'النسبة%'], rows },
+      tableData: { _columns: ['الغرض', 'العدد', 'النسبة%'], rows },
     });
   }
 
-  // المؤشرات التحليلية (indicators)
-  const indicators = summary?.indicators as Record<string, unknown>[] | undefined;
+  // المؤشرات التحليلية — يدعم composite_indicators وindicators
+  const indicators = (summary?.composite_indicators ?? summary?.indicators) as Record<string, unknown>[] | undefined;
   if (Array.isArray(indicators) && indicators.length > 0) {
     const rows = indicators.map((ind) => [
       str(ind, 'المؤشر', 'name'),
-      num(ind, 'البسط', 'count'),
-      num(ind, 'المقام', 'total'),
+      num(ind, 'القيمة', 'البسط', 'count'),
+      num(ind, 'أساس الحساب', 'المقام', 'total'),
       num(ind, 'النسبة %', 'percentage'),
-      str(ind, 'درجة الثقة', 'confidence'),
+      str(ind, 'الصيغة', 'درجة الثقة', 'confidence'),
     ] as (string | number | null)[]);
     tabs.push({
       id: 'v22_indicators', label: 'المؤشرات التحليلية', icon: '📊',
       description: 'مؤشرات منهجية مركّبة تقيس أبعاد الكتاب',
-      tableData: { _columns: ['المؤشر', 'البسط', 'المقام', 'النسبة%', 'درجة الثقة'], rows },
+      tableData: { _columns: ['المؤشر', 'القيمة', 'الأساس', 'النسبة%', 'الصيغة'], rows },
     });
   }
 
   const resources = raw.resources as Record<string, unknown> | undefined;
 
-  // الأعلام — يدعم figures (التفسير) وpersons (الحديث والفقه)
-  const figures = (resources?.figures ?? resources?.persons) as Record<string, unknown>[] | undefined;
+  // الأعلام — يدعم figures وpersons وpeople
+  const figures = (resources?.figures ?? resources?.persons ?? resources?.people) as Record<string, unknown>[] | undefined;
   if (Array.isArray(figures) && figures.length > 0) {
     const rows = figures.map((f) => [
-      str(f, 'العلم', 'name'),
+      str(f, 'العلم', 'الشخصية', 'name'),
       str(f, 'المدرسة/الطبقة', 'المجال', 'category'),
-      num(f, 'الحضور', 'count'),
+      num(f, 'الحضور', 'العدد', 'count'),
       str(f, 'النسبة من مجموع الأعلام في هذا الكتاب %', 'النسبة %', 'percentage') || '',
     ] as (string | number | null)[]);
     tabs.push({
@@ -237,8 +237,8 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
     const rows = books.map((b) => [
       str(b, 'الكتاب/المصدر المصرح به', 'name'),
       str(b, 'المجال', 'category'),
-      num(b, 'الحضور', 'count'),
-      num(b, 'النسبة من مجموع إحالات الكتب في هذا الكتاب %', 'percentage'),
+      num(b, 'الحضور', 'العدد', 'count'),
+      num(b, 'النسبة من مجموع إحالات الكتب في هذا الكتاب %', 'النسبة %', 'percentage'),
     ] as (string | number | null)[]);
     tabs.push({
       id: 'v22_books', label: 'المصادر المُحال إليها', icon: '📚',
@@ -247,14 +247,14 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
     });
   }
 
-  // المدارس والاتجاهات — يدعم الحقول العربية والإنجليزية
-  const schools = resources?.schools as Record<string, unknown>[] | undefined;
+  // المدارس والاتجاهات — يدعم schools وschools_and_trends
+  const schools = (resources?.schools ?? resources?.schools_and_trends) as Record<string, unknown>[] | undefined;
   if (Array.isArray(schools) && schools.length > 0) {
     const rows = schools.map((s) => [
       str(s, 'المدرسة/الاتجاه', 'name'),
       str(s, 'المجال', 'category'),
-      num(s, 'الحضور', 'count'),
-      num(s, 'النسبة من مجموع المدارس والاتجاهات في هذا الكتاب %', 'percentage'),
+      num(s, 'الحضور', 'العدد', 'count'),
+      num(s, 'النسبة من مجموع المدارس والاتجاهات في هذا الكتاب %', 'النسبة %', 'percentage'),
     ] as (string | number | null)[]);
     tabs.push({
       id: 'v22_schools', label: 'المدارس والاتجاهات', icon: '🏫',
@@ -263,18 +263,33 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
     });
   }
 
-  // توزيع المجالات (by_field)
-  const byField = resources?.by_field as Record<string, unknown>[] | undefined;
+  // توزيع المجالات — يدعم by_field وfields
+  const byField = (resources?.by_field ?? resources?.fields) as Record<string, unknown>[] | undefined;
   if (Array.isArray(byField) && byField.length > 0) {
     const rows = byField.map((f) => [
       str(f, 'المجال', 'field'),
-      num(f, 'عدد الحضور', 'count'),
-      num(f, 'النسبة من مجموع الموارد العامة في هذا الكتاب %', 'percentage'),
+      num(f, 'العدد', 'عدد الحضور', 'count'),
+      num(f, 'النسبة %', 'النسبة من مجموع الموارد العامة في هذا الكتاب %', 'percentage'),
     ] as (string | number | null)[]);
     tabs.push({
       id: 'v22_byfield', label: 'توزيع المجالات', icon: '🗂️',
       description: 'توزيع الموارد حسب المجال العلمي',
-      tableData: { _columns: ['المجال', 'الحضور', 'النسبة%'], rows },
+      tableData: { _columns: ['المجال', 'العدد', 'النسبة%'], rows },
+    });
+  }
+
+  // أقسام الكتاب (sections) — بنية الجامع لعلوم الإمام أحمد (name/title + words + text_units)
+  if (Array.isArray(sections) && sections.length > 0 && sections[0].surah_no === undefined && sections[0]['العنوان'] === undefined && (sections[0].title !== undefined || sections[0].name !== undefined)) {
+    const rows = sections.map((s, i) => [
+      i + 1,
+      str(s, 'title', 'name'),
+      num(s, 'words'),
+      num(s, 'text_units'),
+    ] as (string | number | null)[]);
+    tabs.push({
+      id: 'v22_sections', label: 'أقسام الكتاب', icon: '📂',
+      description: 'أقسام الموسوعة مع حجم كل قسم بالكلمات والوحدات',
+      tableData: { _columns: ['#', 'القسم', 'الكلمات', 'الوحدات'], rows },
     });
   }
 
@@ -282,16 +297,43 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
   const terms = raw.terms as Record<string, unknown>[] | undefined;
   if (Array.isArray(terms) && terms.length > 0) {
     const rows = terms.map((t) => [
-      str(t, 'العبارة', 'term'),
-      str(t, 'المجموعة', 'domain'),
-      str(t, 'الغرض', 'meaning'),
-      num(t, 'الحضور', 'count'),
+      str(t, 'المصطلح/العبارة', 'العبارة', 'term'),
+      str(t, 'التصنيف', 'المجموعة', 'domain'),
+      num(t, 'العدد', 'الحضور', 'count'),
+      num(t, 'النسبة من مجموع العبارات المنهجية', 'percentage'),
     ] as (string | number | null)[]);
     tabs.push({
       id: 'v22_terms', label: 'المصطلحات المنهجية', icon: '📝',
       description: 'أبرز المصطلحات المنهجية وأغراضها وتكرارها',
-      tableData: { _columns: ['العبارة', 'المجموعة', 'الغرض', 'الحضور'], rows },
+      tableData: { _columns: ['المصطلح/العبارة', 'التصنيف', 'العدد', 'النسبة%'], rows },
     });
+  }
+
+  // المجموعات المنهجية (methodological_subsets) — خلاف/ترجيح/نقد/إحالة
+  const methodSubsets = raw.methodological_subsets as Record<string, Record<string, unknown>[]> | undefined;
+  if (methodSubsets && typeof methodSubsets === 'object') {
+    const subsetLabels: Record<string, string> = {
+      khilaf: 'مصطلحات الخلاف',
+      tarjih: 'مصطلحات الترجيح',
+      criticism: 'مصطلحات النقد والعلل',
+      cross_references: 'مصطلحات الإحالة الداخلية',
+    };
+    for (const [key, label] of Object.entries(subsetLabels)) {
+      const arr = methodSubsets[key];
+      if (Array.isArray(arr) && arr.length > 0) {
+        const rows = arr.map((item) => [
+          str(item, 'المصطلح/العبارة', 'term'),
+          str(item, 'التصنيف', 'category'),
+          num(item, 'العدد', 'count'),
+          num(item, 'النسبة من مجموع عبارات هذا الغرض %', 'percentage'),
+        ] as (string | number | null)[]);
+        tabs.push({
+          id: `v22_subset_${key}`, label, icon: key === 'khilaf' ? '⚖️' : key === 'tarjih' ? '🏆' : key === 'criticism' ? '🔍' : '🔗',
+          description: `أبرز مصطلحات ${label} وتكرارها`,
+          tableData: { _columns: ['المصطلح/العبارة', 'التصنيف', 'العدد', 'النسبة%'], rows },
+        });
+      }
+    }
   }
 
   return tabs;
