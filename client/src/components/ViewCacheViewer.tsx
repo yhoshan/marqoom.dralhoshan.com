@@ -177,65 +177,69 @@ function normalize(d: any): NormalizedData {
   if (d.protocol_version === "2.2" && d.book && d.sections) {
     const book = d.book || {};
     const summary = d.summary || {};
-    const indicators = summary.indicators || {};
-    const purposeDist: { purpose: string; count: number; percentage: number }[] = summary.purpose_distribution || [];
-    const sections: any[] = d.sections || [];
+    const indicatorsRaw = summary.indicators;
+    const indicators: Record<string, unknown> = Array.isArray(indicatorsRaw)
+      ? Object.fromEntries(indicatorsRaw.map((ind: any) => [String(ind['المؤشر'] || ind.name || ''), ind['النسبة %'] ?? ind.percentage ?? 0]))
+      : (indicatorsRaw || {});
+    const purposeDist: any[] = summary.purpose_distribution || [];
+    const sectionsRaw: any[] = Array.isArray(d.sections) ? d.sections : [];
     const resources = d.resources || {};
-    const figures: any[] = resources.figures || [];
+    // يدعم figures (تفسير) وpersons (حديث/فقه)
+    const figures: any[] = resources.figures || resources.persons || [];
     const schools: any[] = resources.schools || [];
-    const terms: any[] = d.terms || [];
+    const terms: any[] = Array.isArray(d.terms) ? d.terms : [];
     const limits = d.limits || {};
 
-    // تحويل sections (سور) إلى بيانات السور
-    const surahs = sections.map((s: any) => ({
-      number: Number(s.surah_no) || 0,
-      name: String(s.title || ""),
-      pageStart: undefined,
+    // تحويل sections — يدعم بنية التفسير (surah_no) والكتب الحديثية/الفقهية (العنوان)
+    const surahs = sectionsRaw.map((s: any) => ({
+      number: Number(s.surah_no || s['الترتيب'] || 0),
+      name: String(s.title || s['العنوان'] || ""),
+      pageStart: s['بداية الصفحة الرقمية'] ? Number(s['بداية الصفحة الرقمية']) : undefined,
       ayahCount: undefined,
-      chars: Number(s.approx_words) || undefined,
-      charsPerAyah: Number(s.internal_units) || undefined,
+      chars: Number(s.approx_words || s['كلمات المقطع التقريبية'] || 0) || undefined,
+      charsPerAyah: Number(s.internal_units || 0) || undefined,
     }));
 
-    // تحويل purpose_distribution إلى أغراض
+    // تحويل purpose_distribution — يدعم الحقول العربية والإنجليزية
     const purposes = purposeDist.map((p: any) => ({
-      label: String(p.purpose || ""),
-      count: Number(p.count) || 0,
-      pct: Number(p.percentage) || 0,
+      label: String(p['الغرض'] || p.purpose || ""),
+      count: Number(p['الحضور'] || p.count || 0),
+      pct: Number(p['النسبة من مجموع العبارات المنهجية %'] || p.percentage || 0),
     }));
 
-    // تحويل resources.figures إلى أعلام
+    // تحويل resources.figures/persons إلى أعلام
     const people = figures.slice(0, 30).map((f: any) => ({
-      name: String(f.name || ""),
-      role: String(f.category || ""),
-      count: Number(f.count) || 0,
-      pct: 0,
-      confidence: f.note ? String(f.note) : undefined,
+      name: String(f['العلم'] || f.name || ""),
+      role: String(f['المدرسة/الطبقة'] || f['المجال'] || f.category || ""),
+      count: Number(f['الحضور'] || f.count || 0),
+      pct: Number(f['النسبة من مجموع الأعلام في هذا الكتاب %'] || f.percentage || 0),
+      confidence: f['تنبيه منهجي'] || f.note ? String(f['تنبيه منهجي'] || f.note) : undefined,
     }));
 
     // تحويل resources.schools إلى موارد
     const resourcesList = schools.map((s: any) => ({
-      label: String(s.name || ""),
-      count: Number(s.count) || 0,
-      pct: 0,
+      label: String(s['المدرسة/الاتجاه'] || s.name || ""),
+      count: Number(s['الحضور'] || s.count || 0),
+      pct: Number(s['النسبة من مجموع المدارس والاتجاهات في هذا الكتاب %'] || s.percentage || 0),
     }));
 
-    // تحويل terms إلى كتب (إعادة استخدام حقل books لعرض المصطلحات)
+    // تحويل terms إلى كتب (يدعم الحقول العربية والإنجليزية)
     const books = terms.map((t: any) => ({
-      title: String(t.term || ""),
-      category: String(t.domain || ""),
-      author: String(t.meaning || ""),
-      count: Number(t.count) || 0,
+      title: String(t['العبارة'] || t.term || ""),
+      category: String(t['المجموعة'] || t.domain || ""),
+      author: String(t['الغرض'] || t.meaning || ""),
+      count: Number(t['الحضور'] || t.count || 0),
       pct: 0,
     }));
 
-    // تحويل limits (object) إلى مصفوفة أزواج
-    const limitsArr: [string, string][] = Object.entries(limits).map(([k, v]) => [
-      String(k), String(v)
-    ] as [string, string]);
+    // تحويل limits (object أو مصفوفة) إلى مصفوفة أزواج
+    const limitsArr: [string, string][] = Array.isArray(limits)
+      ? limits.map((item: any) => [String(item[0] ?? item.key ?? ''), String(item[1] ?? item.value ?? '')] as [string, string])
+      : Object.entries(limits).map(([k, v]) => [String(k), String(v)] as [string, string]);
 
     return {
-      title: String(book.title || book.short_title || ""),
-      author: String(book.author || ""),
+      title: String(book.title || book.short_title || book['عنوان الكتاب'] || ""),
+      author: String(book.author || book['المؤلف'] || ""),
       diedHijri: null,
       category: "",
       bookId: undefined,
