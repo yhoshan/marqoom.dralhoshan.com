@@ -104,7 +104,7 @@
   - يختلف عن v1 (highlights/distributions) وعن v2.1 (views/facets)
 - [ ] فحص الكشافات ذات الإحصائيات الصفرية (17 كشاف) والتأكد من عمل جداولها
   - بعضها لديه highlights وبعضها لا (مثل altabari له 4 جداول)
-- [ ] حفظ checkpoint نهائي ورفع على GitHub
+- [x] حفظ checkpoint نهائي ورفع على GitHub (version: 5d5ec262)
 
 ## جلسة 2026-06-28 — استبدال ملفات الطبري + دعم schema v2.2
 
@@ -143,4 +143,4 @@
 - [x] تسجيل 22 view_cache في قاعدة البيانات (13 جديدة + 9 محدّثة)
 
 ### ما تبقى ❌
-- [ ] حفظ checkpoint نهائي ورفع على GitHub
+- [x] حفظ checkpoint نهائي ورفع على GitHub (version: 5d5ec262)
