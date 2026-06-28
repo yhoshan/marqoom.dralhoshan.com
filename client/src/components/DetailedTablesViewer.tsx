@@ -138,7 +138,7 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
   const raw = d as Record<string, unknown>;
   const tabs: { id: string; label: string; icon: string; description: string; tableData: TableData }[] = [];
 
-  // ── مساعد: استخراج قيمة رقمية من حقول متعددة الأسماء ──
+  // ── مساعدات: استخراج قيمة من حقول متعددة الأسماء ──
   const num = (obj: Record<string, unknown>, ...keys: string[]) => {
     for (const k of keys) { const v = obj[k]; if (v !== undefined && v !== null) return Number(v) || 0; }
     return 0;
@@ -146,6 +146,15 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
   const str = (obj: Record<string, unknown>, ...keys: string[]) => {
     for (const k of keys) { const v = obj[k]; if (v !== undefined && v !== null) return String(v); }
     return '';
+  };
+  // استخراج أول مصفوفة كائنات من قائمة مفاتيح
+  const getArr = (obj: Record<string, unknown> | undefined, ...keys: string[]): Record<string, unknown>[] | undefined => {
+    if (!obj) return undefined;
+    for (const k of keys) {
+      const v = obj[k];
+      if (Array.isArray(v) && v.length > 0 && typeof v[0] === 'object') return v as Record<string, unknown>[];
+    }
+    return undefined;
   };
 
   // السور (sections) — بنية التفسير
@@ -216,11 +225,11 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
   const resources = raw.resources as Record<string, unknown> | undefined;
 
   // الأعلام — يدعم figures وpersons وpeople
-  const figures = (resources?.figures ?? resources?.persons ?? resources?.people) as Record<string, unknown>[] | undefined;
-  if (Array.isArray(figures) && figures.length > 0) {
+  const figures = getArr(resources, 'figures', 'persons', 'people');
+  if (figures && figures.length > 0) {
     const rows = figures.map((f) => [
-      str(f, 'العلم', 'الشخصية', 'name'),
-      str(f, 'المدرسة/الطبقة', 'المجال', 'category'),
+      str(f, 'العلم', 'الشخصية', 'name', 'الشخص'),
+      str(f, 'المدرسة/الطبقة', 'المجال', 'category', 'التصنيف'),
       num(f, 'الحضور', 'العدد', 'count'),
       str(f, 'النسبة من مجموع الأعلام في هذا الكتاب %', 'النسبة %', 'percentage') || '',
     ] as (string | number | null)[]);
@@ -231,12 +240,12 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
     });
   }
 
-  // المصادر والكتب (resources.books)
-  const books = resources?.books as Record<string, unknown>[] | undefined;
-  if (Array.isArray(books) && books.length > 0) {
+  // المصادر والكتب — يدعم books وexplicit_books وtop_books وhuman_sources
+  const books = getArr(resources, 'books', 'explicit_books', 'top_books');
+  if (books && books.length > 0) {
     const rows = books.map((b) => [
-      str(b, 'الكتاب/المصدر المصرح به', 'name'),
-      str(b, 'المجال', 'category'),
+      str(b, 'الكتاب/المصدر المصرح به', 'name', 'الكتاب', 'المصدر'),
+      str(b, 'المجال', 'category', 'التصنيف'),
       num(b, 'الحضور', 'العدد', 'count'),
       num(b, 'النسبة من مجموع إحالات الكتب في هذا الكتاب %', 'النسبة %', 'percentage'),
     ] as (string | number | null)[]);
@@ -247,11 +256,27 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
     });
   }
 
-  // المدارس والاتجاهات — يدعم schools وschools_and_trends
-  const schools = (resources?.schools ?? resources?.schools_and_trends) as Record<string, unknown>[] | undefined;
-  if (Array.isArray(schools) && schools.length > 0) {
+  // المصادر البشرية (human_sources) — منفصلة عن الكتب
+  const humanSources = getArr(resources, 'human_sources');
+  if (humanSources && humanSources.length > 0) {
+    const rows = humanSources.map((h) => [
+      str(h, 'العلم/المصدر البشري', 'name', 'الشخص'),
+      str(h, 'المجال', 'category'),
+      num(h, 'الحضور', 'العدد', 'count'),
+      num(h, 'النسبة %', 'percentage'),
+    ] as (string | number | null)[]);
+    tabs.push({
+      id: 'v22_human_sources', label: 'المصادر البشرية', icon: '👤',
+      description: 'العلماء والشخصيات المصرح بهم بالاسم',
+      tableData: { _columns: ['العلم', 'المجال', 'الحضور', 'النسبة%'], rows },
+    });
+  }
+
+  // المدارس والاتجاهات — يدعم schools وschools_and_trends وschools_trends
+  const schools = getArr(resources, 'schools', 'schools_and_trends', 'schools_trends');
+  if (schools && schools.length > 0) {
     const rows = schools.map((s) => [
-      str(s, 'المدرسة/الاتجاه', 'name'),
+      str(s, 'المدرسة/الاتجاه', 'name', 'المدرسة', 'الاتجاه'),
       str(s, 'المجال', 'category'),
       num(s, 'الحضور', 'العدد', 'count'),
       num(s, 'النسبة من مجموع المدارس والاتجاهات في هذا الكتاب %', 'النسبة %', 'percentage'),
@@ -263,11 +288,11 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
     });
   }
 
-  // توزيع المجالات — يدعم by_field وfields
-  const byField = (resources?.by_field ?? resources?.fields) as Record<string, unknown>[] | undefined;
-  if (Array.isArray(byField) && byField.length > 0) {
+  // توزيع المجالات — يدعم by_field وfields وdomains
+  const byField = getArr(resources, 'by_field', 'fields', 'domains');
+  if (byField && byField.length > 0) {
     const rows = byField.map((f) => [
-      str(f, 'المجال', 'field'),
+      str(f, 'المجال', 'field', 'domain', 'name'),
       num(f, 'العدد', 'عدد الحضور', 'count'),
       num(f, 'النسبة %', 'النسبة من مجموع الموارد العامة في هذا الكتاب %', 'percentage'),
     ] as (string | number | null)[]);
@@ -334,6 +359,97 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
         });
       }
     }
+  }
+
+  // صيغ الأداء والرواية (narration_forms) — من summary أو resources
+  const narrationForms = getArr(summary as Record<string, unknown> | undefined, 'narration_forms')
+    ?? getArr(resources, 'narration_forms');
+  if (narrationForms && narrationForms.length > 0) {
+    const rows = narrationForms.map((n) => [
+      str(n, 'صيغة الأداء', 'الصيغة', 'name', 'form'),
+      str(n, 'التصنيف', 'category'),
+      num(n, 'الحضور', 'العدد', 'count'),
+      num(n, 'النسبة %', 'percentage'),
+    ] as (string | number | null)[]);
+    tabs.push({
+      id: 'v22_narration', label: 'صيغ الأداء والرواية', icon: '📜',
+      description: 'صيغ التحديث والرواية وأنواعها وأعدادها',
+      tableData: { _columns: ['الصيغة', 'التصنيف', 'الحضور', 'النسبة%'], rows },
+    });
+  }
+
+  // الكثافة العلمية (density) — من distributions أو summary
+  const densityArr = getArr(raw.distributions as Record<string, unknown> | undefined, 'density')
+    ?? getArr(summary as Record<string, unknown> | undefined, 'density');
+  if (densityArr && densityArr.length > 0) {
+    const rows = densityArr.map((d2) => [
+      str(d2, 'القسم', 'الباب', 'section', 'name'),
+      num(d2, 'الكثافة', 'الكثافة العلمية', 'density'),
+      num(d2, 'عدد العبارات', 'count'),
+      num(d2, 'عدد الصفحات', 'pages'),
+    ] as (string | number | null)[]);
+    tabs.push({
+      id: 'v22_density', label: 'الكثافة العلمية', icon: '🔬',
+      description: 'توزيع الكثافة العلمية على أقسام المصنّف',
+      tableData: { _columns: ['القسم', 'الكثافة', 'العبارات', 'الصفحات'], rows },
+    });
+  }
+
+  // القارئ السريع (quick_reader) — من raw.quick_reader أو summary
+  const quickReader = getArr(raw, 'quick_reader')
+    ?? getArr(summary as Record<string, unknown> | undefined, 'quick_reader');
+  if (quickReader && quickReader.length > 0) {
+    const rows = quickReader.map((q) => [
+      str(q, 'المحور', 'الموضوع', 'topic', 'name'),
+      str(q, 'الخلاصة', 'الوصف', 'summary', 'description'),
+      num(q, 'العدد', 'count'),
+    ] as (string | number | null)[]);
+    tabs.push({
+      id: 'v22_quick_reader', label: 'القارئ السريع', icon: '⚡',
+      description: 'محاور سريعة للباحث المتعجل',
+      tableData: { _columns: ['المحور', 'الخلاصة', 'العدد'], rows },
+    });
+  }
+
+  // الملخص التنفيذي (executive_summary) — من raw.executive_summary أو summary
+  const execSummary = getArr(raw, 'executive_summary')
+    ?? getArr(summary as Record<string, unknown> | undefined, 'executive_summary');
+  if (execSummary && execSummary.length > 0) {
+    const rows = execSummary.map((e) => [
+      str(e, 'المحور', 'البند', 'item', 'name'),
+      str(e, 'القيمة', 'الوصف', 'value', 'description'),
+    ] as (string | number | null)[]);
+    tabs.push({
+      id: 'v22_exec_summary', label: 'الملخص التنفيذي', icon: '📋',
+      description: 'أبرز النتائج والمحاور الكبرى للكشاف',
+      tableData: { _columns: ['المحور', 'القيمة'], rows },
+    });
+  }
+
+  // النتائج القابلة للنشر (publishable_results) — من raw
+  const publishable = getArr(raw, 'publishable_results', 'results');
+  if (publishable && publishable.length > 0) {
+    const rows = publishable.map((p) => [
+      str(p, 'النتيجة', 'البند', 'result', 'name'),
+      str(p, 'التفصيل', 'الوصف', 'detail', 'description'),
+      str(p, 'القيمة', 'value'),
+    ] as (string | number | null)[]);
+    tabs.push({
+      id: 'v22_publishable', label: 'نتائج قابلة للنشر', icon: '🌟',
+      description: 'أبرز النتائج العلمية القابلة للنشر والاستشهاد',
+      tableData: { _columns: ['النتيجة', 'التفصيل', 'القيمة'], rows },
+    });
+  }
+
+  // حدود الدراسة (limits) — من raw.limits (array of [string, string])
+  const limits = raw.limits as [string, string][] | undefined;
+  if (Array.isArray(limits) && limits.length > 0 && Array.isArray(limits[0])) {
+    const rows = limits.map((l) => [String(l[0] || ''), String(l[1] || '')] as (string | number | null)[]);
+    tabs.push({
+      id: 'v22_limits', label: 'حدود الدراسة', icon: '⚠️',
+      description: 'ملاحظات منهجية وحدود الكشاف',
+      tableData: { _columns: ['الحد', 'التفصيل'], rows },
+    });
   }
 
   return tabs;
