@@ -49,25 +49,7 @@ const KASHAFAT = [
     url: "https://marqoom1.dralhoshan.com",
     xlsxUrl: "/manus-storage/fathalbaari_3a4cf8fb.xlsx",
   },
-  {
-    id: "ibnabdulbar_old",
-    num: 2,
-    title: "كشّاف التمهيد والاستذكار والكافي لابن عبد البر",
-    author: "ابن عبد البر القرطبي",
-    death: "ت 463هـ",
-    category: "حديث",
-    categoryLabel: "الحديث وعلومه",
-    description:
-      "كشاف شامل لثلاثة مصنفات كبرى: التمهيد لما في الموطأ، والاستذكار، والكافي — يرصد منهج الإمام الحافظ في الحديث والفقه والرجال.",
-    stats: [
-      { label: "كلمة", value: "8.5 مليون" },
-      { label: "عبارة", value: "235,427" },
-      { label: "صفحة", value: "13,722" },
-      { label: "مصنفات", value: "3" },
-    ],
-    tag: "حديث وفقه مقارن",
-    url: "https://marqoom2.dralhoshan.com",
-  },
+
   {
     id: "alrazi",
     num: 4,
