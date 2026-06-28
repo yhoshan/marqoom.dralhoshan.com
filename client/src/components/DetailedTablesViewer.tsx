@@ -116,9 +116,11 @@ function facetToTableData(arr: { name?: string; type?: string; count: number }[]
   return { _columns: columns, rows };
 }
 
-// ── كشف هل البيانات v2.1 ──
+// ── كشف هل البيانات v2.1 أو v2.2 ──
 function isV21(d: ViewCacheData): boolean {
   const raw = d as Record<string, unknown>;
+  // v2.2: protocol_version كمفتاح رئيسي (sections + resources + book)
+  if (raw.protocol_version && raw.sections && raw.book) return true;
   // الكشف بوجود views أو facets كمفاتيح رئيسية
   if (raw.views && typeof raw.views === 'object') return true;
   if (raw.facets && typeof raw.facets === 'object') return true;
@@ -129,6 +131,92 @@ function isV21(d: ViewCacheData): boolean {
     if (sv) return true;
   }
   return false;
+}
+
+// ── استخراج التبويبات من v2.2 ──
+function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string; description: string; tableData: TableData }[] {
+  const raw = d as Record<string, unknown>;
+  const tabs: { id: string; label: string; icon: string; description: string; tableData: TableData }[] = [];
+
+  // السور (sections)
+  const sections = raw.sections as Record<string, unknown>[] | undefined;
+  if (Array.isArray(sections) && sections.length > 0) {
+    const rows = sections.map((s) => [
+      Number(s.surah_no) || 0,
+      String(s.title || ''),
+      Number(s.internal_units) || 0,
+      Number(s.approx_words) || 0,
+    ] as (string | number | null)[]);
+    tabs.push({
+      id: 'v22_surahs', label: 'توزيع السور', icon: '📖',
+      description: 'السور الـ 114 مع عدد الوحدات والكلمات',
+      tableData: { _columns: ['رقم', 'السورة', 'وحدات', 'كلمات'], rows },
+    });
+  }
+
+  // الأغراض (purpose_distribution)
+  const summary = raw.summary as Record<string, unknown> | undefined;
+  const purposeDist = summary?.purpose_distribution as Record<string, unknown>[] | undefined;
+  if (Array.isArray(purposeDist) && purposeDist.length > 0) {
+    const rows = purposeDist.map((p) => [
+      String(p.purpose || ''),
+      Number(p.count) || 0,
+      Number(p.percentage) || 0,
+    ] as (string | number | null)[]);
+    tabs.push({
+      id: 'v22_purposes', label: 'توزيع الأغراض', icon: '🎯',
+      description: 'توزيع الأغراض العلمية ونسبها',
+      tableData: { _columns: ['الغرض', 'العدد', 'النسبة%'], rows },
+    });
+  }
+
+  // الأعلام (resources.figures)
+  const resources = raw.resources as Record<string, unknown> | undefined;
+  const figures = resources?.figures as Record<string, unknown>[] | undefined;
+  if (Array.isArray(figures) && figures.length > 0) {
+    const rows = figures.map((f) => [
+      String(f.name || ''),
+      String(f.category || ''),
+      Number(f.count) || 0,
+    ] as (string | number | null)[]);
+    tabs.push({
+      id: 'v22_figures', label: 'الأعلام', icon: '👥',
+      description: 'أبرز الأعلام والمفسرين وتكرارهم',
+      tableData: { _columns: ['العلم', 'التصنيف', 'عدد المرات'], rows },
+    });
+  }
+
+  // المدارس (resources.schools)
+  const schools = resources?.schools as Record<string, unknown>[] | undefined;
+  if (Array.isArray(schools) && schools.length > 0) {
+    const rows = schools.map((s) => [
+      String(s.name || ''),
+      Number(s.count) || 0,
+    ] as (string | number | null)[]);
+    tabs.push({
+      id: 'v22_schools', label: 'المدارس', icon: '🏫',
+      description: 'المدارس والأساليب التفسيرية',
+      tableData: { _columns: ['المدرسة', 'عدد المرات'], rows },
+    });
+  }
+
+  // المصطلحات (terms)
+  const terms = raw.terms as Record<string, unknown>[] | undefined;
+  if (Array.isArray(terms) && terms.length > 0) {
+    const rows = terms.map((t) => [
+      String(t.term || ''),
+      String(t.domain || ''),
+      String(t.meaning || ''),
+      Number(t.count) || 0,
+    ] as (string | number | null)[]);
+    tabs.push({
+      id: 'v22_terms', label: 'مصطلحات الكشاف', icon: '📝',
+      description: 'مصطلحات منهجية ودلالتها',
+      tableData: { _columns: ['المصطلح', 'المجال', 'المعنى', 'عدد المرات'], rows },
+    });
+  }
+
+  return tabs;
 }
 
 // ── استخراج التبويبات من v2.1 ──
@@ -743,20 +831,25 @@ export default function DetailedTablesViewer({
   const [activeTab, setActiveTab] = useState<string>("");
   const tabsRef = useRef<HTMLDivElement>(null);
 
-  // كشف schema v2.1
+  // كشف schema
   const isNewSchema = useMemo(() => isV21(data), [data]);
-  const v21Tabs = useMemo(() => isNewSchema ? getV21Tabs(data) : [], [data, isNewSchema]);
+  const raw = data as Record<string, unknown>;
+  const isV22 = useMemo(() => !!(raw.protocol_version && raw.sections && raw.book), [data]);
+  const v21Tabs = useMemo(() => {
+    if (!isNewSchema) return [];
+    if (isV22) return getV22Tabs(data);
+    return getV21Tabs(data);
+  }, [data, isNewSchema, isV22]);
 
-  // تحديد التبويبات المتاحة (v1 أو v2.1)
+  // تحديد التبويبات المتاحة (v1 أو v2.1 أو v2.2)
   const availableTabs = useMemo(() => {
     if (isNewSchema) {
-      // v2.1: نستخدم التبويبات المستخرجة من views/facets
       return v21Tabs.map(t => ({
         id: t.id,
         label: t.label,
         icon: t.icon,
         description: t.description,
-        getData: () => null, // غير مستخدم في v2.1
+        getData: () => null,
       }));
     }
     // v1: المنطق القديم

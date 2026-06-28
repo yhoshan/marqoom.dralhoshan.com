@@ -173,6 +173,90 @@ interface NormalizedData {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function normalize(d: any): NormalizedData {
+  // ── MARQOOM_SCHEMA v2.2 (protocol_version=2.2, has book, summary, sections, resources) ──
+  if (d.protocol_version === "2.2" && d.book && d.sections) {
+    const book = d.book || {};
+    const summary = d.summary || {};
+    const indicators = summary.indicators || {};
+    const purposeDist: { purpose: string; count: number; percentage: number }[] = summary.purpose_distribution || [];
+    const sections: any[] = d.sections || [];
+    const resources = d.resources || {};
+    const figures: any[] = resources.figures || [];
+    const schools: any[] = resources.schools || [];
+    const terms: any[] = d.terms || [];
+    const limits = d.limits || {};
+
+    // تحويل sections (سور) إلى بيانات السور
+    const surahs = sections.map((s: any) => ({
+      number: Number(s.surah_no) || 0,
+      name: String(s.title || ""),
+      pageStart: undefined,
+      ayahCount: undefined,
+      chars: Number(s.approx_words) || undefined,
+      charsPerAyah: Number(s.internal_units) || undefined,
+    }));
+
+    // تحويل purpose_distribution إلى أغراض
+    const purposes = purposeDist.map((p: any) => ({
+      label: String(p.purpose || ""),
+      count: Number(p.count) || 0,
+      pct: Number(p.percentage) || 0,
+    }));
+
+    // تحويل resources.figures إلى أعلام
+    const people = figures.slice(0, 30).map((f: any) => ({
+      name: String(f.name || ""),
+      role: String(f.category || ""),
+      count: Number(f.count) || 0,
+      pct: 0,
+      confidence: f.note ? String(f.note) : undefined,
+    }));
+
+    // تحويل resources.schools إلى موارد
+    const resourcesList = schools.map((s: any) => ({
+      label: String(s.name || ""),
+      count: Number(s.count) || 0,
+      pct: 0,
+    }));
+
+    // تحويل terms إلى كتب (إعادة استخدام حقل books لعرض المصطلحات)
+    const books = terms.map((t: any) => ({
+      title: String(t.term || ""),
+      category: String(t.domain || ""),
+      author: String(t.meaning || ""),
+      count: Number(t.count) || 0,
+      pct: 0,
+    }));
+
+    // تحويل limits (object) إلى مصفوفة أزواج
+    const limitsArr: [string, string][] = Object.entries(limits).map(([k, v]) => [
+      String(k), String(v)
+    ] as [string, string]);
+
+    return {
+      title: String(book.title || book.short_title || ""),
+      author: String(book.author || ""),
+      diedHijri: null,
+      category: "",
+      bookId: undefined,
+      schemaVersion: "2.2",
+      generatedAt: undefined,
+      summary: {
+        pages: undefined,
+        parts: undefined,
+        wordsApprox: Number(indicators["عدد الكلمات التقريبي"]) || undefined,
+        chars: undefined,
+        surahsDetected: Number(indicators["عدد السور"]) || undefined,
+      },
+      purposes,
+      resources: resourcesList,
+      books,
+      people,
+      surahs,
+      limits: limitsArr,
+    };
+  }
+
   // ── MARQOOM_SCHEMA v1 (has _meta, book, summary, highlights, distributions) ──
   if (d._meta && d.book && d.highlights) {
     const hl = d.highlights || {};
@@ -300,7 +384,7 @@ function normalize(d: any): NormalizedData {
       books: parseBooksTable(hl.top_books),
       people: parsePeopleTable(hl.top_people),
       surahs: parseSurahTable(dist.surahs || dist.surah),
-      limits: (d.limits || []).map((item: unknown[]) => [String(item[0] ?? ""), String(item[1] ?? "")] as [string, string]),
+      limits: Array.isArray(d.limits) ? (d.limits as unknown[][]).map((item) => [String(item[0] ?? ""), String(item[1] ?? "")] as [string, string]) : [],
       rawHighlights: hl,
     };
   }
@@ -369,7 +453,7 @@ function normalize(d: any): NormalizedData {
     books: parseBooksArr(d.top_books || []),
     people: parsePeopleArr(d.top_people || []),
     surahs: parseSurahArr(d.surah_distribution || []),
-    limits: (d.limits || []).map((item: unknown[]) => [String(item[0] ?? ""), String(item[1] ?? "")] as [string, string]),
+    limits: Array.isArray(d.limits) ? (d.limits as unknown[][]).map((item) => [String(item[0] ?? ""), String(item[1] ?? "")] as [string, string]) : [],
   };
 }
 
