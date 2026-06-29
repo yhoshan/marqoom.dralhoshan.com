@@ -2396,6 +2396,11 @@ export default function KashafDetail() {
   const [, navigate] = useLocation();
   const [showAbout, setShowAbout] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("sec-stats");
+  const navScrollRef = useRef<HTMLDivElement>(null);
+  const scrollNavTabs = (dir: "left" | "right") => {
+    if (!navScrollRef.current) return;
+    navScrollRef.current.scrollBy({ left: dir === "left" ? -160 : 160, behavior: "smooth" });
+  };
 
   const kashaf = KASHAFAT.find((k) => k.id === id);
 
@@ -2664,48 +2669,65 @@ export default function KashafDetail() {
             position: "sticky", top: 0, zIndex: 50,
             background: isDark ? "rgba(7,30,28,0.97)" : "rgba(240,250,249,0.97)",
             backdropFilter: "blur(10px)",
-            borderBottom: `2px solid ${isDark ? T.creamMid : T.creamMid}`,
-            padding: "8px clamp(12px,4vw,20px)",
-            display: "flex", gap: 6, overflowX: "auto",
-            scrollbarWidth: "none",
-            WebkitOverflowScrolling: "touch",
-            direction: "rtl",
+            borderBottom: `2px solid ${T.creamMid}`,
+            boxShadow: isDark ? "0 2px 12px rgba(0,0,0,0.4)" : "0 2px 12px rgba(13,138,122,0.12)",
           }}>
-            {navItems.map((item) => (
+            <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 4px", display: "flex", alignItems: "center", gap: 0, position: "relative", direction: "rtl" }}>
+              {/* سهم اليمين */}
               <button
-                key={item.id}
-                onClick={() => {
-                  const el = document.getElementById(item.id);
-                  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-                }}
-                style={{
-                  display: "flex", alignItems: "center", gap: 6,
-                  padding: "7px 14px", borderRadius: 20,
-                  border: `1.5px solid ${activeSection === item.id ? T.emerald : (isDark ? T.creamMid : T.creamMid)}`,
-                  background: activeSection === item.id ? T.emerald : "transparent",
-                  color: activeSection === item.id ? T.white : (isDark ? T.textMid : T.textMid),
-                  fontSize: "clamp(11px,2.5vw,13px)", cursor: "pointer",
-                  whiteSpace: "nowrap", fontFamily: "'Noto Naskh Arabic',serif",
-                  fontWeight: activeSection === item.id ? 700 : 400,
-                  transition: "all 0.2s",
-                  flexShrink: 0,
-                  WebkitTapHighlightColor: "transparent",
-                }}
-                onMouseEnter={(e) => {
-                  if (activeSection !== item.id) {
-                    (e.currentTarget as HTMLElement).style.background = isDark ? "rgba(42,202,186,0.1)" : "rgba(13,138,122,0.08)";
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (activeSection !== item.id) {
-                    (e.currentTarget as HTMLElement).style.background = "transparent";
-                  }
-                }}
+                onClick={() => scrollNavTabs("right")}
+                style={{ flexShrink: 0, background: "none", border: "none", cursor: "pointer", padding: "0 8px", color: T.emerald, fontSize: 18, display: "flex", alignItems: "center", minHeight: 52 }}
               >
-                <i className={item.icon} style={{ fontSize: 11 }} />
-                {item.label}
+                ❯
               </button>
-            ))}
+              <div ref={navScrollRef} style={{ flex: 1, display: "flex", alignItems: "center", gap: 6, overflowX: "auto", scrollbarWidth: "none", WebkitOverflowScrolling: "touch", padding: "0 4px" }}>
+                {navItems.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => {
+                      const el = document.getElementById(item.id);
+                      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }}
+                    style={{
+                      display: "flex", alignItems: "center", gap: 6,
+                      padding: "0 clamp(12px,3vw,16px)",
+                      minHeight: 44,
+                      borderRadius: 40,
+                      border: activeSection === item.id ? `1.5px solid ${T.emerald}` : `1.5px solid transparent`,
+                      background: activeSection === item.id ? T.emerald : "transparent",
+                      color: activeSection === item.id ? T.white : T.textMid,
+                      fontSize: "clamp(11px,2.5vw,13px)", cursor: "pointer",
+                      whiteSpace: "nowrap", fontFamily: "'Noto Naskh Arabic',serif",
+                      fontWeight: activeSection === item.id ? 700 : 400,
+                      transition: "all 0.2s",
+                      margin: "4px 0",
+                      flexShrink: 0,
+                      WebkitTapHighlightColor: "transparent",
+                    }}
+                    onMouseEnter={(e) => {
+                      if (activeSection !== item.id) {
+                        (e.currentTarget as HTMLElement).style.background = isDark ? "rgba(42,202,186,0.1)" : "rgba(13,138,122,0.08)";
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (activeSection !== item.id) {
+                        (e.currentTarget as HTMLElement).style.background = "transparent";
+                      }
+                    }}
+                  >
+                    <i className={item.icon} style={{ fontSize: 11 }} />
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+              {/* سهم اليسار */}
+              <button
+                onClick={() => scrollNavTabs("left")}
+                style={{ flexShrink: 0, background: "none", border: "none", cursor: "pointer", padding: "0 8px", color: T.emerald, fontSize: 18, display: "flex", alignItems: "center", minHeight: 52 }}
+              >
+                ❮
+              </button>
+            </div>
           </div>
         );
       })()}
