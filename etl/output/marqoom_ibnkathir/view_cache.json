@@ -1,0 +1,4911 @@
+{
+  "project": "مرقوم — بوابة الكشافات التراثية الرقمية",
+  "protocol_version": "2.2",
+  "generated_at": "2026-06-28T14:14:13Z",
+  "source_excel": "مرقوم_تحليل_تفسير_ابن_كثير_لابن_كثير.xlsx",
+  "book": {
+    "title": "تفسير القرآن العظيم",
+    "short_title": "تفسير ابن كثير",
+    "author": "أبو الفداء إسماعيل بن عمر بن كثير الدمشقي (ت 774هـ)",
+    "author_short": "ابن كثير",
+    "death_year": "774هـ",
+    "field": "التفسير وعلوم القرآن",
+    "type": "تفسير أثري تحليلي جامع",
+    "source_files": [
+      "01_shamela008473_تفسير_ابن_كثير_ت_سلامة_ابن_كثير.epub"
+    ],
+    "edition": "طبعة دار طيبة، تحقيق سامي بن محمد سلامة",
+    "unit_count": 114
+  },
+  "summary": {
+    "words_author_text": 1572288,
+    "words_sura_text": 1537694,
+    "xhtml_pages_author": 5053,
+    "surah_count": 114,
+    "footnote_blocks_excluded": 4764,
+    "footnote_words_excluded": 260949,
+    "quran_braces": 28738,
+    "ayah_refs": 5810,
+    "haddathana_haddathani": 14293,
+    "rawah": 2746,
+    "explicit_books_total": 4280,
+    "people_total": 50424,
+    "schools_total": 4312,
+    "resources_total": 59016,
+    "verification_status": "ناجح مع ملاحظات"
+  },
+  "sections": [
+    {
+      "id": "surah_001",
+      "type": "surah",
+      "order": 1,
+      "title": "الفاتحة",
+      "start_page": 175,
+      "end_page_estimated": 228,
+      "xhtml_pages": 54,
+      "word_count": 18393,
+      "percent_of_tafsir_text": 1.196,
+      "indicators": {
+        "quran_braces": 218,
+        "ayah_refs": 113,
+        "قال": 453,
+        "رواه": 45,
+        "حدثنا_حدثني": 113,
+        "ibn_jarir": 18,
+        "ibn_abi_hatim": 9,
+        "ahmad_musnad": 30,
+        "bukhari": 8,
+        "muslim": 22,
+        "ibn_abbas": 34,
+        "mujahid": 6,
+        "qatadah": 3,
+        "ahl_kitab_israel": 17,
+        "tarjih_naqd": 103
+      }
+    },
+    {
+      "id": "surah_002",
+      "type": "surah",
+      "order": 2,
+      "title": "البقرة",
+      "start_page": 229,
+      "end_page_estimated": 852,
+      "xhtml_pages": 624,
+      "word_count": 209075,
+      "percent_of_tafsir_text": 13.597,
+      "indicators": {
+        "quran_braces": 3217,
+        "ayah_refs": 682,
+        "قال": 4347,
+        "رواه": 411,
+        "حدثنا_حدثني": 1819,
+        "ibn_jarir": 365,
+        "ibn_abi_hatim": 260,
+        "ahmad_musnad": 203,
+        "bukhari": 167,
+        "muslim": 199,
+        "ibn_abbas": 712,
+        "mujahid": 254,
+        "qatadah": 197,
+        "ahl_kitab_israel": 353,
+        "tarjih_naqd": 603
+      }
+    },
+    {
+      "id": "surah_003",
+      "type": "surah",
+      "order": 3,
+      "title": "آل عمران",
+      "start_page": 853,
+      "end_page_estimated": 1076,
+      "xhtml_pages": 224,
+      "word_count": 71583,
+      "percent_of_tafsir_text": 4.655,
+      "indicators": {
+        "quran_braces": 1071,
+        "ayah_refs": 163,
+        "قال": 1548,
+        "رواه": 187,
+        "حدثنا_حدثني": 728,
+        "ibn_jarir": 68,
+        "ibn_abi_hatim": 65,
+        "ahmad_musnad": 128,
+        "bukhari": 68,
+        "muslim": 65,
+        "ibn_abbas": 138,
+        "mujahid": 37,
+        "qatadah": 43,
+        "ahl_kitab_israel": 134,
+        "tarjih_naqd": 151
+      }
+    },
+    {
+      "id": "surah_004",
+      "type": "surah",
+      "order": 4,
+      "title": "النساء",
+      "start_page": 1077,
+      "end_page_estimated": 1381,
+      "xhtml_pages": 305,
+      "word_count": 103618,
+      "percent_of_tafsir_text": 6.739,
+      "indicators": {
+        "quran_braces": 1401,
+        "ayah_refs": 251,
+        "قال": 2232,
+        "رواه": 279,
+        "حدثنا_حدثني": 1213,
+        "ibn_jarir": 171,
+        "ibn_abi_hatim": 155,
+        "ahmad_musnad": 152,
+        "bukhari": 89,
+        "muslim": 118,
+        "ibn_abbas": 295,
+        "mujahid": 84,
+        "qatadah": 80,
+        "ahl_kitab_israel": 85,
+        "tarjih_naqd": 325
+      }
+    },
+    {
+      "id": "surah_005",
+      "type": "surah",
+      "order": 5,
+      "title": "المائدة",
+      "start_page": 1382,
+      "end_page_estimated": 1631,
+      "xhtml_pages": 250,
+      "word_count": 84181,
+      "percent_of_tafsir_text": 5.474,
+      "indicators": {
+        "quran_braces": 1069,
+        "ayah_refs": 147,
+        "قال": 1661,
+        "رواه": 245,
+        "حدثنا_حدثني": 949,
+        "ibn_jarir": 215,
+        "ibn_abi_hatim": 111,
+        "ahmad_musnad": 115,
+        "bukhari": 55,
+        "muslim": 88,
+        "ibn_abbas": 200,
+        "mujahid": 77,
+        "qatadah": 55,
+        "ahl_kitab_israel": 174,
+        "tarjih_naqd": 257
+      }
+    },
+    {
+      "id": "surah_006",
+      "type": "surah",
+      "order": 6,
+      "title": "الأنعام",
+      "start_page": 1632,
+      "end_page_estimated": 1798,
+      "xhtml_pages": 167,
+      "word_count": 51632,
+      "percent_of_tafsir_text": 3.358,
+      "indicators": {
+        "quran_braces": 1341,
+        "ayah_refs": 369,
+        "قال": 1055,
+        "رواه": 81,
+        "حدثنا_حدثني": 367,
+        "ibn_jarir": 88,
+        "ibn_abi_hatim": 54,
+        "ahmad_musnad": 44,
+        "bukhari": 17,
+        "muslim": 32,
+        "ibn_abbas": 136,
+        "mujahid": 48,
+        "qatadah": 30,
+        "ahl_kitab_israel": 21,
+        "tarjih_naqd": 118
+      }
+    },
+    {
+      "id": "surah_007",
+      "type": "surah",
+      "order": 7,
+      "title": "الأعراف",
+      "start_page": 1799,
+      "end_page_estimated": 1974,
+      "xhtml_pages": 176,
+      "word_count": 53564,
+      "percent_of_tafsir_text": 3.483,
+      "indicators": {
+        "quran_braces": 1082,
+        "ayah_refs": 240,
+        "قال": 1080,
+        "رواه": 88,
+        "حدثنا_حدثني": 319,
+        "ibn_jarir": 75,
+        "ibn_abi_hatim": 21,
+        "ahmad_musnad": 54,
+        "bukhari": 22,
+        "muslim": 50,
+        "ibn_abbas": 162,
+        "mujahid": 63,
+        "qatadah": 52,
+        "ahl_kitab_israel": 99,
+        "tarjih_naqd": 136
+      }
+    },
+    {
+      "id": "surah_008",
+      "type": "surah",
+      "order": 8,
+      "title": "الأنفال",
+      "start_page": 1975,
+      "end_page_estimated": 2078,
+      "xhtml_pages": 104,
+      "word_count": 33235,
+      "percent_of_tafsir_text": 2.161,
+      "indicators": {
+        "quran_braces": 510,
+        "ayah_refs": 99,
+        "قال": 657,
+        "رواه": 53,
+        "حدثنا_حدثني": 303,
+        "ibn_jarir": 44,
+        "ibn_abi_hatim": 21,
+        "ahmad_musnad": 41,
+        "bukhari": 24,
+        "muslim": 25,
+        "ibn_abbas": 107,
+        "mujahid": 45,
+        "qatadah": 19,
+        "ahl_kitab_israel": 9,
+        "tarjih_naqd": 75
+      }
+    },
+    {
+      "id": "surah_009",
+      "type": "surah",
+      "order": 9,
+      "title": "التوبة",
+      "start_page": 2079,
+      "end_page_estimated": 2240,
+      "xhtml_pages": 162,
+      "word_count": 50770,
+      "percent_of_tafsir_text": 3.302,
+      "indicators": {
+        "quran_braces": 723,
+        "ayah_refs": 113,
+        "قال": 964,
+        "رواه": 80,
+        "حدثنا_حدثني": 365,
+        "ibn_jarir": 49,
+        "ibn_abi_hatim": 18,
+        "ahmad_musnad": 74,
+        "bukhari": 24,
+        "muslim": 41,
+        "ibn_abbas": 83,
+        "mujahid": 39,
+        "qatadah": 42,
+        "ahl_kitab_israel": 34,
+        "tarjih_naqd": 103
+      }
+    },
+    {
+      "id": "surah_010",
+      "type": "surah",
+      "order": 10,
+      "title": "يونس",
+      "start_page": 2241,
+      "end_page_estimated": 2311,
+      "xhtml_pages": 71,
+      "word_count": 18707,
+      "percent_of_tafsir_text": 1.217,
+      "indicators": {
+        "quran_braces": 505,
+        "ayah_refs": 167,
+        "قال": 279,
+        "رواه": 19,
+        "حدثنا_حدثني": 92,
+        "ibn_jarir": 21,
+        "ibn_abi_hatim": 10,
+        "ahmad_musnad": 6,
+        "bukhari": 1,
+        "muslim": 4,
+        "ibn_abbas": 27,
+        "mujahid": 15,
+        "qatadah": 12,
+        "ahl_kitab_israel": 37,
+        "tarjih_naqd": 14
+      }
+    },
+    {
+      "id": "surah_011",
+      "type": "surah",
+      "order": 11,
+      "title": "هود",
+      "start_page": 2312,
+      "end_page_estimated": 2386,
+      "xhtml_pages": 75,
+      "word_count": 19762,
+      "percent_of_tafsir_text": 1.285,
+      "indicators": {
+        "quran_braces": 512,
+        "ayah_refs": 113,
+        "قال": 332,
+        "رواه": 7,
+        "حدثنا_حدثني": 87,
+        "ibn_jarir": 10,
+        "ibn_abi_hatim": 7,
+        "ahmad_musnad": 18,
+        "bukhari": 7,
+        "muslim": 12,
+        "ibn_abbas": 48,
+        "mujahid": 21,
+        "qatadah": 28,
+        "ahl_kitab_israel": 11,
+        "tarjih_naqd": 32
+      }
+    },
+    {
+      "id": "surah_012",
+      "type": "surah",
+      "order": 12,
+      "title": "يوسف",
+      "start_page": 2387,
+      "end_page_estimated": 2461,
+      "xhtml_pages": 75,
+      "word_count": 20151,
+      "percent_of_tafsir_text": 1.31,
+      "indicators": {
+        "quran_braces": 457,
+        "ayah_refs": 45,
+        "قال": 388,
+        "رواه": 23,
+        "حدثنا_حدثني": 101,
+        "ibn_jarir": 32,
+        "ibn_abi_hatim": 11,
+        "ahmad_musnad": 22,
+        "bukhari": 8,
+        "muslim": 6,
+        "ibn_abbas": 69,
+        "mujahid": 31,
+        "qatadah": 21,
+        "ahl_kitab_israel": 12,
+        "tarjih_naqd": 45
+      }
+    },
+    {
+      "id": "surah_013",
+      "type": "surah",
+      "order": 13,
+      "title": "الرعد",
+      "start_page": 2462,
+      "end_page_estimated": 2515,
+      "xhtml_pages": 54,
+      "word_count": 15542,
+      "percent_of_tafsir_text": 1.011,
+      "indicators": {
+        "quran_braces": 364,
+        "ayah_refs": 100,
+        "قال": 277,
+        "رواه": 18,
+        "حدثنا_حدثني": 109,
+        "ibn_jarir": 19,
+        "ibn_abi_hatim": 10,
+        "ahmad_musnad": 15,
+        "bukhari": 5,
+        "muslim": 9,
+        "ibn_abbas": 42,
+        "mujahid": 27,
+        "qatadah": 16,
+        "ahl_kitab_israel": 12,
+        "tarjih_naqd": 25
+      }
+    },
+    {
+      "id": "surah_014",
+      "type": "surah",
+      "order": 14,
+      "title": "إبراهيم",
+      "start_page": 2516,
+      "end_page_estimated": 2568,
+      "xhtml_pages": 53,
+      "word_count": 15789,
+      "percent_of_tafsir_text": 1.027,
+      "indicators": {
+        "quran_braces": 316,
+        "ayah_refs": 103,
+        "قال": 368,
+        "رواه": 15,
+        "حدثنا_حدثني": 89,
+        "ibn_jarir": 18,
+        "ibn_abi_hatim": 9,
+        "ahmad_musnad": 15,
+        "bukhari": 7,
+        "muslim": 10,
+        "ibn_abbas": 22,
+        "mujahid": 15,
+        "qatadah": 15,
+        "ahl_kitab_israel": 8,
+        "tarjih_naqd": 28
+      }
+    },
+    {
+      "id": "surah_015",
+      "type": "surah",
+      "order": 15,
+      "title": "الحجر",
+      "start_page": 2569,
+      "end_page_estimated": 2604,
+      "xhtml_pages": 36,
+      "word_count": 9545,
+      "percent_of_tafsir_text": 0.621,
+      "indicators": {
+        "quran_braces": 227,
+        "ayah_refs": 46,
+        "قال": 222,
+        "رواه": 11,
+        "حدثنا_حدثني": 100,
+        "ibn_jarir": 20,
+        "ibn_abi_hatim": 11,
+        "ahmad_musnad": 2,
+        "bukhari": 5,
+        "muslim": 3,
+        "ibn_abbas": 33,
+        "mujahid": 20,
+        "qatadah": 10,
+        "ahl_kitab_israel": 4,
+        "tarjih_naqd": 21
+      }
+    },
+    {
+      "id": "surah_016",
+      "type": "surah",
+      "order": 16,
+      "title": "النحل",
+      "start_page": 2605,
+      "end_page_estimated": 2680,
+      "xhtml_pages": 76,
+      "word_count": 20276,
+      "percent_of_tafsir_text": 1.319,
+      "indicators": {
+        "quran_braces": 579,
+        "ayah_refs": 168,
+        "قال": 321,
+        "رواه": 18,
+        "حدثنا_حدثني": 98,
+        "ibn_jarir": 21,
+        "ibn_abi_hatim": 9,
+        "ahmad_musnad": 15,
+        "bukhari": 9,
+        "muslim": 13,
+        "ibn_abbas": 44,
+        "mujahid": 38,
+        "qatadah": 22,
+        "ahl_kitab_israel": 7,
+        "tarjih_naqd": 31
+      }
+    },
+    {
+      "id": "surah_017",
+      "type": "surah",
+      "order": 17,
+      "title": "الإسراء",
+      "start_page": 2681,
+      "end_page_estimated": 2820,
+      "xhtml_pages": 140,
+      "word_count": 46534,
+      "percent_of_tafsir_text": 3.026,
+      "indicators": {
+        "quran_braces": 591,
+        "ayah_refs": 147,
+        "قال": 1239,
+        "رواه": 64,
+        "حدثنا_حدثني": 356,
+        "ibn_jarir": 36,
+        "ibn_abi_hatim": 5,
+        "ahmad_musnad": 71,
+        "bukhari": 26,
+        "muslim": 35,
+        "ibn_abbas": 90,
+        "mujahid": 34,
+        "qatadah": 56,
+        "ahl_kitab_israel": 56,
+        "tarjih_naqd": 108
+      }
+    },
+    {
+      "id": "surah_018",
+      "type": "surah",
+      "order": 18,
+      "title": "الكهف",
+      "start_page": 2821,
+      "end_page_estimated": 2905,
+      "xhtml_pages": 85,
+      "word_count": 25932,
+      "percent_of_tafsir_text": 1.686,
+      "indicators": {
+        "quran_braces": 593,
+        "ayah_refs": 97,
+        "قال": 588,
+        "رواه": 22,
+        "حدثنا_حدثني": 172,
+        "ibn_jarir": 35,
+        "ibn_abi_hatim": 5,
+        "ahmad_musnad": 33,
+        "bukhari": 13,
+        "muslim": 17,
+        "ibn_abbas": 95,
+        "mujahid": 25,
+        "qatadah": 38,
+        "ahl_kitab_israel": 46,
+        "tarjih_naqd": 59
+      }
+    },
+    {
+      "id": "surah_019",
+      "type": "surah",
+      "order": 19,
+      "title": "مريم",
+      "start_page": 2906,
+      "end_page_estimated": 2972,
+      "xhtml_pages": 67,
+      "word_count": 20086,
+      "percent_of_tafsir_text": 1.306,
+      "indicators": {
+        "quran_braces": 507,
+        "ayah_refs": 88,
+        "قال": 497,
+        "رواه": 19,
+        "حدثنا_حدثني": 175,
+        "ibn_jarir": 34,
+        "ibn_abi_hatim": 34,
+        "ahmad_musnad": 24,
+        "bukhari": 7,
+        "muslim": 8,
+        "ibn_abbas": 70,
+        "mujahid": 45,
+        "qatadah": 33,
+        "ahl_kitab_israel": 28,
+        "tarjih_naqd": 45
+      }
+    },
+    {
+      "id": "surah_020",
+      "type": "surah",
+      "order": 20,
+      "title": "طه",
+      "start_page": 2973,
+      "end_page_estimated": 3040,
+      "xhtml_pages": 68,
+      "word_count": 20398,
+      "percent_of_tafsir_text": 1.327,
+      "indicators": {
+        "quran_braces": 494,
+        "ayah_refs": 115,
+        "قال": 401,
+        "رواه": 10,
+        "حدثنا_حدثني": 112,
+        "ibn_jarir": 0,
+        "ibn_abi_hatim": 32,
+        "ahmad_musnad": 8,
+        "bukhari": 3,
+        "muslim": 3,
+        "ibn_abbas": 62,
+        "mujahid": 23,
+        "qatadah": 16,
+        "ahl_kitab_israel": 59,
+        "tarjih_naqd": 30
+      }
+    },
+    {
+      "id": "surah_021",
+      "type": "surah",
+      "order": 21,
+      "title": "الأنبياء",
+      "start_page": 3041,
+      "end_page_estimated": 3106,
+      "xhtml_pages": 66,
+      "word_count": 19833,
+      "percent_of_tafsir_text": 1.29,
+      "indicators": {
+        "quran_braces": 451,
+        "ayah_refs": 98,
+        "قال": 459,
+        "رواه": 24,
+        "حدثنا_حدثني": 169,
+        "ibn_jarir": 22,
+        "ibn_abi_hatim": 40,
+        "ahmad_musnad": 14,
+        "bukhari": 11,
+        "muslim": 11,
+        "ibn_abbas": 65,
+        "mujahid": 23,
+        "qatadah": 23,
+        "ahl_kitab_israel": 24,
+        "tarjih_naqd": 28
+      }
+    },
+    {
+      "id": "surah_022",
+      "type": "surah",
+      "order": 22,
+      "title": "الحج",
+      "start_page": 3107,
+      "end_page_estimated": 3184,
+      "xhtml_pages": 78,
+      "word_count": 22092,
+      "percent_of_tafsir_text": 1.437,
+      "indicators": {
+        "quran_braces": 520,
+        "ayah_refs": 117,
+        "قال": 484,
+        "رواه": 45,
+        "حدثنا_حدثني": 174,
+        "ibn_jarir": 28,
+        "ibn_abi_hatim": 31,
+        "ahmad_musnad": 37,
+        "bukhari": 14,
+        "muslim": 17,
+        "ibn_abbas": 69,
+        "mujahid": 56,
+        "qatadah": 24,
+        "ahl_kitab_israel": 5,
+        "tarjih_naqd": 60
+      }
+    },
+    {
+      "id": "surah_023",
+      "type": "surah",
+      "order": 23,
+      "title": "المؤمنون",
+      "start_page": 3185,
+      "end_page_estimated": 3235,
+      "xhtml_pages": 51,
+      "word_count": 14515,
+      "percent_of_tafsir_text": 0.944,
+      "indicators": {
+        "quran_braces": 365,
+        "ayah_refs": 87,
+        "قال": 290,
+        "رواه": 13,
+        "حدثنا_حدثني": 142,
+        "ibn_jarir": 6,
+        "ibn_abi_hatim": 19,
+        "ahmad_musnad": 19,
+        "bukhari": 0,
+        "muslim": 7,
+        "ibn_abbas": 25,
+        "mujahid": 14,
+        "qatadah": 15,
+        "ahl_kitab_israel": 10,
+        "tarjih_naqd": 32
+      }
+    },
+    {
+      "id": "surah_024",
+      "type": "surah",
+      "order": 24,
+      "title": "النور",
+      "start_page": 3236,
+      "end_page_estimated": 3327,
+      "xhtml_pages": 92,
+      "word_count": 32136,
+      "percent_of_tafsir_text": 2.09,
+      "indicators": {
+        "quran_braces": 507,
+        "ayah_refs": 73,
+        "قال": 604,
+        "رواه": 52,
+        "حدثنا_حدثني": 279,
+        "ibn_jarir": 19,
+        "ibn_abi_hatim": 38,
+        "ahmad_musnad": 44,
+        "bukhari": 21,
+        "muslim": 22,
+        "ibn_abbas": 80,
+        "mujahid": 25,
+        "qatadah": 23,
+        "ahl_kitab_israel": 7,
+        "tarjih_naqd": 87
+      }
+    },
+    {
+      "id": "surah_025",
+      "type": "surah",
+      "order": 25,
+      "title": "الفرقان",
+      "start_page": 3328,
+      "end_page_estimated": 3377,
+      "xhtml_pages": 50,
+      "word_count": 14776,
+      "percent_of_tafsir_text": 0.961,
+      "indicators": {
+        "quran_braces": 384,
+        "ayah_refs": 109,
+        "قال": 292,
+        "رواه": 11,
+        "حدثنا_حدثني": 112,
+        "ibn_jarir": 16,
+        "ibn_abi_hatim": 19,
+        "ahmad_musnad": 10,
+        "bukhari": 2,
+        "muslim": 8,
+        "ibn_abbas": 28,
+        "mujahid": 22,
+        "qatadah": 10,
+        "ahl_kitab_israel": 2,
+        "tarjih_naqd": 26
+      }
+    },
+    {
+      "id": "surah_026",
+      "type": "surah",
+      "order": 26,
+      "title": "الشعراء",
+      "start_page": 3378,
+      "end_page_estimated": 3429,
+      "xhtml_pages": 52,
+      "word_count": 15567,
+      "percent_of_tafsir_text": 1.012,
+      "indicators": {
+        "quran_braces": 393,
+        "ayah_refs": 109,
+        "قال": 345,
+        "رواه": 8,
+        "حدثنا_حدثني": 66,
+        "ibn_jarir": 3,
+        "ibn_abi_hatim": 11,
+        "ahmad_musnad": 10,
+        "bukhari": 7,
+        "muslim": 6,
+        "ibn_abbas": 31,
+        "mujahid": 18,
+        "qatadah": 13,
+        "ahl_kitab_israel": 31,
+        "tarjih_naqd": 21
+      }
+    },
+    {
+      "id": "surah_027",
+      "type": "surah",
+      "order": 27,
+      "title": "النمل",
+      "start_page": 3430,
+      "end_page_estimated": 3479,
+      "xhtml_pages": 50,
+      "word_count": 14607,
+      "percent_of_tafsir_text": 0.95,
+      "indicators": {
+        "quran_braces": 353,
+        "ayah_refs": 77,
+        "قال": 293,
+        "رواه": 6,
+        "حدثنا_حدثني": 61,
+        "ibn_jarir": 4,
+        "ibn_abi_hatim": 15,
+        "ahmad_musnad": 7,
+        "bukhari": 0,
+        "muslim": 7,
+        "ibn_abbas": 42,
+        "mujahid": 23,
+        "qatadah": 19,
+        "ahl_kitab_israel": 11,
+        "tarjih_naqd": 25
+      }
+    },
+    {
+      "id": "surah_028",
+      "type": "surah",
+      "order": 28,
+      "title": "القصص",
+      "start_page": 3480,
+      "end_page_estimated": 3531,
+      "xhtml_pages": 52,
+      "word_count": 15361,
+      "percent_of_tafsir_text": 0.999,
+      "indicators": {
+        "quran_braces": 404,
+        "ayah_refs": 84,
+        "قال": 309,
+        "رواه": 13,
+        "حدثنا_حدثني": 78,
+        "ibn_jarir": 21,
+        "ibn_abi_hatim": 14,
+        "ahmad_musnad": 5,
+        "bukhari": 5,
+        "muslim": 7,
+        "ibn_abbas": 37,
+        "mujahid": 18,
+        "qatadah": 14,
+        "ahl_kitab_israel": 32,
+        "tarjih_naqd": 48
+      }
+    },
+    {
+      "id": "surah_029",
+      "type": "surah",
+      "order": 29,
+      "title": "العنكبوت",
+      "start_page": 3532,
+      "end_page_estimated": 3572,
+      "xhtml_pages": 41,
+      "word_count": 11110,
+      "percent_of_tafsir_text": 0.723,
+      "indicators": {
+        "quran_braces": 253,
+        "ayah_refs": 65,
+        "قال": 201,
+        "رواه": 9,
+        "حدثنا_حدثني": 98,
+        "ibn_jarir": 13,
+        "ibn_abi_hatim": 14,
+        "ahmad_musnad": 12,
+        "bukhari": 5,
+        "muslim": 3,
+        "ibn_abbas": 24,
+        "mujahid": 7,
+        "qatadah": 12,
+        "ahl_kitab_israel": 16,
+        "tarjih_naqd": 29
+      }
+    },
+    {
+      "id": "surah_030",
+      "type": "surah",
+      "order": 30,
+      "title": "الروم",
+      "start_page": 3573,
+      "end_page_estimated": 3611,
+      "xhtml_pages": 39,
+      "word_count": 11732,
+      "percent_of_tafsir_text": 0.763,
+      "indicators": {
+        "quran_braces": 223,
+        "ayah_refs": 36,
+        "قال": 216,
+        "رواه": 11,
+        "حدثنا_حدثني": 85,
+        "ibn_jarir": 10,
+        "ibn_abi_hatim": 9,
+        "ahmad_musnad": 12,
+        "bukhari": 3,
+        "muslim": 4,
+        "ibn_abbas": 19,
+        "mujahid": 6,
+        "qatadah": 6,
+        "ahl_kitab_israel": 4,
+        "tarjih_naqd": 19
+      }
+    },
+    {
+      "id": "surah_031",
+      "type": "surah",
+      "order": 31,
+      "title": "لقمان",
+      "start_page": 3612,
+      "end_page_estimated": 3641,
+      "xhtml_pages": 30,
+      "word_count": 9880,
+      "percent_of_tafsir_text": 0.643,
+      "indicators": {
+        "quran_braces": 165,
+        "ayah_refs": 30,
+        "قال": 218,
+        "رواه": 12,
+        "حدثنا_حدثني": 119,
+        "ibn_jarir": 6,
+        "ibn_abi_hatim": 9,
+        "ahmad_musnad": 10,
+        "bukhari": 5,
+        "muslim": 3,
+        "ibn_abbas": 11,
+        "mujahid": 12,
+        "qatadah": 10,
+        "ahl_kitab_israel": 7,
+        "tarjih_naqd": 21
+      }
+    },
+    {
+      "id": "surah_032",
+      "type": "surah",
+      "order": 32,
+      "title": "السجدة",
+      "start_page": 3642,
+      "end_page_estimated": 3659,
+      "xhtml_pages": 18,
+      "word_count": 5735,
+      "percent_of_tafsir_text": 0.373,
+      "indicators": {
+        "quran_braces": 140,
+        "ayah_refs": 30,
+        "قال": 120,
+        "رواه": 7,
+        "حدثنا_حدثني": 61,
+        "ibn_jarir": 7,
+        "ibn_abi_hatim": 6,
+        "ahmad_musnad": 6,
+        "bukhari": 6,
+        "muslim": 9,
+        "ibn_abbas": 8,
+        "mujahid": 3,
+        "qatadah": 7,
+        "ahl_kitab_israel": 10,
+        "tarjih_naqd": 8
+      }
+    },
+    {
+      "id": "surah_033",
+      "type": "surah",
+      "order": 33,
+      "title": "الأحزاب",
+      "start_page": 3660,
+      "end_page_estimated": 3785,
+      "xhtml_pages": 126,
+      "word_count": 41566,
+      "percent_of_tafsir_text": 2.703,
+      "indicators": {
+        "quran_braces": 455,
+        "ayah_refs": 63,
+        "قال": 892,
+        "رواه": 83,
+        "حدثنا_حدثني": 501,
+        "ibn_jarir": 50,
+        "ibn_abi_hatim": 43,
+        "ahmad_musnad": 89,
+        "bukhari": 49,
+        "muslim": 39,
+        "ibn_abbas": 52,
+        "mujahid": 24,
+        "qatadah": 22,
+        "ahl_kitab_israel": 27,
+        "tarjih_naqd": 126
+      }
+    },
+    {
+      "id": "surah_034",
+      "type": "surah",
+      "order": 34,
+      "title": "سبأ",
+      "start_page": 3786,
+      "end_page_estimated": 3829,
+      "xhtml_pages": 44,
+      "word_count": 13215,
+      "percent_of_tafsir_text": 0.859,
+      "indicators": {
+        "quran_braces": 263,
+        "ayah_refs": 54,
+        "قال": 293,
+        "رواه": 16,
+        "حدثنا_حدثني": 92,
+        "ibn_jarir": 9,
+        "ibn_abi_hatim": 21,
+        "ahmad_musnad": 7,
+        "bukhari": 6,
+        "muslim": 8,
+        "ibn_abbas": 30,
+        "mujahid": 16,
+        "qatadah": 22,
+        "ahl_kitab_israel": 9,
+        "tarjih_naqd": 23
+      }
+    },
+    {
+      "id": "surah_035",
+      "type": "surah",
+      "order": 35,
+      "title": "فاطر",
+      "start_page": 3830,
+      "end_page_estimated": 3866,
+      "xhtml_pages": 37,
+      "word_count": 10724,
+      "percent_of_tafsir_text": 0.697,
+      "indicators": {
+        "quran_braces": 235,
+        "ayah_refs": 45,
+        "قال": 249,
+        "رواه": 23,
+        "حدثنا_حدثني": 127,
+        "ibn_jarir": 22,
+        "ibn_abi_hatim": 15,
+        "ahmad_musnad": 13,
+        "bukhari": 7,
+        "muslim": 3,
+        "ibn_abbas": 25,
+        "mujahid": 10,
+        "qatadah": 7,
+        "ahl_kitab_israel": 5,
+        "tarjih_naqd": 40
+      }
+    },
+    {
+      "id": "surah_036",
+      "type": "surah",
+      "order": 36,
+      "title": "يس",
+      "start_page": 3867,
+      "end_page_estimated": 3906,
+      "xhtml_pages": 40,
+      "word_count": 12182,
+      "percent_of_tafsir_text": 0.792,
+      "indicators": {
+        "quran_braces": 292,
+        "ayah_refs": 61,
+        "قال": 231,
+        "رواه": 16,
+        "حدثنا_حدثني": 95,
+        "ibn_jarir": 22,
+        "ibn_abi_hatim": 14,
+        "ahmad_musnad": 12,
+        "bukhari": 1,
+        "muslim": 8,
+        "ibn_abbas": 35,
+        "mujahid": 22,
+        "qatadah": 24,
+        "ahl_kitab_israel": 6,
+        "tarjih_naqd": 27
+      }
+    },
+    {
+      "id": "surah_037",
+      "type": "surah",
+      "order": 37,
+      "title": "الصافات",
+      "start_page": 3907,
+      "end_page_estimated": 3954,
+      "xhtml_pages": 48,
+      "word_count": 14515,
+      "percent_of_tafsir_text": 0.944,
+      "indicators": {
+        "quran_braces": 351,
+        "ayah_refs": 57,
+        "قال": 378,
+        "رواه": 13,
+        "حدثنا_حدثني": 109,
+        "ibn_jarir": 24,
+        "ibn_abi_hatim": 26,
+        "ahmad_musnad": 6,
+        "bukhari": 2,
+        "muslim": 7,
+        "ibn_abbas": 56,
+        "mujahid": 23,
+        "qatadah": 32,
+        "ahl_kitab_israel": 18,
+        "tarjih_naqd": 29
+      }
+    },
+    {
+      "id": "surah_038",
+      "type": "surah",
+      "order": 38,
+      "title": "ص",
+      "start_page": 3955,
+      "end_page_estimated": 3992,
+      "xhtml_pages": 38,
+      "word_count": 11409,
+      "percent_of_tafsir_text": 0.742,
+      "indicators": {
+        "quran_braces": 197,
+        "ayah_refs": 28,
+        "قال": 235,
+        "رواه": 12,
+        "حدثنا_حدثني": 87,
+        "ibn_jarir": 19,
+        "ibn_abi_hatim": 14,
+        "ahmad_musnad": 11,
+        "bukhari": 4,
+        "muslim": 3,
+        "ibn_abbas": 33,
+        "mujahid": 18,
+        "qatadah": 14,
+        "ahl_kitab_israel": 14,
+        "tarjih_naqd": 20
+      }
+    },
+    {
+      "id": "surah_039",
+      "type": "surah",
+      "order": 39,
+      "title": "الزمر",
+      "start_page": 3993,
+      "end_page_estimated": 4044,
+      "xhtml_pages": 52,
+      "word_count": 15308,
+      "percent_of_tafsir_text": 0.996,
+      "indicators": {
+        "quran_braces": 355,
+        "ayah_refs": 88,
+        "قال": 284,
+        "رواه": 18,
+        "حدثنا_حدثني": 153,
+        "ibn_jarir": 0,
+        "ibn_abi_hatim": 13,
+        "ahmad_musnad": 33,
+        "bukhari": 11,
+        "muslim": 23,
+        "ibn_abbas": 26,
+        "mujahid": 11,
+        "qatadah": 9,
+        "ahl_kitab_israel": 8,
+        "tarjih_naqd": 25
+      }
+    },
+    {
+      "id": "surah_040",
+      "type": "surah",
+      "order": 40,
+      "title": "غافر",
+      "start_page": 4045,
+      "end_page_estimated": 4087,
+      "xhtml_pages": 43,
+      "word_count": 11993,
+      "percent_of_tafsir_text": 0.78,
+      "indicators": {
+        "quran_braces": 331,
+        "ayah_refs": 60,
+        "قال": 192,
+        "رواه": 17,
+        "حدثنا_حدثني": 74,
+        "ibn_jarir": 5,
+        "ibn_abi_hatim": 18,
+        "ahmad_musnad": 9,
+        "bukhari": 5,
+        "muslim": 8,
+        "ibn_abbas": 18,
+        "mujahid": 6,
+        "qatadah": 11,
+        "ahl_kitab_israel": 7,
+        "tarjih_naqd": 21
+      }
+    },
+    {
+      "id": "surah_041",
+      "type": "surah",
+      "order": 41,
+      "title": "فصلت",
+      "start_page": 4088,
+      "end_page_estimated": 4120,
+      "xhtml_pages": 33,
+      "word_count": 9782,
+      "percent_of_tafsir_text": 0.636,
+      "indicators": {
+        "quran_braces": 267,
+        "ayah_refs": 59,
+        "قال": 197,
+        "رواه": 14,
+        "حدثنا_حدثني": 61,
+        "ibn_jarir": 10,
+        "ibn_abi_hatim": 14,
+        "ahmad_musnad": 5,
+        "bukhari": 4,
+        "muslim": 5,
+        "ibn_abbas": 15,
+        "mujahid": 11,
+        "qatadah": 6,
+        "ahl_kitab_israel": 1,
+        "tarjih_naqd": 17
+      }
+    },
+    {
+      "id": "surah_042",
+      "type": "surah",
+      "order": 42,
+      "title": "الشورى",
+      "start_page": 4121,
+      "end_page_estimated": 4155,
+      "xhtml_pages": 35,
+      "word_count": 10244,
+      "percent_of_tafsir_text": 0.666,
+      "indicators": {
+        "quran_braces": 262,
+        "ayah_refs": 41,
+        "قال": 199,
+        "رواه": 13,
+        "حدثنا_حدثني": 99,
+        "ibn_jarir": 12,
+        "ibn_abi_hatim": 10,
+        "ahmad_musnad": 12,
+        "bukhari": 6,
+        "muslim": 5,
+        "ibn_abbas": 14,
+        "mujahid": 8,
+        "qatadah": 6,
+        "ahl_kitab_israel": 0,
+        "tarjih_naqd": 26
+      }
+    },
+    {
+      "id": "surah_043",
+      "type": "surah",
+      "order": 43,
+      "title": "الزخرف",
+      "start_page": 4156,
+      "end_page_estimated": 4188,
+      "xhtml_pages": 33,
+      "word_count": 9094,
+      "percent_of_tafsir_text": 0.591,
+      "indicators": {
+        "quran_braces": 268,
+        "ayah_refs": 43,
+        "قال": 155,
+        "رواه": 7,
+        "حدثنا_حدثني": 42,
+        "ibn_jarir": 18,
+        "ibn_abi_hatim": 7,
+        "ahmad_musnad": 8,
+        "bukhari": 4,
+        "muslim": 4,
+        "ibn_abbas": 22,
+        "mujahid": 12,
+        "qatadah": 19,
+        "ahl_kitab_israel": 8,
+        "tarjih_naqd": 11
+      }
+    },
+    {
+      "id": "surah_044",
+      "type": "surah",
+      "order": 44,
+      "title": "الدخان",
+      "start_page": 4189,
+      "end_page_estimated": 4209,
+      "xhtml_pages": 21,
+      "word_count": 6495,
+      "percent_of_tafsir_text": 0.422,
+      "indicators": {
+        "quran_braces": 135,
+        "ayah_refs": 36,
+        "قال": 134,
+        "رواه": 5,
+        "حدثنا_حدثني": 77,
+        "ibn_jarir": 13,
+        "ibn_abi_hatim": 11,
+        "ahmad_musnad": 2,
+        "bukhari": 1,
+        "muslim": 6,
+        "ibn_abbas": 14,
+        "mujahid": 8,
+        "qatadah": 6,
+        "ahl_kitab_israel": 12,
+        "tarjih_naqd": 16
+      }
+    },
+    {
+      "id": "surah_045",
+      "type": "surah",
+      "order": 45,
+      "title": "الجاثية",
+      "start_page": 4210,
+      "end_page_estimated": 4222,
+      "xhtml_pages": 13,
+      "word_count": 3241,
+      "percent_of_tafsir_text": 0.211,
+      "indicators": {
+        "quran_braces": 119,
+        "ayah_refs": 12,
+        "قال": 53,
+        "رواه": 1,
+        "حدثنا_حدثني": 10,
+        "ibn_jarir": 2,
+        "ibn_abi_hatim": 6,
+        "ahmad_musnad": 0,
+        "bukhari": 0,
+        "muslim": 3,
+        "ibn_abbas": 4,
+        "mujahid": 3,
+        "qatadah": 0,
+        "ahl_kitab_israel": 4,
+        "tarjih_naqd": 11
+      }
+    },
+    {
+      "id": "surah_046",
+      "type": "surah",
+      "order": 46,
+      "title": "الأحقاف",
+      "start_page": 4223,
+      "end_page_estimated": 4257,
+      "xhtml_pages": 35,
+      "word_count": 11938,
+      "percent_of_tafsir_text": 0.776,
+      "indicators": {
+        "quran_braces": 192,
+        "ayah_refs": 42,
+        "قال": 262,
+        "رواه": 21,
+        "حدثنا_حدثني": 127,
+        "ibn_jarir": 13,
+        "ibn_abi_hatim": 11,
+        "ahmad_musnad": 16,
+        "bukhari": 8,
+        "muslim": 12,
+        "ibn_abbas": 26,
+        "mujahid": 5,
+        "qatadah": 4,
+        "ahl_kitab_israel": 10,
+        "tarjih_naqd": 34
+      }
+    },
+    {
+      "id": "surah_047",
+      "type": "surah",
+      "order": 47,
+      "title": "محمد",
+      "start_page": 4258,
+      "end_page_estimated": 4279,
+      "xhtml_pages": 22,
+      "word_count": 5946,
+      "percent_of_tafsir_text": 0.387,
+      "indicators": {
+        "quran_braces": 147,
+        "ayah_refs": 29,
+        "قال": 116,
+        "رواه": 12,
+        "حدثنا_حدثني": 62,
+        "ibn_jarir": 2,
+        "ibn_abi_hatim": 5,
+        "ahmad_musnad": 11,
+        "bukhari": 6,
+        "muslim": 7,
+        "ibn_abbas": 6,
+        "mujahid": 4,
+        "qatadah": 9,
+        "ahl_kitab_israel": 0,
+        "tarjih_naqd": 17
+      }
+    },
+    {
+      "id": "surah_048",
+      "type": "surah",
+      "order": 48,
+      "title": "الفتح",
+      "start_page": 4280,
+      "end_page_estimated": 4320,
+      "xhtml_pages": 41,
+      "word_count": 14648,
+      "percent_of_tafsir_text": 0.953,
+      "indicators": {
+        "quran_braces": 155,
+        "ayah_refs": 17,
+        "قال": 314,
+        "رواه": 20,
+        "حدثنا_حدثني": 136,
+        "ibn_jarir": 7,
+        "ibn_abi_hatim": 10,
+        "ahmad_musnad": 16,
+        "bukhari": 20,
+        "muslim": 18,
+        "ibn_abbas": 20,
+        "mujahid": 7,
+        "qatadah": 12,
+        "ahl_kitab_israel": 10,
+        "tarjih_naqd": 18
+      }
+    },
+    {
+      "id": "surah_049",
+      "type": "surah",
+      "order": 49,
+      "title": "الحجرات",
+      "start_page": 4321,
+      "end_page_estimated": 4351,
+      "xhtml_pages": 31,
+      "word_count": 10002,
+      "percent_of_tafsir_text": 0.65,
+      "indicators": {
+        "quran_braces": 106,
+        "ayah_refs": 10,
+        "قال": 219,
+        "رواه": 18,
+        "حدثنا_حدثني": 147,
+        "ibn_jarir": 9,
+        "ibn_abi_hatim": 7,
+        "ahmad_musnad": 22,
+        "bukhari": 13,
+        "muslim": 12,
+        "ibn_abbas": 5,
+        "mujahid": 5,
+        "qatadah": 5,
+        "ahl_kitab_israel": 1,
+        "tarjih_naqd": 29
+      }
+    },
+    {
+      "id": "surah_050",
+      "type": "surah",
+      "order": 50,
+      "title": "ق",
+      "start_page": 4352,
+      "end_page_estimated": 4373,
+      "xhtml_pages": 22,
+      "word_count": 6631,
+      "percent_of_tafsir_text": 0.431,
+      "indicators": {
+        "quran_braces": 161,
+        "ayah_refs": 34,
+        "قال": 106,
+        "رواه": 10,
+        "حدثنا_حدثني": 52,
+        "ibn_jarir": 8,
+        "ibn_abi_hatim": 4,
+        "ahmad_musnad": 10,
+        "bukhari": 5,
+        "muslim": 9,
+        "ibn_abbas": 19,
+        "mujahid": 14,
+        "qatadah": 11,
+        "ahl_kitab_israel": 5,
+        "tarjih_naqd": 17
+      }
+    },
+    {
+      "id": "surah_051",
+      "type": "surah",
+      "order": 51,
+      "title": "الذاريات",
+      "start_page": 4374,
+      "end_page_estimated": 4390,
+      "xhtml_pages": 17,
+      "word_count": 4285,
+      "percent_of_tafsir_text": 0.279,
+      "indicators": {
+        "quran_braces": 145,
+        "ayah_refs": 13,
+        "قال": 95,
+        "رواه": 1,
+        "حدثنا_حدثني": 21,
+        "ibn_jarir": 9,
+        "ibn_abi_hatim": 1,
+        "ahmad_musnad": 6,
+        "bukhari": 0,
+        "muslim": 4,
+        "ibn_abbas": 20,
+        "mujahid": 10,
+        "qatadah": 9,
+        "ahl_kitab_israel": 2,
+        "tarjih_naqd": 11
+      }
+    },
+    {
+      "id": "surah_052",
+      "type": "surah",
+      "order": 52,
+      "title": "الطور",
+      "start_page": 4391,
+      "end_page_estimated": 4407,
+      "xhtml_pages": 17,
+      "word_count": 4798,
+      "percent_of_tafsir_text": 0.312,
+      "indicators": {
+        "quran_braces": 107,
+        "ayah_refs": 11,
+        "قال": 85,
+        "رواه": 16,
+        "حدثنا_حدثني": 45,
+        "ibn_jarir": 9,
+        "ibn_abi_hatim": 6,
+        "ahmad_musnad": 6,
+        "bukhari": 4,
+        "muslim": 6,
+        "ibn_abbas": 17,
+        "mujahid": 8,
+        "qatadah": 3,
+        "ahl_kitab_israel": 0,
+        "tarjih_naqd": 10
+      }
+    },
+    {
+      "id": "surah_053",
+      "type": "surah",
+      "order": 53,
+      "title": "النجم",
+      "start_page": 4408,
+      "end_page_estimated": 4436,
+      "xhtml_pages": 29,
+      "word_count": 9433,
+      "percent_of_tafsir_text": 0.613,
+      "indicators": {
+        "quran_braces": 180,
+        "ayah_refs": 39,
+        "قال": 244,
+        "رواه": 21,
+        "حدثنا_حدثني": 140,
+        "ibn_jarir": 23,
+        "ibn_abi_hatim": 11,
+        "ahmad_musnad": 22,
+        "bukhari": 8,
+        "muslim": 14,
+        "ibn_abbas": 34,
+        "mujahid": 14,
+        "qatadah": 12,
+        "ahl_kitab_israel": 4,
+        "tarjih_naqd": 30
+      }
+    },
+    {
+      "id": "surah_054",
+      "type": "surah",
+      "order": 54,
+      "title": "القمر",
+      "start_page": 4437,
+      "end_page_estimated": 4458,
+      "xhtml_pages": 22,
+      "word_count": 5848,
+      "percent_of_tafsir_text": 0.38,
+      "indicators": {
+        "quran_braces": 143,
+        "ayah_refs": 18,
+        "قال": 118,
+        "رواه": 15,
+        "حدثنا_حدثني": 103,
+        "ibn_jarir": 8,
+        "ibn_abi_hatim": 4,
+        "ahmad_musnad": 20,
+        "bukhari": 12,
+        "muslim": 22,
+        "ibn_abbas": 11,
+        "mujahid": 12,
+        "qatadah": 8,
+        "ahl_kitab_israel": 3,
+        "tarjih_naqd": 17
+      }
+    },
+    {
+      "id": "surah_055",
+      "type": "surah",
+      "order": 55,
+      "title": "الرحمن",
+      "start_page": 4459,
+      "end_page_estimated": 4485,
+      "xhtml_pages": 27,
+      "word_count": 7395,
+      "percent_of_tafsir_text": 0.481,
+      "indicators": {
+        "quran_braces": 176,
+        "ayah_refs": 28,
+        "قال": 176,
+        "رواه": 12,
+        "حدثنا_حدثني": 89,
+        "ibn_jarir": 10,
+        "ibn_abi_hatim": 16,
+        "ahmad_musnad": 8,
+        "bukhari": 6,
+        "muslim": 7,
+        "ibn_abbas": 44,
+        "mujahid": 17,
+        "qatadah": 13,
+        "ahl_kitab_israel": 1,
+        "tarjih_naqd": 14
+      }
+    },
+    {
+      "id": "surah_056",
+      "type": "surah",
+      "order": 56,
+      "title": "الواقعة",
+      "start_page": 4486,
+      "end_page_estimated": 4527,
+      "xhtml_pages": 42,
+      "word_count": 13170,
+      "percent_of_tafsir_text": 0.856,
+      "indicators": {
+        "quran_braces": 269,
+        "ayah_refs": 44,
+        "قال": 348,
+        "رواه": 38,
+        "حدثنا_حدثني": 194,
+        "ibn_jarir": 30,
+        "ibn_abi_hatim": 25,
+        "ahmad_musnad": 19,
+        "bukhari": 8,
+        "muslim": 12,
+        "ibn_abbas": 42,
+        "mujahid": 28,
+        "qatadah": 23,
+        "ahl_kitab_israel": 7,
+        "tarjih_naqd": 39
+      }
+    },
+    {
+      "id": "surah_057",
+      "type": "surah",
+      "order": 57,
+      "title": "الحديد",
+      "start_page": 4528,
+      "end_page_estimated": 4560,
+      "xhtml_pages": 33,
+      "word_count": 10307,
+      "percent_of_tafsir_text": 0.67,
+      "indicators": {
+        "quran_braces": 198,
+        "ayah_refs": 46,
+        "قال": 204,
+        "رواه": 12,
+        "حدثنا_حدثني": 95,
+        "ibn_jarir": 17,
+        "ibn_abi_hatim": 4,
+        "ahmad_musnad": 14,
+        "bukhari": 7,
+        "muslim": 4,
+        "ibn_abbas": 8,
+        "mujahid": 6,
+        "qatadah": 14,
+        "ahl_kitab_israel": 23,
+        "tarjih_naqd": 39
+      }
+    },
+    {
+      "id": "surah_058",
+      "type": "surah",
+      "order": 58,
+      "title": "المجادلة",
+      "start_page": 4561,
+      "end_page_estimated": 4585,
+      "xhtml_pages": 25,
+      "word_count": 7803,
+      "percent_of_tafsir_text": 0.507,
+      "indicators": {
+        "quran_braces": 135,
+        "ayah_refs": 9,
+        "قال": 159,
+        "رواه": 12,
+        "حدثنا_حدثني": 54,
+        "ibn_jarir": 5,
+        "ibn_abi_hatim": 6,
+        "ahmad_musnad": 14,
+        "bukhari": 2,
+        "muslim": 7,
+        "ibn_abbas": 10,
+        "mujahid": 5,
+        "qatadah": 7,
+        "ahl_kitab_israel": 2,
+        "tarjih_naqd": 23
+      }
+    },
+    {
+      "id": "surah_059",
+      "type": "surah",
+      "order": 59,
+      "title": "الحشر",
+      "start_page": 4586,
+      "end_page_estimated": 4614,
+      "xhtml_pages": 29,
+      "word_count": 9211,
+      "percent_of_tafsir_text": 0.599,
+      "indicators": {
+        "quran_braces": 145,
+        "ayah_refs": 25,
+        "قال": 189,
+        "رواه": 9,
+        "حدثنا_حدثني": 74,
+        "ibn_jarir": 9,
+        "ibn_abi_hatim": 5,
+        "ahmad_musnad": 9,
+        "bukhari": 12,
+        "muslim": 3,
+        "ibn_abbas": 10,
+        "mujahid": 4,
+        "qatadah": 8,
+        "ahl_kitab_israel": 11,
+        "tarjih_naqd": 12
+      }
+    },
+    {
+      "id": "surah_060",
+      "type": "surah",
+      "order": 60,
+      "title": "الممتحنة",
+      "start_page": 4615,
+      "end_page_estimated": 4639,
+      "xhtml_pages": 25,
+      "word_count": 8198,
+      "percent_of_tafsir_text": 0.533,
+      "indicators": {
+        "quran_braces": 104,
+        "ayah_refs": 13,
+        "قال": 122,
+        "رواه": 16,
+        "حدثنا_حدثني": 91,
+        "ibn_jarir": 15,
+        "ibn_abi_hatim": 8,
+        "ahmad_musnad": 19,
+        "bukhari": 9,
+        "muslim": 6,
+        "ibn_abbas": 19,
+        "mujahid": 5,
+        "qatadah": 5,
+        "ahl_kitab_israel": 0,
+        "tarjih_naqd": 16
+      }
+    },
+    {
+      "id": "surah_061",
+      "type": "surah",
+      "order": 61,
+      "title": "الصف",
+      "start_page": 4640,
+      "end_page_estimated": 4650,
+      "xhtml_pages": 11,
+      "word_count": 3603,
+      "percent_of_tafsir_text": 0.234,
+      "indicators": {
+        "quran_braces": 61,
+        "ayah_refs": 9,
+        "قال": 79,
+        "رواه": 4,
+        "حدثنا_حدثني": 23,
+        "ibn_jarir": 2,
+        "ibn_abi_hatim": 3,
+        "ahmad_musnad": 4,
+        "bukhari": 2,
+        "muslim": 3,
+        "ibn_abbas": 4,
+        "mujahid": 1,
+        "qatadah": 2,
+        "ahl_kitab_israel": 15,
+        "tarjih_naqd": 3
+      }
+    },
+    {
+      "id": "surah_062",
+      "type": "surah",
+      "order": 62,
+      "title": "الجمعة",
+      "start_page": 4651,
+      "end_page_estimated": 4661,
+      "xhtml_pages": 11,
+      "word_count": 3321,
+      "percent_of_tafsir_text": 0.216,
+      "indicators": {
+        "quran_braces": 49,
+        "ayah_refs": 14,
+        "قال": 49,
+        "رواه": 9,
+        "حدثنا_حدثني": 27,
+        "ibn_jarir": 0,
+        "ibn_abi_hatim": 4,
+        "ahmad_musnad": 6,
+        "bukhari": 7,
+        "muslim": 7,
+        "ibn_abbas": 3,
+        "mujahid": 2,
+        "qatadah": 2,
+        "ahl_kitab_israel": 3,
+        "tarjih_naqd": 1
+      }
+    },
+    {
+      "id": "surah_063",
+      "type": "surah",
+      "order": 63,
+      "title": "المنافقون",
+      "start_page": 4662,
+      "end_page_estimated": 4672,
+      "xhtml_pages": 11,
+      "word_count": 3802,
+      "percent_of_tafsir_text": 0.247,
+      "indicators": {
+        "quran_braces": 36,
+        "ayah_refs": 3,
+        "قال": 80,
+        "رواه": 3,
+        "حدثنا_حدثني": 37,
+        "ibn_jarir": 0,
+        "ibn_abi_hatim": 4,
+        "ahmad_musnad": 5,
+        "bukhari": 4,
+        "muslim": 1,
+        "ibn_abbas": 5,
+        "mujahid": 0,
+        "qatadah": 3,
+        "ahl_kitab_israel": 3,
+        "tarjih_naqd": 6
+      }
+    },
+    {
+      "id": "surah_064",
+      "type": "surah",
+      "order": 64,
+      "title": "التغابن",
+      "start_page": 4673,
+      "end_page_estimated": 4680,
+      "xhtml_pages": 8,
+      "word_count": 2150,
+      "percent_of_tafsir_text": 0.14,
+      "indicators": {
+        "quran_braces": 67,
+        "ayah_refs": 13,
+        "قال": 42,
+        "رواه": 3,
+        "حدثنا_حدثني": 28,
+        "ibn_jarir": 2,
+        "ibn_abi_hatim": 2,
+        "ahmad_musnad": 2,
+        "bukhari": 0,
+        "muslim": 0,
+        "ibn_abbas": 5,
+        "mujahid": 1,
+        "qatadah": 1,
+        "ahl_kitab_israel": 2,
+        "tarjih_naqd": 4
+      }
+    },
+    {
+      "id": "surah_065",
+      "type": "surah",
+      "order": 65,
+      "title": "الطلاق",
+      "start_page": 4681,
+      "end_page_estimated": 4697,
+      "xhtml_pages": 17,
+      "word_count": 5675,
+      "percent_of_tafsir_text": 0.369,
+      "indicators": {
+        "quran_braces": 101,
+        "ayah_refs": 13,
+        "قال": 108,
+        "رواه": 17,
+        "حدثنا_حدثني": 75,
+        "ibn_jarir": 11,
+        "ibn_abi_hatim": 8,
+        "ahmad_musnad": 9,
+        "bukhari": 8,
+        "muslim": 4,
+        "ibn_abbas": 15,
+        "mujahid": 1,
+        "qatadah": 4,
+        "ahl_kitab_israel": 0,
+        "tarjih_naqd": 15
+      }
+    },
+    {
+      "id": "surah_066",
+      "type": "surah",
+      "order": 66,
+      "title": "التحريم",
+      "start_page": 4698,
+      "end_page_estimated": 4716,
+      "xhtml_pages": 19,
+      "word_count": 6713,
+      "percent_of_tafsir_text": 0.437,
+      "indicators": {
+        "quran_braces": 84,
+        "ayah_refs": 8,
+        "قال": 146,
+        "رواه": 7,
+        "حدثنا_حدثني": 92,
+        "ibn_jarir": 8,
+        "ibn_abi_hatim": 7,
+        "ahmad_musnad": 10,
+        "bukhari": 10,
+        "muslim": 7,
+        "ibn_abbas": 22,
+        "mujahid": 5,
+        "qatadah": 4,
+        "ahl_kitab_israel": 1,
+        "tarjih_naqd": 22
+      }
+    },
+    {
+      "id": "surah_067",
+      "type": "surah",
+      "order": 67,
+      "title": "الملك",
+      "start_page": 4717,
+      "end_page_estimated": 4726,
+      "xhtml_pages": 10,
+      "word_count": 2514,
+      "percent_of_tafsir_text": 0.163,
+      "indicators": {
+        "quran_braces": 88,
+        "ayah_refs": 10,
+        "قال": 48,
+        "رواه": 2,
+        "حدثنا_حدثني": 15,
+        "ibn_jarir": 2,
+        "ibn_abi_hatim": 2,
+        "ahmad_musnad": 3,
+        "bukhari": 0,
+        "muslim": 0,
+        "ibn_abbas": 6,
+        "mujahid": 2,
+        "qatadah": 6,
+        "ahl_kitab_israel": 0,
+        "tarjih_naqd": 4
+      }
+    },
+    {
+      "id": "surah_068",
+      "type": "surah",
+      "order": 68,
+      "title": "القلم",
+      "start_page": 4727,
+      "end_page_estimated": 4752,
+      "xhtml_pages": 26,
+      "word_count": 7859,
+      "percent_of_tafsir_text": 0.511,
+      "indicators": {
+        "quran_braces": 126,
+        "ayah_refs": 13,
+        "قال": 232,
+        "رواه": 20,
+        "حدثنا_حدثني": 149,
+        "ibn_jarir": 15,
+        "ibn_abi_hatim": 9,
+        "ahmad_musnad": 24,
+        "bukhari": 9,
+        "muslim": 11,
+        "ibn_abbas": 40,
+        "mujahid": 19,
+        "qatadah": 6,
+        "ahl_kitab_israel": 2,
+        "tarjih_naqd": 20
+      }
+    },
+    {
+      "id": "surah_069",
+      "type": "surah",
+      "order": 69,
+      "title": "الحاقة",
+      "start_page": 4753,
+      "end_page_estimated": 4766,
+      "xhtml_pages": 14,
+      "word_count": 3639,
+      "percent_of_tafsir_text": 0.237,
+      "indicators": {
+        "quran_braces": 101,
+        "ayah_refs": 15,
+        "قال": 106,
+        "رواه": 6,
+        "حدثنا_حدثني": 46,
+        "ibn_jarir": 7,
+        "ibn_abi_hatim": 12,
+        "ahmad_musnad": 3,
+        "bukhari": 0,
+        "muslim": 3,
+        "ibn_abbas": 13,
+        "mujahid": 7,
+        "qatadah": 9,
+        "ahl_kitab_israel": 1,
+        "tarjih_naqd": 9
+      }
+    },
+    {
+      "id": "surah_070",
+      "type": "surah",
+      "order": 70,
+      "title": "المعارج",
+      "start_page": 4767,
+      "end_page_estimated": 4779,
+      "xhtml_pages": 13,
+      "word_count": 3687,
+      "percent_of_tafsir_text": 0.24,
+      "indicators": {
+        "quran_braces": 115,
+        "ayah_refs": 20,
+        "قال": 65,
+        "رواه": 4,
+        "حدثنا_حدثني": 29,
+        "ibn_jarir": 6,
+        "ibn_abi_hatim": 5,
+        "ahmad_musnad": 8,
+        "bukhari": 1,
+        "muslim": 1,
+        "ibn_abbas": 17,
+        "mujahid": 11,
+        "qatadah": 8,
+        "ahl_kitab_israel": 1,
+        "tarjih_naqd": 10
+      }
+    },
+    {
+      "id": "surah_071",
+      "type": "surah",
+      "order": 71,
+      "title": "نوح",
+      "start_page": 4780,
+      "end_page_estimated": 4787,
+      "xhtml_pages": 8,
+      "word_count": 2410,
+      "percent_of_tafsir_text": 0.157,
+      "indicators": {
+        "quran_braces": 61,
+        "ayah_refs": 7,
+        "قال": 42,
+        "رواه": 0,
+        "حدثنا_حدثني": 12,
+        "ibn_jarir": 2,
+        "ibn_abi_hatim": 3,
+        "ahmad_musnad": 1,
+        "bukhari": 1,
+        "muslim": 1,
+        "ibn_abbas": 9,
+        "mujahid": 2,
+        "qatadah": 0,
+        "ahl_kitab_israel": 0,
+        "tarjih_naqd": 1
+      }
+    },
+    {
+      "id": "surah_072",
+      "type": "surah",
+      "order": 72,
+      "title": "الجن",
+      "start_page": 4788,
+      "end_page_estimated": 4799,
+      "xhtml_pages": 12,
+      "word_count": 3718,
+      "percent_of_tafsir_text": 0.242,
+      "indicators": {
+        "quran_braces": 99,
+        "ayah_refs": 10,
+        "قال": 68,
+        "رواه": 5,
+        "حدثنا_حدثني": 31,
+        "ibn_jarir": 6,
+        "ibn_abi_hatim": 6,
+        "ahmad_musnad": 0,
+        "bukhari": 0,
+        "muslim": 2,
+        "ibn_abbas": 17,
+        "mujahid": 7,
+        "qatadah": 9,
+        "ahl_kitab_israel": 1,
+        "tarjih_naqd": 8
+      }
+    },
+    {
+      "id": "surah_073",
+      "type": "surah",
+      "order": 73,
+      "title": "المزمل",
+      "start_page": 4800,
+      "end_page_estimated": 4812,
+      "xhtml_pages": 13,
+      "word_count": 3967,
+      "percent_of_tafsir_text": 0.258,
+      "indicators": {
+        "quran_braces": 82,
+        "ayah_refs": 10,
+        "قال": 82,
+        "رواه": 5,
+        "حدثنا_حدثني": 42,
+        "ibn_jarir": 10,
+        "ibn_abi_hatim": 4,
+        "ahmad_musnad": 6,
+        "bukhari": 4,
+        "muslim": 3,
+        "ibn_abbas": 19,
+        "mujahid": 2,
+        "qatadah": 6,
+        "ahl_kitab_israel": 1,
+        "tarjih_naqd": 16
+      }
+    },
+    {
+      "id": "surah_074",
+      "type": "surah",
+      "order": 74,
+      "title": "المدثر",
+      "start_page": 4813,
+      "end_page_estimated": 4828,
+      "xhtml_pages": 16,
+      "word_count": 4793,
+      "percent_of_tafsir_text": 0.312,
+      "indicators": {
+        "quran_braces": 115,
+        "ayah_refs": 8,
+        "قال": 98,
+        "رواه": 11,
+        "حدثنا_حدثني": 44,
+        "ibn_jarir": 6,
+        "ibn_abi_hatim": 5,
+        "ahmad_musnad": 6,
+        "bukhari": 4,
+        "muslim": 1,
+        "ibn_abbas": 18,
+        "mujahid": 11,
+        "qatadah": 12,
+        "ahl_kitab_israel": 2,
+        "tarjih_naqd": 11
+      }
+    },
+    {
+      "id": "surah_075",
+      "type": "surah",
+      "order": 75,
+      "title": "القيامة",
+      "start_page": 4829,
+      "end_page_estimated": 4839,
+      "xhtml_pages": 11,
+      "word_count": 3529,
+      "percent_of_tafsir_text": 0.229,
+      "indicators": {
+        "quran_braces": 119,
+        "ayah_refs": 26,
+        "قال": 89,
+        "رواه": 6,
+        "حدثنا_حدثني": 43,
+        "ibn_jarir": 11,
+        "ibn_abi_hatim": 8,
+        "ahmad_musnad": 2,
+        "bukhari": 4,
+        "muslim": 5,
+        "ibn_abbas": 22,
+        "mujahid": 13,
+        "qatadah": 13,
+        "ahl_kitab_israel": 5,
+        "tarjih_naqd": 15
+      }
+    },
+    {
+      "id": "surah_076",
+      "type": "surah",
+      "order": 76,
+      "title": "الإنسان",
+      "start_page": 4840,
+      "end_page_estimated": 4852,
+      "xhtml_pages": 13,
+      "word_count": 3306,
+      "percent_of_tafsir_text": 0.215,
+      "indicators": {
+        "quran_braces": 104,
+        "ayah_refs": 20,
+        "قال": 64,
+        "رواه": 3,
+        "حدثنا_حدثني": 7,
+        "ibn_jarir": 7,
+        "ibn_abi_hatim": 1,
+        "ahmad_musnad": 2,
+        "bukhari": 1,
+        "muslim": 2,
+        "ibn_abbas": 11,
+        "mujahid": 9,
+        "qatadah": 5,
+        "ahl_kitab_israel": 0,
+        "tarjih_naqd": 8
+      }
+    },
+    {
+      "id": "surah_077",
+      "type": "surah",
+      "order": 77,
+      "title": "المرسلات",
+      "start_page": 4853,
+      "end_page_estimated": 4859,
+      "xhtml_pages": 7,
+      "word_count": 1835,
+      "percent_of_tafsir_text": 0.119,
+      "indicators": {
+        "quran_braces": 76,
+        "ayah_refs": 14,
+        "قال": 37,
+        "رواه": 0,
+        "حدثنا_حدثني": 16,
+        "ibn_jarir": 3,
+        "ibn_abi_hatim": 3,
+        "ahmad_musnad": 1,
+        "bukhari": 2,
+        "muslim": 2,
+        "ibn_abbas": 9,
+        "mujahid": 4,
+        "qatadah": 0,
+        "ahl_kitab_israel": 0,
+        "tarjih_naqd": 1
+      }
+    },
+    {
+      "id": "surah_078",
+      "type": "surah",
+      "order": 78,
+      "title": "النبأ",
+      "start_page": 4860,
+      "end_page_estimated": 4870,
+      "xhtml_pages": 11,
+      "word_count": 2756,
+      "percent_of_tafsir_text": 0.179,
+      "indicators": {
+        "quran_braces": 96,
+        "ayah_refs": 20,
+        "قال": 64,
+        "رواه": 3,
+        "حدثنا_حدثني": 23,
+        "ibn_jarir": 10,
+        "ibn_abi_hatim": 6,
+        "ahmad_musnad": 0,
+        "bukhari": 1,
+        "muslim": 2,
+        "ibn_abbas": 12,
+        "mujahid": 8,
+        "qatadah": 6,
+        "ahl_kitab_israel": 0,
+        "tarjih_naqd": 8
+      }
+    },
+    {
+      "id": "surah_079",
+      "type": "surah",
+      "order": 79,
+      "title": "النازعات",
+      "start_page": 4871,
+      "end_page_estimated": 4878,
+      "xhtml_pages": 8,
+      "word_count": 2121,
+      "percent_of_tafsir_text": 0.138,
+      "indicators": {
+        "quran_braces": 95,
+        "ayah_refs": 16,
+        "قال": 39,
+        "رواه": 2,
+        "حدثنا_حدثني": 12,
+        "ibn_jarir": 2,
+        "ibn_abi_hatim": 3,
+        "ahmad_musnad": 2,
+        "bukhari": 0,
+        "muslim": 0,
+        "ibn_abbas": 14,
+        "mujahid": 10,
+        "qatadah": 4,
+        "ahl_kitab_israel": 1,
+        "tarjih_naqd": 3
+      }
+    },
+    {
+      "id": "surah_080",
+      "type": "surah",
+      "order": 80,
+      "title": "عبس",
+      "start_page": 4879,
+      "end_page_estimated": 4887,
+      "xhtml_pages": 9,
+      "word_count": 3003,
+      "percent_of_tafsir_text": 0.195,
+      "indicators": {
+        "quran_braces": 6,
+        "ayah_refs": 4,
+        "قال": 67,
+        "رواه": 7,
+        "حدثنا_حدثني": 35,
+        "ibn_jarir": 11,
+        "ibn_abi_hatim": 7,
+        "ahmad_musnad": 1,
+        "bukhari": 1,
+        "muslim": 0,
+        "ibn_abbas": 19,
+        "mujahid": 5,
+        "qatadah": 8,
+        "ahl_kitab_israel": 2,
+        "tarjih_naqd": 13
+      }
+    },
+    {
+      "id": "surah_081",
+      "type": "surah",
+      "order": 81,
+      "title": "التكوير",
+      "start_page": 4888,
+      "end_page_estimated": 4900,
+      "xhtml_pages": 13,
+      "word_count": 3941,
+      "percent_of_tafsir_text": 0.256,
+      "indicators": {
+        "quran_braces": 104,
+        "ayah_refs": 15,
+        "قال": 135,
+        "رواه": 9,
+        "حدثنا_حدثني": 64,
+        "ibn_jarir": 14,
+        "ibn_abi_hatim": 15,
+        "ahmad_musnad": 3,
+        "bukhari": 3,
+        "muslim": 6,
+        "ibn_abbas": 17,
+        "mujahid": 10,
+        "qatadah": 8,
+        "ahl_kitab_israel": 3,
+        "tarjih_naqd": 13
+      }
+    },
+    {
+      "id": "surah_082",
+      "type": "surah",
+      "order": 82,
+      "title": "الانفطار",
+      "start_page": 4901,
+      "end_page_estimated": 4905,
+      "xhtml_pages": 5,
+      "word_count": 1560,
+      "percent_of_tafsir_text": 0.101,
+      "indicators": {
+        "quran_braces": 34,
+        "ayah_refs": 4,
+        "قال": 56,
+        "رواه": 3,
+        "حدثنا_حدثني": 26,
+        "ibn_jarir": 1,
+        "ibn_abi_hatim": 3,
+        "ahmad_musnad": 2,
+        "bukhari": 1,
+        "muslim": 0,
+        "ibn_abbas": 4,
+        "mujahid": 3,
+        "qatadah": 4,
+        "ahl_kitab_israel": 0,
+        "tarjih_naqd": 1
+      }
+    },
+    {
+      "id": "surah_083",
+      "type": "surah",
+      "order": 83,
+      "title": "المطففين",
+      "start_page": 4906,
+      "end_page_estimated": 4915,
+      "xhtml_pages": 10,
+      "word_count": 2647,
+      "percent_of_tafsir_text": 0.172,
+      "indicators": {
+        "quran_braces": 63,
+        "ayah_refs": 8,
+        "قال": 58,
+        "رواه": 3,
+        "حدثنا_حدثني": 29,
+        "ibn_jarir": 7,
+        "ibn_abi_hatim": 2,
+        "ahmad_musnad": 6,
+        "bukhari": 1,
+        "muslim": 3,
+        "ibn_abbas": 5,
+        "mujahid": 2,
+        "qatadah": 3,
+        "ahl_kitab_israel": 0,
+        "tarjih_naqd": 4
+      }
+    },
+    {
+      "id": "surah_084",
+      "type": "surah",
+      "order": 84,
+      "title": "الانشقاق",
+      "start_page": 4916,
+      "end_page_estimated": 4924,
+      "xhtml_pages": 9,
+      "word_count": 2517,
+      "percent_of_tafsir_text": 0.164,
+      "indicators": {
+        "quran_braces": 66,
+        "ayah_refs": 4,
+        "قال": 73,
+        "رواه": 7,
+        "حدثنا_حدثني": 24,
+        "ibn_jarir": 7,
+        "ibn_abi_hatim": 4,
+        "ahmad_musnad": 1,
+        "bukhari": 4,
+        "muslim": 6,
+        "ibn_abbas": 14,
+        "mujahid": 8,
+        "qatadah": 4,
+        "ahl_kitab_israel": 0,
+        "tarjih_naqd": 8
+      }
+    },
+    {
+      "id": "surah_085",
+      "type": "surah",
+      "order": 85,
+      "title": "البروج",
+      "start_page": 4925,
+      "end_page_estimated": 4936,
+      "xhtml_pages": 12,
+      "word_count": 4176,
+      "percent_of_tafsir_text": 0.272,
+      "indicators": {
+        "quran_braces": 52,
+        "ayah_refs": 6,
+        "قال": 95,
+        "رواه": 3,
+        "حدثنا_حدثني": 53,
+        "ibn_jarir": 8,
+        "ibn_abi_hatim": 8,
+        "ahmad_musnad": 3,
+        "bukhari": 0,
+        "muslim": 2,
+        "ibn_abbas": 10,
+        "mujahid": 5,
+        "qatadah": 0,
+        "ahl_kitab_israel": 2,
+        "tarjih_naqd": 7
+      }
+    },
+    {
+      "id": "surah_086",
+      "type": "surah",
+      "order": 86,
+      "title": "الطارق",
+      "start_page": 4937,
+      "end_page_estimated": 4940,
+      "xhtml_pages": 4,
+      "word_count": 1182,
+      "percent_of_tafsir_text": 0.077,
+      "indicators": {
+        "quran_braces": 29,
+        "ayah_refs": 3,
+        "قال": 32,
+        "رواه": 5,
+        "حدثنا_حدثني": 11,
+        "ibn_jarir": 1,
+        "ibn_abi_hatim": 1,
+        "ahmad_musnad": 4,
+        "bukhari": 1,
+        "muslim": 1,
+        "ibn_abbas": 8,
+        "mujahid": 2,
+        "qatadah": 4,
+        "ahl_kitab_israel": 1,
+        "tarjih_naqd": 3
+      }
+    },
+    {
+      "id": "surah_087",
+      "type": "surah",
+      "order": 87,
+      "title": "الأعلى",
+      "start_page": 4941,
+      "end_page_estimated": 4947,
+      "xhtml_pages": 7,
+      "word_count": 1939,
+      "percent_of_tafsir_text": 0.126,
+      "indicators": {
+        "quran_braces": 50,
+        "ayah_refs": 9,
+        "قال": 56,
+        "رواه": 4,
+        "حدثنا_حدثني": 24,
+        "ibn_jarir": 9,
+        "ibn_abi_hatim": 0,
+        "ahmad_musnad": 6,
+        "bukhari": 0,
+        "muslim": 4,
+        "ibn_abbas": 8,
+        "mujahid": 2,
+        "qatadah": 4,
+        "ahl_kitab_israel": 1,
+        "tarjih_naqd": 4
+      }
+    },
+    {
+      "id": "surah_088",
+      "type": "surah",
+      "order": 88,
+      "title": "الغاشية",
+      "start_page": 4948,
+      "end_page_estimated": 4953,
+      "xhtml_pages": 6,
+      "word_count": 1697,
+      "percent_of_tafsir_text": 0.11,
+      "indicators": {
+        "quran_braces": 41,
+        "ayah_refs": 5,
+        "قال": 63,
+        "رواه": 5,
+        "حدثنا_حدثني": 21,
+        "ibn_jarir": 0,
+        "ibn_abi_hatim": 3,
+        "ahmad_musnad": 5,
+        "bukhari": 3,
+        "muslim": 4,
+        "ibn_abbas": 10,
+        "mujahid": 1,
+        "qatadah": 4,
+        "ahl_kitab_israel": 0,
+        "tarjih_naqd": 2
+      }
+    },
+    {
+      "id": "surah_089",
+      "type": "surah",
+      "order": 89,
+      "title": "الفجر",
+      "start_page": 4954,
+      "end_page_estimated": 4966,
+      "xhtml_pages": 13,
+      "word_count": 4237,
+      "percent_of_tafsir_text": 0.276,
+      "indicators": {
+        "quran_braces": 84,
+        "ayah_refs": 12,
+        "قال": 77,
+        "رواه": 12,
+        "حدثنا_حدثني": 50,
+        "ibn_jarir": 13,
+        "ibn_abi_hatim": 14,
+        "ahmad_musnad": 4,
+        "bukhari": 1,
+        "muslim": 2,
+        "ibn_abbas": 16,
+        "mujahid": 10,
+        "qatadah": 13,
+        "ahl_kitab_israel": 1,
+        "tarjih_naqd": 14
+      }
+    },
+    {
+      "id": "surah_090",
+      "type": "surah",
+      "order": 90,
+      "title": "البلد",
+      "start_page": 4967,
+      "end_page_estimated": 4974,
+      "xhtml_pages": 8,
+      "word_count": 2532,
+      "percent_of_tafsir_text": 0.165,
+      "indicators": {
+        "quran_braces": 54,
+        "ayah_refs": 5,
+        "قال": 62,
+        "رواه": 9,
+        "حدثنا_حدثني": 34,
+        "ibn_jarir": 9,
+        "ibn_abi_hatim": 6,
+        "ahmad_musnad": 8,
+        "bukhari": 1,
+        "muslim": 2,
+        "ibn_abbas": 10,
+        "mujahid": 9,
+        "qatadah": 11,
+        "ahl_kitab_israel": 1,
+        "tarjih_naqd": 2
+      }
+    },
+    {
+      "id": "surah_091",
+      "type": "surah",
+      "order": 91,
+      "title": "الشمس",
+      "start_page": 4975,
+      "end_page_estimated": 4980,
+      "xhtml_pages": 6,
+      "word_count": 1553,
+      "percent_of_tafsir_text": 0.101,
+      "indicators": {
+        "quran_braces": 48,
+        "ayah_refs": 5,
+        "قال": 48,
+        "رواه": 3,
+        "حدثنا_حدثني": 26,
+        "ibn_jarir": 5,
+        "ibn_abi_hatim": 5,
+        "ahmad_musnad": 4,
+        "bukhari": 1,
+        "muslim": 2,
+        "ibn_abbas": 9,
+        "mujahid": 11,
+        "qatadah": 6,
+        "ahl_kitab_israel": 0,
+        "tarjih_naqd": 6
+      }
+    },
+    {
+      "id": "surah_092",
+      "type": "surah",
+      "order": 92,
+      "title": "الليل",
+      "start_page": 4981,
+      "end_page_estimated": 4988,
+      "xhtml_pages": 8,
+      "word_count": 2530,
+      "percent_of_tafsir_text": 0.165,
+      "indicators": {
+        "quran_braces": 47,
+        "ayah_refs": 4,
+        "قال": 80,
+        "رواه": 6,
+        "حدثنا_حدثني": 41,
+        "ibn_jarir": 5,
+        "ibn_abi_hatim": 5,
+        "ahmad_musnad": 8,
+        "bukhari": 5,
+        "muslim": 3,
+        "ibn_abbas": 5,
+        "mujahid": 2,
+        "qatadah": 3,
+        "ahl_kitab_israel": 0,
+        "tarjih_naqd": 2
+      }
+    },
+    {
+      "id": "surah_093",
+      "type": "surah",
+      "order": 93,
+      "title": "الضحى",
+      "start_page": 4989,
+      "end_page_estimated": 4994,
+      "xhtml_pages": 6,
+      "word_count": 1952,
+      "percent_of_tafsir_text": 0.127,
+      "indicators": {
+        "quran_braces": 28,
+        "ayah_refs": 4,
+        "قال": 39,
+        "رواه": 5,
+        "حدثنا_حدثني": 28,
+        "ibn_jarir": 5,
+        "ibn_abi_hatim": 1,
+        "ahmad_musnad": 3,
+        "bukhari": 1,
+        "muslim": 4,
+        "ibn_abbas": 5,
+        "mujahid": 4,
+        "qatadah": 3,
+        "ahl_kitab_israel": 0,
+        "tarjih_naqd": 8
+      }
+    },
+    {
+      "id": "surah_094",
+      "type": "surah",
+      "order": 94,
+      "title": "الشرح",
+      "start_page": 4995,
+      "end_page_estimated": 4999,
+      "xhtml_pages": 5,
+      "word_count": 1422,
+      "percent_of_tafsir_text": 0.092,
+      "indicators": {
+        "quran_braces": 19,
+        "ayah_refs": 2,
+        "قال": 31,
+        "رواه": 4,
+        "حدثنا_حدثني": 24,
+        "ibn_jarir": 2,
+        "ibn_abi_hatim": 4,
+        "ahmad_musnad": 1,
+        "bukhari": 0,
+        "muslim": 0,
+        "ibn_abbas": 3,
+        "mujahid": 2,
+        "qatadah": 2,
+        "ahl_kitab_israel": 0,
+        "tarjih_naqd": 3
+      }
+    },
+    {
+      "id": "surah_095",
+      "type": "surah",
+      "order": 95,
+      "title": "التين",
+      "start_page": 5000,
+      "end_page_estimated": 5001,
+      "xhtml_pages": 2,
+      "word_count": 574,
+      "percent_of_tafsir_text": 0.037,
+      "indicators": {
+        "quran_braces": 16,
+        "ayah_refs": 1,
+        "قال": 10,
+        "رواه": 0,
+        "حدثنا_حدثني": 2,
+        "ibn_jarir": 1,
+        "ibn_abi_hatim": 1,
+        "ahmad_musnad": 0,
+        "bukhari": 0,
+        "muslim": 0,
+        "ibn_abbas": 3,
+        "mujahid": 3,
+        "qatadah": 0,
+        "ahl_kitab_israel": 3,
+        "tarjih_naqd": 1
+      }
+    },
+    {
+      "id": "surah_096",
+      "type": "surah",
+      "order": 96,
+      "title": "العلق",
+      "start_page": 5002,
+      "end_page_estimated": 5006,
+      "xhtml_pages": 5,
+      "word_count": 1418,
+      "percent_of_tafsir_text": 0.092,
+      "indicators": {
+        "quran_braces": 24,
+        "ayah_refs": 1,
+        "قال": 33,
+        "رواه": 3,
+        "حدثنا_حدثني": 14,
+        "ibn_jarir": 3,
+        "ibn_abi_hatim": 1,
+        "ahmad_musnad": 3,
+        "bukhari": 1,
+        "muslim": 1,
+        "ibn_abbas": 6,
+        "mujahid": 0,
+        "qatadah": 0,
+        "ahl_kitab_israel": 1,
+        "tarjih_naqd": 2
+      }
+    },
+    {
+      "id": "surah_097",
+      "type": "surah",
+      "order": 97,
+      "title": "القدر",
+      "start_page": 5007,
+      "end_page_estimated": 5021,
+      "xhtml_pages": 15,
+      "word_count": 5316,
+      "percent_of_tafsir_text": 0.346,
+      "indicators": {
+        "quran_braces": 20,
+        "ayah_refs": 6,
+        "قال": 118,
+        "رواه": 16,
+        "حدثنا_حدثني": 58,
+        "ibn_jarir": 5,
+        "ibn_abi_hatim": 4,
+        "ahmad_musnad": 15,
+        "bukhari": 4,
+        "muslim": 5,
+        "ibn_abbas": 7,
+        "mujahid": 6,
+        "qatadah": 8,
+        "ahl_kitab_israel": 7,
+        "tarjih_naqd": 25
+      }
+    },
+    {
+      "id": "surah_098",
+      "type": "surah",
+      "order": 98,
+      "title": "البينة",
+      "start_page": 5022,
+      "end_page_estimated": 5026,
+      "xhtml_pages": 5,
+      "word_count": 1115,
+      "percent_of_tafsir_text": 0.073,
+      "indicators": {
+        "quran_braces": 28,
+        "ayah_refs": 4,
+        "قال": 28,
+        "رواه": 2,
+        "حدثنا_حدثني": 14,
+        "ibn_jarir": 1,
+        "ibn_abi_hatim": 0,
+        "ahmad_musnad": 2,
+        "bukhari": 0,
+        "muslim": 0,
+        "ibn_abbas": 1,
+        "mujahid": 1,
+        "qatadah": 2,
+        "ahl_kitab_israel": 5,
+        "tarjih_naqd": 3
+      }
+    },
+    {
+      "id": "surah_099",
+      "type": "surah",
+      "order": 99,
+      "title": "الزلزلة",
+      "start_page": 5027,
+      "end_page_estimated": 5031,
+      "xhtml_pages": 5,
+      "word_count": 1637,
+      "percent_of_tafsir_text": 0.106,
+      "indicators": {
+        "quran_braces": 26,
+        "ayah_refs": 3,
+        "قال": 51,
+        "رواه": 1,
+        "حدثنا_حدثني": 34,
+        "ibn_jarir": 3,
+        "ibn_abi_hatim": 3,
+        "ahmad_musnad": 4,
+        "bukhari": 3,
+        "muslim": 4,
+        "ibn_abbas": 3,
+        "mujahid": 1,
+        "qatadah": 1,
+        "ahl_kitab_israel": 0,
+        "tarjih_naqd": 6
+      }
+    },
+    {
+      "id": "surah_100",
+      "type": "surah",
+      "order": 100,
+      "title": "العاديات",
+      "start_page": 5032,
+      "end_page_estimated": 5035,
+      "xhtml_pages": 4,
+      "word_count": 892,
+      "percent_of_tafsir_text": 0.058,
+      "indicators": {
+        "quran_braces": 29,
+        "ayah_refs": 1,
+        "قال": 27,
+        "رواه": 1,
+        "حدثنا_حدثني": 8,
+        "ibn_jarir": 3,
+        "ibn_abi_hatim": 4,
+        "ahmad_musnad": 0,
+        "bukhari": 0,
+        "muslim": 0,
+        "ibn_abbas": 17,
+        "mujahid": 1,
+        "qatadah": 2,
+        "ahl_kitab_israel": 1,
+        "tarjih_naqd": 3
+      }
+    },
+    {
+      "id": "surah_101",
+      "type": "surah",
+      "order": 101,
+      "title": "القارعة",
+      "start_page": 5036,
+      "end_page_estimated": 5039,
+      "xhtml_pages": 4,
+      "word_count": 873,
+      "percent_of_tafsir_text": 0.057,
+      "indicators": {
+        "quran_braces": 15,
+        "ayah_refs": 1,
+        "قال": 22,
+        "رواه": 3,
+        "حدثنا_حدثني": 11,
+        "ibn_jarir": 2,
+        "ibn_abi_hatim": 1,
+        "ahmad_musnad": 4,
+        "bukhari": 1,
+        "muslim": 4,
+        "ibn_abbas": 1,
+        "mujahid": 1,
+        "qatadah": 2,
+        "ahl_kitab_israel": 0,
+        "tarjih_naqd": 1
+      }
+    },
+    {
+      "id": "surah_102",
+      "type": "surah",
+      "order": 102,
+      "title": "التكاثر",
+      "start_page": 5040,
+      "end_page_estimated": 5047,
+      "xhtml_pages": 8,
+      "word_count": 2447,
+      "percent_of_tafsir_text": 0.159,
+      "indicators": {
+        "quran_braces": 28,
+        "ayah_refs": 1,
+        "قال": 58,
+        "رواه": 4,
+        "حدثنا_حدثني": 52,
+        "ibn_jarir": 1,
+        "ibn_abi_hatim": 9,
+        "ahmad_musnad": 6,
+        "bukhari": 3,
+        "muslim": 6,
+        "ibn_abbas": 4,
+        "mujahid": 2,
+        "qatadah": 3,
+        "ahl_kitab_israel": 0,
+        "tarjih_naqd": 5
+      }
+    },
+    {
+      "id": "surah_103",
+      "type": "surah",
+      "order": 103,
+      "title": "العصر",
+      "start_page": 5048,
+      "end_page_estimated": 5048,
+      "xhtml_pages": 1,
+      "word_count": 96,
+      "percent_of_tafsir_text": 0.006,
+      "indicators": {
+        "quran_braces": 4,
+        "ayah_refs": 0,
+        "قال": 0,
+        "رواه": 0,
+        "حدثنا_حدثني": 0,
+        "ibn_jarir": 0,
+        "ibn_abi_hatim": 0,
+        "ahmad_musnad": 0,
+        "bukhari": 0,
+        "muslim": 0,
+        "ibn_abbas": 0,
+        "mujahid": 0,
+        "qatadah": 0,
+        "ahl_kitab_israel": 0,
+        "tarjih_naqd": 0
+      }
+    },
+    {
+      "id": "surah_104",
+      "type": "surah",
+      "order": 104,
+      "title": "الهمزة",
+      "start_page": 5049,
+      "end_page_estimated": 5050,
+      "xhtml_pages": 2,
+      "word_count": 425,
+      "percent_of_tafsir_text": 0.028,
+      "indicators": {
+        "quran_braces": 15,
+        "ayah_refs": 2,
+        "قال": 8,
+        "رواه": 1,
+        "حدثنا_حدثني": 5,
+        "ibn_jarir": 1,
+        "ibn_abi_hatim": 0,
+        "ahmad_musnad": 0,
+        "bukhari": 0,
+        "muslim": 0,
+        "ibn_abbas": 3,
+        "mujahid": 2,
+        "qatadah": 3,
+        "ahl_kitab_israel": 0,
+        "tarjih_naqd": 0
+      }
+    },
+    {
+      "id": "surah_105",
+      "type": "surah",
+      "order": 105,
+      "title": "الفيل",
+      "start_page": 5051,
+      "end_page_estimated": 5058,
+      "xhtml_pages": 8,
+      "word_count": 2675,
+      "percent_of_tafsir_text": 0.174,
+      "indicators": {
+        "quran_braces": 10,
+        "ayah_refs": 0,
+        "قال": 26,
+        "رواه": 1,
+        "حدثنا_حدثني": 10,
+        "ibn_jarir": 1,
+        "ibn_abi_hatim": 2,
+        "ahmad_musnad": 0,
+        "bukhari": 1,
+        "muslim": 0,
+        "ibn_abbas": 5,
+        "mujahid": 1,
+        "qatadah": 0,
+        "ahl_kitab_israel": 1,
+        "tarjih_naqd": 3
+      }
+    },
+    {
+      "id": "surah_106",
+      "type": "surah",
+      "order": 106,
+      "title": "قريش",
+      "start_page": 5059,
+      "end_page_estimated": 5060,
+      "xhtml_pages": 2,
+      "word_count": 592,
+      "percent_of_tafsir_text": 0.038,
+      "indicators": {
+        "quran_braces": 9,
+        "ayah_refs": 3,
+        "قال": 11,
+        "رواه": 0,
+        "حدثنا_حدثني": 12,
+        "ibn_jarir": 1,
+        "ibn_abi_hatim": 1,
+        "ahmad_musnad": 0,
+        "bukhari": 0,
+        "muslim": 0,
+        "ibn_abbas": 0,
+        "mujahid": 0,
+        "qatadah": 0,
+        "ahl_kitab_israel": 0,
+        "tarjih_naqd": 3
+      }
+    },
+    {
+      "id": "surah_107",
+      "type": "surah",
+      "order": 107,
+      "title": "الماعون",
+      "start_page": 5061,
+      "end_page_estimated": 5065,
+      "xhtml_pages": 5,
+      "word_count": 1576,
+      "percent_of_tafsir_text": 0.102,
+      "indicators": {
+        "quran_braces": 18,
+        "ayah_refs": 2,
+        "قال": 47,
+        "رواه": 10,
+        "حدثنا_حدثني": 34,
+        "ibn_jarir": 4,
+        "ibn_abi_hatim": 3,
+        "ahmad_musnad": 1,
+        "bukhari": 0,
+        "muslim": 0,
+        "ibn_abbas": 6,
+        "mujahid": 4,
+        "qatadah": 0,
+        "ahl_kitab_israel": 0,
+        "tarjih_naqd": 9
+      }
+    },
+    {
+      "id": "surah_108",
+      "type": "surah",
+      "order": 108,
+      "title": "الكوثر",
+      "start_page": 5066,
+      "end_page_estimated": 5074,
+      "xhtml_pages": 9,
+      "word_count": 2612,
+      "percent_of_tafsir_text": 0.17,
+      "indicators": {
+        "quran_braces": 20,
+        "ayah_refs": 2,
+        "قال": 75,
+        "رواه": 11,
+        "حدثنا_حدثني": 46,
+        "ibn_jarir": 9,
+        "ibn_abi_hatim": 2,
+        "ahmad_musnad": 7,
+        "bukhari": 5,
+        "muslim": 5,
+        "ibn_abbas": 13,
+        "mujahid": 4,
+        "qatadah": 4,
+        "ahl_kitab_israel": 6,
+        "tarjih_naqd": 7
+      }
+    },
+    {
+      "id": "surah_109",
+      "type": "surah",
+      "order": 109,
+      "title": "الكافرون",
+      "start_page": 5075,
+      "end_page_estimated": 5076,
+      "xhtml_pages": 2,
+      "word_count": 708,
+      "percent_of_tafsir_text": 0.046,
+      "indicators": {
+        "quran_braces": 22,
+        "ayah_refs": 8,
+        "قال": 12,
+        "رواه": 0,
+        "حدثنا_حدثني": 5,
+        "ibn_jarir": 1,
+        "ibn_abi_hatim": 0,
+        "ahmad_musnad": 1,
+        "bukhari": 2,
+        "muslim": 0,
+        "ibn_abbas": 0,
+        "mujahid": 0,
+        "qatadah": 0,
+        "ahl_kitab_israel": 0,
+        "tarjih_naqd": 2
+      }
+    },
+    {
+      "id": "surah_110",
+      "type": "surah",
+      "order": 110,
+      "title": "النصر",
+      "start_page": 5077,
+      "end_page_estimated": 5081,
+      "xhtml_pages": 5,
+      "word_count": 1702,
+      "percent_of_tafsir_text": 0.111,
+      "indicators": {
+        "quran_braces": 16,
+        "ayah_refs": 0,
+        "قال": 38,
+        "رواه": 2,
+        "حدثنا_حدثني": 34,
+        "ibn_jarir": 3,
+        "ibn_abi_hatim": 1,
+        "ahmad_musnad": 6,
+        "bukhari": 5,
+        "muslim": 1,
+        "ibn_abbas": 15,
+        "mujahid": 1,
+        "qatadah": 0,
+        "ahl_kitab_israel": 1,
+        "tarjih_naqd": 2
+      }
+    },
+    {
+      "id": "surah_111",
+      "type": "surah",
+      "order": 111,
+      "title": "المسد",
+      "start_page": 5082,
+      "end_page_estimated": 5094,
+      "xhtml_pages": 13,
+      "word_count": 4333,
+      "percent_of_tafsir_text": 0.282,
+      "indicators": {
+        "quran_braces": 19,
+        "ayah_refs": 1,
+        "قال": 133,
+        "رواه": 19,
+        "حدثنا_حدثني": 87,
+        "ibn_jarir": 7,
+        "ibn_abi_hatim": 2,
+        "ahmad_musnad": 15,
+        "bukhari": 12,
+        "muslim": 4,
+        "ibn_abbas": 4,
+        "mujahid": 3,
+        "qatadah": 5,
+        "ahl_kitab_israel": 2,
+        "tarjih_naqd": 20
+      }
+    },
+    {
+      "id": "surah_112",
+      "type": "surah",
+      "order": 112,
+      "title": "الإخلاص",
+      "start_page": 5095,
+      "end_page_estimated": 5101,
+      "xhtml_pages": 7,
+      "word_count": 2295,
+      "percent_of_tafsir_text": 0.149,
+      "indicators": {
+        "quran_braces": 18,
+        "ayah_refs": 4,
+        "قال": 71,
+        "رواه": 2,
+        "حدثنا_حدثني": 42,
+        "ibn_jarir": 1,
+        "ibn_abi_hatim": 1,
+        "ahmad_musnad": 7,
+        "bukhari": 5,
+        "muslim": 3,
+        "ibn_abbas": 2,
+        "mujahid": 4,
+        "qatadah": 0,
+        "ahl_kitab_israel": 2,
+        "tarjih_naqd": 5
+      }
+    },
+    {
+      "id": "surah_113",
+      "type": "surah",
+      "order": 113,
+      "title": "الفلق",
+      "start_page": 5102,
+      "end_page_estimated": 5105,
+      "xhtml_pages": 4,
+      "word_count": 1377,
+      "percent_of_tafsir_text": 0.09,
+      "indicators": {
+        "quran_braces": 14,
+        "ayah_refs": 1,
+        "قال": 38,
+        "رواه": 4,
+        "حدثنا_حدثني": 24,
+        "ibn_jarir": 5,
+        "ibn_abi_hatim": 2,
+        "ahmad_musnad": 2,
+        "bukhari": 4,
+        "muslim": 1,
+        "ibn_abbas": 3,
+        "mujahid": 4,
+        "qatadah": 0,
+        "ahl_kitab_israel": 1,
+        "tarjih_naqd": 7
+      }
+    },
+    {
+      "id": "surah_114",
+      "type": "surah",
+      "order": 114,
+      "title": "الناس",
+      "start_page": 5106,
+      "end_page_estimated": 5109,
+      "xhtml_pages": 4,
+      "word_count": 1247,
+      "percent_of_tafsir_text": 0.081,
+      "indicators": {
+        "quran_braces": 10,
+        "ayah_refs": 1,
+        "قال": 42,
+        "رواه": 0,
+        "حدثنا_حدثني": 12,
+        "ibn_jarir": 1,
+        "ibn_abi_hatim": 0,
+        "ahmad_musnad": 5,
+        "bukhari": 0,
+        "muslim": 0,
+        "ibn_abbas": 4,
+        "mujahid": 1,
+        "qatadah": 0,
+        "ahl_kitab_israel": 0,
+        "tarjih_naqd": 6
+      }
+    }
+  ],
+  "resources": {
+    "explicit_books": [
+      {
+        "الكتاب/المصدر المصرح به": "القرآن الكريم",
+        "المجال": "قرآني",
+        "نوع المورد": "كتاب أصل",
+        "عدد الحضور": 1954,
+        "نسبة الحضور من مجموع إحالات الكتب %": 45.654,
+        "الصيغ المرصودة": "القرآن: 1558؛ كتاب الله: 245؛ الفرقان: 151"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "الصحيحان",
+        "المجال": "حديثي",
+        "نوع المورد": "مصدر حديثي مركب",
+        "عدد الحضور": 994,
+        "نسبة الحضور من مجموع إحالات الكتب %": 23.224,
+        "الصيغ المرصودة": "الصحيحين: 568؛ في الصحيحين: 423؛ رواه الشيخان: 3"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "التوراة",
+        "المجال": "كتب أهل الكتاب/إسرائيليات",
+        "نوع المورد": "كتاب ديني",
+        "عدد الحضور": 309,
+        "نسبة الحضور من مجموع إحالات الكتب %": 7.22,
+        "الصيغ المرصودة": "التوراة: 309"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "صحيح مسلم",
+        "المجال": "حديثي",
+        "نوع المورد": "كتاب حديث",
+        "عدد الحضور": 280,
+        "نسبة الحضور من مجموع إحالات الكتب %": 6.542,
+        "الصيغ المرصودة": "صحيح مسلم: 160؛ الصحيح لمسلم: 3؛ في صحيح مسلم: 88؛ رواه مسلم في صحيحه: 23؛ اخرجه مسلم في صحيحه: 6"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "صحيح البخاري",
+        "المجال": "حديثي",
+        "نوع المورد": "كتاب حديث",
+        "عدد الحضور": 127,
+        "نسبة الحضور من مجموع إحالات الكتب %": 2.967,
+        "الصيغ المرصودة": "صحيح البخاري: 82؛ الصحيح للبخاري: 1؛ في صحيح البخاري: 37؛ رواه البخاري في صحيحه: 5؛ اخرجه البخاري في صحيحه: 2"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "المستدرك للحاكم",
+        "المجال": "حديثي",
+        "نوع المورد": "كتاب حديث",
+        "عدد الحضور": 92,
+        "نسبة الحضور من مجموع إحالات الكتب %": 2.15,
+        "الصيغ المرصودة": "المستدرك: 9؛ مستدرك الحاكم: 1؛ الحاكم في مستدركه: 76؛ في المستدرك: 6"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "مسند الإمام أحمد",
+        "المجال": "حديثي",
+        "نوع المورد": "كتاب حديث",
+        "عدد الحضور": 50,
+        "نسبة الحضور من مجموع إحالات الكتب %": 1.168,
+        "الصيغ المرصودة": "مسند احمد: 6؛ مسند الامام احمد: 21؛ في المسند: 13؛ رواه احمد في مسنده: 1؛ في مسند الامام احمد: 9"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "دلائل النبوة للبيهقي",
+        "المجال": "سيرة/حديث",
+        "نوع المورد": "كتاب دلائل وسيرة",
+        "عدد الحضور": 50,
+        "نسبة الحضور من مجموع إحالات الكتب %": 1.168,
+        "الصيغ المرصودة": "دلائل النبوه: 28؛ البيهقي في دلائل النبوه: 10؛ في دلائل النبوه: 12"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "مسند البزار",
+        "المجال": "حديثي",
+        "نوع المورد": "كتاب حديث",
+        "عدد الحضور": 37,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.864,
+        "الصيغ المرصودة": "مسند البزار: 2؛ البزار في مسنده: 35"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "الإنجيل",
+        "المجال": "كتب أهل الكتاب/إسرائيليات",
+        "نوع المورد": "كتاب ديني",
+        "عدد الحضور": 34,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.794,
+        "الصيغ المرصودة": "الإنجيل: 34"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "الزبور",
+        "المجال": "كتب أهل الكتاب/إسرائيليات",
+        "نوع المورد": "كتاب ديني",
+        "عدد الحضور": 31,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.724,
+        "الصيغ المرصودة": "الزبور: 31"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "سنن أبي داود",
+        "المجال": "حديثي",
+        "نوع المورد": "كتاب حديث",
+        "عدد الحضور": 31,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.724,
+        "الصيغ المرصودة": "سنن ابي داود: 18؛ رواه ابو داود في سننه: 7؛ اخرجه ابو داود في سننه: 1؛ في سنن ابي داود: 5"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "صحيح ابن حبان",
+        "المجال": "حديثي",
+        "نوع المورد": "كتاب حديث",
+        "عدد الحضور": 31,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.724,
+        "الصيغ المرصودة": "صحيح ابن حبان: 3؛ ابن حبان في صحيحه: 26؛ في صحيح ابن حبان: 2"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "تفسير ابن جرير الطبري/جامع البيان",
+        "المجال": "تفسيري",
+        "نوع المورد": "كتاب تفسير",
+        "عدد الحضور": 26,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.607,
+        "الصيغ المرصودة": "تفسير ابن جرير: 2؛ تفسير الطبري: 2؛ ابن جرير في تفسيره: 22"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "الموطأ",
+        "المجال": "حديثي/فقهي",
+        "نوع المورد": "كتاب حديث وفقه",
+        "عدد الحضور": 22,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.514,
+        "الصيغ المرصودة": "الموطأ: 11؛ موطا مالك: 3؛ في الموطا: 8"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "تفسير السدي",
+        "المجال": "تفسيري/أثري",
+        "نوع المورد": "كتاب/رواية تفسيرية",
+        "عدد الحضور": 21,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.491,
+        "الصيغ المرصودة": "تفسير السدي: 1؛ السدي في تفسيره: 20"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "سيرة ابن إسحاق/المغازي",
+        "المجال": "سيرة/تاريخ",
+        "نوع المورد": "كتاب سيرة ومغازي",
+        "عدد الحضور": 20,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.467,
+        "الصيغ المرصودة": "كتاب المغازي: 2؛ المغازي: 18"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "مسند أبي يعلى",
+        "المجال": "حديثي",
+        "نوع المورد": "كتاب حديث",
+        "عدد الحضور": 19,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.444,
+        "الصيغ المرصودة": "مسند ابي يعلي: 3؛ ابو يعلي في مسنده: 16"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "المعجم الكبير للطبراني",
+        "المجال": "حديثي",
+        "نوع المورد": "معجم حديثي",
+        "عدد الحضور": 19,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.444,
+        "الصيغ المرصودة": "المعجم الكبير: 7؛ في المعجم الكبير: 7؛ الطبراني في المعجم الكبير: 5"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "مفاتيح الغيب/تفسير الرازي",
+        "المجال": "تفسيري/كلامي",
+        "نوع المورد": "كتاب تفسير",
+        "عدد الحضور": 19,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.444,
+        "الصيغ المرصودة": "مفاتيح الغيب: 6؛ الرازي في تفسيره: 13"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "سنن ابن ماجه",
+        "المجال": "حديثي",
+        "نوع المورد": "كتاب حديث",
+        "عدد الحضور": 15,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.35,
+        "الصيغ المرصودة": "سنن ابن ماجه: 10؛ رواه ابن ماجه في سننه: 1؛ في سنن ابن ماجه: 4"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "سنن النسائي",
+        "المجال": "حديثي",
+        "نوع المورد": "كتاب حديث",
+        "عدد الحضور": 11,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.257,
+        "الصيغ المرصودة": "سنن النسائي: 5؛ رواه النسائي في سننه: 3؛ اخرجه النسائي في سننه: 1؛ في سنن النسائي: 2"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "تفسير ابن مردويه",
+        "المجال": "تفسيري",
+        "نوع المورد": "كتاب تفسير بالمأثور",
+        "عدد الحضور": 11,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.257,
+        "الصيغ المرصودة": "تفسير ابن مردويه: 1؛ ابن مردويه في تفسيره: 9؛ في تفسير ابن مردويه: 1"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "سنن البيهقي/السنن الكبرى",
+        "المجال": "حديثي/فقهي",
+        "نوع المورد": "كتاب حديث وفقه",
+        "عدد الحضور": 9,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.21,
+        "الصيغ المرصودة": "سنن البيهقي: 1؛ السنن الكبرى: 4؛ البيهقي في السنن: 1؛ في السنن الكبرى: 3"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "الزهد لابن المبارك/أحمد",
+        "المجال": "حديثي/رقائق",
+        "نوع المورد": "كتاب زهد",
+        "عدد الحضور": 9,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.21,
+        "الصيغ المرصودة": "كتاب الزهد: 7؛ في الزهد: 2"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "تفسير ابن أبي حاتم",
+        "المجال": "تفسيري",
+        "نوع المورد": "كتاب تفسير بالمأثور",
+        "عدد الحضور": 8,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.187,
+        "الصيغ المرصودة": "ابن ابي حاتم في تفسيره: 8"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "تفسير عبد بن حميد",
+        "المجال": "تفسيري",
+        "نوع المورد": "كتاب تفسير بالمأثور",
+        "عدد الحضور": 8,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.187,
+        "الصيغ المرصودة": "عبد بن حميد في تفسيره: 8"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "تفسير وكيع",
+        "المجال": "تفسيري",
+        "نوع المورد": "كتاب تفسير بالمأثور",
+        "عدد الحضور": 8,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.187,
+        "الصيغ المرصودة": "تفسير وكيع: 1؛ وكيع في تفسيره: 6؛ في تفسير وكيع: 1"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "تفسير القرطبي",
+        "المجال": "تفسيري/فقهي",
+        "نوع المورد": "كتاب تفسير",
+        "عدد الحضور": 8,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.187,
+        "الصيغ المرصودة": "القرطبي في تفسيره: 8"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "معالم التنزيل/تفسير البغوي",
+        "المجال": "تفسيري",
+        "نوع المورد": "كتاب تفسير",
+        "عدد الحضور": 7,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.164,
+        "الصيغ المرصودة": "البغوي في تفسيره: 7"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "صحيح ابن خزيمة",
+        "المجال": "حديثي",
+        "نوع المورد": "كتاب حديث",
+        "عدد الحضور": 5,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.117,
+        "الصيغ المرصودة": "صحيح ابن خزيمه: 3؛ ابن خزيمه في صحيحه: 2"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "جامع/سنن الترمذي",
+        "المجال": "حديثي",
+        "نوع المورد": "كتاب حديث",
+        "عدد الحضور": 4,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.093,
+        "الصيغ المرصودة": "سنن الترمذي: 1؛ الترمذي في تفسيره: 3"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "تفسير ابن المنذر",
+        "المجال": "تفسيري",
+        "نوع المورد": "كتاب تفسير بالمأثور",
+        "عدد الحضور": 4,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.093,
+        "الصيغ المرصودة": "ابن المنذر في تفسيره: 4"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "المعجم الأوسط للطبراني",
+        "المجال": "حديثي",
+        "نوع المورد": "معجم حديثي",
+        "عدد الحضور": 1,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.023,
+        "الصيغ المرصودة": "المعجم الاوسط: 1"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "شعب الإيمان للبيهقي",
+        "المجال": "حديثي/رقائق",
+        "نوع المورد": "كتاب حديث",
+        "عدد الحضور": 1,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.023,
+        "الصيغ المرصودة": "شعب الايمان: 1"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "مصنف عبد الرزاق",
+        "المجال": "حديثي/آثار",
+        "نوع المورد": "مصنف آثار",
+        "عدد الحضور": 1,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.023,
+        "الصيغ المرصودة": "عبد الرزاق في مصنفه: 1"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "تفسير عبد الرزاق",
+        "المجال": "تفسيري",
+        "نوع المورد": "كتاب تفسير بالمأثور",
+        "عدد الحضور": 1,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.023,
+        "الصيغ المرصودة": "عبد الرزاق في تفسيره: 1"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "الكشاف للزمخشري",
+        "المجال": "تفسيري/لغوي/اعتزالي",
+        "نوع المورد": "كتاب تفسير",
+        "عدد الحضور": 1,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.023,
+        "الصيغ المرصودة": "الكشاف: 1"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "الأم للشافعي",
+        "المجال": "فقهي",
+        "نوع المورد": "كتاب فقه",
+        "عدد الحضور": 1,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.023,
+        "الصيغ المرصودة": "الشافعي في الام: 1"
+      },
+      {
+        "الكتاب/المصدر المصرح به": "معاني القرآن للزجاج",
+        "المجال": "لغوي/قرآني",
+        "نوع المورد": "كتاب لغة قرآن",
+        "عدد الحضور": 1,
+        "نسبة الحضور من مجموع إحالات الكتب %": 0.023,
+        "الصيغ المرصودة": "الزجاج في معاني القرآن: 1"
+      }
+    ],
+    "people": [
+      {
+        "العَلَم/المصدر البشري": "النبي صلى الله عليه وسلم",
+        "المجال": "نبوي",
+        "الطبقة/المجموعة": "المصدر النبوي",
+        "عدد الحضور": 11763,
+        "نسبة الحضور من مجموع الأعلام %": 23.328,
+        "الصيغ المرصودة": "رسول الله: 9088؛ النبي صلى الله عليه وسلم: 2408؛ محمد صلى الله عليه وسلم: 267"
+      },
+      {
+        "العَلَم/المصدر البشري": "ابن عباس",
+        "المجال": "تفسير الصحابة",
+        "الطبقة/المجموعة": "صحابة",
+        "عدد الحضور": 4176,
+        "نسبة الحضور من مجموع الأعلام %": 8.282,
+        "الصيغ المرصودة": "ابن عباس: 4099؛ عبد الله بن عباس: 76؛ ابن العباس: 1"
+      },
+      {
+        "العَلَم/المصدر البشري": "ابن جرير الطبري",
+        "المجال": "تفسير/تاريخ",
+        "الطبقة/المجموعة": "مفسرون ومصنفون",
+        "عدد الحضور": 2171,
+        "نسبة الحضور من مجموع الأعلام %": 4.305,
+        "الصيغ المرصودة": "ابن جرير: 2139؛ الطبري: 24؛ محمد بن جرير: 8"
+      },
+      {
+        "العَلَم/المصدر البشري": "الإمام أحمد",
+        "المجال": "حديث/فقه",
+        "الطبقة/المجموعة": "محدثون وفقهاء",
+        "عدد الحضور": 2027,
+        "نسبة الحضور من مجموع الأعلام %": 4.02,
+        "الصيغ المرصودة": "احمد بن حنبل: 121؛ الامام احمد: 1780؛ رواه احمد: 75؛ اخرجه احمد: 3؛ احمد في المسند: 4؛ احمد في مسنده: 44"
+      },
+      {
+        "العَلَم/المصدر البشري": "مجاهد بن جبر",
+        "المجال": "تفسير التابعين",
+        "الطبقة/المجموعة": "تابعون",
+        "عدد الحضور": 1743,
+        "نسبة الحضور من مجموع الأعلام %": 3.457,
+        "الصيغ المرصودة": "مجاهد: 1736؛ مجاهد بن جبر: 7"
+      },
+      {
+        "العَلَم/المصدر البشري": "ابن أبي حاتم",
+        "المجال": "تفسير/حديث",
+        "الطبقة/المجموعة": "مفسرون ومحدثون",
+        "عدد الحضور": 1630,
+        "نسبة الحضور من مجموع الأعلام %": 3.233,
+        "الصيغ المرصودة": "ابن ابي حاتم: 1630"
+      },
+      {
+        "العَلَم/المصدر البشري": "الحسن البصري",
+        "المجال": "تفسير/وعظ",
+        "الطبقة/المجموعة": "تابعون",
+        "عدد الحضور": 1627,
+        "نسبة الحضور من مجموع الأعلام %": 3.227,
+        "الصيغ المرصودة": "الحسن البصري: 293؛ الحسن: 1334"
+      },
+      {
+        "العَلَم/المصدر البشري": "قتادة",
+        "المجال": "تفسير التابعين",
+        "الطبقة/المجموعة": "تابعون",
+        "عدد الحضور": 1513,
+        "نسبة الحضور من مجموع الأعلام %": 3.001,
+        "الصيغ المرصودة": "قتاده: 1513"
+      },
+      {
+        "العَلَم/المصدر البشري": "مالك بن أنس",
+        "المجال": "فقه/حديث",
+        "الطبقة/المجموعة": "فقهاء",
+        "عدد الحضور": 1344,
+        "نسبة الحضور من مجموع الأعلام %": 2.665,
+        "الصيغ المرصودة": "مالك بن انس: 34؛ الامام مالك: 64؛ مالك: 1246"
+      },
+      {
+        "العَلَم/المصدر البشري": "أبو هريرة",
+        "المجال": "صحابي/حديث",
+        "الطبقة/المجموعة": "صحابة",
+        "عدد الحضور": 1070,
+        "نسبة الحضور من مجموع الأعلام %": 2.122,
+        "الصيغ المرصودة": "ابو هريره: 107؛ ابي هريره: 963"
+      },
+      {
+        "العَلَم/المصدر البشري": "البخاري",
+        "المجال": "حديث",
+        "الطبقة/المجموعة": "محدثون",
+        "عدد الحضور": 1061,
+        "نسبة الحضور من مجموع الأعلام %": 2.104,
+        "الصيغ المرصودة": "البخاري: 1059؛ محمد بن اسماعيل البخاري: 2"
+      },
+      {
+        "العَلَم/المصدر البشري": "علي بن أبي طالب",
+        "المجال": "صحابي/فقهي",
+        "الطبقة/المجموعة": "صحابة",
+        "عدد الحضور": 975,
+        "نسبة الحضور من مجموع الأعلام %": 1.934,
+        "الصيغ المرصودة": "علي بن ابي طالب: 169؛ عن علي: 469؛ وقال علي: 216؛ علي رضي الله عنه: 121"
+      },
+      {
+        "العَلَم/المصدر البشري": "عكرمة",
+        "المجال": "تفسير التابعين",
+        "الطبقة/المجموعة": "تابعون",
+        "عدد الحضور": 870,
+        "نسبة الحضور من مجموع الأعلام %": 1.725,
+        "الصيغ المرصودة": "عكرمه: 870"
+      },
+      {
+        "العَلَم/المصدر البشري": "عبد الله بن مسعود",
+        "المجال": "تفسير الصحابة",
+        "الطبقة/المجموعة": "صحابة",
+        "عدد الحضور": 833,
+        "نسبة الحضور من مجموع الأعلام %": 1.652,
+        "الصيغ المرصودة": "ابن مسعود: 608؛ عبد الله بن مسعود: 225"
+      },
+      {
+        "العَلَم/المصدر البشري": "سفيان الثوري",
+        "المجال": "فقه/حديث",
+        "الطبقة/المجموعة": "فقهاء ومحدثون",
+        "عدد الحضور": 814,
+        "نسبة الحضور من مجموع الأعلام %": 1.614,
+        "الصيغ المرصودة": "الثوري: 560؛ سفيان الثوري: 254"
+      },
+      {
+        "العَلَم/المصدر البشري": "الترمذي",
+        "المجال": "حديث",
+        "الطبقة/المجموعة": "محدثون",
+        "عدد الحضور": 807,
+        "نسبة الحضور من مجموع الأعلام %": 1.6,
+        "الصيغ المرصودة": "الترمذي: 769؛ ابو عيسي الترمذي: 38"
+      },
+      {
+        "العَلَم/المصدر البشري": "أنس بن مالك",
+        "المجال": "صحابي/حديث",
+        "الطبقة/المجموعة": "صحابة",
+        "عدد الحضور": 800,
+        "نسبة الحضور من مجموع الأعلام %": 1.587,
+        "الصيغ المرصودة": "انس بن مالك: 266؛ عن انس: 499؛ قال انس: 35"
+      },
+      {
+        "العَلَم/المصدر البشري": "سعيد بن جبير",
+        "المجال": "تفسير التابعين",
+        "الطبقة/المجموعة": "تابعون",
+        "عدد الحضور": 736,
+        "نسبة الحضور من مجموع الأعلام %": 1.46,
+        "الصيغ المرصودة": "سعيد بن جبير: 736"
+      },
+      {
+        "العَلَم/المصدر البشري": "عائشة",
+        "المجال": "صحابية/حديث وفقه",
+        "الطبقة/المجموعة": "صحابة",
+        "عدد الحضور": 727,
+        "نسبة الحضور من مجموع الأعلام %": 1.442,
+        "الصيغ المرصودة": "عائشه: 727"
+      },
+      {
+        "العَلَم/المصدر البشري": "عطاء بن أبي رباح",
+        "المجال": "تفسير/فقه",
+        "الطبقة/المجموعة": "تابعون",
+        "عدد الحضور": 712,
+        "نسبة الحضور من مجموع الأعلام %": 1.412,
+        "الصيغ المرصودة": "عطاء بن ابي رباح: 60؛ عطاء: 652"
+      },
+      {
+        "العَلَم/المصدر البشري": "عبد الرحمن بن زيد بن أسلم",
+        "المجال": "تفسير",
+        "الطبقة/المجموعة": "أتباع التابعين",
+        "عدد الحضور": 697,
+        "نسبة الحضور من مجموع الأعلام %": 1.382,
+        "الصيغ المرصودة": "ابن زيد: 125؛ عبد الرحمن بن زيد: 172؛ زيد بن اسلم: 400"
+      },
+      {
+        "العَلَم/المصدر البشري": "أبو داود",
+        "المجال": "حديث",
+        "الطبقة/المجموعة": "محدثون",
+        "عدد الحضور": 686,
+        "نسبة الحضور من مجموع الأعلام %": 1.36,
+        "الصيغ المرصودة": "ابو داود: 584؛ ابي داود: 102"
+      },
+      {
+        "العَلَم/المصدر البشري": "السدي",
+        "المجال": "تفسير التابعين",
+        "الطبقة/المجموعة": "تابعون/أتباع",
+        "عدد الحضور": 645,
+        "نسبة الحضور من مجموع الأعلام %": 1.279,
+        "الصيغ المرصودة": "السدي: 639؛ السدي الكبير: 6"
+      },
+      {
+        "العَلَم/المصدر البشري": "عبد الله بن عمر",
+        "المجال": "صحابي/حديث وفقه",
+        "الطبقة/المجموعة": "صحابة",
+        "عدد الحضور": 632,
+        "نسبة الحضور من مجموع الأعلام %": 1.253,
+        "الصيغ المرصودة": "ابن عمر: 479؛ عبد الله بن عمر: 153"
+      },
+      {
+        "العَلَم/المصدر البشري": "الزهري",
+        "المجال": "حديث/سيرة",
+        "الطبقة/المجموعة": "تابعون",
+        "عدد الحضور": 623,
+        "نسبة الحضور من مجموع الأعلام %": 1.236,
+        "الصيغ المرصودة": "الزهري: 522؛ ابن شهاب: 101"
+      },
+      {
+        "العَلَم/المصدر البشري": "ابن إسحاق",
+        "المجال": "سيرة/تاريخ",
+        "الطبقة/المجموعة": "أهل السيرة",
+        "عدد الحضور": 602,
+        "نسبة الحضور من مجموع الأعلام %": 1.194,
+        "الصيغ المرصودة": "ابن اسحاق: 184؛ محمد بن اسحاق: 418"
+      },
+      {
+        "العَلَم/المصدر البشري": "عمر بن الخطاب",
+        "المجال": "صحابي/فقهي",
+        "الطبقة/المجموعة": "صحابة",
+        "عدد الحضور": 545,
+        "نسبة الحضور من مجموع الأعلام %": 1.081,
+        "الصيغ المرصودة": "عمر بن الخطاب: 326؛ الفاروق: 2؛ عن عمر: 200؛ وقال عمر: 17"
+      },
+      {
+        "العَلَم/المصدر البشري": "عبد الرزاق الصنعاني",
+        "المجال": "تفسير/حديث",
+        "الطبقة/المجموعة": "مصنفو الآثار",
+        "عدد الحضور": 486,
+        "نسبة الحضور من مجموع الأعلام %": 0.964,
+        "الصيغ المرصودة": "عبد الرزاق: 486"
+      },
+      {
+        "العَلَم/المصدر البشري": "جابر بن عبد الله",
+        "المجال": "صحابي/حديث",
+        "الطبقة/المجموعة": "صحابة",
+        "عدد الحضور": 482,
+        "نسبة الحضور من مجموع الأعلام %": 0.956,
+        "الصيغ المرصودة": "جابر بن عبد الله: 156؛ عن جابر: 318؛ قال جابر: 8"
+      },
+      {
+        "العَلَم/المصدر البشري": "الضحاك",
+        "المجال": "تفسير التابعين",
+        "الطبقة/المجموعة": "تابعون",
+        "عدد الحضور": 482,
+        "نسبة الحضور من مجموع الأعلام %": 0.956,
+        "الصيغ المرصودة": "الضحاك: 482"
+      },
+      {
+        "العَلَم/المصدر البشري": "الربيع بن أنس",
+        "المجال": "تفسير",
+        "الطبقة/المجموعة": "تابعون/أتباع",
+        "عدد الحضور": 459,
+        "نسبة الحضور من مجموع الأعلام %": 0.91,
+        "الصيغ المرصودة": "الربيع بن انس: 140؛ الربيع: 319"
+      },
+      {
+        "العَلَم/المصدر البشري": "مسلم",
+        "المجال": "حديث",
+        "الطبقة/المجموعة": "محدثون",
+        "عدد الحضور": 406,
+        "نسبة الحضور من مجموع الأعلام %": 0.805,
+        "الصيغ المرصودة": "مسلم بن الحجاج: 13؛ رواه مسلم: 199؛ اخرجه مسلم: 16؛ مسلم في صحيحه: 90؛ في صحيح مسلم: 88"
+      },
+      {
+        "العَلَم/المصدر البشري": "النسائي",
+        "المجال": "حديث",
+        "الطبقة/المجموعة": "محدثون",
+        "عدد الحضور": 355,
+        "نسبة الحضور من مجموع الأعلام %": 0.704,
+        "الصيغ المرصودة": "النسائي: 355"
+      },
+      {
+        "العَلَم/المصدر البشري": "وكيع بن الجراح",
+        "المجال": "تفسير/حديث",
+        "الطبقة/المجموعة": "محدثون",
+        "عدد الحضور": 353,
+        "نسبة الحضور من مجموع الأعلام %": 0.7,
+        "الصيغ المرصودة": "وكيع: 343؛ وكيع بن الجراح: 10"
+      },
+      {
+        "العَلَم/المصدر البشري": "عبد الله بن عمرو",
+        "المجال": "صحابي/حديث",
+        "الطبقة/المجموعة": "صحابة",
+        "عدد الحضور": 289,
+        "نسبة الحضور من مجموع الأعلام %": 0.573,
+        "الصيغ المرصودة": "عبد الله بن عمرو: 268؛ ابن عمرو: 21"
+      },
+      {
+        "العَلَم/المصدر البشري": "الشعبي",
+        "المجال": "تفسير/فقه",
+        "الطبقة/المجموعة": "تابعون",
+        "عدد الحضور": 279,
+        "نسبة الحضور من مجموع الأعلام %": 0.553,
+        "الصيغ المرصودة": "الشعبي: 279"
+      },
+      {
+        "العَلَم/المصدر البشري": "أبو بكر الصديق",
+        "المجال": "صحابي",
+        "الطبقة/المجموعة": "صحابة",
+        "عدد الحضور": 272,
+        "نسبة الحضور من مجموع الأعلام %": 0.539,
+        "الصيغ المرصودة": "ابو بكر الصديق: 22؛ ابي بكر الصديق: 40؛ عن ابي بكر: 137؛ قال ابو بكر: 73"
+      },
+      {
+        "العَلَم/المصدر البشري": "الشافعي",
+        "المجال": "فقه/أصول",
+        "الطبقة/المجموعة": "فقهاء",
+        "عدد الحضور": 264,
+        "نسبة الحضور من مجموع الأعلام %": 0.524,
+        "الصيغ المرصودة": "الشافعي: 256؛ محمد بن ادريس الشافعي: 8"
+      },
+      {
+        "العَلَم/المصدر البشري": "ابن مردويه",
+        "المجال": "تفسير/حديث",
+        "الطبقة/المجموعة": "مفسرون ومحدثون",
+        "عدد الحضور": 261,
+        "نسبة الحضور من مجموع الأعلام %": 0.518,
+        "الصيغ المرصودة": "ابن مردويه: 261"
+      },
+      {
+        "العَلَم/المصدر البشري": "الطبراني",
+        "المجال": "حديث",
+        "الطبقة/المجموعة": "محدثون",
+        "عدد الحضور": 259,
+        "نسبة الحضور من مجموع الأعلام %": 0.514,
+        "الصيغ المرصودة": "الطبراني: 259"
+      },
+      {
+        "العَلَم/المصدر البشري": "محمد بن كعب القرظي",
+        "المجال": "تفسير/قصص",
+        "الطبقة/المجموعة": "تابعون",
+        "عدد الحضور": 238,
+        "نسبة الحضور من مجموع الأعلام %": 0.472,
+        "الصيغ المرصودة": "محمد بن كعب القرظي: 89؛ محمد بن كعب: 149"
+      },
+      {
+        "العَلَم/المصدر البشري": "الحاكم النيسابوري",
+        "المجال": "حديث",
+        "الطبقة/المجموعة": "محدثون",
+        "عدد الحضور": 230,
+        "نسبة الحضور من مجموع الأعلام %": 0.456,
+        "الصيغ المرصودة": "الحاكم: 230"
+      },
+      {
+        "العَلَم/المصدر البشري": "البزار",
+        "المجال": "حديث",
+        "الطبقة/المجموعة": "محدثون",
+        "عدد الحضور": 229,
+        "نسبة الحضور من مجموع الأعلام %": 0.454,
+        "الصيغ المرصودة": "البزار: 229"
+      },
+      {
+        "العَلَم/المصدر البشري": "سفيان بن عيينة",
+        "المجال": "حديث",
+        "الطبقة/المجموعة": "محدثون",
+        "عدد الحضور": 217,
+        "نسبة الحضور من مجموع الأعلام %": 0.43,
+        "الصيغ المرصودة": "ابن عيينه: 54؛ سفيان بن عيينه: 163"
+      },
+      {
+        "العَلَم/المصدر البشري": "الفخر الرازي",
+        "المجال": "تفسير/كلام",
+        "الطبقة/المجموعة": "مفسرون كلاميون",
+        "عدد الحضور": 207,
+        "نسبة الحضور من مجموع الأعلام %": 0.411,
+        "الصيغ المرصودة": "الرازي: 192؛ فخر الدين الرازي: 15"
+      },
+      {
+        "العَلَم/المصدر البشري": "ابن ماجه",
+        "المجال": "حديث",
+        "الطبقة/المجموعة": "محدثون",
+        "عدد الحضور": 201,
+        "نسبة الحضور من مجموع الأعلام %": 0.399,
+        "الصيغ المرصودة": "ابن ماجه: 201"
+      },
+      {
+        "العَلَم/المصدر البشري": "النخعي",
+        "المجال": "فقه/تفسير",
+        "الطبقة/المجموعة": "تابعون",
+        "عدد الحضور": 192,
+        "نسبة الحضور من مجموع الأعلام %": 0.381,
+        "الصيغ المرصودة": "النخعي: 149؛ ابراهيم النخعي: 43"
+      },
+      {
+        "العَلَم/المصدر البشري": "أبي بن كعب",
+        "المجال": "تفسير الصحابة/قراءات",
+        "الطبقة/المجموعة": "صحابة",
+        "عدد الحضور": 177,
+        "نسبة الحضور من مجموع الأعلام %": 0.351,
+        "الصيغ المرصودة": "ابي بن كعب: 177"
+      },
+      {
+        "العَلَم/المصدر البشري": "ابن المبارك",
+        "المجال": "حديث/زهد",
+        "الطبقة/المجموعة": "محدثون",
+        "عدد الحضور": 177,
+        "نسبة الحضور من مجموع الأعلام %": 0.351,
+        "الصيغ المرصودة": "ابن المبارك: 94؛ عبد الله بن المبارك: 83"
+      },
+      {
+        "العَلَم/المصدر البشري": "عثمان بن عفان",
+        "المجال": "صحابي",
+        "الطبقة/المجموعة": "صحابة",
+        "عدد الحضور": 172,
+        "نسبة الحضور من مجموع الأعلام %": 0.341,
+        "الصيغ المرصودة": "عثمان بن عفان: 76؛ عن عثمان: 87؛ قال عثمان: 9"
+      },
+      {
+        "العَلَم/المصدر البشري": "ابن أبي شيبة",
+        "المجال": "حديث/آثار",
+        "الطبقة/المجموعة": "مصنفو الآثار",
+        "عدد الحضور": 169,
+        "نسبة الحضور من مجموع الأعلام %": 0.335,
+        "الصيغ المرصودة": "ابن ابي شيبه: 14؛ ابي شيبه: 155"
+      },
+      {
+        "العَلَم/المصدر البشري": "أبو يعلى",
+        "المجال": "حديث",
+        "الطبقة/المجموعة": "محدثون",
+        "عدد الحضور": 161,
+        "نسبة الحضور من مجموع الأعلام %": 0.319,
+        "الصيغ المرصودة": "ابو يعلي: 150؛ ابي يعلي: 11"
+      },
+      {
+        "العَلَم/المصدر البشري": "البيهقي",
+        "المجال": "حديث/فقه/دلائل",
+        "الطبقة/المجموعة": "محدثون وفقهاء",
+        "عدد الحضور": 149,
+        "نسبة الحضور من مجموع الأعلام %": 0.295,
+        "الصيغ المرصودة": "البيهقي: 149"
+      },
+      {
+        "العَلَم/المصدر البشري": "أبو سعيد الخدري",
+        "المجال": "صحابي/حديث",
+        "الطبقة/المجموعة": "صحابة",
+        "عدد الحضور": 127,
+        "نسبة الحضور من مجموع الأعلام %": 0.252,
+        "الصيغ المرصودة": "ابو سعيد الخدري: 5؛ ابي سعيد الخدري: 122"
+      },
+      {
+        "العَلَم/المصدر البشري": "القرطبي",
+        "المجال": "تفسير/فقه",
+        "الطبقة/المجموعة": "مفسرون فقهاء",
+        "عدد الحضور": 121,
+        "نسبة الحضور من مجموع الأعلام %": 0.24,
+        "الصيغ المرصودة": "القرطبي: 121"
+      },
+      {
+        "العَلَم/المصدر البشري": "معاذ بن جبل",
+        "المجال": "صحابي/فقه",
+        "الطبقة/المجموعة": "صحابة",
+        "عدد الحضور": 117,
+        "نسبة الحضور من مجموع الأعلام %": 0.232,
+        "الصيغ المرصودة": "معاذ بن جبل: 53؛ عن معاذ: 55؛ قال معاذ: 9"
+      },
+      {
+        "العَلَم/المصدر البشري": "الخليل بن أحمد",
+        "المجال": "لغة/عروض",
+        "الطبقة/المجموعة": "لغويون",
+        "عدد الحضور": 116,
+        "نسبة الحضور من مجموع الأعلام %": 0.23,
+        "الصيغ المرصودة": "الخليل بن احمد: 7؛ الخليل: 109"
+      },
+      {
+        "العَلَم/المصدر البشري": "طاوس",
+        "المجال": "تفسير/فقه",
+        "الطبقة/المجموعة": "تابعون",
+        "عدد الحضور": 113,
+        "نسبة الحضور من مجموع الأعلام %": 0.224,
+        "الصيغ المرصودة": "طاوس: 113"
+      },
+      {
+        "العَلَم/المصدر البشري": "أبو عبيدة معمر بن المثنى",
+        "المجال": "لغة/غريب",
+        "الطبقة/المجموعة": "لغويون",
+        "عدد الحضور": 112,
+        "نسبة الحضور من مجموع الأعلام %": 0.222,
+        "الصيغ المرصودة": "ابو عبيده: 50؛ ابي عبيده: 58؛ معمر بن المثني: 4"
+      },
+      {
+        "العَلَم/المصدر البشري": "الأوزاعي",
+        "المجال": "فقه/حديث",
+        "الطبقة/المجموعة": "فقهاء",
+        "عدد الحضور": 108,
+        "نسبة الحضور من مجموع الأعلام %": 0.214,
+        "الصيغ المرصودة": "الاوزاعي: 108"
+      },
+      {
+        "العَلَم/المصدر البشري": "أبو حنيفة",
+        "المجال": "فقه",
+        "الطبقة/المجموعة": "فقهاء",
+        "عدد الحضور": 94,
+        "نسبة الحضور من مجموع الأعلام %": 0.186,
+        "الصيغ المرصودة": "ابو حنيفه: 48؛ ابي حنيفه: 46"
+      },
+      {
+        "العَلَم/المصدر البشري": "عبد بن حميد",
+        "المجال": "تفسير/حديث",
+        "الطبقة/المجموعة": "مفسرون ومحدثون",
+        "عدد الحضور": 74,
+        "نسبة الحضور من مجموع الأعلام %": 0.147,
+        "الصيغ المرصودة": "عبد بن حميد: 74"
+      },
+      {
+        "العَلَم/المصدر البشري": "البغوي",
+        "المجال": "تفسير/حديث",
+        "الطبقة/المجموعة": "مفسرون",
+        "عدد الحضور": 74,
+        "نسبة الحضور من مجموع الأعلام %": 0.147,
+        "الصيغ المرصودة": "البغوي: 74"
+      },
+      {
+        "العَلَم/المصدر البشري": "زيد بن ثابت",
+        "المجال": "صحابي/قراءات",
+        "الطبقة/المجموعة": "صحابة",
+        "عدد الحضور": 57,
+        "نسبة الحضور من مجموع الأعلام %": 0.113,
+        "الصيغ المرصودة": "زيد بن ثابت: 57"
+      },
+      {
+        "العَلَم/المصدر البشري": "ابن حبان",
+        "المجال": "حديث",
+        "الطبقة/المجموعة": "محدثون",
+        "عدد الحضور": 56,
+        "نسبة الحضور من مجموع الأعلام %": 0.111,
+        "الصيغ المرصودة": "ابن حبان: 56"
+      },
+      {
+        "العَلَم/المصدر البشري": "الدارقطني",
+        "المجال": "حديث/علل",
+        "الطبقة/المجموعة": "محدثون",
+        "عدد الحضور": 42,
+        "نسبة الحضور من مجموع الأعلام %": 0.083,
+        "الصيغ المرصودة": "الدارقطني: 42"
+      },
+      {
+        "العَلَم/المصدر البشري": "ابن سعد",
+        "المجال": "تاريخ/طبقات",
+        "الطبقة/المجموعة": "أهل السيرة والتراجم",
+        "عدد الحضور": 28,
+        "نسبة الحضور من مجموع الأعلام %": 0.056,
+        "الصيغ المرصودة": "ابن سعد: 14؛ محمد بن سعد: 14"
+      },
+      {
+        "العَلَم/المصدر البشري": "إسحاق بن راهويه",
+        "المجال": "حديث/فقه",
+        "الطبقة/المجموعة": "فقهاء ومحدثون",
+        "عدد الحضور": 25,
+        "نسبة الحضور من مجموع الأعلام %": 0.05,
+        "الصيغ المرصودة": "اسحاق بن راهويه: 24؛ ابن راهويه: 1"
+      },
+      {
+        "العَلَم/المصدر البشري": "الدارمي",
+        "المجال": "حديث",
+        "الطبقة/المجموعة": "محدثون",
+        "عدد الحضور": 21,
+        "نسبة الحضور من مجموع الأعلام %": 0.042,
+        "الصيغ المرصودة": "الدارمي: 21"
+      },
+      {
+        "العَلَم/المصدر البشري": "الزمخشري",
+        "المجال": "تفسير/لغة/اعتزال",
+        "الطبقة/المجموعة": "مفسرون لغويون",
+        "عدد الحضور": 18,
+        "نسبة الحضور من مجموع الأعلام %": 0.036,
+        "الصيغ المرصودة": "الزمخشري: 18"
+      },
+      {
+        "العَلَم/المصدر البشري": "الفراء",
+        "المجال": "لغة/نحو",
+        "الطبقة/المجموعة": "لغويون",
+        "عدد الحضور": 18,
+        "نسبة الحضور من مجموع الأعلام %": 0.036,
+        "الصيغ المرصودة": "الفراء: 18"
+      },
+      {
+        "العَلَم/المصدر البشري": "ابن خزيمة",
+        "المجال": "حديث",
+        "الطبقة/المجموعة": "محدثون",
+        "عدد الحضور": 16,
+        "نسبة الحضور من مجموع الأعلام %": 0.032,
+        "الصيغ المرصودة": "ابن خزيمه: 16"
+      },
+      {
+        "العَلَم/المصدر البشري": "النحاس",
+        "المجال": "لغة/إعراب",
+        "الطبقة/المجموعة": "لغويون",
+        "عدد الحضور": 16,
+        "نسبة الحضور من مجموع الأعلام %": 0.032,
+        "الصيغ المرصودة": "النحاس: 16"
+      },
+      {
+        "العَلَم/المصدر البشري": "ابن هشام",
+        "المجال": "سيرة/تاريخ",
+        "الطبقة/المجموعة": "أهل السيرة",
+        "عدد الحضور": 15,
+        "نسبة الحضور من مجموع الأعلام %": 0.03,
+        "الصيغ المرصودة": "ابن هشام: 15"
+      },
+      {
+        "العَلَم/المصدر البشري": "ابن المنذر",
+        "المجال": "تفسير/فقه",
+        "الطبقة/المجموعة": "مفسرون ومحدثون",
+        "عدد الحضور": 14,
+        "نسبة الحضور من مجموع الأعلام %": 0.028,
+        "الصيغ المرصودة": "ابن المنذر: 14"
+      },
+      {
+        "العَلَم/المصدر البشري": "الواقدي",
+        "المجال": "مغازي/تاريخ",
+        "الطبقة/المجموعة": "أهل السيرة",
+        "عدد الحضور": 14,
+        "نسبة الحضور من مجموع الأعلام %": 0.028,
+        "الصيغ المرصودة": "الواقدي: 14"
+      },
+      {
+        "العَلَم/المصدر البشري": "الكسائي",
+        "المجال": "لغة/قراءات",
+        "الطبقة/المجموعة": "لغويون/قراء",
+        "عدد الحضور": 11,
+        "نسبة الحضور من مجموع الأعلام %": 0.022,
+        "الصيغ المرصودة": "الكسائي: 11"
+      },
+      {
+        "العَلَم/المصدر البشري": "سيبويه",
+        "المجال": "نحو",
+        "الطبقة/المجموعة": "لغويون",
+        "عدد الحضور": 11,
+        "نسبة الحضور من مجموع الأعلام %": 0.022,
+        "الصيغ المرصودة": "سيبويه: 11"
+      },
+      {
+        "العَلَم/المصدر البشري": "الزجاج",
+        "المجال": "لغة/معاني القرآن",
+        "الطبقة/المجموعة": "لغويون",
+        "عدد الحضور": 9,
+        "نسبة الحضور من مجموع الأعلام %": 0.018,
+        "الصيغ المرصودة": "الزجاج: 9"
+      },
+      {
+        "العَلَم/المصدر البشري": "المبرد",
+        "المجال": "لغة/نحو",
+        "الطبقة/المجموعة": "لغويون",
+        "عدد الحضور": 2,
+        "نسبة الحضور من مجموع الأعلام %": 0.004,
+        "الصيغ المرصودة": "المبرد: 2"
+      }
+    ],
+    "schools_trends": [
+      {
+        "المدرسة/الاتجاه/المذهب": "المشركون",
+        "المجال": "جدل قرآني",
+        "نوع المورد": "جماعة دينية",
+        "عدد الحضور": 759,
+        "نسبة الحضور من مجموع المدارس والاتجاهات %": 17.602,
+        "الصيغ المرصودة": "المشركون: 201؛ المشركين: 534؛ اهل الشرك: 24"
+      },
+      {
+        "المدرسة/الاتجاه/المذهب": "اليهود",
+        "المجال": "كتب سابقة/جدل",
+        "نوع المورد": "جماعة دينية",
+        "عدد الحضور": 573,
+        "نسبة الحضور من مجموع المدارس والاتجاهات %": 13.288,
+        "الصيغ المرصودة": "اليهود: 462؛ اليهودي: 39؛ يهود: 72"
+      },
+      {
+        "المدرسة/الاتجاه/المذهب": "بنو إسرائيل/الإسرائيليات",
+        "المجال": "قصص وإسرائيليات",
+        "نوع المورد": "مورد قصصي/ديني",
+        "عدد الحضور": 558,
+        "نسبة الحضور من مجموع المدارس والاتجاهات %": 12.941,
+        "الصيغ المرصودة": "بنو اسرائيل: 78؛ بني اسرائيل: 456؛ الاسرائيليات: 22؛ اسرائيليات: 2"
+      },
+      {
+        "المدرسة/الاتجاه/المذهب": "الصحابة",
+        "المجال": "طبقة نقل",
+        "نوع المورد": "طبقة",
+        "عدد الحضور": 410,
+        "نسبة الحضور من مجموع المدارس والاتجاهات %": 9.508,
+        "الصيغ المرصودة": "الصحابه: 220؛ اصحاب رسول الله: 94؛ اصحاب النبي: 96"
+      },
+      {
+        "المدرسة/الاتجاه/المذهب": "أهل العلم/العلماء",
+        "المجال": "علم عام",
+        "نوع المورد": "طبقة علمية",
+        "عدد الحضور": 365,
+        "نسبة الحضور من مجموع المدارس والاتجاهات %": 8.465,
+        "الصيغ المرصودة": "اهل العلم: 64؛ العلماء: 301"
+      },
+      {
+        "المدرسة/الاتجاه/المذهب": "السلف",
+        "المجال": "منهج تفسيري",
+        "نوع المورد": "اتجاه عام",
+        "عدد الحضور": 335,
+        "نسبة الحضور من مجموع المدارس والاتجاهات %": 7.769,
+        "الصيغ المرصودة": "السلف: 332؛ السلف الصالح: 3"
+      },
+      {
+        "المدرسة/الاتجاه/المذهب": "أهل الكتاب",
+        "المجال": "كتب سابقة/جدل",
+        "نوع المورد": "جماعة دينية/مورد",
+        "عدد الحضور": 323,
+        "نسبة الحضور من مجموع المدارس والاتجاهات %": 7.491,
+        "الصيغ المرصودة": "اهل الكتاب: 323"
+      },
+      {
+        "المدرسة/الاتجاه/المذهب": "المنافقون",
+        "المجال": "جدل قرآني",
+        "نوع المورد": "جماعة دينية/اجتماعية",
+        "عدد الحضور": 314,
+        "نسبة الحضور من مجموع المدارس والاتجاهات %": 7.282,
+        "الصيغ المرصودة": "المنافقون: 97؛ المنافقين: 217"
+      },
+      {
+        "المدرسة/الاتجاه/المذهب": "النصارى",
+        "المجال": "كتب سابقة/جدل",
+        "نوع المورد": "جماعة دينية",
+        "عدد الحضور": 183,
+        "نسبة الحضور من مجموع المدارس والاتجاهات %": 4.244,
+        "الصيغ المرصودة": "النصاري: 166؛ نصراني: 17"
+      },
+      {
+        "المدرسة/الاتجاه/المذهب": "أهل التفسير/المفسرون",
+        "المجال": "تفسير",
+        "نوع المورد": "مدرسة علمية",
+        "عدد الحضور": 180,
+        "نسبة الحضور من مجموع المدارس والاتجاهات %": 4.174,
+        "الصيغ المرصودة": "اهل التفسير: 2؛ المفسرون: 69؛ المفسرين: 109"
+      },
+      {
+        "المدرسة/الاتجاه/المذهب": "الفقهاء",
+        "المجال": "فقه",
+        "نوع المورد": "طبقة علمية",
+        "عدد الحضور": 60,
+        "نسبة الحضور من مجموع المدارس والاتجاهات %": 1.391,
+        "الصيغ المرصودة": "الفقهاء: 58؛ اهل الفقه: 2"
+      },
+      {
+        "المدرسة/الاتجاه/المذهب": "القراء",
+        "المجال": "قراءات",
+        "نوع المورد": "طبقة علمية",
+        "عدد الحضور": 42,
+        "نسبة الحضور من مجموع المدارس والاتجاهات %": 0.974,
+        "الصيغ المرصودة": "القراء: 42"
+      },
+      {
+        "المدرسة/الاتجاه/المذهب": "التابعون",
+        "المجال": "طبقة نقل",
+        "نوع المورد": "طبقة",
+        "عدد الحضور": 36,
+        "نسبة الحضور من مجموع المدارس والاتجاهات %": 0.835,
+        "الصيغ المرصودة": "التابعون: 1؛ التابعين: 35"
+      },
+      {
+        "المدرسة/الاتجاه/المذهب": "الحنفية",
+        "المجال": "فقه",
+        "نوع المورد": "مذهب فقهي",
+        "عدد الحضور": 32,
+        "نسبة الحضور من مجموع المدارس والاتجاهات %": 0.742,
+        "الصيغ المرصودة": "الحنفيه: 28؛ اصحاب ابي حنيفه: 4"
+      },
+      {
+        "المدرسة/الاتجاه/المذهب": "الخوارج",
+        "المجال": "فرق",
+        "نوع المورد": "فرقة",
+        "عدد الحضور": 23,
+        "نسبة الحضور من مجموع المدارس والاتجاهات %": 0.533,
+        "الصيغ المرصودة": "الخوارج: 17؛ الحروريه: 6"
+      },
+      {
+        "المدرسة/الاتجاه/المذهب": "أهل العربية/اللغة",
+        "المجال": "لغة",
+        "نوع المورد": "مدرسة علمية",
+        "عدد الحضور": 20,
+        "نسبة الحضور من مجموع المدارس والاتجاهات %": 0.464,
+        "الصيغ المرصودة": "اهل العربيه: 14؛ اهل اللغه: 6"
+      },
+      {
+        "المدرسة/الاتجاه/المذهب": "أهل السنة",
+        "المجال": "اعتقاد",
+        "نوع المورد": "اتجاه عقدي",
+        "عدد الحضور": 18,
+        "نسبة الحضور من مجموع المدارس والاتجاهات %": 0.417,
+        "الصيغ المرصودة": "اهل السنه: 18"
+      },
+      {
+        "المدرسة/الاتجاه/المذهب": "المعتزلة",
+        "المجال": "كلام",
+        "نوع المورد": "فرقة كلامية",
+        "عدد الحضور": 17,
+        "نسبة الحضور من مجموع المدارس والاتجاهات %": 0.394,
+        "الصيغ المرصودة": "المعتزله: 17"
+      },
+      {
+        "المدرسة/الاتجاه/المذهب": "المالكية",
+        "المجال": "فقه",
+        "نوع المورد": "مذهب فقهي",
+        "عدد الحضور": 15,
+        "نسبة الحضور من مجموع المدارس والاتجاهات %": 0.348,
+        "الصيغ المرصودة": "المالكيه: 8؛ اصحاب مالك: 7"
+      },
+      {
+        "المدرسة/الاتجاه/المذهب": "الرافضة/الشيعة",
+        "المجال": "فرق",
+        "نوع المورد": "فرقة",
+        "عدد الحضور": 14,
+        "نسبة الحضور من مجموع المدارس والاتجاهات %": 0.325,
+        "الصيغ المرصودة": "الرافضه: 4؛ الشيعه: 10"
+      },
+      {
+        "المدرسة/الاتجاه/المذهب": "الشافعية",
+        "المجال": "فقه",
+        "نوع المورد": "مذهب فقهي",
+        "عدد الحضور": 10,
+        "نسبة الحضور من مجموع المدارس والاتجاهات %": 0.232,
+        "الصيغ المرصودة": "الشافعيه: 7؛ اصحاب الشافعي: 3"
+      },
+      {
+        "المدرسة/الاتجاه/المذهب": "القدرية",
+        "المجال": "كلام",
+        "نوع المورد": "فرقة كلامية",
+        "عدد الحضور": 9,
+        "نسبة الحضور من مجموع المدارس والاتجاهات %": 0.209,
+        "الصيغ المرصودة": "القدريه: 9"
+      },
+      {
+        "المدرسة/الاتجاه/المذهب": "الصوفية/الزهاد",
+        "المجال": "رقائق وسلوك",
+        "نوع المورد": "اتجاه سلوكي",
+        "عدد الحضور": 7,
+        "نسبة الحضور من مجموع المدارس والاتجاهات %": 0.162,
+        "الصيغ المرصودة": "الصوفيه: 6؛ الزهاد: 1"
+      },
+      {
+        "المدرسة/الاتجاه/المذهب": "الجهمية",
+        "المجال": "كلام",
+        "نوع المورد": "فرقة كلامية",
+        "عدد الحضور": 4,
+        "نسبة الحضور من مجموع المدارس والاتجاهات %": 0.093,
+        "الصيغ المرصودة": "الجهميه: 4"
+      },
+      {
+        "المدرسة/الاتجاه/المذهب": "أهل الحديث",
+        "المجال": "حديث/منهج",
+        "نوع المورد": "اتجاه علمي",
+        "عدد الحضور": 3,
+        "نسبة الحضور من مجموع المدارس والاتجاهات %": 0.07,
+        "الصيغ المرصودة": "اهل الحديث: 3"
+      },
+      {
+        "المدرسة/الاتجاه/المذهب": "الحنابلة",
+        "المجال": "فقه",
+        "نوع المورد": "مذهب فقهي",
+        "عدد الحضور": 2,
+        "نسبة الحضور من مجموع المدارس والاتجاهات %": 0.046,
+        "الصيغ المرصودة": "الحنابله: 2"
+      }
+    ],
+    "domains": [
+      {
+        "المجال": "نبوي",
+        "عدد الحضور": 11763,
+        "النسبة من مجموع الموارد العامة %": 19.932
+      },
+      {
+        "المجال": "تفسير التابعين",
+        "عدد الحضور": 5989,
+        "النسبة من مجموع الموارد العامة %": 10.148
+      },
+      {
+        "المجال": "تفسير الصحابة",
+        "عدد الحضور": 5009,
+        "النسبة من مجموع الموارد العامة %": 8.488
+      },
+      {
+        "المجال": "حديث",
+        "عدد الحضور": 4705,
+        "النسبة من مجموع الموارد العامة %": 7.972
+      },
+      {
+        "المجال": "تفسير/حديث",
+        "عدد الحضور": 2878,
+        "النسبة من مجموع الموارد العامة %": 4.877
+      },
+      {
+        "المجال": "صحابي/حديث",
+        "عدد الحضور": 2768,
+        "النسبة من مجموع الموارد العامة %": 4.69
+      },
+      {
+        "المجال": "فقه/حديث",
+        "عدد الحضور": 2266,
+        "النسبة من مجموع الموارد العامة %": 3.84
+      },
+      {
+        "المجال": "تفسير/تاريخ",
+        "عدد الحضور": 2171,
+        "النسبة من مجموع الموارد العامة %": 3.679
+      },
+      {
+        "المجال": "حديث/فقه",
+        "عدد الحضور": 2052,
+        "النسبة من مجموع الموارد العامة %": 3.477
+      },
+      {
+        "المجال": "قرآني",
+        "عدد الحضور": 1954,
+        "النسبة من مجموع الموارد العامة %": 3.311
+      },
+      {
+        "المجال": "حديثي",
+        "عدد الحضور": 1716,
+        "النسبة من مجموع الموارد العامة %": 2.908
+      },
+      {
+        "المجال": "تفسير/وعظ",
+        "عدد الحضور": 1627,
+        "النسبة من مجموع الموارد العامة %": 2.757
+      },
+      {
+        "المجال": "صحابي/فقهي",
+        "عدد الحضور": 1520,
+        "النسبة من مجموع الموارد العامة %": 2.576
+      },
+      {
+        "المجال": "تفسير",
+        "عدد الحضور": 1336,
+        "النسبة من مجموع الموارد العامة %": 2.264
+      },
+      {
+        "المجال": "تفسير/فقه",
+        "عدد الحضور": 1239,
+        "النسبة من مجموع الموارد العامة %": 2.099
+      },
+      {
+        "المجال": "كتب سابقة/جدل",
+        "عدد الحضور": 1079,
+        "النسبة من مجموع الموارد العامة %": 1.828
+      },
+      {
+        "المجال": "جدل قرآني",
+        "عدد الحضور": 1073,
+        "النسبة من مجموع الموارد العامة %": 1.818
+      },
+      {
+        "المجال": "صحابية/حديث وفقه",
+        "عدد الحضور": 727,
+        "النسبة من مجموع الموارد العامة %": 1.232
+      },
+      {
+        "المجال": "سيرة/تاريخ",
+        "عدد الحضور": 637,
+        "النسبة من مجموع الموارد العامة %": 1.079
+      },
+      {
+        "المجال": "صحابي/حديث وفقه",
+        "عدد الحضور": 632,
+        "النسبة من مجموع الموارد العامة %": 1.071
+      },
+      {
+        "المجال": "حديث/سيرة",
+        "عدد الحضور": 623,
+        "النسبة من مجموع الموارد العامة %": 1.056
+      },
+      {
+        "المجال": "قصص وإسرائيليات",
+        "عدد الحضور": 558,
+        "النسبة من مجموع الموارد العامة %": 0.946
+      },
+      {
+        "المجال": "طبقة نقل",
+        "عدد الحضور": 446,
+        "النسبة من مجموع الموارد العامة %": 0.756
+      },
+      {
+        "المجال": "صحابي",
+        "عدد الحضور": 444,
+        "النسبة من مجموع الموارد العامة %": 0.752
+      },
+      {
+        "المجال": "كتب أهل الكتاب/إسرائيليات",
+        "عدد الحضور": 374,
+        "النسبة من مجموع الموارد العامة %": 0.634
+      },
+      {
+        "المجال": "علم عام",
+        "عدد الحضور": 365,
+        "النسبة من مجموع الموارد العامة %": 0.618
+      },
+      {
+        "المجال": "منهج تفسيري",
+        "عدد الحضور": 335,
+        "النسبة من مجموع الموارد العامة %": 0.568
+      },
+      {
+        "المجال": "فقه/أصول",
+        "عدد الحضور": 264,
+        "النسبة من مجموع الموارد العامة %": 0.447
+      },
+      {
+        "المجال": "تفسير/قصص",
+        "عدد الحضور": 238,
+        "النسبة من مجموع الموارد العامة %": 0.403
+      },
+      {
+        "المجال": "فقه",
+        "عدد الحضور": 213,
+        "النسبة من مجموع الموارد العامة %": 0.361
+      },
+      {
+        "المجال": "تفسير/كلام",
+        "عدد الحضور": 207,
+        "النسبة من مجموع الموارد العامة %": 0.351
+      },
+      {
+        "المجال": "فقه/تفسير",
+        "عدد الحضور": 192,
+        "النسبة من مجموع الموارد العامة %": 0.325
+      },
+      {
+        "المجال": "تفسير الصحابة/قراءات",
+        "عدد الحضور": 177,
+        "النسبة من مجموع الموارد العامة %": 0.3
+      },
+      {
+        "المجال": "حديث/زهد",
+        "عدد الحضور": 177,
+        "النسبة من مجموع الموارد العامة %": 0.3
+      },
+      {
+        "المجال": "حديث/آثار",
+        "عدد الحضور": 169,
+        "النسبة من مجموع الموارد العامة %": 0.286
+      },
+      {
+        "المجال": "حديث/فقه/دلائل",
+        "عدد الحضور": 149,
+        "النسبة من مجموع الموارد العامة %": 0.252
+      },
+      {
+        "المجال": "صحابي/فقه",
+        "عدد الحضور": 117,
+        "النسبة من مجموع الموارد العامة %": 0.198
+      },
+      {
+        "المجال": "لغة/عروض",
+        "عدد الحضور": 116,
+        "النسبة من مجموع الموارد العامة %": 0.197
+      },
+      {
+        "المجال": "لغة/غريب",
+        "عدد الحضور": 112,
+        "النسبة من مجموع الموارد العامة %": 0.19
+      },
+      {
+        "المجال": "تفسيري",
+        "عدد الحضور": 73,
+        "النسبة من مجموع الموارد العامة %": 0.124
+      },
+      {
+        "المجال": "صحابي/قراءات",
+        "عدد الحضور": 57,
+        "النسبة من مجموع الموارد العامة %": 0.097
+      },
+      {
+        "المجال": "سيرة/حديث",
+        "عدد الحضور": 50,
+        "النسبة من مجموع الموارد العامة %": 0.085
+      },
+      {
+        "المجال": "حديث/علل",
+        "عدد الحضور": 42,
+        "النسبة من مجموع الموارد العامة %": 0.071
+      },
+      {
+        "المجال": "قراءات",
+        "عدد الحضور": 42,
+        "النسبة من مجموع الموارد العامة %": 0.071
+      },
+      {
+        "المجال": "فرق",
+        "عدد الحضور": 37,
+        "النسبة من مجموع الموارد العامة %": 0.063
+      },
+      {
+        "المجال": "حديثي/فقهي",
+        "عدد الحضور": 31,
+        "النسبة من مجموع الموارد العامة %": 0.053
+      },
+      {
+        "المجال": "كلام",
+        "عدد الحضور": 30,
+        "النسبة من مجموع الموارد العامة %": 0.051
+      },
+      {
+        "المجال": "تاريخ/طبقات",
+        "عدد الحضور": 28,
+        "النسبة من مجموع الموارد العامة %": 0.047
+      },
+      {
+        "المجال": "تفسيري/أثري",
+        "عدد الحضور": 21,
+        "النسبة من مجموع الموارد العامة %": 0.036
+      },
+      {
+        "المجال": "لغة/نحو",
+        "عدد الحضور": 20,
+        "النسبة من مجموع الموارد العامة %": 0.034
+      },
+      {
+        "المجال": "لغة",
+        "عدد الحضور": 20,
+        "النسبة من مجموع الموارد العامة %": 0.034
+      },
+      {
+        "المجال": "تفسيري/كلامي",
+        "عدد الحضور": 19,
+        "النسبة من مجموع الموارد العامة %": 0.032
+      },
+      {
+        "المجال": "تفسير/لغة/اعتزال",
+        "عدد الحضور": 18,
+        "النسبة من مجموع الموارد العامة %": 0.031
+      },
+      {
+        "المجال": "اعتقاد",
+        "عدد الحضور": 18,
+        "النسبة من مجموع الموارد العامة %": 0.031
+      },
+      {
+        "المجال": "لغة/إعراب",
+        "عدد الحضور": 16,
+        "النسبة من مجموع الموارد العامة %": 0.027
+      },
+      {
+        "المجال": "مغازي/تاريخ",
+        "عدد الحضور": 14,
+        "النسبة من مجموع الموارد العامة %": 0.024
+      },
+      {
+        "المجال": "لغة/قراءات",
+        "عدد الحضور": 11,
+        "النسبة من مجموع الموارد العامة %": 0.019
+      },
+      {
+        "المجال": "نحو",
+        "عدد الحضور": 11,
+        "النسبة من مجموع الموارد العامة %": 0.019
+      },
+      {
+        "المجال": "حديثي/رقائق",
+        "عدد الحضور": 10,
+        "النسبة من مجموع الموارد العامة %": 0.017
+      },
+      {
+        "المجال": "لغة/معاني القرآن",
+        "عدد الحضور": 9,
+        "النسبة من مجموع الموارد العامة %": 0.015
+      },
+      {
+        "المجال": "تفسيري/فقهي",
+        "عدد الحضور": 8,
+        "النسبة من مجموع الموارد العامة %": 0.014
+      },
+      {
+        "المجال": "رقائق وسلوك",
+        "عدد الحضور": 7,
+        "النسبة من مجموع الموارد العامة %": 0.012
+      },
+      {
+        "المجال": "حديث/منهج",
+        "عدد الحضور": 3,
+        "النسبة من مجموع الموارد العامة %": 0.005
+      },
+      {
+        "المجال": "حديثي/آثار",
+        "عدد الحضور": 1,
+        "النسبة من مجموع الموارد العامة %": 0.002
+      },
+      {
+        "المجال": "تفسيري/لغوي/اعتزالي",
+        "عدد الحضور": 1,
+        "النسبة من مجموع الموارد العامة %": 0.002
+      },
+      {
+        "المجال": "فقهي",
+        "عدد الحضور": 1,
+        "النسبة من مجموع الموارد العامة %": 0.002
+      },
+      {
+        "المجال": "لغوي/قرآني",
+        "عدد الحضور": 1,
+        "النسبة من مجموع الموارد العامة %": 0.002
+      }
+    ]
+  },
+  "terms": [],
+  "manual_review": [
+    {
+      "البند": "اضطراب فهرس السور الخام",
+      "الملاحظة": "الفهرس الداخلي يعرض 120 مدخلًا على مستوى السور بسبب 6 تكرارات ظاهرة: التوبة، المجادلة، الروم، نوح، الإنسان، عبس.",
+      "الأثر": "قد يخلط حدود السور لو اعتُمِد الفهرس الخام فقط.",
+      "الإجراء المقترح": "اعتُمِد ترتيب المصحف لاختيار 114 بداية سورة، وينبغي مراجعة هذه المواضع في الطبعة عند التدقيق النهائي."
+    },
+    {
+      "البند": "حدود السور على مستوى الصفحة",
+      "الملاحظة": "التحليل السُّوري قُسّم بحسب بداية كل سورة في صفحة XHTML، لا بحسب الموضع الدقيق داخل الصفحة.",
+      "الأثر": "قد تدخل أسطر قليلة من نهاية سورة في بداية التي تليها عند التقاء السور في صفحة واحدة.",
+      "الإجراء المقترح": "للنشر الأكاديمي الدقيق يمكن تقطيع النص من anchor C داخل XHTML بدل الصفحة كاملة."
+    },
+    {
+      "البند": "النصوص بين أقواس مربعة",
+      "الملاحظة": "بعض الزيادات أو اختلافات النسخ داخل المتن تظهر بين [ ]، وهي ليست كلها من كلام ابن كثير.",
+      "الأثر": "قد ترتفع بعض مؤشرات المصادر أو النقد بسبب زيادات تحقيقية مدرجة في المتن.",
+      "الإجراء المقترح": "مراجعة bracketed insertions إذا أريد عزل كلام المؤلف عزلًا صارمًا."
+    },
+    {
+      "البند": "الأسماء المشتركة",
+      "الملاحظة": "بعض الأعلام مثل أحمد ومالك والحسن لها استعمالات مشتركة وقد تقع في السند أو اسم راوٍ أو إمام.",
+      "الأثر": "الأرقام مؤشر حضور لفظي لا حكم نهائي على طبيعة الاستعمال.",
+      "الإجراء المقترح": "مراجعة سياقية للأسماء المشتركة عند تحويلها لاستنتاجات نوعية."
+    },
+    {
+      "البند": "الأحاديث والآثار",
+      "الملاحظة": "عدّ الأحاديث لم يُبنَ على تخريج حديثي مستقل بل على مؤشرات لفظية مثل: رواه، حدثنا، قال رسول الله، علامات التنصيص.",
+      "الأثر": "لا يصح تحويله إلى عدد أحاديث مميزة دون إزالة المكرر وتحديد المتون والأسانيد.",
+      "الإجراء المقترح": "بناء طبقة لاحقة لاستخراج الأسانيد والمتون إن كان الهدف حصر الأحاديث المميزة."
+    },
+    {
+      "البند": "الحواشي",
+      "الملاحظة": "استُبعدت الحواشي من متن التحليل، وعدد كلماتها قُدّر مستقلًا.",
+      "الأثر": "الأرقام تعبّر عن متن المؤلف/المتن المدرج لا عن تعليقات المحقق.",
+      "الإجراء المقترح": "إنتاج تقرير منفصل للحواشي إن أريد تحليل عمل المحقق."
+    },
+    {
+      "البند": "تطبيع النص",
+      "الملاحظة": "العدّ أزال التشكيل وطبع الهمزات والألف المقصورة والتاء المربوطة لأغراض المطابقة.",
+      "الأثر": "يحسن الالتقاط لكنه قد يدمج صورًا لفظية متقاربة.",
+      "الإجراء المقترح": "إرفاق صيغة القاموس لكل مؤشر عند النشر، كما في ملف Excel."
+    }
+  ],
+  "study_limits": [
+    {
+      "حدود عدّ الموارد": "النسخة",
+      "col_2": "01_shamela008473_تفسير_ابن_كثير_ت_سلامة_ابن_كثير.epub"
+    },
+    {
+      "حدود عدّ الموارد": "نطاق العد",
+      "col_2": "اعتمد العد على متن ابن كثير من مقدمة المؤلف في الصفحة الرقمية P57 إلى نهاية التفسير."
+    },
+    {
+      "حدود عدّ الموارد": "استبعاد الحواشي",
+      "col_2": "استبعدت وسوم footnote الخاصة بحواشي المحقق: 4764 موضعًا، بنحو 260949 كلمة."
+    },
+    {
+      "حدود عدّ الموارد": "وحدة العد",
+      "col_2": "الحضور اللفظي للصيغ المرصودة داخل النص بعد التطبيع العربي، لا عدد الإحالات العلمية المحققة يدويًا."
+    },
+    {
+      "حدود عدّ الموارد": "التطبيع",
+      "col_2": "أزيلت الحركات والتطويل، ووحّدت الهمزات، والألف المقصورة/الياء، والتاء المربوطة/الهاء لأغراض العد."
+    },
+    {
+      "حدود عدّ الموارد": "تمييز الكتاب وصاحبه",
+      "col_2": "ذِكر الكتاب عُدَّ في ورقة الكتب، وذِكر صاحبه عُدَّ في ورقة الأعلام، ولا تُدمج النسب بينهما."
+    },
+    {
+      "حدود عدّ الموارد": "قاعدة نسبة الكتب",
+      "col_2": "النسبة = عدد حضور الكتاب ÷ مجموع إحالات الكتب المصرح بها."
+    },
+    {
+      "حدود عدّ الموارد": "قاعدة نسبة الأعلام",
+      "col_2": "النسبة = عدد حضور العَلَم ÷ مجموع الأعلام المرصودة."
+    },
+    {
+      "حدود عدّ الموارد": "قاعدة نسبة المدارس",
+      "col_2": "النسبة = عدد حضور المدرسة/الاتجاه ÷ مجموع المدارس والاتجاهات."
+    },
+    {
+      "حدود عدّ الموارد": "قاعدة خريطة المجال",
+      "col_2": "النسبة = مجموع حضور موارد المجال ÷ مجموع الموارد العامة المرصودة."
+    },
+    {
+      "حدود عدّ الموارد": "تنبيه",
+      "col_2": "بعض الأسماء مشتركة أو قد تظهر داخل أسانيد متكررة، فتحتاج النتائج النوعية إلى مراجعة يدوية عند بناء حكم نهائي."
+    },
+    {
+      "حدود عدّ الموارد": "تنبيه",
+      "col_2": "بعض صيغ الكتب عامة أو مختصرة، مثل: الصحيحين، في المسند، المستدرك؛ لذلك تُقرأ بوصفها مؤشرات حضور لا إثباتًا ببليوجرافيًا نهائيًا."
+    }
+  ],
+  "publishable_results": [
+    {
+      "م": 1,
+      "نتيجة قابلة للنشر": "بلغ حجم متن تفسير ابن كثير محل التحليل أكثر من 1.57 مليون كلمة بعد استبعاد الحواشي."
+    },
+    {
+      "م": 2,
+      "نتيجة قابلة للنشر": "سورة البقرة هي أوسع موضع في التفسير بنسبة 13.597% من متن تفسير السور."
+    },
+    {
+      "م": 3,
+      "نتيجة قابلة للنشر": "وردت النصوص القرآنية داخل الأقواس القرآنية 28,738 مرة، وهو مؤشر على كثافة الاستشهاد القرآني."
+    },
+    {
+      "م": 4,
+      "نتيجة قابلة للنشر": "يظهر الطابع الأثري بقوة من خلال 14,293 موضعًا لصيغ حدثنا/حدثني."
+    },
+    {
+      "م": 5,
+      "نتيجة قابلة للنشر": "أبرز مصدر تفسيري مرصود هو ابن جرير/الطبري، يليه ابن أبي حاتم."
+    },
+    {
+      "م": 6,
+      "نتيجة قابلة للنشر": "أبرز مصدر حديثي مرصود هو الإمام أحمد/المسند، ثم مسلم، ثم البخاري."
+    },
+    {
+      "م": 7,
+      "نتيجة قابلة للنشر": "أكثر أعلام السلف حضورًا في القاموس المرصود: ابن عباس، ثم مجاهد، ثم قتادة."
+    },
+    {
+      "م": 8,
+      "نتيجة قابلة للنشر": "تظهر مؤشرات النقد والترجيح في ألفاظ: صحيح، غريب، إسناده، لا يصح، والله أعلم."
+    },
+    {
+      "م": 9,
+      "نتيجة قابلة للنشر": "الموارد اللغوية والفقهية في التفسير أدوات مساعدة للبيان، لا الإطار الغالب للتأليف."
+    },
+    {
+      "م": 10,
+      "نتيجة قابلة للنشر": "تحتاج الإسرائيليات وموارد أهل الكتاب إلى طبقة مراجعة نوعية مستقلة قبل إصدار أحكام تفصيلية."
+    }
+  ],
+  "quick_user_results": [
+    {
+      "م": 1,
+      "نتيجة مختصرة": "تفسير ابن كثير تفسير أثري حديثي النزعة، لا يقرأ كشرح حديث فقط ولا ككتاب فقه فقط."
+    },
+    {
+      "م": 2,
+      "نتيجة مختصرة": "أوسع السور في التحليل سورة البقرة، ثم النساء، ثم المائدة."
+    },
+    {
+      "م": 3,
+      "نتيجة مختصرة": "حضور ابن جرير وابن أبي حاتم يبرز اعتماد ابن كثير على طبقة التفسير المسند."
+    },
+    {
+      "م": 4,
+      "نتيجة مختصرة": "أقوى الأعلام حضورًا بعد النبي ﷺ: ابن عباس، ثم ابن جرير، ثم الإمام أحمد، ثم مجاهد."
+    },
+    {
+      "م": 5,
+      "نتيجة مختصرة": "أرقام الموارد هي نسب حضور لا نسب استفادة قطعية."
+    },
+    {
+      "م": 6,
+      "نتيجة مختصرة": "ينبغي مراجعة الأسماء المشتركة مثل أحمد ومالك والحسن قبل بناء أحكام نوعية تفصيلية."
+    },
+    {
+      "م": 7,
+      "نتيجة مختصرة": "الفهرس الداخلي للـEPUB فيه اضطرابات، ولذلك اعتمد التحليل ترتيب المصحف."
+    }
+  ]
+}

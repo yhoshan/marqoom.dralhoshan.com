@@ -1,0 +1,281 @@
+{
+  "total": 40,
+  "downloaded": 39,
+  "skipped": 1,
+  "errors": [],
+  "files": [
+    {
+      "kashafId": "albadaei",
+      "storageKey": "albadaei_viewcache_7ea8aa5c.json",
+      "schemaVersion": "v2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/albadaei/view_cache.json"
+    },
+    {
+      "kashafId": "almughni",
+      "storageKey": "almughni_viewcache_38df8421.json",
+      "schemaVersion": "v2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/almughni/view_cache.json"
+    },
+    {
+      "kashafId": "almuhalla",
+      "storageKey": "almuhalla_viewcache_1c4ca55d.json",
+      "schemaVersion": "v2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/almuhalla/view_cache.json"
+    },
+    {
+      "kashafId": "alqurtubi",
+      "storageKey": "alqurtubi_viewcache_016b29f6.json",
+      "schemaVersion": "v2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/alqurtubi/view_cache.json"
+    },
+    {
+      "kashafId": "alrazi",
+      "storageKey": "alrazi_viewcache_9df0ad95.json",
+      "schemaVersion": "v2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/alrazi/view_cache.json"
+    },
+    {
+      "kashafId": "altabari",
+      "storageKey": "marqoom/viewcache/altabari_viewcache.json",
+      "schemaVersion": "2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/altabari/view_cache.json"
+    },
+    {
+      "kashafId": "annawawe",
+      "storageKey": "annawawe_viewcache_88827e07.json",
+      "schemaVersion": "v2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/annawawe/view_cache.json"
+    },
+    {
+      "kashafId": "fathalbaari",
+      "storageKey": "fathalbaari_viewcache_1f422fb4.json",
+      "schemaVersion": "v2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/fathalbaari/view_cache.json"
+    },
+    {
+      "kashafId": "ibnkhuzaymah",
+      "storageKey": "ibnkhuzayma_tawhid_view_cache_7dca4db3.json",
+      "schemaVersion": "2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/ibnkhuzaymah/view_cache.json"
+    },
+    {
+      "kashafId": "marqoom_aghani",
+      "storageKey": "marqoom/viewcache/marqoom_aghani_viewcache.json",
+      "schemaVersion": "2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/marqoom_aghani/view_cache.json"
+    },
+    {
+      "kashafId": "marqoom_alistidhkar",
+      "storageKey": "marqoom/viewcache/marqoom_alistidhkar_viewcache.json",
+      "schemaVersion": "2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/marqoom_alistidhkar/view_cache.json"
+    },
+    {
+      "kashafId": "marqoom_alkafi_ibnabdulbar",
+      "storageKey": "marqoom/viewcache/marqoom_alkafi_ibnabdulbar_viewcache.json",
+      "schemaVersion": "2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/marqoom_alkafi_ibnabdulbar/view_cache.json"
+    },
+    {
+      "kashafId": "marqoom_altamhid",
+      "storageKey": "marqoom/viewcache/marqoom_altamhid_viewcache.json",
+      "schemaVersion": "2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/marqoom_altamhid/view_cache.json"
+    },
+    {
+      "kashafId": "marqoom_bayan_talbis",
+      "storageKey": "marqoom/viewcache/marqoom_bayan_talbis_viewcache.json",
+      "schemaVersion": "2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/marqoom_bayan_talbis/view_cache.json"
+    },
+    {
+      "kashafId": "marqoom_dara_taarus",
+      "storageKey": "marqoom/viewcache/marqoom_dara_taarus_viewcache.json",
+      "schemaVersion": "2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/marqoom_dara_taarus/view_cache.json"
+    },
+    {
+      "kashafId": "marqoom_ibnkathir",
+      "storageKey": "marqoom/viewcache/marqoom_ibnkathir_viewcache.json",
+      "schemaVersion": "2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/marqoom_ibnkathir/view_cache.json"
+    },
+    {
+      "kashafId": "marqoom_ilam_almuwaqqiin",
+      "storageKey": "marqoom/viewcache/marqoom_ilam_almuwaqqiin_viewcache.json",
+      "schemaVersion": "2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/marqoom_ilam_almuwaqqiin/view_cache.json"
+    },
+    {
+      "kashafId": "marqoom_jamia_ahmad",
+      "storageKey": "marqoom/viewcache/marqoom_jamia_ahmad_viewcache.json",
+      "schemaVersion": "2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/marqoom_jamia_ahmad/view_cache.json"
+    },
+    {
+      "kashafId": "marqoom_jawab_sahih",
+      "storageKey": "marqoom/viewcache/marqoom_jawab_sahih_viewcache.json",
+      "schemaVersion": "2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/marqoom_jawab_sahih/view_cache.json"
+    },
+    {
+      "kashafId": "marqoom_madarij",
+      "storageKey": "marqoom/viewcache/marqoom_madarij_viewcache.json",
+      "schemaVersion": "2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/marqoom_madarij/view_cache.json"
+    },
+    {
+      "kashafId": "marqoom_wafayat",
+      "storageKey": "marqoom/viewcache/marqoom_wafayat_viewcache.json",
+      "schemaVersion": "2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/marqoom_wafayat/view_cache.json"
+    },
+    {
+      "kashafId": "marqoom_zad_almaaad",
+      "storageKey": "marqoom/viewcache/marqoom_zad_almaaad_viewcache.json",
+      "schemaVersion": "2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/marqoom_zad_almaaad/view_cache.json"
+    },
+    {
+      "kashafId": "marqoom_ziyadah_ihsan",
+      "storageKey": "marqoom/viewcache/marqoom_ziyadah_ihsan_viewcache.json",
+      "schemaVersion": "2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/marqoom_ziyadah_ihsan/view_cache.json"
+    },
+    {
+      "kashafId": "marqoom75_majmoo_fatawa",
+      "storageKey": "majmoo_fatawa_viewcache_fda82065.json",
+      "schemaVersion": "v2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/marqoom75_majmoo_fatawa/view_cache.json"
+    },
+    {
+      "kashafId": "marqoom78_dara_taarus",
+      "storageKey": "dara_taarus_viewcache_acd5abf6.json",
+      "schemaVersion": "v2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/marqoom78_dara_taarus/view_cache.json"
+    },
+    {
+      "kashafId": "marqoom86_ibnkathir",
+      "storageKey": "ibnkathir_viewcache_88772f23.json",
+      "schemaVersion": "v2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/marqoom86_ibnkathir/view_cache.json"
+    },
+    {
+      "kashafId": "marqoom87_jamia_ahmad",
+      "storageKey": "jamia_ahmad_viewcache_29a9edab.json",
+      "schemaVersion": "v2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/marqoom87_jamia_ahmad/view_cache.json"
+    },
+    {
+      "kashafId": "marqoom88_ziyadah_ihsan",
+      "storageKey": "ziyadah_ihsan_viewcache_cbb9bb1f.json",
+      "schemaVersion": "v2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/marqoom88_ziyadah_ihsan/view_cache.json"
+    },
+    {
+      "kashafId": "marqoom89_aghani",
+      "storageKey": "aghani_viewcache_fb7a069a.json",
+      "schemaVersion": "v2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/marqoom89_aghani/view_cache.json"
+    },
+    {
+      "kashafId": "marqoom90_wafayat",
+      "storageKey": "wafayat_viewcache_73601994.json",
+      "schemaVersion": "v2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/marqoom90_wafayat/view_cache.json"
+    },
+    {
+      "kashafId": "marqoom91_altamhid",
+      "storageKey": "altamhid_viewcache_b713097b.json",
+      "schemaVersion": "v2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/marqoom91_altamhid/view_cache.json"
+    },
+    {
+      "kashafId": "marqoom92_alistidhkar",
+      "storageKey": "alistidhkar_viewcache_0ea44c71.json",
+      "schemaVersion": "v2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/marqoom92_alistidhkar/view_cache.json"
+    },
+    {
+      "kashafId": "marqoom93_alkafi_ibnabdulbar",
+      "storageKey": "alkafi_ibnabdulbar_viewcache_c0599d7c.json",
+      "schemaVersion": "v2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/marqoom93_alkafi_ibnabdulbar/view_cache.json"
+    },
+    {
+      "kashafId": "marqoom94_ilam_almuwaqqiin",
+      "storageKey": "ilam_almuwaqqiin_viewcache_eacd2f50.json",
+      "schemaVersion": "v2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/marqoom94_ilam_almuwaqqiin/view_cache.json"
+    },
+    {
+      "kashafId": "marqoom95_zad_almaaad",
+      "storageKey": "zad_almaaad_viewcache_8f71eb90.json",
+      "schemaVersion": "v2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/marqoom95_zad_almaaad/view_cache.json"
+    },
+    {
+      "kashafId": "marqoom96_madarij",
+      "storageKey": "madarij_viewcache_1de4f632.json",
+      "schemaVersion": "v2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/marqoom96_madarij/view_cache.json"
+    },
+    {
+      "kashafId": "marqoom97_jawab_sahih",
+      "storageKey": "jawab_sahih_viewcache_2366ed09.json",
+      "schemaVersion": "v2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/marqoom97_jawab_sahih/view_cache.json"
+    },
+    {
+      "kashafId": "marqoom98_bayan_talbis",
+      "storageKey": "bayan_talbis_viewcache_a7939dfa.json",
+      "schemaVersion": "v2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/marqoom98_bayan_talbis/view_cache.json"
+    },
+    {
+      "kashafId": "risala",
+      "storageKey": "alrisala_shafii_view_cache_6e7d1a06.json",
+      "schemaVersion": "2.2",
+      "protocol_version": "2.2",
+      "path": "/home/ubuntu/marqoom/etl/output/risala/view_cache.json"
+    }
+  ]
+}

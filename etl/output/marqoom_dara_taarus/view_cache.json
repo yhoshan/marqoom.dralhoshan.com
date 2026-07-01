@@ -1,0 +1,1062 @@
+{
+  "project": "مرقوم — بوابة الكشافات التراثية الرقمية",
+  "protocol_version": "2.2",
+  "source_excel": "مرقوم_تحليل_درء_تعارض_العقل_والنقل_لابن_تيمية.xlsx",
+  "book": {
+    "title": "درء تعارض العقل والنقل",
+    "author": "أحمد بن عبد الحليم بن تيمية الحراني",
+    "type": "كتاب ردود عقدية ومناظرات عقلية/نقلية",
+    "included_sources": [
+      "درء تعارض العقل والنقل"
+    ],
+    "word_count": 696108,
+    "cleaned_char_count": 3636065,
+    "xhtml_pages": 4032
+  },
+  "summary": {
+    "methodological_terms_total": 21469,
+    "top_axis": {
+      "axis": "الاستدلال العقلي والكلي",
+      "count": 7889,
+      "per_100k_words": 1133.3,
+      "share_of_methodological_terms": 0.36746
+    },
+    "declared_books_count": 746,
+    "human_sources_count": 2685,
+    "schools_count": 2896,
+    "resources_general_count": 6327
+  },
+  "sections": {
+    "axes": [
+      {
+        "axis": "الاستدلال العقلي والكلي",
+        "count": 7889,
+        "per_100k_words": 1133.3,
+        "share_of_methodological_terms": 0.36746
+      },
+      {
+        "axis": "الاستدلال النقلي",
+        "count": 2936,
+        "per_100k_words": 421.77,
+        "share_of_methodological_terms": 0.136755
+      },
+      {
+        "axis": "اللغة والدلالة",
+        "count": 2176,
+        "per_100k_words": 312.6,
+        "share_of_methodological_terms": 0.101355
+      },
+      {
+        "axis": "الجدل والمناظرة",
+        "count": 2140,
+        "per_100k_words": 307.42,
+        "share_of_methodological_terms": 0.099679
+      },
+      {
+        "axis": "النقد والإبطال",
+        "count": 1792,
+        "per_100k_words": 257.43,
+        "share_of_methodological_terms": 0.083469
+      },
+      {
+        "axis": "النقل والعزو",
+        "count": 1222,
+        "per_100k_words": 175.55,
+        "share_of_methodological_terms": 0.056919
+      },
+      {
+        "axis": "الترجيح والتقرير",
+        "count": 1049,
+        "per_100k_words": 150.7,
+        "share_of_methodological_terms": 0.048861
+      },
+      {
+        "axis": "الإحالات الداخلية",
+        "count": 966,
+        "per_100k_words": 138.77,
+        "share_of_methodological_terms": 0.044995
+      },
+      {
+        "axis": "الخلاف",
+        "count": 752,
+        "per_100k_words": 108.03,
+        "share_of_methodological_terms": 0.035027
+      },
+      {
+        "axis": "تحرير النزاع والتفريقات",
+        "count": 547,
+        "per_100k_words": 78.58,
+        "share_of_methodological_terms": 0.025479
+      }
+    ],
+    "manual_review": [
+      [
+        "R1",
+        "مراجعة الأعلام المشتركة",
+        "أسماء مثل مالك ومسلم قد تكون علمًا أو لفظًا عامًا في بعض السياقات، فتحتاج مراجعة عينة من أعلى المواضع.",
+        "متوسطة"
+      ],
+      [
+        "R2",
+        "تمييز الكتاب عن المؤلف",
+        "فُصل في الملحق بين ذكر الكتاب وذكر صاحبه، لكن بعض الصيغ المختصرة تحتاج تحققًا يدويًا.",
+        "متوسطة"
+      ],
+      [
+        "R3",
+        "تأثير طبيعة الكتاب",
+        "طبيعة درء تعارض العقل والنقل تؤثر في ارتفاع مدارس أو مصادر معينة؛ فلا تقارن الأرقام دون مراعاة نوع الكتاب.",
+        "عالية"
+      ],
+      [
+        "R4",
+        "مصادر أهل الكتاب",
+        "في الجواب الصحيح خصوصًا يجب التفريق بين حضور التوراة/الإنجيل بوصفهما موضوع الرد وبين كونهما مصادر استدلال.",
+        "متوسطة"
+      ],
+      [
+        "R5",
+        "التشابه اللفظي",
+        "العدّ آلي/معجمي مؤسس على القاموس؛ لا يغني عن قراءة المواضع في الدراسات المحكمة.",
+        "عالية"
+      ]
+    ],
+    "limits": [
+      [
+        "النطاق",
+        "هذا الكشاف مستقل لهذا الكتاب/المجموعة كما حددها المستخدم؛ مجموع الفتاوى والمستدرك عوملا كتابًا واحدًا."
+      ],
+      [
+        "أساس العد",
+        "العدّ مبني على النص الكامل الذي سبق استخراجه إلى Excel الشامل، لا على عينة."
+      ],
+      [
+        "نوع الرقم",
+        "الأرقام تعبّر عن نسبة حضور وخريطة موارد، لا عن نسبة استفادة قطعية."
+      ],
+      [
+        "حد الفصل",
+        "فصل الكتب عن الأعلام عن المدارس؛ فذكر الكتاب ليس ذكرًا لصاحبه."
+      ],
+      [
+        "درجة الثقة",
+        "مرتفعة في المصادر الصريحة والفرق الشهيرة، ومتوسطة في الأعلام المشتركة أو الصيغ المختصرة."
+      ],
+      [
+        "ملاحظة تشغيلية",
+        "ملفات EPUB الأصلية غير مرفقة داخل هذا التسليم؛ هذا التسليم يحتوي Excel وJSON فقط وفق طلب المستخدم."
+      ],
+      [
+        "Word/PDF",
+        "لم تُنشأ ملفات Word أو PDF تنفيذًا لطلب المستخدم والبروتوكول 2.2 الذي يجعلها اختيارية."
+      ]
+    ],
+    "publishable_results": [
+      [
+        "العنوان المقترح",
+        "درء تعارض العقل والنقل بالأرقام: بصمة ابن تيمية المنهجية والمواردية"
+      ],
+      [
+        "نتيجة 1",
+        "يعرض الكشاف 696,108 كلمة من درء تعارض العقل والنقل وفق بروتوكول مرقوم 2.2."
+      ],
+      [
+        "نتيجة 2",
+        "بلغ مجموع العبارات المنهجية المرصودة 21,469 موضعًا."
+      ],
+      [
+        "نتيجة 3",
+        "تصدّر محور الاستدلال العقلي والكلي خريطة القاموس المنهجي."
+      ],
+      [
+        "نتيجة 4",
+        "أكثر الموارد المصرح بها حضورًا: القرآن/كتاب الله."
+      ],
+      [
+        "نتيجة 5",
+        "أكثر الأعلام حضورًا: النبي صلى الله عليه وسلم."
+      ],
+      [
+        "نتيجة 6",
+        "أكثر المدارس أو الاتجاهات حضورًا: الفلاسفة."
+      ],
+      [
+        "تنبيه منهجي",
+        "لا تُقرأ النسب بوصفها نسبة استفادة؛ بل بوصفها نسبة حضور وخريطة موارد."
+      ],
+      [
+        "صيغة نشر مختصرة",
+        "يكشف كشاف درء تعارض العقل والنقل عن شبكة موارد ومصطلحات تتغير بحسب طبيعة الكتاب وموضوع الرد أو الفتوى."
+      ],
+      [
+        "توصية",
+        "يعتمد هذا الملف Excel مصدرًا للحقيقة، وتنتج منه ملفات JSON للعرض والتحقق."
+      ]
+    ]
+  },
+  "resources": {
+    "books": [
+      {
+        "resource": "القرآن/كتاب الله",
+        "field": "المصادر العليا",
+        "type": "مصدر أعلى",
+        "confidence": "عالية",
+        "count": 592,
+        "share": 0.793566,
+        "per_100k_words": 85.04
+      },
+      {
+        "resource": "الصحيحان",
+        "field": "حديث",
+        "type": "كتابان حديثيان/صيغة جامعة",
+        "confidence": "عالية",
+        "count": 59,
+        "share": 0.079088,
+        "per_100k_words": 8.48
+      },
+      {
+        "resource": "التوراة",
+        "field": "مصادر أهل الكتاب",
+        "type": "كتاب ديني",
+        "confidence": "عالية",
+        "count": 37,
+        "share": 0.049598,
+        "per_100k_words": 5.32
+      },
+      {
+        "resource": "الرد على الجهمية",
+        "field": "عقيدة/ردود",
+        "type": "كتاب عقيدة/ردود",
+        "confidence": "منخفضة",
+        "count": 19,
+        "share": 0.025469,
+        "per_100k_words": 2.73
+      },
+      {
+        "resource": "صحيح مسلم",
+        "field": "حديث",
+        "type": "كتاب حديث",
+        "confidence": "عالية",
+        "count": 17,
+        "share": 0.022788,
+        "per_100k_words": 2.44
+      },
+      {
+        "resource": "الإنجيل",
+        "field": "مصادر أهل الكتاب",
+        "type": "كتاب ديني",
+        "confidence": "عالية",
+        "count": 4,
+        "share": 0.005362,
+        "per_100k_words": 0.57
+      },
+      {
+        "resource": "الزبور",
+        "field": "مصادر أهل الكتاب",
+        "type": "كتاب ديني",
+        "confidence": "عالية",
+        "count": 4,
+        "share": 0.005362,
+        "per_100k_words": 0.57
+      },
+      {
+        "resource": "صحيح البخاري",
+        "field": "حديث",
+        "type": "كتاب حديث",
+        "confidence": "عالية",
+        "count": 3,
+        "share": 0.004021,
+        "per_100k_words": 0.43
+      },
+      {
+        "resource": "الإبانة",
+        "field": "عقيدة",
+        "type": "كتاب عقيدة",
+        "confidence": "متوسطة",
+        "count": 3,
+        "share": 0.004021,
+        "per_100k_words": 0.43
+      },
+      {
+        "resource": "مقالات الإسلاميين",
+        "field": "عقيدة/فرق",
+        "type": "كتاب مقالات",
+        "confidence": "عالية",
+        "count": 2,
+        "share": 0.002681,
+        "per_100k_words": 0.29
+      },
+      {
+        "resource": "السنة للخلال",
+        "field": "عقيدة/آثار",
+        "type": "كتاب عقيدة/آثار",
+        "confidence": "متوسطة",
+        "count": 2,
+        "share": 0.002681,
+        "per_100k_words": 0.29
+      },
+      {
+        "resource": "مسند أحمد",
+        "field": "حديث",
+        "type": "كتاب حديث",
+        "confidence": "عالية",
+        "count": 1,
+        "share": 0.00134,
+        "per_100k_words": 0.14
+      },
+      {
+        "resource": "التمهيد",
+        "field": "أصول/عقيدة/فقه",
+        "type": "كتاب",
+        "confidence": "منخفضة",
+        "count": 1,
+        "share": 0.00134,
+        "per_100k_words": 0.14
+      },
+      {
+        "resource": "تفسير البغوي",
+        "field": "تفسير",
+        "type": "كتاب تفسير",
+        "confidence": "عالية",
+        "count": 1,
+        "share": 0.00134,
+        "per_100k_words": 0.14
+      },
+      {
+        "resource": "المحصول",
+        "field": "أصول/كلام",
+        "type": "كتاب أصول",
+        "confidence": "متوسطة",
+        "count": 1,
+        "share": 0.00134,
+        "per_100k_words": 0.14
+      }
+    ],
+    "human_sources": [
+      {
+        "resource": "النبي صلى الله عليه وسلم",
+        "classification": "نبوي",
+        "confidence": "عالية",
+        "count": 583,
+        "share": 0.217132,
+        "per_100k_words": 83.75
+      },
+      {
+        "resource": "ابن سينا",
+        "classification": "فيلسوف",
+        "confidence": "عالية",
+        "count": 336,
+        "share": 0.12514,
+        "per_100k_words": 48.27
+      },
+      {
+        "resource": "الرازي",
+        "classification": "متكلم/أصولي/مفسر",
+        "confidence": "متوسطة",
+        "count": 299,
+        "share": 0.111359,
+        "per_100k_words": 42.95
+      },
+      {
+        "resource": "الأشعري/أبو الحسن الأشعري",
+        "classification": "متكلم/مقالات",
+        "confidence": "متوسطة",
+        "count": 222,
+        "share": 0.082682,
+        "per_100k_words": 31.89
+      },
+      {
+        "resource": "أبو بكر الصديق",
+        "classification": "صحابي",
+        "confidence": "عالية",
+        "count": 159,
+        "share": 0.059218,
+        "per_100k_words": 22.84
+      },
+      {
+        "resource": "أرسطو/أرسطاطاليس",
+        "classification": "فيلسوف",
+        "confidence": "عالية",
+        "count": 147,
+        "share": 0.054749,
+        "per_100k_words": 21.12
+      },
+      {
+        "resource": "الصحابة",
+        "classification": "طبقة جماعية",
+        "confidence": "عالية",
+        "count": 105,
+        "share": 0.039106,
+        "per_100k_words": 15.08
+      },
+      {
+        "resource": "أحمد بن حنبل",
+        "classification": "إمام مذهب/أثر",
+        "confidence": "عالية",
+        "count": 96,
+        "share": 0.035754,
+        "per_100k_words": 13.79
+      },
+      {
+        "resource": "الشافعي",
+        "classification": "إمام مذهب",
+        "confidence": "عالية",
+        "count": 74,
+        "share": 0.027561,
+        "per_100k_words": 10.63
+      },
+      {
+        "resource": "الغزالي",
+        "classification": "أصولي/متكلم/صوفي",
+        "confidence": "عالية",
+        "count": 60,
+        "share": 0.022346,
+        "per_100k_words": 8.62
+      },
+      {
+        "resource": "ابن عباس",
+        "classification": "صحابي/مفسر",
+        "confidence": "عالية",
+        "count": 54,
+        "share": 0.020112,
+        "per_100k_words": 7.76
+      },
+      {
+        "resource": "بشر المريسي",
+        "classification": "جهمي/متكلم",
+        "confidence": "عالية",
+        "count": 52,
+        "share": 0.019367,
+        "per_100k_words": 7.47
+      },
+      {
+        "resource": "أبو هريرة",
+        "classification": "صحابي/راوية",
+        "confidence": "عالية",
+        "count": 47,
+        "share": 0.017505,
+        "per_100k_words": 6.75
+      },
+      {
+        "resource": "جهم بن صفوان",
+        "classification": "جهمي",
+        "confidence": "عالية",
+        "count": 39,
+        "share": 0.014525,
+        "per_100k_words": 5.6
+      },
+      {
+        "resource": "أبو حنيفة",
+        "classification": "إمام مذهب",
+        "confidence": "عالية",
+        "count": 38,
+        "share": 0.014153,
+        "per_100k_words": 5.46
+      },
+      {
+        "resource": "البخاري",
+        "classification": "محدث",
+        "confidence": "عالية",
+        "count": 31,
+        "share": 0.011546,
+        "per_100k_words": 4.45
+      },
+      {
+        "resource": "محمد بن جرير الطبري",
+        "classification": "مفسر/مؤرخ",
+        "confidence": "عالية",
+        "count": 26,
+        "share": 0.009683,
+        "per_100k_words": 3.74
+      },
+      {
+        "resource": "ابن مسعود",
+        "classification": "صحابي/مفسر",
+        "confidence": "عالية",
+        "count": 23,
+        "share": 0.008566,
+        "per_100k_words": 3.3
+      },
+      {
+        "resource": "البيهقي",
+        "classification": "محدث/فقيه",
+        "confidence": "عالية",
+        "count": 23,
+        "share": 0.008566,
+        "per_100k_words": 3.3
+      },
+      {
+        "resource": "الجويني",
+        "classification": "متكلم/أصولي",
+        "confidence": "متوسطة",
+        "count": 22,
+        "share": 0.008194,
+        "per_100k_words": 3.16
+      },
+      {
+        "resource": "ابن عبد البر",
+        "classification": "مالكي/محدث",
+        "confidence": "عالية",
+        "count": 21,
+        "share": 0.007821,
+        "per_100k_words": 3.02
+      },
+      {
+        "resource": "مجاهد",
+        "classification": "تابعي/مفسر",
+        "confidence": "متوسطة",
+        "count": 19,
+        "share": 0.007076,
+        "per_100k_words": 2.73
+      },
+      {
+        "resource": "الباقلاني",
+        "classification": "متكلم",
+        "confidence": "عالية",
+        "count": 19,
+        "share": 0.007076,
+        "per_100k_words": 2.73
+      },
+      {
+        "resource": "الجعد بن درهم",
+        "classification": "جهمي",
+        "confidence": "عالية",
+        "count": 14,
+        "share": 0.005214,
+        "per_100k_words": 2.01
+      },
+      {
+        "resource": "علي بن أبي طالب",
+        "classification": "صحابي",
+        "confidence": "عالية",
+        "count": 13,
+        "share": 0.004842,
+        "per_100k_words": 1.87
+      },
+      {
+        "resource": "ابن عربي",
+        "classification": "صوفي/اتحادي",
+        "confidence": "متوسطة",
+        "count": 13,
+        "share": 0.004842,
+        "per_100k_words": 1.87
+      },
+      {
+        "resource": "ابن خزيمة",
+        "classification": "محدث",
+        "confidence": "عالية",
+        "count": 13,
+        "share": 0.004842,
+        "per_100k_words": 1.87
+      },
+      {
+        "resource": "إسحاق بن راهويه",
+        "classification": "إمام أثر",
+        "confidence": "عالية",
+        "count": 13,
+        "share": 0.004842,
+        "per_100k_words": 1.87
+      },
+      {
+        "resource": "أبو الهذيل العلاف",
+        "classification": "معتزلي",
+        "confidence": "عالية",
+        "count": 13,
+        "share": 0.004842,
+        "per_100k_words": 1.87
+      },
+      {
+        "resource": "عائشة",
+        "classification": "صحابية/راوية",
+        "confidence": "عالية",
+        "count": 12,
+        "share": 0.004469,
+        "per_100k_words": 1.72
+      },
+      {
+        "resource": "عمر بن الخطاب",
+        "classification": "صحابي",
+        "confidence": "عالية",
+        "count": 12,
+        "share": 0.004469,
+        "per_100k_words": 1.72
+      },
+      {
+        "resource": "ابن حزم",
+        "classification": "ظاهري/متكلم",
+        "confidence": "عالية",
+        "count": 12,
+        "share": 0.004469,
+        "per_100k_words": 1.72
+      },
+      {
+        "resource": "الزهري",
+        "classification": "تابعي/محدث",
+        "confidence": "عالية",
+        "count": 9,
+        "share": 0.003352,
+        "per_100k_words": 1.29
+      },
+      {
+        "resource": "أفلاطون",
+        "classification": "فيلسوف",
+        "confidence": "عالية",
+        "count": 9,
+        "share": 0.003352,
+        "per_100k_words": 1.29
+      },
+      {
+        "resource": "الفارابي",
+        "classification": "فيلسوف",
+        "confidence": "عالية",
+        "count": 8,
+        "share": 0.00298,
+        "per_100k_words": 1.15
+      },
+      {
+        "resource": "عبد الله بن عمر",
+        "classification": "صحابي/فقيه",
+        "confidence": "متوسطة",
+        "count": 7,
+        "share": 0.002607,
+        "per_100k_words": 1.01
+      },
+      {
+        "resource": "الأوزاعي",
+        "classification": "فقيه",
+        "confidence": "عالية",
+        "count": 7,
+        "share": 0.002607,
+        "per_100k_words": 1.01
+      },
+      {
+        "resource": "قتادة",
+        "classification": "تابعي/مفسر",
+        "confidence": "متوسطة",
+        "count": 6,
+        "share": 0.002235,
+        "per_100k_words": 0.86
+      },
+      {
+        "resource": "مالك بن أنس",
+        "classification": "إمام مذهب",
+        "confidence": "عالية",
+        "count": 6,
+        "share": 0.002235,
+        "per_100k_words": 0.86
+      },
+      {
+        "resource": "الترمذي",
+        "classification": "محدث",
+        "confidence": "عالية",
+        "count": 5,
+        "share": 0.001862,
+        "per_100k_words": 0.72
+      },
+      {
+        "resource": "الحسن البصري",
+        "classification": "تابعي",
+        "confidence": "عالية",
+        "count": 5,
+        "share": 0.001862,
+        "per_100k_words": 0.72
+      },
+      {
+        "resource": "أبو داود",
+        "classification": "محدث",
+        "confidence": "عالية",
+        "count": 4,
+        "share": 0.00149,
+        "per_100k_words": 0.57
+      },
+      {
+        "resource": "الجاحظ",
+        "classification": "معتزلي/أديب",
+        "confidence": "عالية",
+        "count": 3,
+        "share": 0.001117,
+        "per_100k_words": 0.43
+      },
+      {
+        "resource": "معاوية",
+        "classification": "صحابي/خليفة",
+        "confidence": "متوسطة",
+        "count": 2,
+        "share": 0.000745,
+        "per_100k_words": 0.29
+      },
+      {
+        "resource": "سفيان الثوري",
+        "classification": "محدث/فقيه",
+        "confidence": "عالية",
+        "count": 2,
+        "share": 0.000745,
+        "per_100k_words": 0.29
+      },
+      {
+        "resource": "سيبويه",
+        "classification": "لغوي/نحوي",
+        "confidence": "عالية",
+        "count": 1,
+        "share": 0.000372,
+        "per_100k_words": 0.14
+      },
+      {
+        "resource": "الخليل بن أحمد",
+        "classification": "لغوي",
+        "confidence": "عالية",
+        "count": 1,
+        "share": 0.000372,
+        "per_100k_words": 0.14
+      }
+    ],
+    "schools": [
+      {
+        "resource": "الفلاسفة",
+        "classification": "اتجاه فلسفي",
+        "confidence": "عالية",
+        "count": 557,
+        "share": 0.192334,
+        "per_100k_words": 80.02
+      },
+      {
+        "resource": "المعتزلة",
+        "classification": "فرقة كلامية",
+        "confidence": "عالية",
+        "count": 402,
+        "share": 0.138812,
+        "per_100k_words": 57.75
+      },
+      {
+        "resource": "السلف",
+        "classification": "مدرسة/طبقة منهجية",
+        "confidence": "عالية",
+        "count": 371,
+        "share": 0.128108,
+        "per_100k_words": 53.3
+      },
+      {
+        "resource": "الجهمية",
+        "classification": "فرقة عقدية",
+        "confidence": "عالية",
+        "count": 279,
+        "share": 0.09634,
+        "per_100k_words": 40.08
+      },
+      {
+        "resource": "المتكلمون",
+        "classification": "اتجاه كلامي عام",
+        "confidence": "عالية",
+        "count": 253,
+        "share": 0.087362,
+        "per_100k_words": 36.34
+      },
+      {
+        "resource": "النصارى",
+        "classification": "ديانة/طائفة",
+        "confidence": "عالية",
+        "count": 154,
+        "share": 0.053177,
+        "per_100k_words": 22.12
+      },
+      {
+        "resource": "أهل السنة",
+        "classification": "مدرسة عقدية",
+        "confidence": "عالية",
+        "count": 118,
+        "share": 0.040746,
+        "per_100k_words": 16.95
+      },
+      {
+        "resource": "الباطنية",
+        "classification": "فرقة/اتجاه",
+        "confidence": "عالية",
+        "count": 97,
+        "share": 0.033494,
+        "per_100k_words": 13.93
+      },
+      {
+        "resource": "الكرامية",
+        "classification": "فرقة كلامية",
+        "confidence": "عالية",
+        "count": 89,
+        "share": 0.030732,
+        "per_100k_words": 12.79
+      },
+      {
+        "resource": "الأشاعرة",
+        "classification": "مدرسة كلامية",
+        "confidence": "عالية",
+        "count": 85,
+        "share": 0.029351,
+        "per_100k_words": 12.21
+      },
+      {
+        "resource": "اليهود",
+        "classification": "ديانة/طائفة",
+        "confidence": "عالية",
+        "count": 81,
+        "share": 0.02797,
+        "per_100k_words": 11.64
+      },
+      {
+        "resource": "أهل الحديث",
+        "classification": "اتجاه علمي/عقدي",
+        "confidence": "عالية",
+        "count": 65,
+        "share": 0.022445,
+        "per_100k_words": 9.34
+      },
+      {
+        "resource": "القدرية",
+        "classification": "فرقة/اتجاه",
+        "confidence": "عالية",
+        "count": 55,
+        "share": 0.018992,
+        "per_100k_words": 7.9
+      },
+      {
+        "resource": "الحنابلة",
+        "classification": "مذهب فقهي/أثري",
+        "confidence": "عالية",
+        "count": 45,
+        "share": 0.015539,
+        "per_100k_words": 6.46
+      },
+      {
+        "resource": "الكلابية",
+        "classification": "مدرسة كلامية",
+        "confidence": "عالية",
+        "count": 43,
+        "share": 0.014848,
+        "per_100k_words": 6.18
+      },
+      {
+        "resource": "الصوفية",
+        "classification": "اتجاه سلوكي/كلامي",
+        "confidence": "عالية",
+        "count": 37,
+        "share": 0.012776,
+        "per_100k_words": 5.32
+      },
+      {
+        "resource": "الحلولية",
+        "classification": "اتجاه صوفي/فلسفي",
+        "confidence": "عالية",
+        "count": 30,
+        "share": 0.010359,
+        "per_100k_words": 4.31
+      },
+      {
+        "resource": "الحنفية",
+        "classification": "مذهب فقهي",
+        "confidence": "عالية",
+        "count": 28,
+        "share": 0.009669,
+        "per_100k_words": 4.02
+      },
+      {
+        "resource": "الرافضة/الإمامية",
+        "classification": "فرقة",
+        "confidence": "عالية",
+        "count": 22,
+        "share": 0.007597,
+        "per_100k_words": 3.16
+      },
+      {
+        "resource": "المالكية",
+        "classification": "مذهب فقهي",
+        "confidence": "عالية",
+        "count": 19,
+        "share": 0.006561,
+        "per_100k_words": 2.73
+      },
+      {
+        "resource": "الخوارج",
+        "classification": "فرقة",
+        "confidence": "عالية",
+        "count": 13,
+        "share": 0.004489,
+        "per_100k_words": 1.87
+      },
+      {
+        "resource": "المشبهة",
+        "classification": "فرقة/وصف جدلي",
+        "confidence": "متوسطة",
+        "count": 13,
+        "share": 0.004489,
+        "per_100k_words": 1.87
+      },
+      {
+        "resource": "المرجئة",
+        "classification": "فرقة/اتجاه",
+        "confidence": "عالية",
+        "count": 12,
+        "share": 0.004144,
+        "per_100k_words": 1.72
+      },
+      {
+        "resource": "الشافعية",
+        "classification": "مذهب فقهي",
+        "confidence": "عالية",
+        "count": 10,
+        "share": 0.003453,
+        "per_100k_words": 1.44
+      },
+      {
+        "resource": "الاتحادية",
+        "classification": "اتجاه صوفي/فلسفي",
+        "confidence": "عالية",
+        "count": 9,
+        "share": 0.003108,
+        "per_100k_words": 1.29
+      },
+      {
+        "resource": "الجبرية",
+        "classification": "فرقة/اتجاه",
+        "confidence": "عالية",
+        "count": 7,
+        "share": 0.002417,
+        "per_100k_words": 1.01
+      },
+      {
+        "resource": "أهل الأثر",
+        "classification": "اتجاه علمي/عقدي",
+        "confidence": "عالية",
+        "count": 2,
+        "share": 0.000691,
+        "per_100k_words": 0.29
+      }
+    ],
+    "domains": [
+      {
+        "domain": "المصادر العليا",
+        "count": 592,
+        "share_declared_books": 0.793566,
+        "share_all_resources": 0.093567
+      },
+      {
+        "domain": "حديث",
+        "count": 80,
+        "share_declared_books": 0.107239,
+        "share_all_resources": 0.012644
+      },
+      {
+        "domain": "مصادر أهل الكتاب",
+        "count": 45,
+        "share_declared_books": 0.060322,
+        "share_all_resources": 0.007112
+      },
+      {
+        "domain": "عقيدة/ردود",
+        "count": 19,
+        "share_declared_books": 0.025469,
+        "share_all_resources": 0.003003
+      },
+      {
+        "domain": "عقيدة",
+        "count": 3,
+        "share_declared_books": 0.004021,
+        "share_all_resources": 0.000474
+      },
+      {
+        "domain": "عقيدة/فرق",
+        "count": 2,
+        "share_declared_books": 0.002681,
+        "share_all_resources": 0.000316
+      },
+      {
+        "domain": "عقيدة/آثار",
+        "count": 2,
+        "share_declared_books": 0.002681,
+        "share_all_resources": 0.000316
+      },
+      {
+        "domain": "أصول/عقيدة/فقه",
+        "count": 1,
+        "share_declared_books": 0.00134,
+        "share_all_resources": 0.000158
+      },
+      {
+        "domain": "تفسير",
+        "count": 1,
+        "share_declared_books": 0.00134,
+        "share_all_resources": 0.000158
+      },
+      {
+        "domain": "أصول/كلام",
+        "count": 1,
+        "share_declared_books": 0.00134,
+        "share_all_resources": 0.000158
+      }
+    ]
+  },
+  "terms": [
+    {
+      "axis": "الاستدلال العقلي والكلي",
+      "count": 7889,
+      "per_100k_words": 1133.3,
+      "share_of_methodological_terms": 0.36746
+    },
+    {
+      "axis": "الاستدلال النقلي",
+      "count": 2936,
+      "per_100k_words": 421.77,
+      "share_of_methodological_terms": 0.136755
+    },
+    {
+      "axis": "اللغة والدلالة",
+      "count": 2176,
+      "per_100k_words": 312.6,
+      "share_of_methodological_terms": 0.101355
+    },
+    {
+      "axis": "الجدل والمناظرة",
+      "count": 2140,
+      "per_100k_words": 307.42,
+      "share_of_methodological_terms": 0.099679
+    },
+    {
+      "axis": "النقد والإبطال",
+      "count": 1792,
+      "per_100k_words": 257.43,
+      "share_of_methodological_terms": 0.083469
+    },
+    {
+      "axis": "النقل والعزو",
+      "count": 1222,
+      "per_100k_words": 175.55,
+      "share_of_methodological_terms": 0.056919
+    },
+    {
+      "axis": "الترجيح والتقرير",
+      "count": 1049,
+      "per_100k_words": 150.7,
+      "share_of_methodological_terms": 0.048861
+    },
+    {
+      "axis": "الإحالات الداخلية",
+      "count": 966,
+      "per_100k_words": 138.77,
+      "share_of_methodological_terms": 0.044995
+    },
+    {
+      "axis": "الخلاف",
+      "count": 752,
+      "per_100k_words": 108.03,
+      "share_of_methodological_terms": 0.035027
+    },
+    {
+      "axis": "تحرير النزاع والتفريقات",
+      "count": 547,
+      "per_100k_words": 78.58,
+      "share_of_methodological_terms": 0.025479
+    }
+  ],
+  "created_at": "2026-06-28",
+  "notes": [
+    "لا يحتوي هذا التسليم على Word أو PDF.",
+    "الأرقام تعبر عن حضور نصي وخريطة موارد لا عن نسبة استفادة قطعية.",
+    "هذا الكشاف مشتق من Excel الشامل السابق المبني على النص الكامل للملفات المرفوعة."
+  ]
+}
