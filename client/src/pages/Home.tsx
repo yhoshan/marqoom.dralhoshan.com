@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { useLocation } from "wouter";
 import { useTheme } from "@/contexts/ThemeContext";
 import { formatStatValue } from "@/lib/format";
+import { trpc } from "@/lib/trpc";
 
 // ═══════════════════════════════════════════════
 // DESIGN: هوية مرقوم الرسمية
@@ -1760,7 +1761,14 @@ export default function Home() {
   const { theme, toggleTheme } = useTheme();
   const isDark = theme === "dark";
   const T = isDark ? D : C;
-  const STATS = computeGlobalStats();
+  // جلب عدد الكشافات من قاعدة البيانات — مصدر الحقيقة
+  const { data: kashafCountData } = trpc.kashafat.getCount.useQuery(undefined, {
+    staleTime: 5 * 60 * 1000, // 5 دقائق
+  });
+  const STATS = {
+    ...computeGlobalStats(),
+    totalKashafat: kashafCountData?.count ?? KASHAFAT.length,
+  };
 
   useEffect(() => {
     const handleScroll = () => setShowScrollTop(window.scrollY > 400);

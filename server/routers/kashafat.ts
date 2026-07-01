@@ -7,7 +7,7 @@
  */
 import { TRPCError } from "@trpc/server";
 import { publicProcedure, router } from "../_core/trpc";
-import { getViewCacheKey } from "../db";
+import { countViewCaches, getViewCacheKey } from "../db";
 import { storageGetSignedUrl } from "../storage";
 import { z } from "zod";
 
@@ -54,6 +54,13 @@ const KASHAFAT = [
 ];
 
 export const kashafatRouter = router({
+  /**
+   * عدد الكشافات المسجلة في قاعدة البيانات — مصدر الحقيقة
+   */
+  getCount: publicProcedure.query(async () => {
+    return { count: await countViewCaches() };
+  }),
+
   /** List all kashafat (no file URLs) */
   list: publicProcedure.query(() => KASHAFAT),
 

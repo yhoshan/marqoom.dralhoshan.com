@@ -1,4 +1,4 @@
-import { eq } from "drizzle-orm";
+import { eq, sql } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
 import { InsertKashafViewcache, InsertUser, kashafViewcache, users } from "../drizzle/schema";
 import { ENV } from './_core/env';
@@ -145,6 +145,18 @@ export async function upsertViewCache(record: InsertKashafViewcache): Promise<vo
         bookAuthor: record.bookAuthor ?? null,
       },
     });
+}
+
+/**
+ * عدد جميع الكشافات المربوطة في قاعدة البيانات
+ */
+export async function countViewCaches(): Promise<number> {
+  const db = await getDb();
+  if (!db) return 0;
+  const rows = await db
+    .select({ cnt: sql<number>`COUNT(*)` })
+    .from(kashafViewcache);
+  return Number(rows[0]?.cnt ?? 0);
 }
 
 /**
