@@ -228,10 +228,14 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
   const figures = getArr(resources, 'figures', 'persons', 'people');
   if (figures && figures.length > 0) {
     const rows = figures.map((f) => [
-      str(f, 'العلم', 'الشخصية', 'name', 'الشخص'),
-      str(f, 'المدرسة/الطبقة', 'المجال', 'category', 'التصنيف'),
-      num(f, 'الحضور', 'العدد', 'count'),
-      str(f, 'النسبة من مجموع الأعلام في هذا الكتاب %', 'النسبة %', 'percentage') || '',
+      // fathalbaari: المدخل | annawawe: العَلَم | almuhalla: العلم/المصدر البشري | almughni: العَلَم/المصدر البشري | albadaei: العلم | ibnkathir: العَلَم/المصدر البشري | alrazi: المورد/العلم
+      str(f, 'العلم', 'العَلَم', 'العلم/المصدر البشري', 'العَلَم/المصدر البشري', 'المورد/العلم', 'الشخصية', 'name', 'الشخص', 'المدخل'),
+      // fathalbaari: المجال | annawawe: الفئة العلمية | almuhalla: التصنيف | almughni: التصنيف | albadaei: المدرسة/الانتماء | ibnkathir: المجال | alrazi: (none)
+      str(f, 'المدرسة/الطبقة', 'الفئة العلمية', 'التصنيف', 'المجال', 'المدرسة/الانتماء', 'الطبقة/المجموعة', 'category'),
+      // fathalbaari: العدد | annawawe: الحضور | almuhalla: عدد الحضور اللفظي | almughni: عدد الورود | albadaei: العدد | alrazi: عدد المطابقات
+      num(f, 'الحضور', 'العدد', 'عدد الحضور', 'عدد الحضور اللفظي', 'عدد الورود', 'عدد المطابقات', 'count'),
+      // النسبة
+      str(f, 'النسبة من مجموع الأعلام في هذا الكتاب %', 'نسبة الحضور من مجموع الأعلام', 'نسبة الحضور من مجموع الأعلام المرصودة %', 'النسبة من مجموع الأعلام المرصودة', 'النسبة من موارد الأعلام %', 'نسبة الحضور من مجموع الأعلام %', 'النسبة %', 'percentage') || '',
     ] as (string | number | null)[]);
     tabs.push({
       id: 'v22_figures', label: 'الأعلام', icon: '👥',
@@ -240,14 +244,18 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
     });
   }
 
-  // المصادر والكتب — يدعم books وexplicit_books وtop_books وhuman_sources
+  // المصادر والكتب — يدعم books وexplicit_books وtop_books
   const books = getArr(resources, 'books', 'explicit_books', 'top_books');
   if (books && books.length > 0) {
     const rows = books.map((b) => [
-      str(b, 'الكتاب/المصدر المصرح به', 'الكتاب المصرح به', 'name', 'الكتاب', 'المصدر'),
-      str(b, 'المجال', 'category', 'التصنيف'),
-      num(b, 'الحضور', 'عدد الحضور', 'العدد', 'count'),
-      num(b, 'النسبة من مجموع إحالات الكتب في هذا الكتاب %', 'نسبة الحضور من مجموع إحالات الكتب', 'النسبة %', 'percentage'),
+      // alqurtubi: الكتاب المصرح به | almuhalla: اسم الكتاب/المصدر المصرح به | almughni: الكتاب/المورد المصرح به | albadaei: المورد/الكتاب | ibnkathir: الكتاب/المصدر المصرح به | alrazi: الكتاب المصرح به | fathalbaari: المدخل | annawawe: الكتاب/المصدر
+      str(b, 'الكتاب/المصدر المصرح به', 'الكتاب المصرح به', 'اسم الكتاب/المصدر المصرح به', 'الكتاب/المورد المصرح به', 'المورد/الكتاب', 'الكتاب/المصدر', 'name', 'الكتاب', 'المصدر', 'المدخل'),
+      // almuhalla: المجال | almughni: المجال | albadaei: المجال | alrazi: المجال | fathalbaari: المجال | annawawe: المجال
+      str(b, 'المجال', 'category', 'التصنيف', 'النوع'),
+      // alqurtubi: عدد الحضور | almuhalla: عدد الإحالات اللفظية | almughni: عدد الإحالات | albadaei: العدد | alrazi: عدد الإشارات | fathalbaari: العدد | annawawe: الحضور
+      num(b, 'الحضور', 'عدد الحضور', 'العدد', 'عدد الإحالات اللفظية', 'عدد الإحالات', 'عدد الإشارات', 'count'),
+      // النسبة
+      num(b, 'النسبة من مجموع إحالات الكتب في هذا الكتاب %', 'نسبة الحضور من مجموع إحالات الكتب', 'نسبة الحضور من مجموع إحالات الكتب المصرح بها %', 'النسبة من إحالات الكتب %', 'النسبة من إحالات الكتب المصرح بها', 'النسبة %', 'percentage'),
     ] as (string | number | null)[]);
     tabs.push({
       id: 'v22_books', label: 'المصادر المُحال إليها', icon: '📚',
@@ -256,14 +264,14 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
     });
   }
 
-  // المصادر البشرية (human_sources) — منفصلة عن الكتب
+  // المصادر البشرية (human_sources) — منفصلة عن الكتب (alqurtubi فقط)
   const humanSources = getArr(resources, 'human_sources');
   if (humanSources && humanSources.length > 0) {
     const rows = humanSources.map((h) => [
       str(h, 'العلم/المصدر البشري', 'name', 'الشخص'),
       str(h, 'المجال الغالب', 'المجال', 'category'),
       num(h, 'الحضور', 'عدد الحضور', 'العدد', 'count'),
-      num(h, 'نسبة الحضور من مجموع الأعلام', 'النسبة %', 'percentage'),
+      num(h, 'نسبة الحضور من مجموع الأعلام', 'نسبة الحضور من مجموع الأعلام %', 'النسبة %', 'percentage'),
     ] as (string | number | null)[]);
     tabs.push({
       id: 'v22_human_sources', label: 'المصادر البشرية', icon: '👤',
@@ -276,10 +284,14 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
   const schools = getArr(resources, 'schools', 'schools_and_trends', 'schools_trends');
   if (schools && schools.length > 0) {
     const rows = schools.map((s) => [
-      str(s, 'المدرسة/الاتجاه', 'المدرسة/الاتجاه/المذهب', 'name', 'المدرسة', 'الاتجاه'),
+      // alqurtubi: المدرسة/الاتجاه/المذهب | almuhalla: المدرسة/الاتجاه | almughni: المدرسة/الاتجاه/المذهب | albadaei: المدرسة/الاتجاه | ibnkathir: المدرسة/الاتجاه/المذهب | alrazi: المدرسة/الاتجاه | fathalbaari: المدخل | annawawe: المدرسة/الاتجاه/المذهب
+      str(s, 'المدرسة/الاتجاه', 'المدرسة/الاتجاه/المذهب', 'name', 'المدرسة', 'الاتجاه', 'المدخل'),
+      // النوع أو المجال
       str(s, 'النوع', 'المجال', 'category'),
-      num(s, 'الحضور', 'عدد الحضور', 'العدد', 'count'),
-      num(s, 'نسبة الحضور من مجموع المدارس والاتجاهات', 'النسبة من مجموع المدارس والاتجاهات في هذا الكتاب %', 'النسبة %', 'percentage'),
+      // alqurtubi: عدد الحضور | almuhalla: مؤشر الحضور | almughni: عدد الورود | albadaei: العدد | alrazi: عدد الإشارات | fathalbaari: العدد | annawawe: الحضور
+      num(s, 'الحضور', 'عدد الحضور', 'العدد', 'مؤشر الحضور', 'عدد الورود', 'عدد الإشارات', 'count'),
+      // النسبة
+      num(s, 'نسبة الحضور من مجموع المدارس والاتجاهات', 'نسبة الحضور من مجموع المدارس والاتجاهات %', 'النسبة من مجموع المدارس والاتجاهات في هذا الكتاب %', 'النسبة من المدارس والاتجاهات %', 'النسبة من المدارس %', 'النسبة %', 'percentage'),
     ] as (string | number | null)[]);
     tabs.push({
       id: 'v22_schools', label: 'المدارس والاتجاهات', icon: '🏫',
@@ -292,9 +304,12 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
   const byField = getArr(resources, 'by_field', 'fields', 'domains');
   if (byField && byField.length > 0) {
     const rows = byField.map((f) => [
-      str(f, 'مجال المورد', 'المجال', 'field', 'domain', 'name'),
-      num(f, 'العدد', 'عدد الحضور', 'count'),
-      num(f, 'نسبة الحضور من مجموع موارد المؤلف العامة', 'النسبة %', 'النسبة من مجموع الموارد العامة في هذا الكتاب %', 'percentage'),
+      // alqurtubi: مجال المورد | almuhalla: المجال | almughni: المجال | albadaei: المجال | ibnkathir: المجال | alrazi: المورد المعرفي | fathalbaari: المجال | annawawe: مجال الكتب
+      str(f, 'مجال المورد', 'المورد المعرفي', 'مجال الكتب', 'المجال', 'field', 'domain', 'name'),
+      // alqurtubi: عدد الحضور | almuhalla: مؤشر الحضور | almughni: عدد موارد المجال | albadaei: العدد | alrazi: عدد المطابقات | fathalbaari: العدد | annawawe: الحضور
+      num(f, 'العدد', 'عدد الحضور', 'مؤشر الحضور', 'عدد موارد المجال', 'عدد المطابقات', 'count'),
+      // النسبة
+      num(f, 'نسبة الحضور من مجموع موارد المؤلف العامة', 'نسبة الحضور من مجموع موارد المؤلف العامة %', 'النسبة من مجموع موارد المؤلف العامة', 'النسبة من مجموع الموارد العامة في هذا الكتاب %', 'النسبة من موارد القاموس %', 'النسبة من إحالات الكتب', 'النسبة %', 'percentage'),
     ] as (string | number | null)[]);
     tabs.push({
       id: 'v22_byfield', label: 'توزيع المجالات', icon: '🗂️',
@@ -318,18 +333,19 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
     });
   }
 
-  // sections كـ DICT (مثل القرطبي) — يحتوي على density_by_surah وpublishable_results وغيرها
+  // sections كـ DICT — يدعم جميع الكشافات ذات البنية المعقدة
   const sectionsDict = (!Array.isArray(sections) && sections && typeof sections === 'object')
     ? sections as Record<string, unknown>
     : undefined;
   if (sectionsDict) {
+    // القرطبي والرازي: density_by_surah
     const densityBySurah = getArr(sectionsDict, 'density_by_surah');
     if (densityBySurah && densityBySurah.length > 0) {
       const rows = densityBySurah.map((s) => [
         str(s, 'السورة'),
-        num(s, 'عدد صفحات XHTML تقريبية'),
-        num(s, 'عدد الكلمات التقريبي'),
-        num(s, 'كلمات/صفحة'),
+        num(s, 'عدد صفحات XHTML تقريبية', 'صفحة البداية XHTML', 'عدد الصفحات XHTML'),
+        num(s, 'عدد الكلمات التقريبي', 'عدد الكلمات التقريبيات'),
+        num(s, 'كلمات/صفحة', 'كثافة الكلمات/صفحة'),
       ] as (string | number | null)[]);
       tabs.push({
         id: 'v22_surahs_density', label: 'كثافة السور', icon: '📖',
@@ -337,17 +353,139 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
         tableData: { _columns: ['السورة', 'الصفحات', 'الكلمات', 'كلمات/صفحة'], rows },
       });
     }
+    // القرطبي: publishable_results
     const publishableFromSections = getArr(sectionsDict, 'publishable_results');
     if (publishableFromSections && publishableFromSections.length > 0) {
       const rows = publishableFromSections.map((p) => [
-        str(p, 'النتيجة', 'البند', 'result', 'name'),
-        str(p, 'التفصيل', 'الوصف', 'detail', 'description'),
-        str(p, 'القيمة', 'value'),
+        str(p, 'نتيجة قابلة للنشر', 'النتيجة', 'البند', 'result', 'name'),
+        str(p, 'أساسها الحسابي/الملاحظات', 'التفصيل', 'الوصف', 'detail', 'description'),
       ] as (string | number | null)[]);
       tabs.push({
         id: 'v22_publishable_sections', label: 'نتائج قابلة للنشر', icon: '🌟',
         description: 'أبرز النتائج العلمية القابلة للنشر والاستشهاد',
-        tableData: { _columns: ['النتيجة', 'التفصيل', 'القيمة'], rows },
+        tableData: { _columns: ['النتيجة', 'الأساس الحسابي'], rows },
+      });
+    }
+    // المغني: density_by_book وhigh_density_books
+    const densityByBook = getArr(sectionsDict, 'density_by_book');
+    if (densityByBook && densityByBook.length > 0) {
+      const rows = densityByBook.map((s) => [
+        str(s, 'الكتاب', 'name'),
+        num(s, 'الكلمات'),
+        num(s, 'الأحرف'),
+        num(s, 'متوسط الكلمات/صفحة'),
+      ] as (string | number | null)[]);
+      tabs.push({
+        id: 'v22_density_by_book', label: 'كثافة الكتب', icon: '🔬',
+        description: 'توزيع الكثافة على كتب المغني',
+        tableData: { _columns: ['الكتاب', 'الكلمات', 'الأحرف', 'كلمات/صفحة'], rows },
+      });
+    }
+    // المجموع: major_books_by_size
+    const majorBooks = getArr(sectionsDict, 'major_books_by_size');
+    if (majorBooks && majorBooks.length > 0) {
+      const rows = majorBooks.map((s) => [
+        str(s, 'الكتاب', 'name'),
+        num(s, 'الكلمات'),
+        num(s, 'عدد صفحات XHTML'),
+        num(s, 'كلمة/صفحة'),
+      ] as (string | number | null)[]);
+      tabs.push({
+        id: 'v22_major_books', label: 'أكبر كتب المجموع', icon: '📚',
+        description: 'أكبر كتب المجموع حجماً',
+        tableData: { _columns: ['الكتاب', 'الكلمات', 'الصفحات', 'كلمة/صفحة'], rows },
+      });
+    }
+    // فتح الباري: volumes وtop_density وreferences وtarjih وcriticism
+    const volumes = getArr(sectionsDict, 'volumes');
+    if (volumes && volumes.length > 0) {
+      const rows = volumes.map((v2) => [
+        str(v2, 'volume', 'الجزء'),
+        num(v2, 'words'),
+        num(v2, 'إجمالي_عبارات_مصنفة'),
+        num(v2, 'كثافة_لكل_1000_كلمة'),
+      ] as (string | number | null)[]);
+      tabs.push({
+        id: 'v22_volumes', label: 'توزيع الأجزاء', icon: '📘',
+        description: 'توزيع العبارات والكثافة على أجزاء فتح الباري',
+        tableData: { _columns: ['الجزء', 'كلمات', 'عبارات مصنفة', 'كثافة/1000'], rows },
+      });
+    }
+    const topDensity = getArr(sectionsDict, 'top_density');
+    if (topDensity && topDensity.length > 0) {
+      const rows = topDensity.map((v2) => [
+        str(v2, 'volume', 'الجزء'),
+        str(v2, 'book_label', 'الكتاب'),
+        str(v2, 'toc_label', 'الباب'),
+        num(v2, 'كثافة_لكل_1000_كلمة'),
+        str(v2, 'مقتطف'),
+      ] as (string | number | null)[]);
+      tabs.push({
+        id: 'v22_top_density', label: 'أعلى كثافة علمية', icon: '🔬',
+        description: 'أعلى 100 صفحة كثافةً في فتح الباري',
+        tableData: { _columns: ['الجزء', 'الكتاب', 'الباب', 'كثافة/1000', 'مقتطف'], rows },
+      });
+    }
+    const referencesTop = getArr(sectionsDict, 'references');
+    if (referencesTop && referencesTop.length > 0) {
+      const rows = referencesTop.map((v2) => [
+        str(v2, 'volume', 'الجزء'),
+        str(v2, 'book_label', 'الكتاب'),
+        str(v2, 'toc_label', 'الباب'),
+        num(v2, 'عدد_المؤشرات'),
+        str(v2, 'مقتطف'),
+      ] as (string | number | null)[]);
+      tabs.push({
+        id: 'v22_references_top', label: 'أكثر الإحالات', icon: '🔗',
+        description: 'أكثر 50 صفحة إحالاتٍ في فتح الباري',
+        tableData: { _columns: ['الجزء', 'الكتاب', 'الباب', 'مؤشرات', 'مقتطف'], rows },
+      });
+    }
+    const tarjihTop = getArr(sectionsDict, 'tarjih');
+    if (tarjihTop && tarjihTop.length > 0) {
+      const rows = tarjihTop.map((v2) => [
+        str(v2, 'volume', 'الجزء'),
+        str(v2, 'book_label', 'الكتاب'),
+        str(v2, 'toc_label', 'الباب'),
+        num(v2, 'عدد_المؤشرات'),
+        str(v2, 'مقتطف'),
+      ] as (string | number | null)[]);
+      tabs.push({
+        id: 'v22_tarjih_top', label: 'أكثر الترجيح', icon: '🏆',
+        description: 'أكثر 50 صفحة ترجيحًا في فتح الباري',
+        tableData: { _columns: ['الجزء', 'الكتاب', 'الباب', 'مؤشرات', 'مقتطف'], rows },
+      });
+    }
+    const criticismTop = getArr(sectionsDict, 'criticism');
+    if (criticismTop && criticismTop.length > 0) {
+      const rows = criticismTop.map((v2) => [
+        str(v2, 'volume', 'الجزء'),
+        str(v2, 'book_label', 'الكتاب'),
+        str(v2, 'toc_label', 'الباب'),
+        num(v2, 'عدد_المؤشرات'),
+        str(v2, 'مقتطف'),
+      ] as (string | number | null)[]);
+      tabs.push({
+        id: 'v22_criticism_top', label: 'أكثر النقد', icon: '🔍',
+        description: 'أكثر 50 صفحة نقدًا في فتح الباري',
+        tableData: { _columns: ['الجزء', 'الكتاب', 'الباب', 'مؤشرات', 'مقتطف'], rows },
+      });
+    }
+    // البدائع: density_by_fiqh_books
+    const densityByFiqhBooks = getArr(sectionsDict, 'density_by_fiqh_books');
+    if (densityByFiqhBooks && densityByFiqhBooks.length > 0) {
+      const rows = densityByFiqhBooks.map((s) => [
+        str(s, 'الكتاب', 'name'),
+        num(s, 'الكلمات'),
+        num(s, 'الخلاف'),
+        num(s, 'الترجيح'),
+        num(s, 'النقد'),
+        num(s, 'الكثافة/10 آلاف'),
+      ] as (string | number | null)[]);
+      tabs.push({
+        id: 'v22_fiqh_density', label: 'كثافة كتب البدائع', icon: '🔬',
+        description: 'توزيع الخلاف والترجيح والنقد على كتب البدائع',
+        tableData: { _columns: ['الكتاب', 'كلمات', 'خلاف', 'ترجيح', 'نقد', 'كثافة/10آلف'], rows },
       });
     }
   }
@@ -356,22 +494,59 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
   const termsRaw = raw.terms as Record<string, unknown>[] | Record<string, unknown> | undefined;
   const termsArr: Record<string, unknown>[] | undefined = Array.isArray(termsRaw)
     ? termsRaw
-    : (termsRaw && typeof termsRaw === 'object' && Array.isArray((termsRaw as Record<string, unknown>).methodological_terms))
-      ? (termsRaw as Record<string, unknown>).methodological_terms as Record<string, unknown>[]
-      : undefined;
+    : (termsRaw && typeof termsRaw === 'object') ? (
+        Array.isArray((termsRaw as Record<string, unknown>).methodological_terms)
+          ? (termsRaw as Record<string, unknown>).methodological_terms as Record<string, unknown>[]
+          : undefined
+      )
+    : undefined;
   const terms = termsArr;
   if (Array.isArray(terms) && terms.length > 0) {
     const rows = terms.map((t) => [
-      str(t, 'المصطلح/العبارة', 'المصطلح', 'العبارة', 'term'),
-      str(t, 'التصنيف', 'الفئة', 'المجموعة', 'domain'),
+      // fathalbaari: العبارة | alrazi: المصطلح/العبارة | alqurtubi(dict): المصطلح | almuhalla: العبارة | almughni(dict): العبارة | albadaei: العبارة | altabari: term
+      str(t, 'المصطلح/العبارة', 'المصطلح', 'العبارة', 'المصطلحات والأعلام المرصودة', 'term'),
+      // fathalbaari: الفئة | alrazi: الغرض | alqurtubi: الفئة | almuhalla: المحور | almughni: الفئة | albadaei: التصنيف | altabari: domain
+      str(t, 'التصنيف', 'الفئة', 'الغرض', 'المحور', 'المجموعة', 'domain'),
+      // fathalbaari: العدد | alrazi: العدد | almuhalla: العدد | almughni: العدد | albadaei: العدد | altabari: count
       num(t, 'العدد', 'الحضور', 'count'),
-      num(t, 'النسبة من مجموع العبارات المنهجية', 'percentage'),
+      // النسبة
+      num(t, 'النسبة من مجموع العبارات المنهجية', 'النسبة من مجموع مطابقات القاموس', 'النسبة من مجموع العبارات المحسوبة', 'النسبة من مجموع العبارات المنهجية المرصودة %', 'percentage'),
     ] as (string | number | null)[]);
     tabs.push({
       id: 'v22_terms', label: 'المصطلحات المنهجية', icon: '📝',
       description: 'أبرز المصطلحات المنهجية وأغراضها وتكرارها',
       tableData: { _columns: ['المصطلح/العبارة', 'التصنيف', 'العدد', 'النسبة%'], rows },
     });
+  }
+
+  // المغني: terms هو DICT يحتوي على khilaf_terms وtarjih_terms وnaqd_terms وreferrals بشكل منفصل
+  if (termsRaw && typeof termsRaw === 'object' && !Array.isArray(termsRaw)) {
+    const termsDict = termsRaw as Record<string, unknown>;
+    const subsetMap: Record<string, string> = {
+      khilaf_terms: 'مصطلحات الخلاف',
+      tarjih_terms: 'مصطلحات الترجيح',
+      naqd_terms: 'مصطلحات النقد',
+      referrals: 'الإحالات الداخلية',
+    };
+    const subsetIcons: Record<string, string> = {
+      khilaf_terms: '⚖️', tarjih_terms: '🏆', naqd_terms: '🔍', referrals: '🔗',
+    };
+    for (const [key, label] of Object.entries(subsetMap)) {
+      const arr = termsDict[key] as Record<string, unknown>[] | undefined;
+      if (Array.isArray(arr) && arr.length > 0) {
+        const rows = arr.map((item) => [
+          str(item, 'العبارة', 'المصطلح/العبارة', 'نوع الإحالة', 'المورد/العبارة', 'term'),
+          str(item, 'الفئة', 'التصنيف', 'category'),
+          num(item, 'العدد', 'count'),
+          num(item, 'النسبة', 'النسبة من مجموع عبارات هذا الغرض %', 'percentage'),
+        ] as (string | number | null)[]);
+        tabs.push({
+          id: `v22_terms_${key}`, label, icon: subsetIcons[key] || '📝',
+          description: `أبرز ${label} وتكرارها`,
+          tableData: { _columns: ['العبارة', 'التصنيف', 'العدد', 'النسبة%'], rows },
+        });
+      }
+    }
   }
 
   // المجموعات المنهجية (methodological_subsets) — خلاف/ترجيح/نقد/إحالة
