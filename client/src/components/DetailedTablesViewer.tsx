@@ -116,15 +116,36 @@ function facetToTableData(arr: { name?: string; type?: string; count: number }[]
   return { _columns: columns, rows };
 }
 
-// ── كشف هل البيانات v2.1 أو v2.2 ──
+// ── كشف هل البيانات v2.2 أو v2.1 ──
+// شرط v2.2 الدقيق: protocol_version = "2.2" + book + أحد مصادر البيانات (sections | resources | terms | indicators)
+// ملاحظة: sections قد يكون dict فارغاً {} في بعض الكشافات فلا يصح اشتراطه وحده
+function hasV22DataSource(raw: Record<string, unknown>): boolean {
+  // sections: array غير فارغة أو dict غير فارغ
+  const sections = raw.sections;
+  if (sections !== undefined && sections !== null) {
+    if (Array.isArray(sections) && sections.length > 0) return true;
+    if (typeof sections === 'object' && !Array.isArray(sections) && Object.keys(sections as object).length > 0) return true;
+  }
+  // resources: dict غير فارغ
+  const resources = raw.resources;
+  if (resources && typeof resources === 'object' && Object.keys(resources as object).length > 0) return true;
+  // terms: array غير فارغة
+  if (Array.isArray(raw.terms) && (raw.terms as unknown[]).length > 0) return true;
+  // indicators: array غير فارغة
+  if (Array.isArray(raw.indicators) && (raw.indicators as unknown[]).length > 0) return true;
+  return false;
+}
+
 function isV21(d: ViewCacheData): boolean {
   const raw = d as Record<string, unknown>;
-  // v2.2: protocol_version كمفتاح رئيسي (sections + resources + book)
-  if (raw.protocol_version && raw.sections && raw.book) return true;
-  // الكشف بوجود views أو facets كمفاتيح رئيسية
+  // v2.2 الدقيق: protocol_version = "2.2" + book + مصدر بيانات
+  if (raw.protocol_version === '2.2' && raw.book && hasV22DataSource(raw)) return true;
+  // قبول أي نسخة من protocol_version مع book ومصدر بيانات (للتوسع المستقبلي)
+  if (raw.protocol_version && raw.book && hasV22DataSource(raw)) return true;
+  // الكشف بوجود views أو facets كمفاتيح رئيسية (v2.1)
   if (raw.views && typeof raw.views === 'object') return true;
   if (raw.facets && typeof raw.facets === 'object') return true;
-  // أو بوجود schema.protocol_version
+  // أو بوجود schema.protocol_version (v2.1 قديم)
   const schema = raw.schema;
   if (schema && typeof schema === 'object') {
     const sv = (schema as Record<string, unknown>).protocol_version;
@@ -208,37 +229,58 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
     });
   }
 
-  // المؤشرات التحليلية — يدعم composite_indicators وindicators
-  const indicators = (summary?.composite_indicators ?? summary?.indicators) as Record<string, unknown>[] | undefined;
+  // المؤشرات التحليلية — يدعم composite_indicators وindicators من summary
+  // وأيضاً indicators على المستوى الأعلى (مثل الأم للشافعي)
+  const indicatorsFromSummary = (summary?.composite_indicators ?? summary?.indicators) as Record<string, unknown>[] | undefined;
+  const indicatorsTopLevel = raw.indicators as Record<string, unknown>[] | undefined;
+  const indicators = Array.isArray(indicatorsFromSummary) && indicatorsFromSummary.length > 0
+    ? indicatorsFromSummary
+    : (Array.isArray(indicatorsTopLevel) && indicatorsTopLevel.length > 0 ? indicatorsTopLevel : undefined);
   if (Array.isArray(indicators) && indicators.length > 0) {
     const rows = indicators.map((ind) => [
+      // summary.composite_indicators: المؤشر | summary.indicators: المؤشر | top-level indicators (الأم): المؤشر
       str(ind, 'المؤشر', 'name'),
-      num(ind, 'القيمة', 'البسط', 'count'),
-      num(ind, 'أساس الحساب', 'المقام', 'total'),
-      num(ind, 'النسبة %', 'percentage'),
-      str(ind, 'الصيغة', 'درجة الثقة', 'confidence'),
+      // top-level (الأم): القيمة العددية | summary: القيمة | البسط
+      num(ind, 'القيمة العددية', 'القيمة', 'البسط', 'count'),
+      // top-level (الأم): الأساس | summary: أساس الحساب | المقام
+      num(ind, 'الأساس', 'أساس الحساب', 'المقام', 'total'),
+      // top-level (الأم): النسبة | summary: النسبة %
+      num(ind, 'النسبة', 'النسبة %', 'percentage'),
+      // top-level (الأم): المعادلة | summary: الصيغة | درجة الثقة
+      str(ind, 'المعادلة', 'الصيغة', 'درجة الثقة', 'confidence'),
     ] as (string | number | null)[]);
     tabs.push({
       id: 'v22_indicators', label: 'المؤشرات التحليلية', icon: '📊',
       description: 'مؤشرات منهجية مركّبة تقيس أبعاد الكتاب',
-      tableData: { _columns: ['المؤشر', 'القيمة', 'الأساس', 'النسبة%', 'الصيغة'], rows },
+      tableData: { _columns: ['المؤشر', 'القيمة', 'الأساس', 'النسبة%', 'المعادلة'], rows },
     });
   }
 
-  const resources = raw.resources as Record<string, unknown> | undefined;
+  // ── دعم resources على المستوى الأعلى (مثل الأم للشافعي) ──
+  // في بعض الكشافات resources موجود مباشرةً كمفتاح رئيسي وليس داخل sections
+  const resources = (raw.resources as Record<string, unknown> | undefined)
+    ?? (raw.book ? undefined : undefined); // placeholder للتوضيح فقط
 
   // الأعلام — يدعم figures وpersons وpeople
+  // يبحث في resources (سواء كان داخل sections أو على المستوى الأعلى)
   const figures = getArr(resources, 'figures', 'persons', 'people');
   if (figures && figures.length > 0) {
     const rows = figures.map((f) => [
+      // حقول إنجليزية عامة: resource (dara_taarus/jawab_sahih/bayan_talbis/majmoo_fatawa)
       // fathalbaari: المدخل | annawawe: العَلَم | almuhalla: العلم/المصدر البشري | almughni: العَلَم/المصدر البشري | albadaei: العلم | ibnkathir: العَلَم/المصدر البشري | alrazi: المورد/العلم
-      str(f, 'العلم', 'العَلَم', 'العلم/المصدر البشري', 'العَلَم/المصدر البشري', 'المورد/العلم', 'الشخصية', 'name', 'الشخص', 'المدخل'),
+      // umm_shafii/risala: العلم
+      str(f, 'resource', 'العلم', 'العَلَم', 'العلم/المصدر البشري', 'العَلَم/المصدر البشري', 'المورد/العلم', 'الشخصية', 'name', 'الشخص', 'المدخل'),
+      // حقول إنجليزية عامة: classification (dara_taarus/jawab_sahih/bayan_talbis/majmoo_fatawa)
       // fathalbaari: المجال | annawawe: الفئة العلمية | almuhalla: التصنيف | almughni: التصنيف | albadaei: المدرسة/الانتماء | ibnkathir: المجال | alrazi: (none)
-      str(f, 'المدرسة/الطبقة', 'الفئة العلمية', 'التصنيف', 'المجال', 'المدرسة/الانتماء', 'الطبقة/المجموعة', 'category'),
+      // umm_shafii/risala: الدور/الطبقة + المدرسة/المجال
+      str(f, 'classification', 'الدور/الطبقة', 'المدرسة/الطبقة', 'الفئة العلمية', 'التصنيف', 'المجال', 'المدرسة/الانتماء', 'الطبقة/المجموعة', 'المدرسة/المجال', 'category'),
+      // حقول إنجليزية عامة: count
       // fathalbaari: العدد | annawawe: الحضور | almuhalla: عدد الحضور اللفظي | almughni: عدد الورود | albadaei: العدد | alrazi: عدد المطابقات
-      num(f, 'الحضور', 'العدد', 'عدد الحضور', 'عدد الحضور اللفظي', 'عدد الورود', 'عدد المطابقات', 'count'),
-      // النسبة
-      str(f, 'النسبة من مجموع الأعلام في هذا الكتاب %', 'نسبة الحضور من مجموع الأعلام', 'نسبة الحضور من مجموع الأعلام المرصودة %', 'النسبة من مجموع الأعلام المرصودة', 'النسبة من موارد الأعلام %', 'نسبة الحضور من مجموع الأعلام %', 'النسبة %', 'percentage') || '',
+      // umm_shafii/risala: عدد الحضور
+      num(f, 'count', 'عدد الحضور', 'الحضور', 'العدد', 'عدد الحضور اللفظي', 'عدد الورود', 'عدد المطابقات'),
+      // حقول إنجليزية عامة: share (0-1)
+      // umm_shafii/risala: النسبة من مجموع الأعلام المرصودة
+      num(f, 'share', 'النسبة من مجموع الأعلام المرصودة', 'النسبة من مجموع الأعلام في هذا الكتاب %', 'نسبة الحضور من مجموع الأعلام', 'نسبة الحضور من مجموع الأعلام المرصودة %', 'النسبة من موارد الأعلام %', 'نسبة الحضور من مجموع الأعلام %', 'النسبة %', 'percentage') ?? '',
     ] as (string | number | null)[]);
     tabs.push({
       id: 'v22_figures', label: 'الأعلام', icon: '👥',
@@ -248,17 +290,21 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
   }
 
   // المصادر والكتب — يدعم books وexplicit_books وtop_books
+  // يبحث في resources (سواء كان داخل sections أو على المستوى الأعلى)
   const books = getArr(resources, 'books', 'explicit_books', 'top_books');
   if (books && books.length > 0) {
     const rows = books.map((b) => [
       // alqurtubi: الكتاب المصرح به | almuhalla: اسم الكتاب/المصدر المصرح به | almughni: الكتاب/المورد المصرح به | albadaei: المورد/الكتاب | ibnkathir: الكتاب/المصدر المصرح به | alrazi: الكتاب المصرح به | fathalbaari: المدخل | annawawe: الكتاب/المصدر
-      str(b, 'الكتاب/المصدر المصرح به', 'الكتاب المصرح به', 'اسم الكتاب/المصدر المصرح به', 'الكتاب/المورد المصرح به', 'المورد/الكتاب', 'الكتاب/المصدر', 'name', 'الكتاب', 'المصدر', 'المدخل'),
+      // umm_shafii/risala: المورد/الكتاب | dara_taarus: resource
+      str(b, 'resource', 'المورد/الكتاب', 'الكتاب/المصدر المصرح به', 'الكتاب المصرح به', 'اسم الكتاب/المصدر المصرح به', 'الكتاب/المورد المصرح به', 'الكتاب/المصدر', 'name', 'الكتاب', 'المصدر', 'المدخل'),
       // almuhalla: المجال | almughni: المجال | albadaei: المجال | alrazi: المجال | fathalbaari: المجال | annawawe: المجال
-      str(b, 'المجال', 'category', 'التصنيف', 'النوع'),
+      // umm_shafii/risala: النوع | dara_taarus: field + type
+      str(b, 'field', 'type', 'النوع', 'المجال', 'category', 'التصنيف'),
       // alqurtubi: عدد الحضور | almuhalla: عدد الإحالات اللفظية | almughni: عدد الإحالات | albadaei: العدد | alrazi: عدد الإشارات | fathalbaari: العدد | annawawe: الحضور
-      num(b, 'الحضور', 'عدد الحضور', 'العدد', 'عدد الإحالات اللفظية', 'عدد الإحالات', 'عدد الإشارات', 'count'),
-      // النسبة
-      num(b, 'النسبة من مجموع إحالات الكتب في هذا الكتاب %', 'نسبة الحضور من مجموع إحالات الكتب', 'نسبة الحضور من مجموع إحالات الكتب المصرح بها %', 'النسبة من إحالات الكتب %', 'النسبة من إحالات الكتب المصرح بها', 'النسبة %', 'percentage'),
+      // umm_shafii/risala: عدد الحضور | dara_taarus: count
+      num(b, 'count', 'عدد الحضور', 'الحضور', 'العدد', 'عدد الإحالات اللفظية', 'عدد الإحالات', 'عدد الإشارات'),
+      // النسبة — umm_shafii/risala: النسبة من إحالات الكتب/المصادر المصرح بها | dara_taarus: share
+      num(b, 'share', 'النسبة من إحالات الكتب/المصادر المصرح بها', 'النسبة من مجموع إحالات الكتب في هذا الكتاب %', 'نسبة الحضور من مجموع إحالات الكتب', 'نسبة الحضور من مجموع إحالات الكتب المصرح بها %', 'النسبة من إحالات الكتب %', 'النسبة من إحالات الكتب المصرح بها', 'النسبة %', 'percentage'),
     ] as (string | number | null)[]);
     tabs.push({
       id: 'v22_books', label: 'المصادر المُحال إليها', icon: '📚',
@@ -267,14 +313,18 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
     });
   }
 
-  // المصادر البشرية (human_sources) — منفصلة عن الكتب (alqurtubi فقط)
+  // المصادر البشرية (human_sources) — دراء تعارض وغيره
+  // الحقول الفعلية: resource, classification, count, share, per_100k_words
   const humanSources = getArr(resources, 'human_sources');
   if (humanSources && humanSources.length > 0) {
     const rows = humanSources.map((h) => [
-      str(h, 'العلم/المصدر البشري', 'name', 'الشخص'),
-      str(h, 'المجال الغالب', 'المجال', 'category'),
-      num(h, 'الحضور', 'عدد الحضور', 'العدد', 'count'),
-      num(h, 'نسبة الحضور من مجموع الأعلام', 'نسبة الحضور من مجموع الأعلام %', 'النسبة %', 'percentage'),
+      // dara_taarus: resource | alqurtubi: العلم/المصدر البشري
+      str(h, 'resource', 'العلم/المصدر البشري', 'name', 'الشخص', 'العلم'),
+      // dara_taarus: classification | alqurtubi: المجال الغالب
+      str(h, 'classification', 'المجال الغالب', 'المجال', 'category', 'التصنيف'),
+      num(h, 'count', 'الحضور', 'عدد الحضور', 'العدد'),
+      // dara_taarus: share (رقم عشري 0-1) | alqurtubi: نسبة الحضور...
+      num(h, 'share', 'نسبة الحضور من مجموع الأعلام', 'نسبة الحضور من مجموع الأعلام %', 'النسبة %', 'percentage'),
     ] as (string | number | null)[]);
     tabs.push({
       id: 'v22_human_sources', label: 'المصادر البشرية', icon: '👤',
@@ -284,17 +334,20 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
   }
 
   // المدارس والاتجاهات — يدعم schools وschools_and_trends وschools_trends
+  // يبحث في resources (سواء كان داخل sections أو على المستوى الأعلى)
   const schools = getArr(resources, 'schools', 'schools_and_trends', 'schools_trends');
   if (schools && schools.length > 0) {
     const rows = schools.map((s) => [
       // alqurtubi: المدرسة/الاتجاه/المذهب | almuhalla: المدرسة/الاتجاه | almughni: المدرسة/الاتجاه/المذهب | albadaei: المدرسة/الاتجاه | ibnkathir: المدرسة/الاتجاه/المذهب | alrazi: المدرسة/الاتجاه | fathalbaari: المدخل | annawawe: المدرسة/الاتجاه/المذهب
-      str(s, 'المدرسة/الاتجاه', 'المدرسة/الاتجاه/المذهب', 'name', 'المدرسة', 'الاتجاه', 'المدخل'),
-      // النوع أو المجال
-      str(s, 'النوع', 'المجال', 'category'),
+      // umm_shafii/risala: المدرسة/الاتجاه/الطبقة | dara_taarus: resource
+      str(s, 'resource', 'المدرسة/الاتجاه/الطبقة', 'المدرسة/الاتجاه', 'المدرسة/الاتجاه/المذهب', 'name', 'المدرسة', 'الاتجاه', 'المدخل'),
+      // النوع أو المجال — umm_shafii/risala: النوع | dara_taarus: classification
+      str(s, 'classification', 'النوع', 'المجال', 'category'),
       // alqurtubi: عدد الحضور | almuhalla: مؤشر الحضور | almughni: عدد الورود | albadaei: العدد | alrazi: عدد الإشارات | fathalbaari: العدد | annawawe: الحضور
-      num(s, 'الحضور', 'عدد الحضور', 'العدد', 'مؤشر الحضور', 'عدد الورود', 'عدد الإشارات', 'count'),
-      // النسبة
-      num(s, 'نسبة الحضور من مجموع المدارس والاتجاهات', 'نسبة الحضور من مجموع المدارس والاتجاهات %', 'النسبة من مجموع المدارس والاتجاهات في هذا الكتاب %', 'النسبة من المدارس والاتجاهات %', 'النسبة من المدارس %', 'النسبة %', 'percentage'),
+      // umm_shafii/risala: عدد الحضور | dara_taarus: count
+      num(s, 'count', 'عدد الحضور', 'الحضور', 'العدد', 'مؤشر الحضور', 'عدد الورود', 'عدد الإشارات'),
+      // النسبة — umm_shafii/risala: النسبة من مجموع إشارات المدارس والاتجاهات | dara_taarus: share
+      num(s, 'share', 'النسبة من مجموع إشارات المدارس والاتجاهات', 'نسبة الحضور من مجموع المدارس والاتجاهات', 'نسبة الحضور من مجموع المدارس والاتجاهات %', 'النسبة من مجموع المدارس والاتجاهات في هذا الكتاب %', 'النسبة من المدارس والاتجاهات %', 'النسبة من المدارس %', 'النسبة %', 'percentage'),
     ] as (string | number | null)[]);
     tabs.push({
       id: 'v22_schools', label: 'المدارس والاتجاهات', icon: '🏫',
@@ -304,15 +357,18 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
   }
 
   // توزيع المجالات — يدعم by_field وfields وdomains
+  // يبحث في resources (سواء كان داخل sections أو على المستوى الأعلى)
   const byField = getArr(resources, 'by_field', 'fields', 'domains');
   if (byField && byField.length > 0) {
     const rows = byField.map((f) => [
       // alqurtubi: مجال المورد | almuhalla: المجال | almughni: المجال | albadaei: المجال | ibnkathir: المجال | alrazi: المورد المعرفي | fathalbaari: المجال | annawawe: مجال الكتب
-      str(f, 'مجال المورد', 'المورد المعرفي', 'مجال الكتب', 'المجال', 'field', 'domain', 'name'),
+      // umm_shafii/risala: المجال العلمي | dara_taarus: domain
+      str(f, 'domain', 'المجال العلمي', 'مجال المورد', 'المورد المعرفي', 'مجال الكتب', 'المجال', 'field', 'name'),
       // alqurtubi: عدد الحضور | almuhalla: مؤشر الحضور | almughni: عدد موارد المجال | albadaei: العدد | alrazi: عدد المطابقات | fathalbaari: العدد | annawawe: الحضور
-      num(f, 'العدد', 'عدد الحضور', 'مؤشر الحضور', 'عدد موارد المجال', 'عدد المطابقات', 'count'),
-      // النسبة
-      num(f, 'نسبة الحضور من مجموع موارد المؤلف العامة', 'نسبة الحضور من مجموع موارد المؤلف العامة %', 'النسبة من مجموع موارد المؤلف العامة', 'النسبة من مجموع الموارد العامة في هذا الكتاب %', 'النسبة من موارد القاموس %', 'النسبة من إحالات الكتب', 'النسبة %', 'percentage'),
+      // umm_shafii/risala: عدد مؤشرات الحضور | dara_taarus: count
+      num(f, 'count', 'عدد مؤشرات الحضور', 'العدد', 'عدد الحضور', 'مؤشر الحضور', 'عدد موارد المجال', 'عدد المطابقات'),
+      // النسبة — umm_shafii/risala: النسبة من مجموع مؤشرات المجالات | dara_taarus: share_declared_books أو share_all_resources
+      num(f, 'share_declared_books', 'share_all_resources', 'النسبة من مجموع مؤشرات المجالات', 'نسبة الحضور من مجموع موارد المؤلف العامة', 'نسبة الحضور من مجموع موارد المؤلف العامة %', 'النسبة من مجموع موارد المؤلف العامة', 'النسبة من مجموع الموارد العامة في هذا الكتاب %', 'النسبة من موارد القاموس %', 'النسبة من إحالات الكتب', 'النسبة %', 'percentage'),
     ] as (string | number | null)[]);
     tabs.push({
       id: 'v22_byfield', label: 'توزيع المجالات', icon: '🗂️',
@@ -507,13 +563,16 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
   if (Array.isArray(terms) && terms.length > 0) {
     const rows = terms.map((t) => [
       // fathalbaari: العبارة | alrazi: المصطلح/العبارة | alqurtubi(dict): المصطلح | almuhalla: العبارة | almughni(dict): العبارة | albadaei: العبارة | altabari: term
-      str(t, 'المصطلح/العبارة', 'المصطلح', 'العبارة', 'المصطلحات والأعلام المرصودة', 'term'),
+      // umm_shafii/risala: العبارة
+      str(t, 'العبارة', 'المصطلح/العبارة', 'المصطلح', 'المصطلحات والأعلام المرصودة', 'term'),
       // fathalbaari: الفئة | alrazi: الغرض | alqurtubi: الفئة | almuhalla: المحور | almughni: الفئة | albadaei: التصنيف | altabari: domain
-      str(t, 'التصنيف', 'الفئة', 'الغرض', 'المحور', 'المجموعة', 'domain'),
+      // umm_shafii/risala: الفئة
+      str(t, 'الفئة', 'التصنيف', 'الغرض', 'المحور', 'المجموعة', 'domain'),
       // fathalbaari: العدد | alrazi: العدد | almuhalla: العدد | almughni: العدد | albadaei: العدد | altabari: count
+      // umm_shafii/risala: العدد
       num(t, 'العدد', 'الحضور', 'count'),
-      // النسبة
-      num(t, 'النسبة من مجموع العبارات المنهجية', 'النسبة من مجموع مطابقات القاموس', 'النسبة من مجموع العبارات المحسوبة', 'النسبة من مجموع العبارات المنهجية المرصودة %', 'percentage'),
+      // النسبة — umm_shafii/risala: النسبة من مجموع عبارات القاموس
+      num(t, 'النسبة من مجموع عبارات القاموس', 'النسبة من مجموع العبارات المنهجية', 'النسبة من مجموع مطابقات القاموس', 'النسبة من مجموع العبارات المحسوبة', 'النسبة من مجموع العبارات المنهجية المرصودة %', 'percentage'),
     ] as (string | number | null)[]);
     tabs.push({
       id: 'v22_terms', label: 'المصطلحات المنهجية', icon: '📝',
@@ -1100,7 +1159,28 @@ function DataTable({
                   }}>
                     <CopyRowButton row={row} columns={columns} isDark={isDark} />
                   </td>
-                  {row.map((cell, ci) => (
+                  {row.map((cell, ci) => {
+                    // إذا كان العمود اسمه يحتوي على "النسبة" أو "%" والقيمة عشرية (0-1)، نحوّلها إلى مئوية
+                    const colName = columns[ci] || "";
+                    const isPctCol = colName.includes("النسبة") || colName.includes("%");
+                    let displayVal: string;
+                    if (cell === null || cell === undefined || cell === "" || cell === "0" || cell === 0) {
+                      displayVal = "";
+                    } else if (isPctCol) {
+                      const n = Number(cell);
+                      if (!isNaN(n) && n > 0 && n < 1) {
+                        // نسبة عشرية (0-1) → مئوية
+                        displayVal = (n * 100).toFixed(2) + "%";
+                      } else if (!isNaN(n) && n >= 1) {
+                        // نسبة مئوية بالفعل
+                        displayVal = n.toFixed(2) + "%";
+                      } else {
+                        displayVal = String(cell);
+                      }
+                    } else {
+                      displayVal = String(cell);
+                    }
+                    return (
                     <td
                       key={ci}
                       style={{
@@ -1113,13 +1193,14 @@ function DataTable({
                         lineHeight: 1.6,
                       }}
                     >
-                      {cell === null || cell === undefined || cell === "" || cell === "0" || cell === 0 ? (
+                      {!displayVal ? (
                         <span style={{ color: T.textLight, fontSize: 11 }}>—</span>
                       ) : (
-                        String(cell)
+                        displayVal
                       )}
                     </td>
-                  ))}
+                    );
+                  })}
                 </tr>
               ))
             )}
@@ -1288,7 +1369,9 @@ export default function DetailedTablesViewer({
   // كشف schema
   const isNewSchema = useMemo(() => isV21(data), [data]);
   const raw = data as Record<string, unknown>;
-  const isV22 = useMemo(() => !!(raw.protocol_version && raw.sections && raw.book), [data]);
+  // v2.2 الدقيق: protocol_version = "2.2" + book + أحد مصادر البيانات
+  // sections قد يكون dict فارغاً {} في بعض الكشافات فلا نشترطه
+  const isV22 = useMemo(() => !!(raw.protocol_version && raw.book && hasV22DataSource(raw)), [data]);
   const v21Tabs = useMemo(() => {
     if (!isNewSchema) return [];
     if (isV22) return getV22Tabs(data);

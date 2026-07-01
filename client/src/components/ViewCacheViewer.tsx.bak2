@@ -45,11 +45,6 @@ function fmtPct(n: number | null | undefined): string {
   const v = Number(n);
   return v < 0.1 ? v.toFixed(2) + "%" : v.toFixed(1) + "%";
 }
-// تحويل نسبة عشرية (0.192) إلى مئوية (19.2) — يكشف تلقائياً إذا كانت القيمة < 1
-function toPercent(v: number): number {
-  if (!v || isNaN(v)) return 0;
-  return v > 0 && v < 1 ? v * 100 : v;
-}
 
 // ── استخراج القيمة من صف بالموضع مع fallback ─────────────────────
 function cellAt(row: unknown[], idx: number): unknown {
@@ -180,14 +175,8 @@ interface NormalizedData {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function normalize(d: any): NormalizedData {
-  // ── MARQOOM_SCHEMA v2.2 (protocol_version=2.2, has book + sections|resources|terms) ──
-  // sections قد يكون dict فارغاً — يكفي وجود resources أو terms كمصدر بديل
-  const hasV22Data = d.protocol_version === "2.2" && d.book && (
-    (d.sections && (Array.isArray(d.sections) ? d.sections.length > 0 : Object.keys(d.sections).length > 0)) ||
-    (d.resources && Object.keys(d.resources).length > 0) ||
-    (Array.isArray(d.terms) && d.terms.length > 0)
-  );
-  if (hasV22Data) {
+  // ── MARQOOM_SCHEMA v2.2 (protocol_version=2.2, has book, summary, sections, resources) ──
+  if (d.protocol_version === "2.2" && d.book && d.sections) {
     const book = d.book || {};
     const summary = d.summary || {};
     const indicatorsRaw = summary.indicators;
@@ -228,7 +217,7 @@ function normalize(d: any): NormalizedData {
       name: String(f['العلم'] || f['العلم/الشخص'] || f.resource || f.name || ""),
       role: String(f['المدرسة/الطبقة'] || f['المجال'] || f.classification || f.category || ""),
       count: Number(f['الحضور'] || f.count || 0),
-      pct: toPercent(Number(f['النسبة من مجموع الأعلام في هذا الكتاب %'] || f['النسبة من الأعلام'] || f.share || f.percentage || 0)),
+      pct: Number(f['النسبة من مجموع الأعلام في هذا الكتاب %'] || f['النسبة من الأعلام'] || f.share || f.percentage || 0),
       confidence: f['تنبيه منهجي'] || f.note || f.confidence ? String(f['تنبيه منهجي'] || f.note || f.confidence || "") : undefined,
     })).filter(p => p.name);
 
@@ -237,7 +226,7 @@ function normalize(d: any): NormalizedData {
     const resourcesList = schools.map((s: any) => ({
       label: String(s['المدرسة/الاتجاه'] || s.resource || s.name || ""),
       count: Number(s['الحضور'] || s.count || 0),
-      pct: toPercent(Number(s['النسبة من مجموع المدارس والاتجاهات في هذا الكتاب %'] || s.share || s.percentage || 0)),
+      pct: Number(s['النسبة من مجموع المدارس والاتجاهات في هذا الكتاب %'] || s.share || s.percentage || 0),
     })).filter(r => r.label);
 
     // تحويل resources.books إلى كتب (إذا وُجدت) وإلا terms
@@ -247,7 +236,7 @@ function normalize(d: any): NormalizedData {
       category: String(b['المجال'] || b.field || b.category || ""),
       author: String(b['النوع'] || b.type || ""),
       count: Number(b['الحضور'] || b.count || 0),
-      pct: toPercent(Number(b['النسبة'] || b['النسبة من إحالات الكتب'] || b.share || b.percentage || 0)),
+      pct: Number(b['النسبة'] || b['النسبة من إحالات الكتب'] || b.share || b.percentage || 0),
       confidence: b.confidence ? String(b.confidence) : undefined,
     })).filter(b => b.title);
     // terms كمحاور منهجية
@@ -256,7 +245,7 @@ function normalize(d: any): NormalizedData {
       category: String(t['المجموعة'] || t.domain || ""),
       author: String(t['الغرض'] || t.meaning || ""),
       count: Number(t['الحضور'] || t.count || 0),
-      pct: toPercent(Number(t['النسبة'] || t['النسبة من مجموع عبارات القاموس'] || t.share_of_methodological_terms || t.percentage || 0)),
+      pct: Number(t['النسبة'] || t['النسبة من مجموع عبارات القاموس'] || t.share_of_methodological_terms || t.percentage || 0),
     })).filter(b => b.title);
     // نفضل resources.books إذا وُجدت، وإلا terms
     const books = booksFromResources.length > 0 ? booksFromResources : termsAsBooks;
