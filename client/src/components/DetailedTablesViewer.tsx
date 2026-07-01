@@ -244,10 +244,10 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
   const books = getArr(resources, 'books', 'explicit_books', 'top_books');
   if (books && books.length > 0) {
     const rows = books.map((b) => [
-      str(b, 'الكتاب/المصدر المصرح به', 'name', 'الكتاب', 'المصدر'),
+      str(b, 'الكتاب/المصدر المصرح به', 'الكتاب المصرح به', 'name', 'الكتاب', 'المصدر'),
       str(b, 'المجال', 'category', 'التصنيف'),
-      num(b, 'الحضور', 'العدد', 'count'),
-      num(b, 'النسبة من مجموع إحالات الكتب في هذا الكتاب %', 'النسبة %', 'percentage'),
+      num(b, 'الحضور', 'عدد الحضور', 'العدد', 'count'),
+      num(b, 'النسبة من مجموع إحالات الكتب في هذا الكتاب %', 'نسبة الحضور من مجموع إحالات الكتب', 'النسبة %', 'percentage'),
     ] as (string | number | null)[]);
     tabs.push({
       id: 'v22_books', label: 'المصادر المُحال إليها', icon: '📚',
@@ -261,9 +261,9 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
   if (humanSources && humanSources.length > 0) {
     const rows = humanSources.map((h) => [
       str(h, 'العلم/المصدر البشري', 'name', 'الشخص'),
-      str(h, 'المجال', 'category'),
-      num(h, 'الحضور', 'العدد', 'count'),
-      num(h, 'النسبة %', 'percentage'),
+      str(h, 'المجال الغالب', 'المجال', 'category'),
+      num(h, 'الحضور', 'عدد الحضور', 'العدد', 'count'),
+      num(h, 'نسبة الحضور من مجموع الأعلام', 'النسبة %', 'percentage'),
     ] as (string | number | null)[]);
     tabs.push({
       id: 'v22_human_sources', label: 'المصادر البشرية', icon: '👤',
@@ -276,10 +276,10 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
   const schools = getArr(resources, 'schools', 'schools_and_trends', 'schools_trends');
   if (schools && schools.length > 0) {
     const rows = schools.map((s) => [
-      str(s, 'المدرسة/الاتجاه', 'name', 'المدرسة', 'الاتجاه'),
-      str(s, 'المجال', 'category'),
-      num(s, 'الحضور', 'العدد', 'count'),
-      num(s, 'النسبة من مجموع المدارس والاتجاهات في هذا الكتاب %', 'النسبة %', 'percentage'),
+      str(s, 'المدرسة/الاتجاه', 'المدرسة/الاتجاه/المذهب', 'name', 'المدرسة', 'الاتجاه'),
+      str(s, 'النوع', 'المجال', 'category'),
+      num(s, 'الحضور', 'عدد الحضور', 'العدد', 'count'),
+      num(s, 'نسبة الحضور من مجموع المدارس والاتجاهات', 'النسبة من مجموع المدارس والاتجاهات في هذا الكتاب %', 'النسبة %', 'percentage'),
     ] as (string | number | null)[]);
     tabs.push({
       id: 'v22_schools', label: 'المدارس والاتجاهات', icon: '🏫',
@@ -292,9 +292,9 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
   const byField = getArr(resources, 'by_field', 'fields', 'domains');
   if (byField && byField.length > 0) {
     const rows = byField.map((f) => [
-      str(f, 'المجال', 'field', 'domain', 'name'),
+      str(f, 'مجال المورد', 'المجال', 'field', 'domain', 'name'),
       num(f, 'العدد', 'عدد الحضور', 'count'),
-      num(f, 'النسبة %', 'النسبة من مجموع الموارد العامة في هذا الكتاب %', 'percentage'),
+      num(f, 'نسبة الحضور من مجموع موارد المؤلف العامة', 'النسبة %', 'النسبة من مجموع الموارد العامة في هذا الكتاب %', 'percentage'),
     ] as (string | number | null)[]);
     tabs.push({
       id: 'v22_byfield', label: 'توزيع المجالات', icon: '🗂️',
@@ -318,12 +318,52 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
     });
   }
 
-  // المصطلحات (terms) — يدعم الحقول العربية والإنجليزية
-  const terms = raw.terms as Record<string, unknown>[] | undefined;
+  // sections كـ DICT (مثل القرطبي) — يحتوي على density_by_surah وpublishable_results وغيرها
+  const sectionsDict = (!Array.isArray(sections) && sections && typeof sections === 'object')
+    ? sections as Record<string, unknown>
+    : undefined;
+  if (sectionsDict) {
+    const densityBySurah = getArr(sectionsDict, 'density_by_surah');
+    if (densityBySurah && densityBySurah.length > 0) {
+      const rows = densityBySurah.map((s) => [
+        str(s, 'السورة'),
+        num(s, 'عدد صفحات XHTML تقريبية'),
+        num(s, 'عدد الكلمات التقريبي'),
+        num(s, 'كلمات/صفحة'),
+      ] as (string | number | null)[]);
+      tabs.push({
+        id: 'v22_surahs_density', label: 'كثافة السور', icon: '📖',
+        description: 'توزيع الكلمات والصفحات على سور القرآن',
+        tableData: { _columns: ['السورة', 'الصفحات', 'الكلمات', 'كلمات/صفحة'], rows },
+      });
+    }
+    const publishableFromSections = getArr(sectionsDict, 'publishable_results');
+    if (publishableFromSections && publishableFromSections.length > 0) {
+      const rows = publishableFromSections.map((p) => [
+        str(p, 'النتيجة', 'البند', 'result', 'name'),
+        str(p, 'التفصيل', 'الوصف', 'detail', 'description'),
+        str(p, 'القيمة', 'value'),
+      ] as (string | number | null)[]);
+      tabs.push({
+        id: 'v22_publishable_sections', label: 'نتائج قابلة للنشر', icon: '🌟',
+        description: 'أبرز النتائج العلمية القابلة للنشر والاستشهاد',
+        tableData: { _columns: ['النتيجة', 'التفصيل', 'القيمة'], rows },
+      });
+    }
+  }
+
+  // المصطلحات (terms) — يدعم ARRAY مباشرة أو DICT يحتوي على methodological_terms
+  const termsRaw = raw.terms as Record<string, unknown>[] | Record<string, unknown> | undefined;
+  const termsArr: Record<string, unknown>[] | undefined = Array.isArray(termsRaw)
+    ? termsRaw
+    : (termsRaw && typeof termsRaw === 'object' && Array.isArray((termsRaw as Record<string, unknown>).methodological_terms))
+      ? (termsRaw as Record<string, unknown>).methodological_terms as Record<string, unknown>[]
+      : undefined;
+  const terms = termsArr;
   if (Array.isArray(terms) && terms.length > 0) {
     const rows = terms.map((t) => [
-      str(t, 'المصطلح/العبارة', 'العبارة', 'term'),
-      str(t, 'التصنيف', 'المجموعة', 'domain'),
+      str(t, 'المصطلح/العبارة', 'المصطلح', 'العبارة', 'term'),
+      str(t, 'التصنيف', 'الفئة', 'المجموعة', 'domain'),
       num(t, 'العدد', 'الحضور', 'count'),
       num(t, 'النسبة من مجموع العبارات المنهجية', 'percentage'),
     ] as (string | number | null)[]);
