@@ -194,9 +194,12 @@ function getV22Tabs(d: ViewCacheData): { id: string; label: string; icon: string
   const purposeDist = summary?.purpose_distribution as Record<string, unknown>[] | undefined;
   if (Array.isArray(purposeDist) && purposeDist.length > 0) {
     const rows = purposeDist.map((p) => [
-      str(p, 'الغرض', 'purpose'),
-      num(p, 'العدد', 'الحضور', 'count'),
-      num(p, 'النسبة %', 'النسبة من مجموع العبارات المنهجية %', 'percentage'),
+      // alrazi: الغرض المنهجي | alqurtubi/almuhalla/almughni/albadaei/annawawe/fathalbaari: الغرض
+      str(p, 'الغرض المنهجي', 'الغرض', 'purpose'),
+      // alrazi: عدد المطابقات | alqurtubi: العدد | almuhalla: العدد | almughni: العدد | albadaei: العدد | annawawe: الحضور | fathalbaari: العدد
+      num(p, 'عدد المطابقات', 'العدد', 'الحضور', 'count'),
+      // alrazi: النسبة من مجموع مطابقات القاموس | alqurtubi: النسبة % | almuhalla: النسبة % | almughni: النسبة % | albadaei: النسبة % | annawawe: النسبة % | fathalbaari: النسبة %
+      num(p, 'النسبة من مجموع مطابقات القاموس', 'النسبة %', 'النسبة من مجموع العبارات المنهجية %', 'percentage'),
     ] as (string | number | null)[]);
     tabs.push({
       id: 'v22_purposes', label: 'توزيع الأغراض', icon: '🎯',
