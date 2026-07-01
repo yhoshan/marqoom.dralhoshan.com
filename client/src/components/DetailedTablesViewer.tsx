@@ -895,7 +895,7 @@ function DataTable({
                         lineHeight: 1.6,
                       }}
                     >
-                      {cell === null || cell === undefined ? (
+                      {cell === null || cell === undefined || cell === "" || cell === "0" || cell === 0 ? (
                         <span style={{ color: T.textLight, fontSize: 11 }}>—</span>
                       ) : (
                         String(cell)

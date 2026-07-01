@@ -9,7 +9,10 @@ import { readFileSync, existsSync } from 'fs';
 import { execSync } from 'child_process';
 import path from 'path';
 
-dotenv.config({ path: '/home/ubuntu/marqoom/.env' });
+import { fileURLToPath } from 'url';
+const __etlDir = path.dirname(fileURLToPath(import.meta.url));
+const __root = path.resolve(__etlDir, '..');
+dotenv.config({ path: path.resolve(__root, '.env') });
 
 const FORGE_URL = process.env.BUILT_IN_FORGE_API_URL?.replace(/\/+$/, '');
 const FORGE_KEY = process.env.BUILT_IN_FORGE_API_KEY;

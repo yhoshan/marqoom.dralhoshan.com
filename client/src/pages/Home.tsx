@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useLocation } from "wouter";
 import { useTheme } from "@/contexts/ThemeContext";
+import { formatStatValue } from "@/lib/format";
 
 // ═══════════════════════════════════════════════
 // DESIGN: هوية مرقوم الرسمية
@@ -2011,7 +2012,7 @@ export default function Home() {
                   color: "#FFFFFF",
                   lineHeight: 1.15,
                   letterSpacing: 0,
-                }}>{stat.value}</span>
+                }}>{formatStatValue(stat.value)}</span>
               </div>
               <span style={{
                 fontFamily: "'Noto Naskh Arabic', serif",
@@ -2336,7 +2337,7 @@ function KashafCard({ kashaf }: { kashaf: typeof KASHAFAT[0] }) {
               alignItems: "center",
               gap: 4,
             }}>
-              <span style={{ color: tc.accent, fontWeight: 700 }}>{s.value}</span>
+              <span style={{ color: tc.accent, fontWeight: 700 }}>{formatStatValue(s.value)}</span>
               <span>{s.label}</span>
             </span>
           ))}

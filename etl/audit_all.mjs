@@ -1,7 +1,11 @@
 import mysql from 'mysql2/promise';
 import dotenv from 'dotenv';
 import { readFileSync } from 'fs';
-dotenv.config();
+import { fileURLToPath } from 'url';
+import path from 'path';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const __root = path.resolve(__dirname, '..');
+dotenv.config({ path: path.resolve(__root, '.env') });
 
 const conn = await mysql.createConnection(process.env.DATABASE_URL);
 
@@ -13,8 +17,8 @@ console.log(`\n=== قاعدة البيانات: ${dbRows.length} كشاف ===`);
 const dbIds = new Set(dbRows.map(r => r.kashafId));
 
 // جلب IDs من KashafDetail.tsx
-const detailContent = readFileSync('/home/ubuntu/marqoom/client/src/pages/KashafDetail.tsx', 'utf8');
-const homeContent = readFileSync('/home/ubuntu/marqoom/client/src/pages/Home.tsx', 'utf8');
+const detailContent = readFileSync(path.resolve(__root, 'client/src/pages/KashafDetail.tsx'), 'utf8');
+const homeContent = readFileSync(path.resolve(__root, 'client/src/pages/Home.tsx'), 'utf8');
 
 // استخراج IDs من KashafDetail
 const detailIds = [...detailContent.matchAll(/id:\s*["']([^"']+)["']/g)].map(m => m[1]).filter(id => id.startsWith('marqoom'));

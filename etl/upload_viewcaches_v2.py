@@ -84,7 +84,9 @@ for arabic_key, kashaf_id in MAPPING:
         results.append({"kashafId": kashaf_id, "status": "error", "error": str(e)})
 
 # حفظ النتائج
-with open("/home/ubuntu/marqoom/etl/viewcache_upload_results.json", "w", encoding="utf-8") as f:
+import pathlib
+_etl_dir = pathlib.Path(__file__).parent
+with open(_etl_dir / "viewcache_upload_results.json", "w", encoding="utf-8") as f:
     json.dump(results, f, ensure_ascii=False, indent=2)
 
 print(f"\n📊 الملخص:")

@@ -4,8 +4,10 @@
  * ويربط IDs الكشافات 1-11 القديمة بالـ kashafId الصحيح
  */
 import { readFileSync, writeFileSync } from 'fs';
-
-const data = JSON.parse(readFileSync('/home/ubuntu/marqoom/etl/all_kashafat_full.json', 'utf8'));
+import { fileURLToPath } from 'url';
+import path from 'path';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const data = JSON.parse(readFileSync(path.resolve(__dirname, 'all_kashafat_full.json'), 'utf8'));
 
 // خريطة تصنيفات
 const categoryMap = {
@@ -141,7 +143,7 @@ if (zarkashi) {
   console.log(`\nالزركشي: "${zarkashi.title}" | ${zarkashi.author} ${zarkashi.died}`);
 }
 
-writeFileSync('/home/ubuntu/marqoom/etl/new_kashafat_code.txt', code);
+writeFileSync(path.resolve(__dirname, 'new_kashafat_code.txt'), code);
 console.log(`\nتم توليد كود ${num-12} كشاف جديد في new_kashafat_code.txt`);
 
 // طباعة الكشافات الجديدة بالترتيب

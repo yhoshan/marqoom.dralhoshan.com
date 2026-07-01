@@ -35,7 +35,9 @@ const P = {
 // ── Helpers ────────────────────────────────────────────────────────
 function fmt(n: number | null | undefined): string {
   if (n == null || isNaN(Number(n))) return "—";
-  return Number(n).toLocaleString("en-US");
+  const v = Number(n);
+  if (v === 0) return "—";
+  return v.toLocaleString("en-US");
 }
 
 function fmtPct(n: number | null | undefined): string {

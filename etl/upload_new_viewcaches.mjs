@@ -2,8 +2,10 @@
  * رفع view_cache.json للكشافات الجديدة 86-98 وتحديث قاعدة البيانات
  */
 import { execSync } from "child_process";
-import { readFileSync, existsSync } from "fs";
-import { join } from "path";
+import { readFileSync, existsSync, writeFileSync } from "fs";
+import { join, dirname, resolve } from "path";
+import { fileURLToPath } from "url";
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const BASE_DIR = "/home/ubuntu/upload/new_kashafat";
 
@@ -188,9 +190,8 @@ for (const { arabicKey, kashafId, localName } of ALL_MAPPING) {
 }
 
 // حفظ النتائج
-import { writeFileSync } from "fs";
 writeFileSync(
-  "/home/ubuntu/marqoom/etl/viewcache_upload_results.json",
+  resolve(__dirname, "viewcache_upload_results.json"),
   JSON.stringify(results, null, 2)
 );
 console.log("\n📊 النتائج:");

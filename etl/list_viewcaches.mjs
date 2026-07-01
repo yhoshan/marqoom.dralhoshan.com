@@ -2,7 +2,10 @@ import mysql from 'mysql2/promise';
 import { readFileSync } from 'fs';
 
 // Load env
-const envPath = '/home/ubuntu/marqoom/.env';
+import { fileURLToPath } from 'url';
+import path from 'path';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const envPath = path.resolve(__dirname, '../.env');
 try {
   const envContent = readFileSync(envPath, 'utf8');
   envContent.split('\n').forEach(line => {

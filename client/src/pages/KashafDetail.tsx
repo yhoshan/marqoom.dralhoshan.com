@@ -4,6 +4,7 @@ import { trpc } from "@/lib/trpc";
 import { useEffect, useRef, useState } from "react";
 import { useParams, useLocation } from "wouter";
 import { useTheme } from "@/contexts/ThemeContext";
+import { formatStatValue } from "@/lib/format";
 
 // ═══════════════════════════════════════════════
 // DESIGN: هوية مرقوم الرسمية
@@ -2752,7 +2753,7 @@ export default function KashafDetail() {
               border: `1px solid ${T.creamMid}`,
             }}>
               <div style={{ fontSize: "clamp(18px,4.5vw,26px)", fontWeight: 700, color: catColor.accent, fontFamily: "'Amiri', serif", marginBottom: 4 }}>
-                {s.value}
+                {formatStatValue(s.value)}
               </div>
               <div style={{ fontSize: "clamp(11px,2.5vw,13px)", color: T.textMid }}>{s.label}</div>
             </div>
